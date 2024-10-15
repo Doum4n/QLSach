@@ -48,40 +48,39 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            pictureBox_Banner = new Guna.UI2.WinForms.Guna2PictureBox();
             btn_newlyUpdate = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            btn_popula = new Guna.UI2.WinForms.Guna2Button();
+            btn_mostView = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             tablePane_book = new TableLayoutPanel();
             tablePane_digitalBook = new TableLayoutPanel();
-            tablePane_magazine = new TableLayoutPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            tablePane_maganzine = new TableLayoutPanel();
+            more_newlyBook = new Guna.UI2.WinForms.Guna2Button();
+            more_digitalBook = new Guna.UI2.WinForms.Guna2Button();
+            more_mangazine = new Guna.UI2.WinForms.Guna2Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).BeginInit();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             guna2Panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // guna2PictureBox1
+            // pictureBox_Banner
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(18, 21);
-            guna2PictureBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(824, 299);
-            guna2PictureBox1.TabIndex = 0;
-            guna2PictureBox1.TabStop = false;
+            pictureBox_Banner.CustomizableEdges = customizableEdges1;
+            pictureBox_Banner.ImageRotate = 0F;
+            pictureBox_Banner.Location = new Point(18, 21);
+            pictureBox_Banner.Margin = new Padding(3, 4, 3, 4);
+            pictureBox_Banner.Name = "pictureBox_Banner";
+            pictureBox_Banner.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            pictureBox_Banner.Size = new Size(824, 299);
+            pictureBox_Banner.TabIndex = 0;
+            pictureBox_Banner.TabStop = false;
             // 
             // btn_newlyUpdate
             // 
@@ -101,39 +100,39 @@
             btn_newlyUpdate.Text = "Mới cập nhật";
             btn_newlyUpdate.Click += btn_newlyUpdate_Click;
             // 
-            // guna2Button2
+            // btn_popula
             // 
-            guna2Button2.CustomizableEdges = customizableEdges5;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.Font = new Font("Segoe UI", 9F);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(218, 340);
-            guna2Button2.Margin = new Padding(3, 4, 3, 4);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button2.Size = new Size(180, 56);
-            guna2Button2.TabIndex = 2;
-            guna2Button2.Text = "Nổi bật";
+            btn_popula.CustomizableEdges = customizableEdges5;
+            btn_popula.DisabledState.BorderColor = Color.DarkGray;
+            btn_popula.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_popula.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_popula.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_popula.Font = new Font("Segoe UI", 9F);
+            btn_popula.ForeColor = Color.White;
+            btn_popula.Location = new Point(218, 340);
+            btn_popula.Margin = new Padding(3, 4, 3, 4);
+            btn_popula.Name = "btn_popula";
+            btn_popula.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btn_popula.Size = new Size(180, 56);
+            btn_popula.TabIndex = 2;
+            btn_popula.Text = "Nổi bật";
             // 
-            // guna2Button3
+            // btn_mostView
             // 
-            guna2Button3.CustomizableEdges = customizableEdges7;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.Font = new Font("Segoe UI", 9F);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(419, 340);
-            guna2Button3.Margin = new Padding(3, 4, 3, 4);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button3.Size = new Size(180, 56);
-            guna2Button3.TabIndex = 3;
-            guna2Button3.Text = "Xem nhiều";
+            btn_mostView.CustomizableEdges = customizableEdges7;
+            btn_mostView.DisabledState.BorderColor = Color.DarkGray;
+            btn_mostView.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_mostView.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_mostView.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_mostView.Font = new Font("Segoe UI", 9F);
+            btn_mostView.ForeColor = Color.White;
+            btn_mostView.Location = new Point(419, 340);
+            btn_mostView.Margin = new Padding(3, 4, 3, 4);
+            btn_mostView.Name = "btn_mostView";
+            btn_mostView.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_mostView.Size = new Size(180, 56);
+            btn_mostView.TabIndex = 3;
+            btn_mostView.Text = "Xem nhiều";
             // 
             // label1
             // 
@@ -165,23 +164,21 @@
             // tablePane_book
             // 
             tablePane_book.AutoSize = true;
-            tablePane_book.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tablePane_book.ColumnCount = 2;
+            tablePane_book.ColumnCount = 1;
             tablePane_book.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tablePane_book.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tablePane_book.Location = new Point(12, 8);
-            tablePane_book.Margin = new Padding(3, 4, 3, 4);
+            tablePane_book.Location = new Point(14, 22);
+            tablePane_book.Margin = new Padding(10);
             tablePane_book.Name = "tablePane_book";
+            tablePane_book.Padding = new Padding(10);
             tablePane_book.RowCount = 1;
             tablePane_book.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tablePane_book.Size = new Size(20, 0);
+            tablePane_book.Size = new Size(207, 217);
             tablePane_book.TabIndex = 7;
             // 
             // tablePane_digitalBook
             // 
             tablePane_digitalBook.AutoSize = true;
-            tablePane_digitalBook.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tablePane_digitalBook.ColumnCount = 2;
+            tablePane_digitalBook.ColumnCount = 1;
             tablePane_digitalBook.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tablePane_digitalBook.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tablePane_digitalBook.Location = new Point(14, 26);
@@ -189,23 +186,8 @@
             tablePane_digitalBook.Name = "tablePane_digitalBook";
             tablePane_digitalBook.RowCount = 1;
             tablePane_digitalBook.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tablePane_digitalBook.Size = new Size(20, 0);
+            tablePane_digitalBook.Size = new Size(222, 218);
             tablePane_digitalBook.TabIndex = 8;
-            // 
-            // tablePane_magazine
-            // 
-            tablePane_magazine.AutoSize = true;
-            tablePane_magazine.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tablePane_magazine.ColumnCount = 2;
-            tablePane_magazine.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tablePane_magazine.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tablePane_magazine.Location = new Point(16, 22);
-            tablePane_magazine.Margin = new Padding(3, 4, 3, 4);
-            tablePane_magazine.Name = "tablePane_magazine";
-            tablePane_magazine.RowCount = 1;
-            tablePane_magazine.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tablePane_magazine.Size = new Size(20, 0);
-            tablePane_magazine.TabIndex = 8;
             // 
             // guna2Panel1
             // 
@@ -231,7 +213,7 @@
             // 
             // guna2Panel3
             // 
-            guna2Panel3.Controls.Add(tablePane_magazine);
+            guna2Panel3.Controls.Add(tablePane_maganzine);
             guna2Panel3.CustomizableEdges = customizableEdges13;
             guna2Panel3.Location = new Point(18, 1190);
             guna2Panel3.Margin = new Padding(3, 4, 3, 4);
@@ -240,88 +222,92 @@
             guna2Panel3.Size = new Size(812, 296);
             guna2Panel3.TabIndex = 10;
             // 
-            // guna2Button4
+            // tablePane_maganzine
             // 
-            guna2Button4.CustomizableEdges = customizableEdges15;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.Font = new Font("Segoe UI", 9F);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(722, 422);
-            guna2Button4.Margin = new Padding(3, 4, 3, 4);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Button4.Size = new Size(111, 40);
-            guna2Button4.TabIndex = 11;
-            guna2Button4.Text = "Xem thêm";
+            tablePane_maganzine.AutoSize = true;
+            tablePane_maganzine.ColumnCount = 1;
+            tablePane_maganzine.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tablePane_maganzine.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tablePane_maganzine.Location = new Point(17, 16);
+            tablePane_maganzine.Name = "tablePane_maganzine";
+            tablePane_maganzine.RowCount = 1;
+            tablePane_maganzine.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tablePane_maganzine.Size = new Size(222, 266);
+            tablePane_maganzine.TabIndex = 0;
             // 
-            // guna2Button5
+            // more_newlyBook
             // 
-            guna2Button5.CustomizableEdges = customizableEdges17;
-            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button5.Font = new Font("Segoe UI", 9F);
-            guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(722, 769);
-            guna2Button5.Margin = new Padding(3, 4, 3, 4);
-            guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Button5.Size = new Size(111, 40);
-            guna2Button5.TabIndex = 12;
-            guna2Button5.Text = "Xem thêm";
+            more_newlyBook.CustomizableEdges = customizableEdges15;
+            more_newlyBook.DisabledState.BorderColor = Color.DarkGray;
+            more_newlyBook.DisabledState.CustomBorderColor = Color.DarkGray;
+            more_newlyBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            more_newlyBook.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            more_newlyBook.Font = new Font("Segoe UI", 9F);
+            more_newlyBook.ForeColor = Color.White;
+            more_newlyBook.Location = new Point(722, 422);
+            more_newlyBook.Margin = new Padding(3, 4, 3, 4);
+            more_newlyBook.Name = "more_newlyBook";
+            more_newlyBook.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            more_newlyBook.Size = new Size(111, 40);
+            more_newlyBook.TabIndex = 11;
+            more_newlyBook.Text = "Xem thêm";
+            more_newlyBook.Click += more_newlyBook_Click;
             // 
-            // guna2Button6
+            // more_digitalBook
             // 
-            guna2Button6.CustomizableEdges = customizableEdges19;
-            guna2Button6.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button6.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button6.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button6.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button6.Font = new Font("Segoe UI", 9F);
-            guna2Button6.ForeColor = Color.White;
-            guna2Button6.Location = new Point(719, 1142);
-            guna2Button6.Margin = new Padding(3, 4, 3, 4);
-            guna2Button6.Name = "guna2Button6";
-            guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Button6.Size = new Size(111, 40);
-            guna2Button6.TabIndex = 13;
-            guna2Button6.Text = "Xem thêm";
+            more_digitalBook.CustomizableEdges = customizableEdges17;
+            more_digitalBook.DisabledState.BorderColor = Color.DarkGray;
+            more_digitalBook.DisabledState.CustomBorderColor = Color.DarkGray;
+            more_digitalBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            more_digitalBook.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            more_digitalBook.Font = new Font("Segoe UI", 9F);
+            more_digitalBook.ForeColor = Color.White;
+            more_digitalBook.Location = new Point(722, 769);
+            more_digitalBook.Margin = new Padding(3, 4, 3, 4);
+            more_digitalBook.Name = "more_digitalBook";
+            more_digitalBook.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            more_digitalBook.Size = new Size(111, 40);
+            more_digitalBook.TabIndex = 12;
+            more_digitalBook.Text = "Xem thêm";
             // 
-            // label4
+            // more_mangazine
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(98, 432);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 14;
-            label4.Text = "label4";
+            more_mangazine.CustomizableEdges = customizableEdges19;
+            more_mangazine.DisabledState.BorderColor = Color.DarkGray;
+            more_mangazine.DisabledState.CustomBorderColor = Color.DarkGray;
+            more_mangazine.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            more_mangazine.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            more_mangazine.Font = new Font("Segoe UI", 9F);
+            more_mangazine.ForeColor = Color.White;
+            more_mangazine.Location = new Point(719, 1142);
+            more_mangazine.Margin = new Padding(3, 4, 3, 4);
+            more_mangazine.Name = "more_mangazine";
+            more_mangazine.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            more_mangazine.Size = new Size(111, 40);
+            more_mangazine.TabIndex = 13;
+            more_mangazine.Text = "Xem thêm";
             // 
             // DashBoard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label4);
-            Controls.Add(guna2Button6);
-            Controls.Add(guna2Button5);
-            Controls.Add(guna2Button4);
+            Controls.Add(more_mangazine);
+            Controls.Add(more_digitalBook);
+            Controls.Add(more_newlyBook);
             Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(guna2Button3);
-            Controls.Add(guna2Button2);
+            Controls.Add(btn_mostView);
+            Controls.Add(btn_popula);
             Controls.Add(btn_newlyUpdate);
-            Controls.Add(guna2PictureBox1);
+            Controls.Add(pictureBox_Banner);
             Margin = new Padding(3, 4, 3, 4);
             Name = "DashBoard";
             Size = new Size(872, 1516);
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);
@@ -334,22 +320,21 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBox_Banner;
         private Guna.UI2.WinForms.Guna2Button btn_newlyUpdate;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btn_popula;
+        private Guna.UI2.WinForms.Guna2Button btn_mostView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tablePane_book;
         private System.Windows.Forms.TableLayoutPanel tablePane_digitalBook;
-        private System.Windows.Forms.TableLayoutPanel tablePane_magazine;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Label label4;
+        private Guna.UI2.WinForms.Guna2Button more_newlyBook;
+        private Guna.UI2.WinForms.Guna2Button more_digitalBook;
+        private Guna.UI2.WinForms.Guna2Button more_mangazine;
+        private TableLayoutPanel tablePane_maganzine;
     }
 }

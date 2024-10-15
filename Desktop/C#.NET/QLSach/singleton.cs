@@ -10,6 +10,7 @@ namespace QLSach
     internal class Singleton
     {
         private readonly Db db;
+        private Guna.UI2.WinForms.Guna2Panel panel;
 
         private static Singleton? instance;
         private static readonly object lockObj = new object();
@@ -30,9 +31,14 @@ namespace QLSach
                     }
                     return instance;
                 }
-        }
+            }
         }
 
         public Db Data { get { return db; } }
+        public Panel MainPane
+        {
+            get { return panel; }
+            set { panel = (Guna.UI2.WinForms.Guna2Panel)value; }
+        }
     }
 }

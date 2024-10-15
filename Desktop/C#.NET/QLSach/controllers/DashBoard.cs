@@ -12,14 +12,9 @@ namespace QLSach.controllers
 {
     public class DashBoard
     {
-        public DashBoard(Db db) 
+        public List<Book> getBooks()
         {
-            
-        }
-
-        public Book? List()
-        {
-            return Singleton.getInstance.Data?.Books?.FirstOrDefault();
+            return Singleton.getInstance.Data?.Books?.ToList();
         }
     }
 }

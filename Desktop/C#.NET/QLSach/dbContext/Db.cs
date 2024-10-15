@@ -20,9 +20,10 @@ namespace QLSach.dbContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost; Database=qlsach; Port=5432; Username=myuser; Password=mysecretpassword;");
+            optionsBuilder.UseNpgsql("Host=localhost; Database=qlsach; Port=5432; Username=admin; Password=pw;");
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<author> Authors { get; set; }
     }
 }

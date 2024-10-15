@@ -1,24 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QLSach.dbContext.models
 {
-    public class Book
+    public class author
     {
         [Key]
-        public int id {  get; set; }
+        public String id { get; set; }
         [Required]
-        public string name { get; set; }
-
-        public Book(String name)
-        {
-            this.name = name;
-        }
-
+        public String name { get; set; }
+        public String description { get; set; }
     }
 }

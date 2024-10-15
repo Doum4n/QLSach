@@ -21,7 +21,8 @@ namespace QLSach.view
 
         private void btn_book_Click(object sender, EventArgs e)
         {
-            Pane_conten.Controls.Add(new DashBoard());
+            Singleton.getInstance.MainPane = Pane_conten;
+            Singleton.getInstance.MainPane.Controls.Add(new DashBoard());
 
             pane_btnSach.Visible = isSelected;
 

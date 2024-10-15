@@ -25,19 +25,20 @@ namespace QLSach.view
         public DashBoard()
         {
             InitializeComponent();
-            LoadBooks(bookStatus.newly_udated);
+            //LoadBooks(bookStatus.newly_udated);
         }
 
-        private void LoadBooks(bookStatus status)
+        private void LoadData(bookStatus status, book bookItem)
         {
-            book book = new book();
             switch (status)
             {
                 case bookStatus.newly_udated:
                     {
-                        tablePane_book.ColumnCount = 1;
-                        tablePane_book.SetColumn(book, tablePane_book.ColumnCount - 1);
-                        tablePane_book.Controls.Add(book);
+                        //tablePane_book.PerformLayout();
+                        tablePane_book.ColumnCount += 1;
+                        //tablePane_book.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+                        tablePane_book.SetColumn(bookItem, tablePane_book.ColumnCount - 1);
+                        tablePane_book.Controls.Add(bookItem);
                         break;
                     }
                 case bookStatus.popula:
@@ -52,8 +53,35 @@ namespace QLSach.view
 
         private void btn_newlyUpdate_Click(object sender, EventArgs e)
         {
-            controllers.DashBoard dashBoard = new controllers.DashBoard(Singleton.getInstance.Data);
-            label4.Text = (dashBoard.List().name).ToString();
+            controllers.DashBoard dashBoard = new controllers.DashBoard();
+
+            foreach (var book in dashBoard.getBooks())
+            {
+                book book1 = new book();
+                book1.Name = book.name;
+                book1.Author = "Entein";
+                book1.Source = "Internet";
+                LoadData(bookStatus.newly_udated, book1);
+
+                book book2 = new book();
+                book2.Name = "Vật lý";
+                book2.Author = "Entein";
+                book2.Source = "Internet";
+                LoadData(bookStatus.newly_udated, book2);
+
+                book book3 = new book();
+                book3.Name = "Vật lý";
+                book3.Author = "Entein";
+                book3.Source = "Internet";
+                LoadData(bookStatus.newly_udated, book3);
+            }
+        }
+
+        private void more_newlyBook_Click(object sender, EventArgs e)
+        {
+            recentUpdate rc = new recentUpdate();
+            Singleton.getInstance.MainPane.Controls.Clear();
+            Singleton.getInstance.MainPane.Controls.Add(rc);
         }
     }
 }
