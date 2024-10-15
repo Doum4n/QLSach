@@ -1,5 +1,3 @@
-using QLSach.dbContext;
-
 namespace QLSach;
 
 static class Program
@@ -14,6 +12,5 @@ static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
         Application.Run(new Login());
-        Db db = new Db();
     }    
 }

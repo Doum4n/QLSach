@@ -1,4 +1,5 @@
-﻿using QLSach.dbContext;
+﻿using QLSach.database;
+using QLSach.dbContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,14 @@ namespace QLSach
 {
     internal class Singleton
     {
-        private readonly Db db;
+        private readonly Context db;
         private Guna.UI2.WinForms.Guna2Panel panel;
 
         private static Singleton? instance;
         private static readonly object lockObj = new object();
         public Singleton()
         {
-            db = new Db();
+            db = new Context();
         }
 
         public static Singleton getInstance
@@ -34,7 +35,7 @@ namespace QLSach
             }
         }
 
-        public Db Data { get { return db; } }
+        public Context Data { get { return db; } }
         public Panel MainPane
         {
             get { return panel; }

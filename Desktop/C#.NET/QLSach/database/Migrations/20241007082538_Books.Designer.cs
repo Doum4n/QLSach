@@ -4,13 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using QLSach.database;
 using QLSach.dbContext;
 
 #nullable disable
 
 namespace QLSach.dbContext.Migrations
 {
-    [DbContext(typeof(Db))]
+    [DbContext(typeof(Context))]
     [Migration("20241007082538_InitialDatabase")]
     partial class InitialDatabase
     {

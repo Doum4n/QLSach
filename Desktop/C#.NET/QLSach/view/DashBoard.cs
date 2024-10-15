@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSach.controllers;
+using QLSach.database;
 
 namespace QLSach.view
 {
@@ -62,18 +63,6 @@ namespace QLSach.view
                 book1.Author = "Entein";
                 book1.Source = "Internet";
                 LoadData(bookStatus.newly_udated, book1);
-
-                book book2 = new book();
-                book2.Name = "Vật lý";
-                book2.Author = "Entein";
-                book2.Source = "Internet";
-                LoadData(bookStatus.newly_udated, book2);
-
-                book book3 = new book();
-                book3.Name = "Vật lý";
-                book3.Author = "Entein";
-                book3.Source = "Internet";
-                LoadData(bookStatus.newly_udated, book3);
             }
         }
 

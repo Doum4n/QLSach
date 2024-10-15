@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using QLSach.dbContext;
+using QLSach.database;
 
 #nullable disable
 
 namespace QLSach.dbContext.Migrations
 {
-    [DbContext(typeof(Db))]
-    [Migration("20241012110723_test")]
-    partial class test
+    [DbContext(typeof(Context))]
+    [Migration("20241015122302_BookSeeder")]
+    partial class BookSeeder
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,48 @@ namespace QLSach.dbContext.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            name = "book1"
+                        },
+                        new
+                        {
+                            id = 2,
+                            name = "book2"
+                        },
+                        new
+                        {
+                            id = 3,
+                            name = "book3"
+                        },
+                        new
+                        {
+                            id = 4,
+                            name = "book4"
+                        },
+                        new
+                        {
+                            id = 5,
+                            name = "book5"
+                        },
+                        new
+                        {
+                            id = 6,
+                            name = "book6"
+                        },
+                        new
+                        {
+                            id = 7,
+                            name = "book7"
+                        },
+                        new
+                        {
+                            id = 8,
+                            name = "book8"
+                        });
                 });
 
             modelBuilder.Entity("QLSach.dbContext.models.author", b =>

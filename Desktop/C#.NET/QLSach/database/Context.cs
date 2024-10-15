@@ -8,14 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLSach.dbContext
+namespace QLSach.database
 {
-    public class Db : DbContext
+    public class Context : Microsoft.EntityFrameworkCore.DbContext
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.UseSerialColumns();
             NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            new DbInitializer(modelBuilder).Seed();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -13,7 +13,8 @@ namespace QLSach.view
     public partial class Mainframe : Form
     {
         
-        private bool isSelected = false;
+        private bool isBookSelected = false;
+        private bool isDigitalSelected = false;
         public Mainframe()
         {
             InitializeComponent();
@@ -24,9 +25,8 @@ namespace QLSach.view
             Singleton.getInstance.MainPane = Pane_conten;
             Singleton.getInstance.MainPane.Controls.Add(new DashBoard());
 
-            pane_btnSach.Visible = isSelected;
-
-            toggle();
+            isBookSelected = !isBookSelected;
+            pane_btnSach.Visible = isBookSelected;
         }
 
         private void Mainframe_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace QLSach.view
 
         private void toggle()
         {
-            isSelected = !isSelected;
+            isBookSelected = !isBookSelected;
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -46,9 +46,8 @@ namespace QLSach.view
 
         private void btn_digitalBook_Click(object sender, EventArgs e)
         {
-            pane_btnDigitalBook.Visible = isSelected;
-
-            toggle();
+            isDigitalSelected = !isDigitalSelected;
+            pane_btnDigitalBook.Visible = isDigitalSelected;
         }
     }
 }

@@ -53,6 +53,8 @@
             btn_next = new Guna.UI2.WinForms.Guna2Button();
             btn_first = new Guna.UI2.WinForms.Guna2Button();
             btn_last = new Guna.UI2.WinForms.Guna2Button();
+            lb_index = new Label();
+            row = new Label();
             SuspendLayout();
             // 
             // tablePane_recentUpdate
@@ -139,7 +141,7 @@
             btn_previous.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_previous.Font = new Font("Segoe UI", 9F);
             btn_previous.ForeColor = Color.White;
-            btn_previous.Location = new Point(359, 621);
+            btn_previous.Location = new Point(512, 835);
             btn_previous.Name = "btn_previous";
             btn_previous.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_previous.Size = new Size(129, 40);
@@ -156,7 +158,7 @@
             btn_next.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_next.Font = new Font("Segoe UI", 9F);
             btn_next.ForeColor = Color.White;
-            btn_next.Location = new Point(504, 621);
+            btn_next.Location = new Point(657, 835);
             btn_next.Name = "btn_next";
             btn_next.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btn_next.Size = new Size(129, 40);
@@ -173,7 +175,7 @@
             btn_first.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_first.Font = new Font("Segoe UI", 9F);
             btn_first.ForeColor = Color.White;
-            btn_first.Location = new Point(199, 621);
+            btn_first.Location = new Point(352, 835);
             btn_first.Name = "btn_first";
             btn_first.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btn_first.Size = new Size(129, 40);
@@ -190,7 +192,7 @@
             btn_last.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_last.Font = new Font("Segoe UI", 9F);
             btn_last.ForeColor = Color.White;
-            btn_last.Location = new Point(648, 621);
+            btn_last.Location = new Point(801, 835);
             btn_last.Name = "btn_last";
             btn_last.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btn_last.Size = new Size(129, 40);
@@ -198,10 +200,30 @@
             btn_last.Text = "Trang cuối";
             btn_last.Click += btn_last_Click;
             // 
+            // lb_index
+            // 
+            lb_index.AutoSize = true;
+            lb_index.Location = new Point(830, 47);
+            lb_index.Name = "lb_index";
+            lb_index.Size = new Size(50, 20);
+            lb_index.TabIndex = 9;
+            lb_index.Text = "label1";
+            // 
+            // row
+            // 
+            row.AutoSize = true;
+            row.Location = new Point(580, 23);
+            row.Name = "row";
+            row.Size = new Size(50, 20);
+            row.TabIndex = 10;
+            row.Text = "label1";
+            // 
             // recentUpdate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(row);
+            Controls.Add(lb_index);
             Controls.Add(btn_last);
             Controls.Add(btn_first);
             Controls.Add(btn_next);
@@ -212,7 +234,7 @@
             Controls.Add(guna2Button1);
             Controls.Add(tablePane_recentUpdate);
             Name = "recentUpdate";
-            Size = new Size(796, 680);
+            Size = new Size(947, 892);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -228,5 +250,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_next;
         private Guna.UI2.WinForms.Guna2Button btn_first;
         private Guna.UI2.WinForms.Guna2Button btn_last;
+        private Label lb_index;
+        private Label row;
     }
 }

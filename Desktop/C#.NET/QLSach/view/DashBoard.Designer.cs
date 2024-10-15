@@ -191,6 +191,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.AutoScroll = true;
             guna2Panel1.Controls.Add(tablePane_book);
             guna2Panel1.CustomizableEdges = customizableEdges9;
             guna2Panel1.Location = new Point(21, 470);

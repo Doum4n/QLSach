@@ -20,14 +20,35 @@ namespace QLSach.view
         public recentUpdate()
         {
             InitializeComponent();
+            tablePane_recentUpdate.RowCount = 0;
+            tablePane_recentUpdate.ColumnCount = 0;
             LoadData();
         }
 
         private void Load(book bookItem)
         {
+            if (tablePane_recentUpdate.ColumnCount > 3)
+            {
+                tablePane_recentUpdate.ColumnCount = 0;
+                tablePane_recentUpdate.RowCount = 1;
+            }
+
+            if (tablePane_recentUpdate.RowCount == 1)
+            {
+                tablePane_recentUpdate.RowCount = 0;
+            }
+
+
+            tablePane_recentUpdate.SetCellPosition(bookItem,
+                new TableLayoutPanelCellPosition(
+                    tablePane_recentUpdate.ColumnCount
+                    , tablePane_recentUpdate.RowCount
+                    )
+                );
+
             tablePane_recentUpdate.ColumnCount += 1;
-            tablePane_recentUpdate.SetColumn(bookItem, tablePane_recentUpdate.ColumnCount - 1);
             tablePane_recentUpdate.Controls.Add(bookItem);
+
         }
 
         private void LoadData()
@@ -42,10 +63,12 @@ namespace QLSach.view
             }
         }
 
-        private void loadByIndex()
+        private void Load()
         {
+       
             List<Book> Books = dashBoard.getBooks();
-            for (int i = 4 * currentIndex; i < 4 * currentIndex + 4; i++)
+
+            for (int i = 8 * currentIndex; i < 8 * currentIndex + 8; i++)
             {
                 book book1 = new book();
                 book1.Name = Books[i].name;
@@ -53,34 +76,49 @@ namespace QLSach.view
                 book1.Source = "Internet";
                 Load(book1);
             }
+            row.Text = tablePane_recentUpdate.RowCount.ToString();
         }
 
 
         private void btn_first_Click(object sender, EventArgs e)
         {
             currentIndex = 0;
+            lb_index.Text = currentIndex.ToString();
+            tablePane_recentUpdate.Controls.Clear();
+            Load();
+           
         }
 
         private void btn_next_Click(object sender, EventArgs e)
         {
-            if (currentIndex != dashBoard.getBooks().Count)
+            if (currentIndex <= dashBoard.getBooks().Count && (8 * currentIndex + 8) < dashBoard.getBooks().Count)
             {
                 currentIndex += 1;
+                lb_index.Text = currentIndex.ToString();
 
                 tablePane_recentUpdate.Controls.Clear();
-                loadByIndex();
+                Load();
             }
         }
 
         private void btn_previous_Click(object sender, EventArgs e)
         {
-            if (currentIndex > 0) 
+            if (currentIndex > 0)
+            {
                 currentIndex -= 1;
+                lb_index.Text = currentIndex.ToString();
+
+                tablePane_recentUpdate.Controls.Clear();
+                Load();
+            }
         }
 
         private void btn_last_Click(object sender, EventArgs e)
         {
-            currentIndex = 999;
+            currentIndex = (int)Math.Floor(dashBoard.getBooks().Count / 8.0) - 1;
+            lb_index.Text = currentIndex.ToString();
+            tablePane_recentUpdate.Controls.Clear();
+            Load();
         }
     }
 }
