@@ -1,4 +1,5 @@
-﻿using QLSach.controllers;
+﻿using QLSach.component;
+using QLSach.controllers;
 using QLSach.dbContext.models;
 using QLSach.view.components.items;
 using System;
@@ -22,7 +23,12 @@ namespace QLSach.view
             InitializeComponent();
             tablePane_recentUpdate.RowCount = 0;
             tablePane_recentUpdate.ColumnCount = 0;
-            LoadData();
+            Load();
+
+            Singleton.getInstance.MainFrameHelper.Path += " > Book";
+
+            if(!Singleton.getInstance.MainFrameHelper.States.Contains(State.RecentUpdate))
+                Singleton.getInstance.MainFrameHelper.States.Push(State.RecentUpdate);
         }
 
         private void Load(book bookItem)
@@ -76,7 +82,8 @@ namespace QLSach.view
                 book1.Source = "Internet";
                 Load(book1);
             }
-            row.Text = tablePane_recentUpdate.RowCount.ToString();
+
+            lb_index.Text = (currentIndex + 1).ToString();
         }
 
 

@@ -54,7 +54,6 @@
             btn_first = new Guna.UI2.WinForms.Guna2Button();
             btn_last = new Guna.UI2.WinForms.Guna2Button();
             lb_index = new Label();
-            row = new Label();
             SuspendLayout();
             // 
             // tablePane_recentUpdate
@@ -209,20 +208,10 @@
             lb_index.TabIndex = 9;
             lb_index.Text = "label1";
             // 
-            // row
-            // 
-            row.AutoSize = true;
-            row.Location = new Point(580, 23);
-            row.Name = "row";
-            row.Size = new Size(50, 20);
-            row.TabIndex = 10;
-            row.Text = "label1";
-            // 
             // recentUpdate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(row);
             Controls.Add(lb_index);
             Controls.Add(btn_last);
             Controls.Add(btn_first);
@@ -251,6 +240,5 @@
         private Guna.UI2.WinForms.Guna2Button btn_first;
         private Guna.UI2.WinForms.Guna2Button btn_last;
         private Label lb_index;
-        private Label row;
     }
 }

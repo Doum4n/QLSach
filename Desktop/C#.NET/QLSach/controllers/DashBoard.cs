@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.AnimatorNS;
 using Microsoft.EntityFrameworkCore;
+using QLSach.component;
 using QLSach.dbContext;
 using QLSach.dbContext.models;
 using System;

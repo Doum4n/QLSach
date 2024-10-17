@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSach.component;
 
 namespace QLSach.view.components.items
 {
@@ -34,6 +35,12 @@ namespace QLSach.view.components.items
         {
             get { return lb_source.Text; }
             set { lb_source.Text = value; }
+        }
+
+        private void onClick(object sender, EventArgs e)
+        {
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
         }
 
     }

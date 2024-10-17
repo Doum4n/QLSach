@@ -46,6 +46,7 @@
             pictureBox1.Size = new Size(128, 154);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += onClick;
             // 
             // lb_name_Book
             // 
@@ -116,6 +117,7 @@
             Margin = new Padding(20);
             Name = "book";
             Size = new Size(157, 292);
+            Click += onClick;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

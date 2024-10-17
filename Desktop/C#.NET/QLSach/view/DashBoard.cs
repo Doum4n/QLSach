@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSach.controllers;
 using QLSach.database;
+using QLSach.component;
 
 namespace QLSach.view
 {
@@ -27,6 +28,13 @@ namespace QLSach.view
         {
             InitializeComponent();
             //LoadBooks(bookStatus.newly_udated);
+            Singleton.getInstance.MainFrameHelper.Path = "Trang chủ";
+            Singleton.getInstance.MainFrameHelper.States.Push(State.DashBoard);
+        }
+
+        private void DashBoard_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void LoadData(bookStatus status, book bookItem)
@@ -69,8 +77,10 @@ namespace QLSach.view
         private void more_newlyBook_Click(object sender, EventArgs e)
         {
             recentUpdate rc = new recentUpdate();
-            Singleton.getInstance.MainPane.Controls.Clear();
-            Singleton.getInstance.MainPane.Controls.Add(rc);
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(rc);
         }
+
+  
     }
 }

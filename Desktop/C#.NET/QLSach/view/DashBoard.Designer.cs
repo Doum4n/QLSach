@@ -308,6 +308,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "DashBoard";
             Size = new Size(872, 1516);
+            Load += DashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();

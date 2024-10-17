@@ -105,3 +105,4 @@ C:\Users\penso\Desktop\C#.NET\QLSach\bin\Debug\net8.0-windows\zh-Hans\Microsoft.
 C:\Users\penso\Desktop\C#.NET\QLSach\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\penso\Desktop\C#.NET\QLSach\obj\Debug\net8.0-windows\QLSach.sourcelink.json
 C:\Users\penso\Desktop\C#.NET\QLSach\obj\Debug\net8.0-windows\QLSach.view.recentUpdate.resources
+C:\Users\penso\Desktop\C#.NET\QLSach\obj\Debug\net8.0-windows\QLSach.view.BookDetail.resources

@@ -60,6 +60,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -77,6 +81,9 @@
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             btn_book = new Guna.UI2.WinForms.Guna2Button();
             Pane_conten = new Guna.UI2.WinForms.Guna2Panel();
+            lb_path = new Label();
+            btn_undo = new Guna.UI2.WinForms.Guna2Button();
+            btn_redo = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel3.SuspendLayout();
             guna2Panel2.SuspendLayout();
             pane_btnDigitalBook.SuspendLayout();
@@ -343,7 +350,6 @@
             guna2Button4.Size = new Size(184, 59);
             guna2Button4.TabIndex = 4;
             guna2Button4.Text = "guna2Button4";
-            guna2Button4.Click += guna2Button4_Click;
             // 
             // btn_book
             // 
@@ -368,18 +374,64 @@
             // 
             Pane_conten.AutoScroll = true;
             Pane_conten.CustomizableEdges = customizableEdges31;
-            Pane_conten.Location = new Point(219, 89);
+            Pane_conten.Location = new Point(219, 113);
             Pane_conten.Margin = new Padding(3, 4, 3, 4);
             Pane_conten.Name = "Pane_conten";
             Pane_conten.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            Pane_conten.Size = new Size(931, 789);
+            Pane_conten.Size = new Size(931, 765);
             Pane_conten.TabIndex = 3;
+            // 
+            // lb_path
+            // 
+            lb_path.AutoSize = true;
+            lb_path.Location = new Point(221, 80);
+            lb_path.Name = "lb_path";
+            lb_path.Size = new Size(50, 20);
+            lb_path.TabIndex = 6;
+            lb_path.Text = "label2";
+            // 
+            // btn_undo
+            // 
+            btn_undo.CustomizableEdges = customizableEdges33;
+            btn_undo.DisabledState.BorderColor = Color.DarkGray;
+            btn_undo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_undo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_undo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_undo.Font = new Font("Segoe UI", 9F);
+            btn_undo.ForeColor = Color.White;
+            btn_undo.Location = new Point(951, 71);
+            btn_undo.Name = "btn_undo";
+            btn_undo.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btn_undo.Size = new Size(92, 35);
+            btn_undo.TabIndex = 7;
+            btn_undo.Text = "<=";
+            btn_undo.Click += btn_undo_Click;
+            // 
+            // btn_redo
+            // 
+            btn_redo.CustomizableEdges = customizableEdges35;
+            btn_redo.DisabledState.BorderColor = Color.DarkGray;
+            btn_redo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_redo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_redo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_redo.Font = new Font("Segoe UI", 9F);
+            btn_redo.ForeColor = Color.White;
+            btn_redo.Location = new Point(1058, 71);
+            btn_redo.Name = "btn_redo";
+            btn_redo.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            btn_redo.Size = new Size(92, 35);
+            btn_redo.TabIndex = 8;
+            btn_redo.Text = "=>";
+            btn_redo.Click += btn_redo_Click;
             // 
             // Mainframe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1162, 892);
+            Controls.Add(btn_redo);
+            Controls.Add(btn_undo);
+            Controls.Add(lb_path);
             Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel2);
             Controls.Add(Pane_conten);
@@ -393,6 +445,7 @@
             pane_btnDigitalBook.ResumeLayout(false);
             pane_btnSach.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -414,5 +467,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Label lb_path;
+        private Guna.UI2.WinForms.Guna2Button btn_undo;
+        private Guna.UI2.WinForms.Guna2Button btn_redo;
     }
 }

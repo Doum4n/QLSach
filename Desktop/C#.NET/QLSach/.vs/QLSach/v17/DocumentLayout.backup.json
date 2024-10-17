@@ -3,36 +3,92 @@
   "WorkspaceRootPath": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\recentupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\recentupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\mainframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\mainframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\mainframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\mainframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\mainframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\mainframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\recentupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\recentupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\recentupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\recentupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\component\\mainframehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:component\\mainframehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\component\\forminitilize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:component\\forminitilize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015122302_BookSeeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dbContext\\Migrations\\20241015122302_BookSeeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\recentupdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\recentupdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\components\\items\\book.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\components\\items\\book.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\qlsach.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:qlsach.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\bookdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\bookdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\bookdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\bookdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\migrations\\dbmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\migrations\\dbmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,24 +107,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dbContext\\Migrations\\20241015121622_x.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121511_c.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dbContext\\Migrations\\20241015121511_c.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\migrations\\20241007082538_books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\migrations\\20241007082538_books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\migrations\\dbmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\migrations\\dbmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\migrations\\20241012110723_authors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,20 +123,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dbContext\\Migrations\\20241015121048_x.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\controllers\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:controllers\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\singleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:singleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\migrations\\20241012110723_authors.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:database\\migrations\\20241012110723_authors.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\components\\items\\book.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\components\\items\\book.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\database\\migrations\\20241007082538_books.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,20 +135,12 @@
       "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:dockerfile||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\dbcontext\\migrations\\20241015121511_c.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:dbcontext\\migrations\\20241015121511_c.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\recentupdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\recentupdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:view\\components\\items\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|c:\\users\\penso\\desktop\\c#.net\\qlsach\\dbcontext\\migrations\\20241015122302_bookseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E994260B-001D-4F5C-9608-5BBEBD64850F}|QLSach.csproj|solutionrelative:dbcontext\\migrations\\20241015122302_bookseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -130,7 +154,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "DashBoard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.cs",
               "RelativeDocumentMoniker": "view\\DashBoard.cs",
@@ -147,53 +171,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "RecentUpdate.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs",
+              "RelativeDocumentMoniker": "view\\RecentUpdate.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs [Design]",
+              "RelativeToolTip": "view\\RecentUpdate.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T11:35:31.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T12:39:50.732Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "RecentUpdate.cs",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs",
               "RelativeDocumentMoniker": "view\\RecentUpdate.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs*",
-              "RelativeToolTip": "view\\RecentUpdate.cs*",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwBQAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs",
+              "RelativeToolTip": "view\\RecentUpdate.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAswBgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T12:21:35.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Mainframe.cs [Design]",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs",
               "RelativeDocumentMoniker": "view\\Mainframe.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs [Design]",
-              "RelativeToolTip": "view\\Mainframe.cs [Design]",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs [Design]*",
+              "RelativeToolTip": "view\\Mainframe.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:38:33.234Z",
+              "WhenOpened": "2024-10-17T11:46:39.708Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RecentUpdate.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs",
-              "RelativeDocumentMoniker": "view\\RecentUpdate.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\RecentUpdate.cs [Design]*",
-              "RelativeToolTip": "view\\RecentUpdate.cs [Design]*",
+              "Title": "Mainframe.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs",
+              "RelativeDocumentMoniker": "view\\Mainframe.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs*",
+              "RelativeToolTip": "view\\Mainframe.cs*",
+              "ViewState": "AgIAADoAAAAAAAAAAAAqwEgAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:39:50.732Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-14T12:25:10.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DashBoard.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.cs",
+              "RelativeDocumentMoniker": "view\\DashBoard.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.cs",
+              "RelativeToolTip": "view\\DashBoard.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAMwB8AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:31:48.496Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -201,293 +238,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashBoard.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.cs",
-              "RelativeDocumentMoniker": "view\\DashBoard.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.cs",
-              "RelativeToolTip": "view\\DashBoard.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwEIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "MainFrameHelper.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\component\\MainFrameHelper.cs",
+              "RelativeDocumentMoniker": "component\\MainFrameHelper.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\component\\MainFrameHelper.cs",
+              "RelativeToolTip": "component\\MainFrameHelper.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwBQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:31:48.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Mainframe.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs",
-              "RelativeDocumentMoniker": "view\\Mainframe.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Mainframe.cs",
-              "RelativeToolTip": "view\\Mainframe.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:25:10.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "20241015121511_c.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121511_c.cs",
-              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121511_c.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121511_c.cs",
-              "RelativeToolTip": "dbContext\\Migrations\\20241015121511_c.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:15:11.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DbInitializer.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\DbInitializer.cs",
-              "RelativeDocumentMoniker": "database\\DbInitializer.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\DbInitializer.cs",
-              "RelativeToolTip": "database\\DbInitializer.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAiwBkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T11:47:13.655Z",
+              "WhenOpened": "2024-10-17T11:22:51.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "20241015122302_BookSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015122302_BookSeeder.cs",
-              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015122302_BookSeeder.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015122302_BookSeeder.cs",
-              "RelativeToolTip": "dbContext\\Migrations\\20241015122302_BookSeeder.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Title": "FormInitilize.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\component\\FormInitilize.cs",
+              "RelativeDocumentMoniker": "component\\FormInitilize.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\component\\FormInitilize.cs",
+              "RelativeToolTip": "component\\FormInitilize.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:23:02.97Z",
+              "WhenOpened": "2024-10-17T13:06:12.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T11:35:31.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Context.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Context.cs",
-              "RelativeDocumentMoniker": "database\\Context.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Context.cs",
-              "RelativeToolTip": "database\\Context.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBIAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:28:46.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20241015121622_x.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121622_x.cs",
-              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121622_x.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121622_x.cs",
-              "RelativeToolTip": "dbContext\\Migrations\\20241015121622_x.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:16:22.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "20241007082538_Books.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.cs",
-              "RelativeDocumentMoniker": "database\\Migrations\\20241007082538_Books.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.cs",
-              "RelativeToolTip": "database\\Migrations\\20241007082538_Books.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:54:35.666Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-17T12:16:09.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "20241015121938_BookSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121938_BookSeeder.cs",
-              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121938_BookSeeder.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121938_BookSeeder.cs",
-              "RelativeToolTip": "dbContext\\Migrations\\20241015121938_BookSeeder.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAwAAAAAAAAAA==",
+              "Title": "DashBoard.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.Designer.cs",
+              "RelativeDocumentMoniker": "view\\DashBoard.Designer.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\DashBoard.Designer.cs",
+              "RelativeToolTip": "view\\DashBoard.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:19:38.209Z",
+              "WhenOpened": "2024-10-17T11:58:19.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "author.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\author.cs",
-              "RelativeDocumentMoniker": "database\\models\\author.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\author.cs",
-              "RelativeToolTip": "database\\models\\author.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:54:51.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DbModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\DbModelSnapshot.cs",
-              "RelativeDocumentMoniker": "database\\Migrations\\DbModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\DbModelSnapshot.cs",
-              "RelativeToolTip": "database\\Migrations\\DbModelSnapshot.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:54:43.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\Book.cs",
-              "RelativeDocumentMoniker": "database\\models\\Book.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\Book.cs",
-              "RelativeToolTip": "database\\models\\Book.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:06:26.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20241012110723_Authors.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.cs",
-              "RelativeDocumentMoniker": "database\\Migrations\\20241012110723_Authors.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.cs",
-              "RelativeToolTip": "database\\Migrations\\20241012110723_Authors.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:54:33.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20241015121048_x.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121048_x.cs",
-              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121048_x.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121048_x.cs",
-              "RelativeToolTip": "dbContext\\Migrations\\20241015121048_x.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T12:10:48.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DashBoard.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\controllers\\DashBoard.cs",
-              "RelativeDocumentMoniker": "controllers\\DashBoard.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\controllers\\DashBoard.cs",
-              "RelativeToolTip": "controllers\\DashBoard.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwBEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:18:57.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "singleton.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\singleton.cs",
-              "RelativeDocumentMoniker": "singleton.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\singleton.cs",
-              "RelativeToolTip": "singleton.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:25:43.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20241012110723_Authors.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.Designer.cs",
-              "RelativeDocumentMoniker": "database\\Migrations\\20241012110723_Authors.Designer.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.Designer.cs",
-              "RelativeToolTip": "database\\Migrations\\20241012110723_Authors.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADgvwwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T11:34:51.685Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "book.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.Designer.cs",
-              "RelativeDocumentMoniker": "view\\components\\items\\book.Designer.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.Designer.cs",
-              "RelativeToolTip": "view\\components\\items\\book.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T12:01:37.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20241007082538_Books.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.Designer.cs",
-              "RelativeDocumentMoniker": "database\\Migrations\\20241007082538_Books.Designer.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.Designer.cs",
-              "RelativeToolTip": "database\\Migrations\\20241007082538_Books.Designer.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAADgvw0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T11:33:53.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "dockerfile",
-              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dockerfile",
-              "RelativeDocumentMoniker": "dockerfile",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dockerfile",
-              "RelativeToolTip": "dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-15T11:27:42.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 11,
               "Title": "recentUpdate.Designer.cs",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\recentUpdate.Designer.cs",
               "RelativeDocumentMoniker": "view\\recentUpdate.Designer.cs",
-              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\recentUpdate.Designer.cs*",
-              "RelativeToolTip": "view\\recentUpdate.Designer.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAUwBYAAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\recentUpdate.Designer.cs",
+              "RelativeToolTip": "view\\recentUpdate.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T12:38:20.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 12,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Login.cs",
+              "RelativeDocumentMoniker": "view\\Login.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Login.cs",
+              "RelativeToolTip": "view\\Login.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvxYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T11:19:32.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "book.cs",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.cs",
               "RelativeDocumentMoniker": "view\\components\\items\\book.cs",
               "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.cs",
               "RelativeToolTip": "view\\components\\items\\book.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAWwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T11:54:16.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 14,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\Login.cs",
               "RelativeDocumentMoniker": "view\\Login.cs",
@@ -499,15 +354,244 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 16,
+              "Title": "book.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.Designer.cs",
+              "RelativeDocumentMoniker": "view\\components\\items\\book.Designer.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.Designer.cs",
+              "RelativeToolTip": "view\\components\\items\\book.Designer.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T12:01:37.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "book.cs [Design]",
               "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.cs",
               "RelativeDocumentMoniker": "view\\components\\items\\book.cs",
               "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\components\\items\\book.cs [Design]",
               "RelativeToolTip": "view\\components\\items\\book.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T12:09:45.571Z",
+              "WhenOpened": "2024-10-17T10:49:19.921Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "database\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\DbInitializer.cs",
+              "RelativeToolTip": "database\\DbInitializer.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T11:47:13.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\Book.cs",
+              "RelativeDocumentMoniker": "database\\models\\Book.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\Book.cs",
+              "RelativeToolTip": "database\\models\\Book.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:06:26.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "QLSach",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\QLSach.csproj",
+              "RelativeDocumentMoniker": "QLSach.csproj",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\QLSach.csproj",
+              "RelativeToolTip": "QLSach.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-17T10:46:32.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DbModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\DbModelSnapshot.cs",
+              "RelativeDocumentMoniker": "database\\Migrations\\DbModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\DbModelSnapshot.cs",
+              "RelativeToolTip": "database\\Migrations\\DbModelSnapshot.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwCcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:54:43.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BookDetail.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\BookDetail.cs",
+              "RelativeDocumentMoniker": "view\\BookDetail.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\BookDetail.cs",
+              "RelativeToolTip": "view\\BookDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:39:52.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BookDetail.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\BookDetail.cs",
+              "RelativeDocumentMoniker": "view\\BookDetail.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\view\\BookDetail.cs [Design]",
+              "RelativeToolTip": "view\\BookDetail.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T10:41:33.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20241015121511_c.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121511_c.cs",
+              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121511_c.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121511_c.cs",
+              "RelativeToolTip": "dbContext\\Migrations\\20241015121511_c.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:15:11.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20241015122302_BookSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015122302_BookSeeder.cs",
+              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015122302_BookSeeder.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015122302_BookSeeder.cs",
+              "RelativeToolTip": "dbContext\\Migrations\\20241015122302_BookSeeder.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:23:02.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Context.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Context.cs",
+              "RelativeDocumentMoniker": "database\\Context.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Context.cs",
+              "RelativeToolTip": "database\\Context.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAwwBIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T11:28:46.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20241015121622_x.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121622_x.cs",
+              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121622_x.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121622_x.cs",
+              "RelativeToolTip": "dbContext\\Migrations\\20241015121622_x.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:16:22.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20241007082538_Books.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.cs",
+              "RelativeDocumentMoniker": "database\\Migrations\\20241007082538_Books.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.cs",
+              "RelativeToolTip": "database\\Migrations\\20241007082538_Books.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:54:35.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20241015121938_BookSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121938_BookSeeder.cs",
+              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121938_BookSeeder.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121938_BookSeeder.cs",
+              "RelativeToolTip": "dbContext\\Migrations\\20241015121938_BookSeeder.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:19:38.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "author.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\author.cs",
+              "RelativeDocumentMoniker": "database\\models\\author.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\models\\author.cs",
+              "RelativeToolTip": "database\\models\\author.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:54:51.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "20241012110723_Authors.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.cs",
+              "RelativeDocumentMoniker": "database\\Migrations\\20241012110723_Authors.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.cs",
+              "RelativeToolTip": "database\\Migrations\\20241012110723_Authors.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:54:33.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20241015121048_x.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121048_x.cs",
+              "RelativeDocumentMoniker": "dbContext\\Migrations\\20241015121048_x.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dbContext\\Migrations\\20241015121048_x.cs",
+              "RelativeToolTip": "dbContext\\Migrations\\20241015121048_x.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T12:10:48.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "20241012110723_Authors.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.Designer.cs",
+              "RelativeDocumentMoniker": "database\\Migrations\\20241012110723_Authors.Designer.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241012110723_Authors.Designer.cs",
+              "RelativeToolTip": "database\\Migrations\\20241012110723_Authors.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADgvwwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T11:34:51.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "20241007082538_Books.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.Designer.cs",
+              "RelativeDocumentMoniker": "database\\Migrations\\20241007082538_Books.Designer.cs",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\database\\Migrations\\20241007082538_Books.Designer.cs",
+              "RelativeToolTip": "database\\Migrations\\20241007082538_Books.Designer.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADgvw0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T11:33:53.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "dockerfile",
+              "DocumentMoniker": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dockerfile",
+              "RelativeDocumentMoniker": "dockerfile",
+              "ToolTip": "C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\dockerfile",
+              "RelativeToolTip": "dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-15T11:27:42.611Z"
             }
           ]
         }
