@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QLSach.database.models;
 
 namespace QLSach.database
 {
@@ -15,13 +16,16 @@ namespace QLSach.database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.UseSerialColumns();
-            NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-            new DbInitializer(modelBuilder).Seed();
+            //NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+            new DataInitializer(modelBuilder).Seed();
+            new RelationshipInit(modelBuilder).init();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost; Database=qlsach; Port=5432; Username=admin; Password=pw;");
+            String ConnectionString = "server=localhost; Database=qlsach; Port=3306; uid=root; Password=pw;";
+            optionsBuilder.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
         }
 
         public DbSet<Book> Books { get; set; }

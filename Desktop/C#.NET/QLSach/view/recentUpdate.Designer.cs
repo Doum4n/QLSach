@@ -224,6 +224,7 @@
             Controls.Add(tablePane_recentUpdate);
             Name = "recentUpdate";
             Size = new Size(947, 892);
+            Load += recentUpdate_Load;
             ResumeLayout(false);
             PerformLayout();
         }

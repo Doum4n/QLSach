@@ -10,9 +10,11 @@ namespace QLSach.dbContext.models
     public class author
     {
         [Key]
-        public String id { get; set; }
+        public int id { get; set; }
         [Required]
         public String name { get; set; }
         public String description { get; set; }
+
+        public Book? Book { get; set; }
     }
 }

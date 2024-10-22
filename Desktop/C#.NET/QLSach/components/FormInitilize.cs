@@ -13,19 +13,21 @@ namespace QLSach.component
         private recentUpdate _recentUpdate;
         private BookDetail _bookDetail;
 
-        public FormInitilize(){ }
+        public FormInitilize(){
+
+        }
 
         public DashBoard DashBoard {
             get {
-                _DashBoard ??= new DashBoard();
+                _DashBoard ??= new();
                 return _DashBoard; 
             } 
         }
         public recentUpdate RecentUpdate {
-            get { _recentUpdate ??= new recentUpdate(); return _recentUpdate; } 
+            get { _recentUpdate ??= new(); return _recentUpdate; } 
         }
         public BookDetail BookDetail {
-            get { _bookDetail ??= new BookDetail(); return _bookDetail; } 
+            get { return new BookDetail(); }
         }
     }
 }

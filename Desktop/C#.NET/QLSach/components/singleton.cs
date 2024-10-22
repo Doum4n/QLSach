@@ -22,12 +22,15 @@ namespace QLSach.component
         //Intilize From
         private readonly FormInitilize initilize;
 
+        public Node State { get; set; }
+        public Node priviouState { get; set; }
+        public int index { get; set; }
+
         public Singleton()
         {
-            db = new Context();
-            mainFrameHelper = new MainFrameHelper();
-            initilize = new FormInitilize();
-          
+            db = new();
+            mainFrameHelper = new();
+            initilize = new();
         }
 
         public static Singleton getInstance
@@ -36,7 +39,7 @@ namespace QLSach.component
             {
                 lock (lockObj)
                 {
-                    instance ??= new Singleton();
+                    instance ??= new();
                     return instance;
                 }
             }
@@ -45,5 +48,16 @@ namespace QLSach.component
         public Context Data { get { return db; } }
         public MainFrameHelper MainFrameHelper { get { return mainFrameHelper; } }
         public FormInitilize Initilize { get { return initilize; } }
+
+        public void Increase()
+        {
+            index++;
+        }
+
+        public void Decrease()
+        {
+            index--;
+        }
     }
+
 }

@@ -11,11 +11,16 @@ using System.Threading.Tasks;
 
 namespace QLSach.controllers
 {
-    public class DashBoard
+    public class BookQuery
     {
         public List<Book> getBooks()
         {
             return Singleton.getInstance.Data?.Books?.ToList();
+        }
+
+        public Book? getBook(int id)
+        {
+            return Singleton.getInstance.Data?.Books?.Where(book => book.id == id).FirstOrDefault();
         }
     }
 }

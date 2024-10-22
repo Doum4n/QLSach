@@ -27,14 +27,15 @@ namespace QLSach.view
         public DashBoard()
         {
             InitializeComponent();
-            //LoadBooks(bookStatus.newly_udated);
             Singleton.getInstance.MainFrameHelper.Path = "Trang chủ";
-            Singleton.getInstance.MainFrameHelper.States.Push(State.DashBoard);
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
         {
-            
+            //Singleton.getInstance.MainFrameHelper.States.Push(State.DashBoard);
+            Singleton.getInstance.State = new(this);
+            Singleton.getInstance.MainFrameHelper.Node = new(this);
+            Singleton.getInstance.MainFrameHelper.Node.AddChild(new Node(this));
         }
 
         private void LoadData(bookStatus status, book bookItem)
@@ -62,11 +63,12 @@ namespace QLSach.view
 
         private void btn_newlyUpdate_Click(object sender, EventArgs e)
         {
-            controllers.DashBoard dashBoard = new controllers.DashBoard();
+            controllers.BookQuery BookQuery = new controllers.BookQuery();
 
-            foreach (var book in dashBoard.getBooks())
+            foreach (var book in BookQuery.getBooks())
             {
                 book book1 = new book();
+                book1.Id = book.id;
                 book1.Name = book.name;
                 book1.Author = "Entein";
                 book1.Source = "Internet";

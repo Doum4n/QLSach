@@ -254,6 +254,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Size = new Size(909, 1214);
+            Load += BookDetail_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

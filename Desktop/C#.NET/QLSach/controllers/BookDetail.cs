@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLSach.component
+namespace QLSach.controllers
 {
-    public enum State
+    public class BookDetail
     {
-        DashBoard,
-        RecentUpdate,
-        BookDetail,
+
     }
 }

@@ -13,6 +13,7 @@ namespace QLSach.view.components.items
 {
     public partial class book : UserControl
     {
+        private int id;
         public book()
         {
             InitializeComponent();
@@ -39,9 +40,11 @@ namespace QLSach.view.components.items
 
         private void onClick(object sender, EventArgs e)
         {
+            Singleton.getInstance.MainFrameHelper.Id = id;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
         }
 
+        public int Id { get { return id; } set { id = value; } }
     }
 }

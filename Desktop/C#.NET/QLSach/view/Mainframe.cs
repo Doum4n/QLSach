@@ -4,22 +4,30 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using QLSach.component;
 
 namespace QLSach.view
 {
+  
     public partial class Mainframe : Form
     {
 
         private bool isBookSelected = false;
         private bool isDigitalSelected = false;
+
+        int count = 1;
+
         public Mainframe()
         {
             InitializeComponent();
-            Singleton.getInstance.MainFrameHelper.ActiveChanged += OnActivated;
+            Singleton.getInstance.MainFrameHelper.ActivePathChanged += OnActivated;
+            //Singleton.getInstance.MainFrameHelper.Node = new Node(new DashBoard());
+            //Singleton.getInstance.MainFrameHelper.Node.AddChild(State.DashBoard);
         }
 
         private void OnActivated(string newValue)
@@ -58,43 +66,50 @@ namespace QLSach.view
 
         private void btn_redo_Click(object sender, EventArgs e)
         {
-            int count = Singleton.getInstance.MainFrameHelper.States.Count - 1;
-
-            if (count > 0)
-            {
-                --count;
-            }
-            switch (Singleton.getInstance.MainFrameHelper.States.ElementAt(count))
-            {
-                case State.RecentUpdate:
-                    {
-                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-                            Singleton.getInstance.Initilize.RecentUpdate
-                        );
-
-                        break;
-                    }
-            }
+            //Node cur = new(Singleton.getInstance.State);
+            ////StateOf(Singleton.getInstance.MainFrameHelper.Node.getCurrentNode().getLastChild().GetState());
+            //addControl(cur.parent.GetState());
+            //MessageBox.Show(cur.parent.GetState().ToString());
         }
 
         private void btn_undo_Click(object sender, EventArgs e)
         {
-            int count = 1;
-
-            if(count < Singleton.getInstance.MainFrameHelper.States.Count - 1)
+            Node cur = Singleton.getInstance.State;
+            if ( cur.parent != null)
             {
-                ++count;
+                cur.visited = true;
+                addControl(cur.parent.getState());
+                MessageBox.Show(cur.parent.getState().ToString());
+
+                Singleton.getInstance.State = Singleton.getInstance.priviouState;
+
+                Singleton.getInstance.MainFrameHelper.Node.DeleteNode( cur );
             }
-            switch (Singleton.getInstance.MainFrameHelper.States.ElementAt(count))
+        }
+
+        private void addControl(UserControl control)
+        {
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(control);
+        }
+
+        private void StateOf(State state)
+        {
+            switch (state)
             {
                 case State.DashBoard:
                     {
-                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-                            Singleton.getInstance.Initilize.DashBoard
-                        );
-
+                        addControl(Singleton.getInstance.Initilize.DashBoard);
+                        break;
+                    }
+                case State.BookDetail:
+                    {
+                        addControl(Singleton.getInstance.Initilize.BookDetail);
+                        break;
+                    }
+                case State.RecentUpdate:
+                    {
+                        addControl(Singleton.getInstance.Initilize.RecentUpdate);
                         break;
                     }
             }
