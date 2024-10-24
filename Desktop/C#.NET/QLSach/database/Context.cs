@@ -30,5 +30,6 @@ namespace QLSach.database
 
         public DbSet<Book> Books { get; set; }
         public DbSet<author> Authors { get; set; }
+        public DbSet<Photo> Photo { get; set; }
     }
 }

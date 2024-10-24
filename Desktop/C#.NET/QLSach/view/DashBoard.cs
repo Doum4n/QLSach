@@ -17,6 +17,7 @@ namespace QLSach.view
 {
     public partial class DashBoard : UserControl
     {
+        Node node;
         private enum bookStatus
         {
             newly_udated,
@@ -28,14 +29,15 @@ namespace QLSach.view
         {
             InitializeComponent();
             Singleton.getInstance.MainFrameHelper.Path = "Trang chủ";
+            node = new Node(this);
+            Singleton.getInstance.MainFrameHelper.Node = node;
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
         {
             //Singleton.getInstance.MainFrameHelper.States.Push(State.DashBoard);
-            Singleton.getInstance.State = new(this);
-            Singleton.getInstance.MainFrameHelper.Node = new(this);
-            Singleton.getInstance.MainFrameHelper.Node.AddChild(new Node(this));
+            Singleton.getInstance.State = node;
+            Singleton.getInstance.MainFrameHelper.Node.AddChild(node);
         }
 
         private void LoadData(bookStatus status, book bookItem)

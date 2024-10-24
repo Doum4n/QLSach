@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            picture = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -48,16 +48,16 @@
             label16 = new Label();
             status = new Label();
             language = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picture
             // 
-            pictureBox1.Location = new Point(31, 36);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(223, 350);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picture.Location = new Point(31, 36);
+            picture.Name = "picture";
+            picture.Size = new Size(223, 350);
+            picture.TabIndex = 0;
+            picture.TabStop = false;
             // 
             // label1
             // 
@@ -252,17 +252,17 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(picture);
             Size = new Size(909, 1214);
             Load += BookDetail_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox picture;
         private Label label1;
         private Label label2;
         private Label label3;

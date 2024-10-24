@@ -1,4 +1,5 @@
-﻿using QLSach.controllers;
+﻿using QLSach.components;
+using QLSach.controllers;
 using QLSach.database;
 using QLSach.dbContext;
 using QLSach.view;
@@ -22,6 +23,8 @@ namespace QLSach.component
         //Intilize From
         private readonly FormInitilize initilize;
 
+        public BookHelper BookHelper { get; }
+
         public Node State { get; set; }
         public Node priviouState { get; set; }
         public int index { get; set; }
@@ -31,6 +34,7 @@ namespace QLSach.component
             db = new();
             mainFrameHelper = new();
             initilize = new();
+            BookHelper = new();
         }
 
         public static Singleton getInstance

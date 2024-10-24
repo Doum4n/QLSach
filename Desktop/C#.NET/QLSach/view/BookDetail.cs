@@ -23,17 +23,23 @@ namespace QLSach.view
 
         private void LoadData()
         {
-            //if(Singleton.getInstance.MainFrameHelper.States.Last() != State.BookDetail)
-
             BookQuery query = new BookQuery();
             Book? book1 = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
             Name.Text = book1?.name;
+
+            //string imagePath = Path.Combine("resources", "images", "poster.png");
+            String imagePath = ".\\resources\\images\\book.png";
+            Singleton.getInstance.BookHelper.ShowMyImage(picture,imagePath, 223, 350);
         }
 
         private void BookDetail_Load(object sender, EventArgs e)
         {
-            Singleton.getInstance.State = new(this);
-            Singleton.getInstance.MainFrameHelper.Node.getLastChild().AddChild(Singleton.getInstance.State);
+            Node cur = Singleton.getInstance.State;
+            Node node = new(this);
+            cur.AddChild(node);
+
+            Singleton.getInstance.State = node;
+            //Singleton.getInstance.MainFrameHelper.Node.getLastChild().AddChild(Singleton.getInstance.State);
 
         }
     }

@@ -118,9 +118,6 @@ namespace QLSach.view
 
         private void recentUpdate_Load(object sender, EventArgs e)
         {
-            //Singleton.getInstance.MainFrameHelper.States.Push(State.RecentUpdate);
-            //Singleton.getInstance.MainFrameHelper.Node.AddChild(State.RecentUpdate);
-            //Singleton.getInstance.State.AddLast(this);
             Singleton.getInstance.State = new(this);
             Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
         }

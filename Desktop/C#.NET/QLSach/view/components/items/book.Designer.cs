@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            picture = new PictureBox();
             lb_name_Book = new Label();
             lb_name_Author = new Label();
             lb_source = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picture
             // 
-            pictureBox1.Location = new Point(15, 21);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(128, 154);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += onClick;
+            picture.Location = new Point(15, 21);
+            picture.Margin = new Padding(3, 4, 3, 4);
+            picture.Name = "picture";
+            picture.Size = new Size(128, 154);
+            picture.TabIndex = 0;
+            picture.TabStop = false;
+            picture.Click += onClick;
             // 
             // lb_name_Book
             // 
@@ -107,25 +107,25 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
+            Controls.Add(picture);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lb_source);
             Controls.Add(lb_name_Author);
             Controls.Add(lb_name_Book);
-            Controls.Add(pictureBox1);
             Margin = new Padding(20);
             Name = "book";
             Size = new Size(157, 292);
             Click += onClick;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Label lb_name_Book;
         private System.Windows.Forms.Label lb_name_Author;
         private System.Windows.Forms.Label lb_source;

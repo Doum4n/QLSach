@@ -2,25 +2,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using QLSach.database;
 
 #nullable disable
 
-namespace QLSach.database.migrations
+namespace QLSach.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241020121351_1")]
-    partial class _1
+    partial class ContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "8.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
@@ -40,6 +35,88 @@ namespace QLSach.database.migrations
                         .IsUnique();
 
                     b.ToTable("Photo");
+
+                    b.HasData(
+                        new
+                        {
+                            path = "2fake path",
+                            book_id = 1
+                        },
+                        new
+                        {
+                            path = "3fake path",
+                            book_id = 2
+                        },
+                        new
+                        {
+                            path = "4fake path",
+                            book_id = 3
+                        },
+                        new
+                        {
+                            path = "5fake path",
+                            book_id = 4
+                        },
+                        new
+                        {
+                            path = "6fake path",
+                            book_id = 5
+                        },
+                        new
+                        {
+                            path = "7fake path",
+                            book_id = 6
+                        },
+                        new
+                        {
+                            path = "8fake path",
+                            book_id = 7
+                        },
+                        new
+                        {
+                            path = "9fake path",
+                            book_id = 8
+                        },
+                        new
+                        {
+                            path = "10fake path",
+                            book_id = 9
+                        },
+                        new
+                        {
+                            path = "11fake path",
+                            book_id = 10
+                        },
+                        new
+                        {
+                            path = "12fake path",
+                            book_id = 11
+                        },
+                        new
+                        {
+                            path = "13fake path",
+                            book_id = 12
+                        },
+                        new
+                        {
+                            path = "14fake path",
+                            book_id = 13
+                        },
+                        new
+                        {
+                            path = "15fake path",
+                            book_id = 14
+                        },
+                        new
+                        {
+                            path = "16fake path",
+                            book_id = 15
+                        },
+                        new
+                        {
+                            path = "17fake path",
+                            book_id = 16
+                        });
                 });
 
             modelBuilder.Entity("QLSach.dbContext.models.Book", b =>
@@ -72,97 +149,97 @@ namespace QLSach.database.migrations
                         {
                             id = 1,
                             author_id = 1,
-                            name = "Assumenda fugiat voluptas voluptatibus repellendus eveniet ut expedita."
+                            name = "Eligendi eaque error tenetur."
                         },
                         new
                         {
                             id = 2,
                             author_id = 2,
-                            name = "Ut non delectus qui dolor placeat id similique.\nAsperiores molestias numquam ea voluptates est quasi dolor.\nIusto labore voluptate debitis nemo.\nFacilis at ipsa ratione quisquam delectus neque provident fugit."
+                            name = "Esse excepturi sunt."
                         },
                         new
                         {
                             id = 3,
                             author_id = 3,
-                            name = "voluptatem"
+                            name = "Ratione a reprehenderit laudantium non nesciunt animi aut voluptatem."
                         },
                         new
                         {
                             id = 4,
                             author_id = 4,
-                            name = "Occaecati ullam hic dolorem laudantium aspernatur sint. Consequatur enim optio praesentium. Maxime occaecati voluptatibus blanditiis accusantium harum."
+                            name = "Libero modi rerum dicta ut."
                         },
                         new
                         {
                             id = 5,
                             author_id = 5,
-                            name = "Beatae aut voluptatibus eaque.\nVoluptas accusantium laudantium modi incidunt.\nAccusantium voluptates autem aliquid error doloribus illum possimus et."
+                            name = "Et tempora exercitationem alias eligendi nobis quia."
                         },
                         new
                         {
                             id = 6,
                             author_id = 6,
-                            name = "aspernatur"
+                            name = "Aperiam laboriosam numquam excepturi et at ea et excepturi ea."
                         },
                         new
                         {
                             id = 7,
                             author_id = 7,
-                            name = "Qui eaque nemo."
+                            name = "Repudiandae dolorum numquam."
                         },
                         new
                         {
                             id = 8,
                             author_id = 8,
-                            name = "Perferendis ut officia."
+                            name = "Soluta quod praesentium placeat corrupti."
                         },
                         new
                         {
                             id = 9,
                             author_id = 9,
-                            name = "Et atque vero et et unde non est rerum.\nEst deleniti natus.\nMaxime ea perferendis aut iure quam.\nEligendi placeat quia accusantium quis quo eligendi rem.\nDeleniti dolorem quasi exercitationem voluptatem sequi tempora magnam assumenda."
+                            name = "Veritatis corporis deserunt accusamus delectus rerum exercitationem doloribus."
                         },
                         new
                         {
                             id = 10,
                             author_id = 10,
-                            name = "Nulla veniam rerum eligendi et.\nEt et commodi quaerat ipsum.\nSed dolor sed sunt voluptatem sint sit dolor facere.\nUt dolorem voluptatem ex tempore quo maiores totam omnis."
+                            name = "Debitis repellat expedita provident numquam ipsum enim sunt id quo."
                         },
                         new
                         {
                             id = 11,
                             author_id = 11,
-                            name = "Laudantium sapiente quod blanditiis molestiae et illum."
+                            name = "Dolore itaque asperiores qui libero deleniti."
                         },
                         new
                         {
                             id = 12,
                             author_id = 12,
-                            name = "quae"
+                            name = "Harum enim voluptas."
                         },
                         new
                         {
                             id = 13,
                             author_id = 13,
-                            name = "provident"
+                            name = "Sequi pariatur vel et non et fugiat recusandae voluptas."
                         },
                         new
                         {
                             id = 14,
                             author_id = 14,
-                            name = "Corrupti et modi aperiam esse.\nEt tempora impedit sunt itaque doloribus.\nFacere in voluptatem.\nVitae accusantium error dolorem.\nRepellendus harum in odio illum ipsa voluptatem quo quas qui.\nIpsam inventore nemo."
+                            name = "Rerum deserunt nisi officia consequatur quibusdam animi laborum et est."
                         },
                         new
                         {
                             id = 15,
                             author_id = 15,
-                            name = "Quaerat similique quis dolorem adipisci eum.\nEst nisi excepturi necessitatibus odio molestias ut.\nUt explicabo error et quia et sequi corrupti cum culpa.\nArchitecto optio veritatis voluptatum et et quam."
+                            name = "Ut quaerat et ratione est rem aperiam blanditiis."
                         },
                         new
                         {
                             id = 16,
                             author_id = 16,
-                            name = "dolor"
+                            name = "Reprehenderit explicabo quae."
                         });
                 });
 
@@ -190,98 +267,98 @@ namespace QLSach.database.migrations
                         new
                         {
                             id = 1,
-                            description = "Occaecati ut beatae et.",
-                            name = "Mara"
+                            description = "Tempora consequatur est.",
+                            name = "Dewayne"
                         },
                         new
                         {
                             id = 2,
-                            description = "Corporis mollitia quasi laboriosam ut.",
-                            name = "Camren"
+                            description = "A corporis molestiae soluta totam ut temporibus.",
+                            name = "Lorena"
                         },
                         new
                         {
                             id = 3,
-                            description = "Suscipit consequuntur aliquam blanditiis consequatur explicabo pariatur porro delectus.",
-                            name = "Marlon"
+                            description = "Sint sint perferendis.",
+                            name = "Pedro"
                         },
                         new
                         {
                             id = 4,
-                            description = "Accusantium eos aut perferendis doloremque et.",
-                            name = "Unique"
+                            description = "Error vel tenetur dolorum necessitatibus.",
+                            name = "Constantin"
                         },
                         new
                         {
                             id = 5,
-                            description = "Non commodi nihil non.",
-                            name = "Jaden"
+                            description = "Iusto quis culpa voluptas omnis.",
+                            name = "Marilie"
                         },
                         new
                         {
                             id = 6,
-                            description = "Consequatur nobis maiores eos optio voluptatem maiores.",
-                            name = "Nathaniel"
+                            description = "Ut consequatur sunt ut iure quam laudantium minus.",
+                            name = "Ron"
                         },
                         new
                         {
                             id = 7,
-                            description = "Culpa praesentium non veniam.",
-                            name = "Violet"
+                            description = "Minus cupiditate consequatur expedita inventore.",
+                            name = "Dallas"
                         },
                         new
                         {
                             id = 8,
-                            description = "Eum ut aut consectetur odio minima ut aspernatur.",
-                            name = "Lamar"
+                            description = "Eius impedit expedita.",
+                            name = "Meredith"
                         },
                         new
                         {
                             id = 9,
-                            description = "Libero sed id quia.",
-                            name = "Nora"
+                            description = "Praesentium nihil et officiis quo.",
+                            name = "Pietro"
                         },
                         new
                         {
                             id = 10,
-                            description = "Est omnis et qui est et dicta occaecati molestiae.",
-                            name = "Savanna"
+                            description = "Quasi asperiores omnis natus dolores voluptatem animi iusto quos velit.",
+                            name = "Elenor"
                         },
                         new
                         {
                             id = 11,
-                            description = "Error ut itaque at doloremque ad.",
-                            name = "Petra"
+                            description = "Distinctio veritatis nihil alias necessitatibus ut ut ducimus.",
+                            name = "Eve"
                         },
                         new
                         {
                             id = 12,
-                            description = "Aut quidem autem numquam soluta.",
-                            name = "Gaetano"
+                            description = "Saepe ab est eum rerum nisi.",
+                            name = "Quinten"
                         },
                         new
                         {
                             id = 13,
-                            description = "Rerum modi rem.",
-                            name = "Ellie"
+                            description = "Et voluptate reiciendis deleniti.",
+                            name = "Hermina"
                         },
                         new
                         {
                             id = 14,
-                            description = "Placeat pariatur sint.",
-                            name = "Jadon"
+                            description = "Aut et autem sunt error ut.",
+                            name = "Arthur"
                         },
                         new
                         {
                             id = 15,
-                            description = "Ullam tempore amet quis sapiente sunt.",
-                            name = "Alison"
+                            description = "Nisi quisquam magnam minus et.",
+                            name = "Lavada"
                         },
                         new
                         {
                             id = 16,
-                            description = "Quidem ab blanditiis eaque aut consectetur numquam dolor deleniti impedit.",
-                            name = "Maxwell"
+                            description = "Amet at enim sit dolore.",
+                            name = "Jaime"
                         });
                 });
 

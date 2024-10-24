@@ -26,8 +26,7 @@ namespace QLSach.view
         {
             InitializeComponent();
             Singleton.getInstance.MainFrameHelper.ActivePathChanged += OnActivated;
-            //Singleton.getInstance.MainFrameHelper.Node = new Node(new DashBoard());
-            //Singleton.getInstance.MainFrameHelper.Node.AddChild(State.DashBoard);
+
         }
 
         private void OnActivated(string newValue)
@@ -40,7 +39,8 @@ namespace QLSach.view
         {
             Singleton.getInstance.MainFrameHelper.MainPane = Pane_conten;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-                    Singleton.getInstance.Initilize.DashBoard
+                    //Singleton.getInstance.Initilize.DashBoard
+                    new DashBoard()
                 );
 
             isBookSelected = !isBookSelected;
@@ -66,52 +66,36 @@ namespace QLSach.view
 
         private void btn_redo_Click(object sender, EventArgs e)
         {
-            //Node cur = new(Singleton.getInstance.State);
-            ////StateOf(Singleton.getInstance.MainFrameHelper.Node.getCurrentNode().getLastChild().GetState());
-            //addControl(cur.parent.GetState());
-            //MessageBox.Show(cur.parent.GetState().ToString());
+            Node cur = Singleton.getInstance.State;
+            if (cur != null && cur.getVisitedNode() != null)
+            {
+                addControl(cur.getVisitedNode().getState());
+                Singleton.getInstance.State = cur.getVisitedNode();
+            }
         }
 
         private void btn_undo_Click(object sender, EventArgs e)
         {
             Node cur = Singleton.getInstance.State;
+            Node pre = cur.parent;
             if ( cur.parent != null)
             {
-                cur.visited = true;
-                addControl(cur.parent.getState());
-                MessageBox.Show(cur.parent.getState().ToString());
+                if (cur != pre)
+                {
+                    addControl(pre.getState());
+                    Singleton.getInstance.State = pre;
+                }
 
-                Singleton.getInstance.State = Singleton.getInstance.priviouState;
-
-                Singleton.getInstance.MainFrameHelper.Node.DeleteNode( cur );
+                //Singleton.getInstance.MainFrameHelper.Node.DeleteNode( cur );
             }
         }
 
         private void addControl(UserControl control)
         {
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(control);
-        }
-
-        private void StateOf(State state)
-        {
-            switch (state)
+            if (control != null)
             {
-                case State.DashBoard:
-                    {
-                        addControl(Singleton.getInstance.Initilize.DashBoard);
-                        break;
-                    }
-                case State.BookDetail:
-                    {
-                        addControl(Singleton.getInstance.Initilize.BookDetail);
-                        break;
-                    }
-                case State.RecentUpdate:
-                    {
-                        addControl(Singleton.getInstance.Initilize.RecentUpdate);
-                        break;
-                    }
+                Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+                Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(control);
             }
         }
     }

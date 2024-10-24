@@ -8,15 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSach.component;
+using QLSach.components;
+using QLSach.controllers;
 
 namespace QLSach.view.components.items
 {
     public partial class book : UserControl
     {
         private int id;
+        private Bitmap MyImage;
+
         public book()
         {
             InitializeComponent();
+
+            //string imagePath = Path.Combine("resources", "images", "poster.png");
+            String imagePath = ".\\resources\\images\\book.png";
+            //ImageQuery query = new ImageQuery();
+            //String imagePath = query.GetPhoto(1).path;
+            //ShowMyImage(imagePath, 128, 154);
+            Singleton.getInstance.BookHelper.ShowMyImage(picture, imagePath, 128, 164);
+        }
+
+        public void ShowMyImage(String fileToDisplay, int xSize, int ySize)
+        {
+            // Sets up an image object to be displayed.
+            if (MyImage != null)
+            {
+                MyImage.Dispose();
+            }
+
+            // Stretches the image to fit the pictureBox.
+            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            MyImage = new Bitmap(fileToDisplay);
+            picture.ClientSize = new Size(xSize, ySize);
+            picture.Image = (Image)MyImage;
         }
 
 

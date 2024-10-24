@@ -17,14 +17,10 @@ namespace QLSach.component
 
         //temp
         private int _id;
-        //public delegate void ActiveIdChangedHandler(int newId);
-        //public event ActiveIdChangedHandler ActiveIdChanged;
 
-        //private Stack<State> states;
         private Node root;
 
         public MainFrameHelper() {
-            //states = new Stack<State>();
         }
 
         public Panel MainPane
@@ -51,39 +47,26 @@ namespace QLSach.component
             ActivePathChanged?.Invoke(newValue);
         }
 
-        //protected virtual void OnIdChanged(int newId)
-        //{
-        //    ActiveIdChanged?.Invoke(newId);
-        //}
-
         public int Id { get { return _id; } set { _id = value; } }
 
-        //public Stack<State> States {  get { return states; } }
-
-        public Node Node
-        {
-            get { return root; }
-            set { root = value; }
-        }
+        public Node Node { get; set; }
 
     }
 
-    public delegate void TreeVisitor(UserControl nodeData);
+    public delegate void TreeVisitor(Node nodeData);
 
     public class Node
     {
         private UserControl data;
         private LinkedList<Node> children;
         public Node parent;
-        private Node current;
-        public bool visited { get; set; } = false;
+        public bool isVisit { get; set; }
 
         public Node(UserControl data)
         {
             this.data = data;
             children = new LinkedList<Node>();
             parent = null;
-
         }
 
         public void AddChild(Node child)
@@ -92,7 +75,7 @@ namespace QLSach.component
             children.AddLast(child);
 
             Singleton.getInstance.priviouState = this;
-           
+            Visit(child);
         }
 
         public Node GetChild(int i)
@@ -105,7 +88,7 @@ namespace QLSach.component
 
         public void Traverse(Node node, TreeVisitor visitor)
         {
-            visitor(node.data);
+            visitor(node);
             foreach (Node kid in node.children)
                 Traverse(kid, visitor);
         }
@@ -120,19 +103,36 @@ namespace QLSach.component
             return data;
         }
 
-        public Node getLastChild()
-        {
-            return children.Last();
-        }
-
         public void DeleteNode(Node node)
         {
             if (node == null) return;
             children.Remove(node);
-            Traverse(node, delegate (UserControl userControl)
+            Traverse(node, delegate (Node node)
             {
                 children.Remove(node);
             });
+            MessageBox.Show(children.Count.ToString());
+        }
+
+        public Node? getVisitedNode()
+        {
+            foreach (var item in this.children)
+            {
+                if (item.isVisit)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public void Visit(Node child)
+        {
+            foreach (var item in this.children)
+            {
+                item.isVisit = false;
+            }
+            child.isVisit = true;
         }
     }
 }
