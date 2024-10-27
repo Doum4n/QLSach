@@ -28,7 +28,7 @@ namespace QLSach.database
             var AuthorId = 1;
             var fakeAuthor = new Faker<author>()
                 .RuleFor(o => o.name, f => f.Name.FirstName())
-                .RuleFor(o => o.id, f => AuthorId++)
+                .RuleFor(o => o.Id, f => AuthorId++)
                 .RuleFor(o => o.description, f => f.Lorem.Sentence());
 
             var authors = fakeAuthor.Generate(16);
@@ -37,8 +37,9 @@ namespace QLSach.database
             var id = 0;
             var fakeBook = new Faker<Book>()
                 .RuleFor(o => o.name, f => f.Lorem.Sentence())
-                .RuleFor(o => o.id, f => BookId++)
-                .RuleFor(o => o.author_id, f => authors[id++].id);
+                .RuleFor(o => o.Id, f => BookId++)
+                .RuleFor(o => o.description, f => f.Lorem.Paragraph())
+                .RuleFor(o => o.author_id, f => authors[id++].Id);
 
             var books = fakeBook.Generate(16);
 

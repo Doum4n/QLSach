@@ -7,6 +7,9 @@
     <Compile Update="view\components\items\book.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\components\items\comment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\DashBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>

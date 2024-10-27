@@ -18,7 +18,7 @@ namespace QLSach.controllers
 
         public Photo? GetPhoto(int id)
         {
-            return Singleton.getInstance.Data?.Photo.Where(photo => photo.book_id == id).FirstOrDefault();
+            return Singleton.getInstance.Data?.Photos.Where(photo => photo.book_id == id).FirstOrDefault();
         }
     }
 }

@@ -64,7 +64,7 @@ namespace QLSach.view
             {
                 book book1 = new book();
                 //Singleton.getInstance.MainFrameHelper.Id = Books[i].id;
-                book1.Id = Books[i].id;
+                book1.Id = Books[i].Id;
                 book1.Name = Books[i].name;
                 book1.Author = "Entein";
                 book1.Source = "Internet";

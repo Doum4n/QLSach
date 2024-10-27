@@ -28,26 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picture = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
             RatingStar = new Guna.UI2.WinForms.Guna2RatingStar();
             Name = new Label();
             author = new Label();
-            publication_place = new Label();
             publication_year = new Label();
             book_type = new Label();
             label16 = new Label();
             status = new Label();
-            language = new Label();
+            textBox_comment = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             SuspendLayout();
             // 
@@ -77,15 +76,6 @@
             label2.TabIndex = 2;
             label2.Text = "Tác giả";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(294, 133);
-            label3.Name = "label3";
-            label3.Size = new Size(94, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Nơi xuất bản";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -113,15 +103,6 @@
             label6.TabIndex = 6;
             label6.Text = "Tình trạng";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(294, 353);
-            label7.Name = "label7";
-            label7.Size = new Size(76, 20);
-            label7.TabIndex = 7;
-            label7.Text = "Ngôn ngữ";
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -134,7 +115,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(31, 912);
+            label9.Location = new Point(30, 1022);
             label9.Name = "label9";
             label9.Size = new Size(70, 20);
             label9.TabIndex = 9;
@@ -151,7 +132,7 @@
             // 
             // RatingStar
             // 
-            RatingStar.Location = new Point(31, 854);
+            RatingStar.Location = new Point(31, 964);
             RatingStar.Name = "RatingStar";
             RatingStar.Size = new Size(150, 35);
             RatingStar.TabIndex = 11;
@@ -173,15 +154,6 @@
             author.Size = new Size(58, 20);
             author.TabIndex = 13;
             author.Text = "label12";
-            // 
-            // publication_place
-            // 
-            publication_place.AutoSize = true;
-            publication_place.Location = new Point(413, 133);
-            publication_place.Name = "publication_place";
-            publication_place.Size = new Size(58, 20);
-            publication_place.TabIndex = 14;
-            publication_place.Text = "label13";
             // 
             // publication_year
             // 
@@ -220,36 +192,45 @@
             status.TabIndex = 17;
             status.Text = "label16";
             // 
-            // language
+            // textBox_comment
             // 
-            language.AutoSize = true;
-            language.Location = new Point(413, 353);
-            language.Name = "language";
-            language.Size = new Size(58, 20);
-            language.TabIndex = 18;
-            language.Text = "label18";
+            textBox_comment.CustomizableEdges = customizableEdges3;
+            textBox_comment.DefaultText = "";
+            textBox_comment.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            textBox_comment.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            textBox_comment.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            textBox_comment.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            textBox_comment.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            textBox_comment.Font = new Font("Segoe UI", 9F);
+            textBox_comment.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            textBox_comment.Location = new Point(49, 861);
+            textBox_comment.Margin = new Padding(3, 4, 3, 4);
+            textBox_comment.Name = "textBox_comment";
+            textBox_comment.PasswordChar = '\0';
+            textBox_comment.PlaceholderText = "";
+            textBox_comment.SelectedText = "";
+            textBox_comment.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            textBox_comment.Size = new Size(822, 79);
+            textBox_comment.TabIndex = 18;
             // 
             // BookDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(language);
+            Controls.Add(textBox_comment);
             Controls.Add(status);
             Controls.Add(label16);
             Controls.Add(book_type);
             Controls.Add(publication_year);
-            Controls.Add(publication_place);
             Controls.Add(author);
             Controls.Add(Name);
             Controls.Add(RatingStar);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(picture);
@@ -265,22 +246,19 @@
         private PictureBox picture;
         private Label label1;
         private Label label2;
-        private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label7;
         private Label label8;
         private Label label9;
         private Label label10;
         private Guna.UI2.WinForms.Guna2RatingStar RatingStar;
         private Label Name;
         private Label author;
-        private Label publication_place;
         private Label publication_year;
         private Label book_type;
         private Label label16;
         private Label status;
-        private Label language;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_comment;
     }
 }

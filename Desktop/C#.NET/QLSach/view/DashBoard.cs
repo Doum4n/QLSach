@@ -12,12 +12,17 @@ using System.Windows.Forms;
 using QLSach.controllers;
 using QLSach.database;
 using QLSach.component;
+using QLSach.dbContext.models;
 
 namespace QLSach.view
 {
     public partial class DashBoard : UserControl
     {
         Node node;
+
+        private controllers.BookQuery dashBoard = new controllers.BookQuery();
+        private int currentIndex = 0;
+
         private enum bookStatus
         {
             newly_udated,
@@ -31,8 +36,15 @@ namespace QLSach.view
             Singleton.getInstance.MainFrameHelper.Path = "Trang chủ";
             node = new Node(this);
             Singleton.getInstance.MainFrameHelper.Node = node;
+            tablePane_book.RowCount = 0;
+            tablePane_book.ColumnCount = 0;
+            LoadData();
         }
 
+        private void Init()
+        {
+
+        }
         private void DashBoard_Load(object sender, EventArgs e)
         {
             //Singleton.getInstance.MainFrameHelper.States.Push(State.DashBoard);
@@ -40,7 +52,7 @@ namespace QLSach.view
             Singleton.getInstance.MainFrameHelper.Node.AddChild(node);
         }
 
-        private void LoadData(bookStatus status, book bookItem)
+        private void LoadData_Btn(bookStatus status, book bookItem)
         {
             switch (status)
             {
@@ -65,17 +77,7 @@ namespace QLSach.view
 
         private void btn_newlyUpdate_Click(object sender, EventArgs e)
         {
-            controllers.BookQuery BookQuery = new controllers.BookQuery();
-
-            foreach (var book in BookQuery.getBooks())
-            {
-                book book1 = new book();
-                book1.Id = book.id;
-                book1.Name = book.name;
-                book1.Author = "Entein";
-                book1.Source = "Internet";
-                LoadData(bookStatus.newly_udated, book1);
-            }
+            LoadData();
         }
 
         private void more_newlyBook_Click(object sender, EventArgs e)
@@ -85,6 +87,53 @@ namespace QLSach.view
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(rc);
         }
 
-  
+        private void setData(book bookItem)
+        {
+            if (tablePane_book.ColumnCount > 3)
+            {
+                tablePane_book.ColumnCount = 0;
+                tablePane_book.RowCount = 1;
+            }
+
+            if (tablePane_book.RowCount == 1)
+            {
+                tablePane_book.RowCount = 0;
+            }
+
+
+            tablePane_book.SetCellPosition(bookItem,
+                new TableLayoutPanelCellPosition(
+                    tablePane_book.ColumnCount
+                    , tablePane_book.RowCount
+                    )
+                );
+
+            tablePane_book.ColumnCount += 1;
+            tablePane_book.Controls.Add(bookItem);
+
+        }
+
+        private void LoadData()
+        {
+
+            List<Book> Books = dashBoard.getBooks();
+
+            for (int i = 8 * currentIndex; i < 8 * currentIndex + 8; i++)
+            {
+                book book1 = new book();
+                //Singleton.getInstance.MainFrameHelper.Id = Books[i].id;
+                book1.Id = Books[i].Id;
+                book1.Name = Books[i].name;
+                book1.Author = "Entein";
+                book1.Source = "Internet";
+                setData(book1);
+            }
+        }
+
+        private void btn_popula_Click(object sender, EventArgs e)
+        {
+            //pane_tool.Controls.Clear();
+            //pane_tool.Controls.Add(new popula());
+        }
     }
 }

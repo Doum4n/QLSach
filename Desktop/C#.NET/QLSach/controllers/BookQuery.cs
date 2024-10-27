@@ -20,7 +20,7 @@ namespace QLSach.controllers
 
         public Book? getBook(int id)
         {
-            return Singleton.getInstance.Data?.Books?.Where(book => book.id == id).FirstOrDefault();
+            return Singleton.getInstance.Data?.Books?.Where(book => book.Id == id).FirstOrDefault();
         }
     }
 }

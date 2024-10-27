@@ -33,6 +33,11 @@ namespace QLSach.database
                 .WithOne(e => e.Book)
                 .HasForeignKey<Photo>(e => e.book_id)
                 .IsRequired();
+
+            modelBuilder.Entity<Book>()
+                .HasMany(b => b.Users)
+                .WithMany(u => u.Books)
+                .UsingEntity<BookInteraction>();
         }
     }
 }
