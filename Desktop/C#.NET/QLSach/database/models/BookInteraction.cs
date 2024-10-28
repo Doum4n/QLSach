@@ -1,4 +1,5 @@
 ﻿using QLSach.dbContext.models;
+using QLSach.view.components.items;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,12 +17,14 @@ namespace QLSach.database.models
         public int BookId { get; set; }
         public int UserId { get; set; }
         [AllowNull]
-        public int comment { get; set; }
+        public int CommentId { get; set; }
         [AllowNull]
         public int rating { get; set; }
         [AllowNull]
         public bool liked { get; set; }
         [AllowNull]
         public bool saved { get; set; }
+
+        public Comment comment { get; set; }
     }
 }

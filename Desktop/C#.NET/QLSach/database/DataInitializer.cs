@@ -52,9 +52,18 @@ namespace QLSach.database
 
             var images = fakeImage.Generate(16);
 
+            var user_id = 1;
+            var fakeUser = new Faker<models.User>()
+                .RuleFor(o => o.Id, f => user_id++)
+                .RuleFor(o => o.Password, f => f.Lorem.Text())
+                .RuleFor(o => o.UserName, f => f.Name.FullName());
+
+            var users = fakeUser.Generate(16);
+
             modelBuilder.Entity<Book>().HasData(books);
             modelBuilder.Entity<author>().HasData(authors);
             modelBuilder.Entity<Photo>().HasData(images);
+            modelBuilder.Entity<models.User>().HasData(users);
         }
     }
 }

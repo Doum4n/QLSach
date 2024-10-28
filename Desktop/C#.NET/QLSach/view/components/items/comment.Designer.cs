@@ -30,12 +30,9 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             textBox_comment = new Guna.UI2.WinForms.Guna2TextBox();
-            avata = new Guna.UI2.WinForms.Guna2PictureBox();
             name = new Label();
-            ((System.ComponentModel.ISupportInitialize)avata).BeginInit();
+            avatar = new Panel();
             SuspendLayout();
             // 
             // textBox_comment
@@ -56,39 +53,34 @@
             textBox_comment.PlaceholderText = "";
             textBox_comment.SelectedText = "";
             textBox_comment.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            textBox_comment.Size = new Size(286, 60);
+            textBox_comment.Size = new Size(651, 64);
             textBox_comment.TabIndex = 0;
-            // 
-            // avata
-            // 
-            avata.CustomizableEdges = customizableEdges3;
-            avata.ImageRotate = 0F;
-            avata.Location = new Point(18, 17);
-            avata.Name = "avata";
-            avata.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            avata.Size = new Size(73, 65);
-            avata.TabIndex = 1;
-            avata.TabStop = false;
             // 
             // name
             // 
             name.AutoSize = true;
             name.Location = new Point(113, 17);
             name.Name = "name";
-            name.Size = new Size(50, 20);
+            name.Size = new Size(46, 20);
             name.TabIndex = 2;
-            name.Text = "label1";
+            name.Text = "name";
+            // 
+            // avatar
+            // 
+            avatar.Location = new Point(18, 20);
+            avatar.Name = "avatar";
+            avatar.Size = new Size(76, 69);
+            avatar.TabIndex = 3;
             // 
             // comment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(avatar);
             Controls.Add(name);
-            Controls.Add(avata);
             Controls.Add(textBox_comment);
             Name = "comment";
-            Size = new Size(444, 143);
-            ((System.ComponentModel.ISupportInitialize)avata).EndInit();
+            Size = new Size(786, 137);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -96,7 +88,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox textBox_comment;
-        private Guna.UI2.WinForms.Guna2PictureBox avata;
         private Label name;
+        private Panel avatar;
     }
 }

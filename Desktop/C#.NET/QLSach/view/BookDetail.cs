@@ -1,6 +1,8 @@
 ﻿using QLSach.component;
 using QLSach.controllers;
+using QLSach.database.models;
 using QLSach.dbContext.models;
+using QLSach.view.components.items;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +31,9 @@ namespace QLSach.view
 
             //string imagePath = Path.Combine("resources", "images", "poster.png");
             String imagePath = ".\\resources\\images\\book.png";
-            Singleton.getInstance.BookHelper.ShowMyImage(picture,imagePath, 223, 350);
+            Singleton.getInstance.BookHelper.ShowMyImage(picture, imagePath, 223, 350);
+
+            pane_comment.Controls.Add(new comment());
         }
 
         private void BookDetail_Load(object sender, EventArgs e)
@@ -41,6 +45,17 @@ namespace QLSach.view
             Singleton.getInstance.State = node;
             //Singleton.getInstance.MainFrameHelper.Node.getLastChild().AddChild(Singleton.getInstance.State);
 
+        }
+
+        private void btn_send_Click(object sender, EventArgs e)
+        {
+            Singleton.getInstance.Data.Comments.Add(
+                new Comment(textBox_comment.Text,
+                            1,
+                            Singleton.getInstance.MainFrameHelper.Id)
+            );
+
+            Singleton.getInstance.Data.SaveChanges();
         }
     }
 }

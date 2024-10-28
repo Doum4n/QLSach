@@ -34,10 +34,27 @@ namespace QLSach.database
                 .HasForeignKey<Photo>(e => e.book_id)
                 .IsRequired();
 
+            //from Book join Comment on comment.book_id = book.id
+            modelBuilder.Entity<Book>()
+               .HasMany(b => b.Comments)
+               .WithOne(c => c.book)
+               .HasForeignKey(c => c.BookId)
+               .IsRequired();
+
             modelBuilder.Entity<Book>()
                 .HasMany(b => b.Users)
                 .WithMany(u => u.Books)
                 .UsingEntity<BookInteraction>();
+
+            modelBuilder.Entity<BookInteraction>()
+               .HasOne(i => i.comment)
+               .WithOne(c => c.bookInteraction)
+               .HasForeignKey<BookInteraction>(b => b.CommentId);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.parent)
+                .WithMany(c => c.childrents)
+                .HasForeignKey(c => c.parent_id);
         }
     }
 }

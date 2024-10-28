@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picture = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -47,6 +51,8 @@
             label16 = new Label();
             status = new Label();
             textBox_comment = new Guna.UI2.WinForms.Guna2TextBox();
+            btn_send = new Guna.UI2.WinForms.Guna2Button();
+            pane_comment = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             SuspendLayout();
             // 
@@ -115,7 +121,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(30, 1022);
+            label9.Location = new Point(30, 1073);
             label9.Name = "label9";
             label9.Size = new Size(70, 20);
             label9.TabIndex = 9;
@@ -132,7 +138,7 @@
             // 
             // RatingStar
             // 
-            RatingStar.Location = new Point(31, 964);
+            RatingStar.Location = new Point(31, 1018);
             RatingStar.Name = "RatingStar";
             RatingStar.Size = new Size(150, 35);
             RatingStar.TabIndex = 11;
@@ -194,7 +200,7 @@
             // 
             // textBox_comment
             // 
-            textBox_comment.CustomizableEdges = customizableEdges3;
+            textBox_comment.CustomizableEdges = customizableEdges1;
             textBox_comment.DefaultText = "";
             textBox_comment.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             textBox_comment.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -209,14 +215,43 @@
             textBox_comment.PasswordChar = '\0';
             textBox_comment.PlaceholderText = "";
             textBox_comment.SelectedText = "";
-            textBox_comment.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            textBox_comment.ShadowDecoration.CustomizableEdges = customizableEdges2;
             textBox_comment.Size = new Size(822, 79);
             textBox_comment.TabIndex = 18;
+            // 
+            // btn_send
+            // 
+            btn_send.CustomizableEdges = customizableEdges3;
+            btn_send.DisabledState.BorderColor = Color.DarkGray;
+            btn_send.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_send.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_send.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_send.Font = new Font("Segoe UI", 9F);
+            btn_send.ForeColor = Color.White;
+            btn_send.Location = new Point(778, 958);
+            btn_send.Name = "btn_send";
+            btn_send.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_send.Size = new Size(93, 47);
+            btn_send.TabIndex = 19;
+            btn_send.Text = "Gửi";
+            btn_send.Click += btn_send_Click;
+            // 
+            // pane_comment
+            // 
+            pane_comment.AutoSize = true;
+            pane_comment.CustomizableEdges = customizableEdges5;
+            pane_comment.Location = new Point(31, 1113);
+            pane_comment.Name = "pane_comment";
+            pane_comment.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            pane_comment.Size = new Size(840, 103);
+            pane_comment.TabIndex = 20;
             // 
             // BookDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pane_comment);
+            Controls.Add(btn_send);
             Controls.Add(textBox_comment);
             Controls.Add(status);
             Controls.Add(label16);
@@ -234,7 +269,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(picture);
-            Size = new Size(909, 1214);
+            Size = new Size(909, 1241);
             Load += BookDetail_Load;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             ResumeLayout(false);
@@ -260,5 +295,7 @@
         private Label label16;
         private Label status;
         private Guna.UI2.WinForms.Guna2TextBox textBox_comment;
+        private Guna.UI2.WinForms.Guna2Button btn_send;
+        private Guna.UI2.WinForms.Guna2Panel pane_comment;
     }
 }
