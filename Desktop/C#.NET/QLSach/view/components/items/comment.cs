@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLSach.component;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace QLSach.view.components.items
 {
     public partial class comment : UserControl
     {
+        public string Content {  get; set; }
         public comment()
         {
             InitializeComponent();
@@ -27,6 +29,22 @@ namespace QLSach.view.components.items
             };
 
             avatar.Controls.Add(customPictureBox);
+        }
+
+        private void btn_reply_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void subComment()
+        {
+            this.Margin = new Padding(50, 5, 10, 5); // Left, Top, Right, Bottom
+            this.Refresh();
+        }
+
+        private void comment_Load(object sender, EventArgs e)
+        {
+            textBox_comment.Text = Content;
         }
     }
 }

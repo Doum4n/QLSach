@@ -33,7 +33,8 @@ namespace QLSach.view
             String imagePath = ".\\resources\\images\\book.png";
             Singleton.getInstance.BookHelper.ShowMyImage(picture, imagePath, 223, 350);
 
-            pane_comment.Controls.Add(new comment());
+            tb_pane_comment.RowCount = 0;
+            //tb_pane_comment.size
         }
 
         private void BookDetail_Load(object sender, EventArgs e)
@@ -43,6 +44,34 @@ namespace QLSach.view
             cur.AddChild(node);
 
             Singleton.getInstance.State = node;
+
+            var comments = Singleton.getInstance.Data.Comments.Where(o => o.BookId == Singleton.getInstance.MainFrameHelper.Id).ToList();
+            comments.ForEach(o =>
+            {
+                if (o.parent_id.HasValue)
+                {
+                    MessageBox.Show(comments.Count.ToString());
+                    comment comment1 = new comment();
+                    comment1.Content = o.content;
+                    comment1.subComment();
+                    tb_pane_comment.RowCount++;
+                    tb_pane_comment.SetRow(comment1, tb_pane_comment.RowCount);
+                    tb_pane_comment.Controls.Add(comment1);
+                }
+                else
+                {
+
+                    //MessageBox.Show("Has " + comments.Count.ToString());
+                    //o.childrents.ForEach(o =>
+                    //{
+                    comment comment = new comment();
+                    comment.Content = o.content;
+                    tb_pane_comment.RowCount++;
+                    tb_pane_comment.SetRow(comment, tb_pane_comment.RowCount);
+                    tb_pane_comment.Controls.Add(comment);
+                    //});
+                }
+            });
             //Singleton.getInstance.MainFrameHelper.Node.getLastChild().AddChild(Singleton.getInstance.State);
 
         }

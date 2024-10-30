@@ -30,9 +30,12 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             textBox_comment = new Guna.UI2.WinForms.Guna2TextBox();
             name = new Label();
             avatar = new Panel();
+            btn_reply = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // textBox_comment
@@ -43,6 +46,7 @@
             textBox_comment.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             textBox_comment.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             textBox_comment.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            textBox_comment.Enabled = false;
             textBox_comment.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textBox_comment.Font = new Font("Segoe UI", 9F);
             textBox_comment.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -72,15 +76,34 @@
             avatar.Size = new Size(76, 69);
             avatar.TabIndex = 3;
             // 
+            // btn_reply
+            // 
+            btn_reply.CustomizableEdges = customizableEdges3;
+            btn_reply.DisabledState.BorderColor = Color.DarkGray;
+            btn_reply.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_reply.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_reply.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_reply.Font = new Font("Segoe UI", 9F);
+            btn_reply.ForeColor = Color.White;
+            btn_reply.Location = new Point(653, 123);
+            btn_reply.Name = "btn_reply";
+            btn_reply.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_reply.Size = new Size(110, 26);
+            btn_reply.TabIndex = 4;
+            btn_reply.Text = "Trả lời";
+            btn_reply.Click += btn_reply_Click;
+            // 
             // comment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btn_reply);
             Controls.Add(avatar);
             Controls.Add(name);
             Controls.Add(textBox_comment);
             Name = "comment";
-            Size = new Size(786, 137);
+            Size = new Size(786, 160);
+            Load += comment_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -90,5 +113,6 @@
         private Guna.UI2.WinForms.Guna2TextBox textBox_comment;
         private Label name;
         private Panel avatar;
+        private Guna.UI2.WinForms.Guna2Button btn_reply;
     }
 }

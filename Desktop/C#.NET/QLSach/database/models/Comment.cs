@@ -17,7 +17,7 @@ namespace QLSach.database.models
 
         public Comment()
         {
-            
+            childrents = new List<Comment>();   
         }
         public Comment(string content, int user_id, int book_id)
         {
@@ -32,7 +32,7 @@ namespace QLSach.database.models
         public int UserId { get; set; }
         public int BookId {  get; set; }
         [AllowNull]
-        public int parent_id { get; set; }
+        public int? parent_id { get; set; }
 
         public User user { get; set; }
         public Book book { get; set; }
@@ -40,5 +40,9 @@ namespace QLSach.database.models
         public BookInteraction bookInteraction { get; set; }
         public Comment parent { get; set; }
         public List<Comment> childrents { get; set; }
+        public bool hasChildrent()
+        {
+            return this.childrents != null && this.childrents.Count > 0;
+        }
     }
 }

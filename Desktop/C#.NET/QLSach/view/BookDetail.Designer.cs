@@ -32,8 +32,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picture = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -52,8 +50,12 @@
             status = new Label();
             textBox_comment = new Guna.UI2.WinForms.Guna2TextBox();
             btn_send = new Guna.UI2.WinForms.Guna2Button();
-            pane_comment = new Guna.UI2.WinForms.Guna2Panel();
+            tb_pane_comment = new TableLayoutPanel();
+            panel1 = new Panel();
+            fileSystemWatcher1 = new FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
             // picture
@@ -236,21 +238,37 @@
             btn_send.Text = "Gửi";
             btn_send.Click += btn_send_Click;
             // 
-            // pane_comment
+            // tb_pane_comment
             // 
-            pane_comment.AutoSize = true;
-            pane_comment.CustomizableEdges = customizableEdges5;
-            pane_comment.Location = new Point(31, 1113);
-            pane_comment.Name = "pane_comment";
-            pane_comment.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            pane_comment.Size = new Size(840, 103);
-            pane_comment.TabIndex = 20;
+            tb_pane_comment.AutoSize = true;
+            tb_pane_comment.ColumnCount = 1;
+            tb_pane_comment.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tb_pane_comment.Location = new Point(18, 15);
+            tb_pane_comment.Name = "tb_pane_comment";
+            tb_pane_comment.RowCount = 1;
+            tb_pane_comment.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tb_pane_comment.Size = new Size(251, 120);
+            tb_pane_comment.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            panel1.AutoSize = true;
+            panel1.Controls.Add(tb_pane_comment);
+            panel1.Location = new Point(31, 1125);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(855, 152);
+            panel1.TabIndex = 21;
+            // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
             // 
             // BookDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pane_comment);
+            AutoSize = true;
             Controls.Add(btn_send);
             Controls.Add(textBox_comment);
             Controls.Add(status);
@@ -269,9 +287,13 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(picture);
-            Size = new Size(909, 1241);
+            Controls.Add(panel1);
+            Size = new Size(909, 1288);
             Load += BookDetail_Load;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,6 +318,8 @@
         private Label status;
         private Guna.UI2.WinForms.Guna2TextBox textBox_comment;
         private Guna.UI2.WinForms.Guna2Button btn_send;
-        private Guna.UI2.WinForms.Guna2Panel pane_comment;
+        private TableLayoutPanel tb_pane_comment;
+        private Panel panel1;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }
