@@ -8,15 +8,9 @@ namespace QLSach.components
 {
     public class BookHelper
     {
-
-        // Nhận PictureBox từ bên ngoài và gán hình ảnh cho nó
+        public int genreId {  get; set; }
         public void ShowMyImage(PictureBox picture, string fileToDisplay, int xSize, int ySize)
         {
-            //// Nếu MyImage đã tồn tại, hủy tài nguyên
-            //if (MyImage != null)
-            //{
-            //    MyImage.Dispose();
-            //}
 
             try
             {

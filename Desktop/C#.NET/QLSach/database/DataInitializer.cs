@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.VisualBasic.ApplicationServices;
 using QLSach.database.models;
 using QLSach.dbContext.models;
@@ -25,6 +26,7 @@ namespace QLSach.database
 
         public void Seed()
         {   
+            //Author
             var AuthorId = 1;
             var fakeAuthor = new Faker<author>()
                 .RuleFor(o => o.name, f => f.Name.FirstName())
@@ -33,16 +35,33 @@ namespace QLSach.database
 
             var authors = fakeAuthor.Generate(32);
 
+            //Genre
+            var GenreId = 1;
+            var fakeGenre = new Faker<Genre>()
+                .RuleFor(o => o.name, f => f.Lorem.Word())
+                .RuleFor(o => o.id, f => GenreId++);
+            var genres = fakeGenre.Generate(32);
+
+            //Book
+            modelBuilder.Entity<Book>()
+                    .Property(b => b.created_at)
+                    .ValueGeneratedOnAdd()
+                    .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+
             var BookId = 1;
             var id = 0;
             var fakeBook = new Faker<Book>()
                 .RuleFor(o => o.name, f => f.Lorem.Sentence())
                 .RuleFor(o => o.Id, f => BookId++)
                 .RuleFor(o => o.description, f => f.Lorem.Paragraph())
-                .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)));
+                .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
+                .RuleFor(o => o.year_public, f => f.Random.Int(1900, DateTime.Now.Year))
+                .RuleFor(o => o.updated_at, f => DateTime.Now)
+                .RuleFor(o => o.genre_id, f => f.PickRandom(genres.Select(o => o.id)));
+            
+            var books = fakeBook.Generate(28);
 
-            var books = fakeBook.Generate(32);
-
+            //Image
             var photoId = 1;
             String imagePath = ".\\resources\\images\\poster.png";
             var fakePath = "fake path";
@@ -50,9 +69,9 @@ namespace QLSach.database
                 .RuleFor(o => o.path, f => (photoId++) + fakePath)
                 .RuleFor(o => o.book_id, f => f.PickRandom(books.Select(o => o.Id)));
 
-
             var images = fakeImage.Generate(16);
 
+            //User
             var user_id = 1;
             var fakeUser = new Faker<models.User>()
                 .RuleFor(o => o.Id, f => user_id++)
@@ -61,7 +80,7 @@ namespace QLSach.database
 
             var users = fakeUser.Generate(16);
 
-
+            //Comment
             modelBuilder.Entity<Comment>()
               .Property(o => o.parent_id)
               .IsRequired(false);
@@ -74,23 +93,12 @@ namespace QLSach.database
                 .RuleFor(o => o.UserId, f => f.PickRandom(users.Select(o => o.Id)));
 
             var comments = fakeComment.Generate(16);
+            //for comment parent
             fakeComment.RuleFor(o => o.parent_id, f => f.PickRandom(comments.Select(o => o.Id)));
             var comments_0 = fakeComment.Generate(16);
 
-            // Gán childrents cho mỗi comment
-            //foreach (var comment in comments_0)
-            //{
-            //    if (comment.parent_id.HasValue)
-            //    {
-            //        var parentComment = comments.FirstOrDefault(c => c.Id == comment.parent_id.Value);
-            //        if (parentComment != null)
-            //        {
-            //            parentComment.childrents.Add(comment); // Thêm vào danh sách childrents
-            //            comment.parent = parentComment; // Thiết lập parent nếu cần
-            //        }
-            //    }
-            //}
-
+            //assign data
+            modelBuilder.Entity<Genre>().HasData(genres);
             modelBuilder.Entity<Book>().HasData(books);
             modelBuilder.Entity<author>().HasData(authors);
             modelBuilder.Entity<Photo>().HasData(images);

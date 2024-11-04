@@ -28,6 +28,7 @@ namespace QLSach.database
             optionsBuilder.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
         }
 
+        public DbSet<Genre> Genre { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<author> Authors { get; set; }
         public DbSet<BookInteraction> BookInteractions { get; set; }

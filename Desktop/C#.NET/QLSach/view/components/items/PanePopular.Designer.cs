@@ -1,6 +1,6 @@
 ﻿namespace QLSach.view.components.items
 {
-    partial class book
+    partial class PanePopular
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            picture = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
+            tbLayoutPanel = new TableLayoutPanel();
             SuspendLayout();
             // 
-            // picture
+            // tbLayoutPanel
             // 
-            picture.Location = new Point(3, 4);
-            picture.Margin = new Padding(3, 4, 3, 4);
-            picture.Name = "picture";
-            picture.Size = new Size(153, 203);
-            picture.TabIndex = 0;
-            picture.TabStop = false;
-            picture.Click += onClick;
+            tbLayoutPanel.AutoSize = true;
+            tbLayoutPanel.ColumnCount = 1;
+            tbLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tbLayoutPanel.Location = new Point(20, 21);
+            tbLayoutPanel.Name = "tbLayoutPanel";
+            tbLayoutPanel.RowCount = 1;
+            tbLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tbLayoutPanel.Size = new Size(186, 207);
+            tbLayoutPanel.TabIndex = 16;
             // 
-            // book
+            // PanePopular
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.AppWorkspace;
-            Controls.Add(picture);
-            Margin = new Padding(20);
-            Name = "book";
-            Size = new Size(159, 211);
-            Click += onClick;
-            ((System.ComponentModel.ISupportInitialize)picture).EndInit();
+            AutoSize = true;
+            Controls.Add(tbLayoutPanel);
+            Name = "PanePopular";
+            Size = new Size(771, 260);
+            Load += PanePopular_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picture;
+        private TableLayoutPanel tbLayoutPanel;
     }
 }

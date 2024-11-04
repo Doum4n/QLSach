@@ -19,12 +19,12 @@ namespace QLSach.component
 
         public DashBoard DashBoard {
             get {
-                //_DashBoard ??= new();
-                return new(); 
+                _DashBoard ??= new();
+                return _DashBoard; 
             } 
         }
         public recentUpdate RecentUpdate {
-            get {return new() ; } 
+            get { _recentUpdate ??= new();  return _recentUpdate ; } 
         }
         public BookDetail BookDetail {
             get { _bookDetail ??= new(); return _bookDetail; }

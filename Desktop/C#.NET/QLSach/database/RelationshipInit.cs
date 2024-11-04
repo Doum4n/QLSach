@@ -43,6 +43,14 @@ namespace QLSach.database
                .WithOne(c => c.book)
                .HasForeignKey(c => c.BookId)
                .IsRequired();
+
+            //1 book belong to 1 genre, 1 genre have many books
+            modelBuilder.Entity<Book>()
+                .HasOne(o => o.Genre)
+                .WithMany(o => o.Books)
+                .HasForeignKey(o => o.genre_id)
+                .IsRequired(); //not null
+
             //
 
             //Book Interaction

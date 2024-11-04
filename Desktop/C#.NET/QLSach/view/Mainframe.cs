@@ -39,8 +39,8 @@ namespace QLSach.view
         {
             Singleton.getInstance.MainFrameHelper.MainPane = Pane_conten;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-                    //Singleton.getInstance.Initilize.DashBoard
-                    new DashBoard()
+                    Singleton.getInstance.Initilize.DashBoard
+                    //new DashBoard()
                 );
 
             isBookSelected = !isBookSelected;

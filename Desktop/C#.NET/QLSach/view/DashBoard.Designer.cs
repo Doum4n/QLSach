@@ -42,8 +42,7 @@
             btn_newlyUpdate = new Guna.UI2.WinForms.Guna2Button();
             btn_popula = new Guna.UI2.WinForms.Guna2Button();
             btn_mostView = new Guna.UI2.WinForms.Guna2Button();
-            tablePane_book = new TableLayoutPanel();
-            more_newlyBook = new Guna.UI2.WinForms.Guna2Button();
+            pane = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).BeginInit();
             SuspendLayout();
             // 
@@ -111,52 +110,31 @@
             btn_mostView.Size = new Size(180, 56);
             btn_mostView.TabIndex = 3;
             btn_mostView.Text = "Xem nhiều";
+            btn_mostView.Click += btn_mostView_Click;
             // 
-            // tablePane_book
+            // pane
             // 
-            tablePane_book.AutoSize = true;
-            tablePane_book.ColumnCount = 1;
-            tablePane_book.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tablePane_book.Location = new Point(18, 420);
-            tablePane_book.Margin = new Padding(10);
-            tablePane_book.Name = "tablePane_book";
-            tablePane_book.Padding = new Padding(10);
-            tablePane_book.RowCount = 1;
-            tablePane_book.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tablePane_book.Size = new Size(207, 217);
-            tablePane_book.TabIndex = 7;
-            // 
-            // more_newlyBook
-            // 
-            more_newlyBook.CustomizableEdges = customizableEdges9;
-            more_newlyBook.DisabledState.BorderColor = Color.DarkGray;
-            more_newlyBook.DisabledState.CustomBorderColor = Color.DarkGray;
-            more_newlyBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            more_newlyBook.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            more_newlyBook.Font = new Font("Segoe UI", 9F);
-            more_newlyBook.ForeColor = Color.White;
-            more_newlyBook.Location = new Point(116, 1126);
-            more_newlyBook.Margin = new Padding(3, 4, 3, 4);
-            more_newlyBook.Name = "more_newlyBook";
-            more_newlyBook.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            more_newlyBook.Size = new Size(682, 40);
-            more_newlyBook.TabIndex = 11;
-            more_newlyBook.Text = "Xem thêm";
-            more_newlyBook.Click += more_newlyBook_Click;
+            pane.AutoSize = true;
+            pane.CustomizableEdges = customizableEdges9;
+            pane.Location = new Point(18, 412);
+            pane.Name = "pane";
+            pane.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            pane.Size = new Size(824, 240);
+            pane.TabIndex = 14;
             // 
             // DashBoard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(more_newlyBook);
-            Controls.Add(tablePane_book);
+            AutoSize = true;
             Controls.Add(btn_mostView);
             Controls.Add(btn_popula);
             Controls.Add(btn_newlyUpdate);
             Controls.Add(pictureBox_Banner);
+            Controls.Add(pane);
             Margin = new Padding(3, 4, 3, 4);
             Name = "DashBoard";
-            Size = new Size(872, 1193);
+            Size = new Size(872, 675);
             Load += DashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).EndInit();
             ResumeLayout(false);
@@ -169,7 +147,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_newlyUpdate;
         private Guna.UI2.WinForms.Guna2Button btn_popula;
         private Guna.UI2.WinForms.Guna2Button btn_mostView;
-        private System.Windows.Forms.TableLayoutPanel tablePane_book;
-        private Guna.UI2.WinForms.Guna2Button more_newlyBook;
+        private Guna.UI2.WinForms.Guna2Panel pane;
     }
 }

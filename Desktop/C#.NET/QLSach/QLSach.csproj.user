@@ -7,7 +7,22 @@
     <Compile Update="view\components\items\book.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\components\items\BookMostPopular.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\components\items\BookMostView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\components\items\comment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\components\items\PaneMostView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\components\items\PanePopular.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\components\items\PaneRecent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\CustomPictureBox.cs">
@@ -23,6 +38,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\RecentUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\components\items\RecentUpdateByGenre.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

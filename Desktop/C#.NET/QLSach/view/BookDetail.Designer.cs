@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             picture = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -45,8 +45,8 @@
             Name = new Label();
             author = new Label();
             publication_year = new Label();
-            book_type = new Label();
-            label16 = new Label();
+            genre = new Label();
+            description = new Label();
             status = new Label();
             textBox_comment = new Guna.UI2.WinForms.Guna2TextBox();
             btn_send = new Guna.UI2.WinForms.Guna2Button();
@@ -98,9 +98,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(294, 239);
             label5.Name = "label5";
-            label5.Size = new Size(70, 20);
+            label5.Size = new Size(62, 20);
             label5.TabIndex = 5;
-            label5.Text = "Loại sách";
+            label5.Text = "Thể loại";
             // 
             // label6
             // 
@@ -172,24 +172,24 @@
             publication_year.TabIndex = 15;
             publication_year.Text = "label14";
             // 
-            // book_type
+            // genre
             // 
-            book_type.AutoSize = true;
-            book_type.Location = new Point(413, 239);
-            book_type.Name = "book_type";
-            book_type.Size = new Size(58, 20);
-            book_type.TabIndex = 16;
-            book_type.Text = "label15";
+            genre.AutoSize = true;
+            genre.Location = new Point(413, 239);
+            genre.Name = "genre";
+            genre.Size = new Size(58, 20);
+            genre.TabIndex = 16;
+            genre.Text = "label15";
             // 
-            // label16
+            // description
             // 
-            label16.AccessibleDescription = "descibe";
-            label16.AutoSize = true;
-            label16.Location = new Point(31, 450);
-            label16.Name = "label16";
-            label16.Size = new Size(58, 20);
-            label16.TabIndex = 17;
-            label16.Text = "label16";
+            description.AccessibleDescription = "";
+            description.AutoSize = true;
+            description.Location = new Point(31, 450);
+            description.Name = "description";
+            description.Size = new Size(58, 20);
+            description.TabIndex = 17;
+            description.Text = "label16";
             // 
             // status
             // 
@@ -202,7 +202,7 @@
             // 
             // textBox_comment
             // 
-            textBox_comment.CustomizableEdges = customizableEdges1;
+            textBox_comment.CustomizableEdges = customizableEdges5;
             textBox_comment.DefaultText = "";
             textBox_comment.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             textBox_comment.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -217,13 +217,13 @@
             textBox_comment.PasswordChar = '\0';
             textBox_comment.PlaceholderText = "";
             textBox_comment.SelectedText = "";
-            textBox_comment.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            textBox_comment.ShadowDecoration.CustomizableEdges = customizableEdges6;
             textBox_comment.Size = new Size(822, 79);
             textBox_comment.TabIndex = 18;
             // 
             // btn_send
             // 
-            btn_send.CustomizableEdges = customizableEdges3;
+            btn_send.CustomizableEdges = customizableEdges7;
             btn_send.DisabledState.BorderColor = Color.DarkGray;
             btn_send.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_send.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -232,7 +232,7 @@
             btn_send.ForeColor = Color.White;
             btn_send.Location = new Point(778, 958);
             btn_send.Name = "btn_send";
-            btn_send.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_send.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btn_send.Size = new Size(93, 47);
             btn_send.TabIndex = 19;
             btn_send.Text = "Gửi";
@@ -272,8 +272,8 @@
             Controls.Add(btn_send);
             Controls.Add(textBox_comment);
             Controls.Add(status);
-            Controls.Add(label16);
-            Controls.Add(book_type);
+            Controls.Add(description);
+            Controls.Add(genre);
             Controls.Add(publication_year);
             Controls.Add(author);
             Controls.Add(Name);
@@ -313,8 +313,8 @@
         private Label Name;
         private Label author;
         private Label publication_year;
-        private Label book_type;
-        private Label label16;
+        private Label genre;
+        private Label description;
         private Label status;
         private Guna.UI2.WinForms.Guna2TextBox textBox_comment;
         private Guna.UI2.WinForms.Guna2Button btn_send;

@@ -1,4 +1,5 @@
-﻿using QLSach.component;
+﻿using Guna.UI2.WinForms.Suite;
+using QLSach.component;
 using QLSach.controllers;
 using QLSach.database.models;
 using QLSach.dbContext.models;
@@ -28,6 +29,10 @@ namespace QLSach.view
             BookQuery query = new BookQuery();
             Book? book1 = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
             Name.Text = book1?.name;
+            author.Text = query.getBookAuthor(book1.Id);
+            genre.Text = query.getBookGenre(book1.Id);
+            publication_year.Text = book1.year_public.ToString();
+            description.Text = book1.description;
 
             //string imagePath = Path.Combine("resources", "images", "poster.png");
             String imagePath = ".\\resources\\images\\book.png";
@@ -50,7 +55,6 @@ namespace QLSach.view
             {
                 if (o.parent_id.HasValue)
                 {
-                    MessageBox.Show(comments.Count.ToString());
                     comment comment1 = new comment();
                     comment1.Content = o.content;
                     comment1.subComment();
