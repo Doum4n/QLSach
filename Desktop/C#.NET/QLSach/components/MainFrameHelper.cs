@@ -14,7 +14,6 @@ namespace QLSach.component
         private String _path;
         public delegate void ActivePathChangedHandler(String newValue);
         public event ActivePathChangedHandler ActivePathChanged;
-        public Guna.UI2.WinForms.Guna2Panel PaneNav {  get; set; }
 
         //temp
         private int _id;
@@ -75,7 +74,6 @@ namespace QLSach.component
             child.parent = this;
             children.AddLast(child);
 
-            Singleton.getInstance.priviouState = this;
             Visit(child);
         }
 

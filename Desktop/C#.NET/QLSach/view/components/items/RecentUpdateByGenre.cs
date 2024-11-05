@@ -31,7 +31,7 @@ namespace QLSach.view
         {
             this.lb_genre.Text = Genre;
             pagination = new(tablePane_recentUpdate, 0, 10, 10);
-            pagination.books = query.getBookByGenre(GenreId);
+            pagination.books = query.get10BooksByGenre(GenreId);
             //pagination.books.ForEach(book => { MessageBox.Show(book.genre_id.ToString()); });
             //MessageBox.Show(Singleton.getInstance.BookHelper.genreId.ToString());
             pagination.LoadData();

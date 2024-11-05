@@ -26,8 +26,9 @@ namespace QLSach.component
         public BookHelper BookHelper { get; }
 
         public Node State { get; set; }
-        public Node priviouState { get; set; }
-        public int index { get; set; }
+
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public Singleton()
         {
@@ -53,15 +54,6 @@ namespace QLSach.component
         public MainFrameHelper MainFrameHelper { get { return mainFrameHelper; } }
         public FormInitilize Initilize { get { return initilize; } }
 
-        public void Increase()
-        {
-            index++;
-        }
-
-        public void Decrease()
-        {
-            index--;
-        }
     }
 
 }

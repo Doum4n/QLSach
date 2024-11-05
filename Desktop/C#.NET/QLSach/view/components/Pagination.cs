@@ -40,7 +40,6 @@ namespace QLSach.view.components
                 tablePane.RowCount = 0;
             }
 
-
             tablePane.SetCellPosition(bookItem,
                 new TableLayoutPanelCellPosition(
                     tablePane.ColumnCount,
@@ -56,8 +55,10 @@ namespace QLSach.view.components
         {
 
             List<Book> Books = books;
+            //when pageSize > column count
             int offset = 0;
-            int lastIndex = (int)Math.Floor(bookQuery.getBooks().Count / (pageSize * 1.0)) - 1;
+            int lastIndex = (int)Math.Floor(books.Count / (pageSize * 1.0)) - 1;
+            //for last page
             if (currentIndex == lastIndex)
             {
                 int count = Books.Count();
@@ -67,35 +68,25 @@ namespace QLSach.view.components
                     offset++;
                 }
             }
-            
-            int prev_pageSize = pageSize;
-            int prev_colCount = colCount;
 
+            //minus until pageSize == number of books (column)
+            //when currentIndex = lastIndex
             while (pageSize > books.Count())
             {
                 pageSize--;
-                colCount--;                              
+                colCount--;                             
                 offset = 0;
             }
 
-
             for (int i = pageSize * currentIndex; i < (pageSize * currentIndex + pageSize) - offset; i++)
             {
-                //MessageBox.Show(i.ToString());
                 if (!Books[i].Id.Equals(null))
                 {
                     book book1 = new book();
-                    //Singleton.getInstance.MainFrameHelper.Id = Books[i].id;
                     book1.Id = Books[i].Id;
-                    //book1.Name = Books[i].name;
-                    //book1.Author = bookQuery.getBookAuthor(Books[i].Id);
-                    //book1.Source = "Internet";
                     setData(book1);
                 }
             }
-
-            pageSize = prev_pageSize;
-            colCount = prev_colCount;
         }
 
         public void btn_first_Click()
@@ -108,7 +99,11 @@ namespace QLSach.view.components
 
         public void btn_next_Click()
         {
-            int lastIndex = (int)Math.Floor(bookQuery.getBooks().Count / (pageSize * 1.0)) - 1;
+            int lastIndex = (int)Math.Floor(books.Count / (pageSize * 1.0)) - 1;
+            if(lastIndex < 1)
+            {
+                lastIndex = 0;
+            }
             if (currentIndex < lastIndex)
             {
                 currentIndex += 1;
@@ -131,7 +126,13 @@ namespace QLSach.view.components
 
         public void btn_last_Click()
         {
-            currentIndex = (int)Math.Floor(bookQuery.getBooks().Count / (pageSize * 1.0)) - 1;
+            //- 1 when there are multiple pages
+            currentIndex = (int)Math.Floor(books.Count / (pageSize * 1.0)) - 1;
+            // when currentIndex = lastIndex
+            if (currentIndex < 1)
+            {
+                currentIndex = 0;
+            }
             tablePane.Controls.Clear();
             LoadData();
         }

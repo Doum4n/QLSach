@@ -10,15 +10,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using QLSach.component;
+using QLSach.controllers;
+using QLSach.view.components;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace QLSach.view
 {
   
     public partial class Mainframe : Form
     {
-
         private bool isBookSelected = false;
         private bool isDigitalSelected = false;
+        private GenreQuery query = new GenreQuery();
+        private BookQuery bookQuery = new BookQuery();
 
         int count = 1;
 
@@ -26,7 +30,6 @@ namespace QLSach.view
         {
             InitializeComponent();
             Singleton.getInstance.MainFrameHelper.ActivePathChanged += OnActivated;
-
         }
 
         private void OnActivated(string newValue)
@@ -49,14 +52,41 @@ namespace QLSach.view
 
         private void Mainframe_Load(object sender, EventArgs e)
         {
+            lb_name.Text = Singleton.getInstance.Username;
+            foreach (var genre in query.getGenre_name_id())
+            {
+                Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
+                btn.Text = genre.Value;
+                btn.Dock = DockStyle.Top;
+                btn.FillColor = Color.Chocolate;
+                btn.Click += new EventHandler(onClick);
+                btn.Name = genre.Key.ToString();
+                pane_btnSach.Controls.Add(btn);
+            }
+        }
 
+        private void onClick(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button btn = sender as Guna.UI2.WinForms.Guna2Button;
+            if (btn != null)
+                loadBookByGenre(int.Parse(btn.Name), btn.Text);
+        }
+
+        private void loadBookByGenre(int GenreId, string GenreName)
+        {
+            BookByGenre bookByGenre = new BookByGenre();
+            bookByGenre.genreId = GenreId;
+            bookByGenre.genreName = GenreName;
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
+               bookByGenre
+            );
         }
 
         private void toggle()
         {
             isBookSelected = !isBookSelected;
         }
-
 
         private void btn_digitalBook_Click(object sender, EventArgs e)
         {
@@ -85,8 +115,6 @@ namespace QLSach.view
                     addControl(pre.getState());
                     Singleton.getInstance.State = pre;
                 }
-
-                //Singleton.getInstance.MainFrameHelper.Node.DeleteNode( cur );
             }
         }
 

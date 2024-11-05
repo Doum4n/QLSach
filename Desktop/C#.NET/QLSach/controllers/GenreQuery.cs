@@ -14,5 +14,12 @@ namespace QLSach.controllers
         {
             return Singleton.getInstance.Data.Genre.ToList();
         }
+
+        public Dictionary<int, string> getGenre_name_id()
+        {
+            return Singleton.getInstance.Data.Genre.ToDictionary(
+                g => g.id, g => g.name
+            );
+        }
     }
 }

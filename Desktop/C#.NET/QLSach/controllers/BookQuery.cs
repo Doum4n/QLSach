@@ -38,9 +38,14 @@ namespace QLSach.controllers
             return Singleton.getInstance.Data.Authors.Where(o => o.Id == authorId).Select(o => o.name).FirstOrDefault();
         }
 
-        public List<Book> getBookByGenre(int genreId)
+        public List<Book> get10BooksByGenre(int genreId)
         {
             return Singleton.getInstance.Data.Books.Where(o => o.genre_id == genreId).Take(10).ToList();
+        }
+
+        public List<Book> getBooksByGenre(int genreId)
+        {
+            return Singleton.getInstance.Data.Books.Where(o => o.genre_id == genreId).ToList();
         }
 
         public List<Book> getMostViewBooks()

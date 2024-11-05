@@ -1,4 +1,5 @@
-﻿using QLSach.view;
+﻿using QLSach.component;
+using QLSach.view;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,9 @@ namespace QLSach
 
         private void SignIn_click(object sender, EventArgs e)
         {
+            Singleton.getInstance.Username = tb_name.Text;
+            Singleton.getInstance.Password = tb_pw.Text;
+
             Mainframe mainframe = new Mainframe();
             mainframe.Show();
 
