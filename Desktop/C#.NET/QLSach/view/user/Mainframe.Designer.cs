@@ -57,6 +57,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            menuStrip1 = new MenuStrip();
+            menuToolStripMenuItem = new ToolStripMenuItem();
+            menu_item_borowed = new ToolStripMenuItem();
+            menu_item_registered = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             lb_name = new Label();
             label1 = new Label();
@@ -74,7 +78,14 @@
             lb_path = new Label();
             btn_undo = new Guna.UI2.WinForms.Guna2Button();
             btn_redo = new Guna.UI2.WinForms.Guna2Button();
+            BottomToolStripPanel = new ToolStripPanel();
+            TopToolStripPanel = new ToolStripPanel();
+            miniToolStrip = new MenuStrip();
+            RightToolStripPanel = new ToolStripPanel();
+            LeftToolStripPanel = new ToolStripPanel();
+            ContentPanel = new ToolStripContentPanel();
             guna2Panel3.SuspendLayout();
+            menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
             pane_btnDigitalBook.SuspendLayout();
@@ -82,6 +93,7 @@
             // 
             // guna2Panel3
             // 
+            guna2Panel3.Controls.Add(menuStrip1);
             guna2Panel3.Controls.Add(pictureBox1);
             guna2Panel3.Controls.Add(lb_name);
             guna2Panel3.Controls.Add(label1);
@@ -94,6 +106,38 @@
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Panel3.Size = new Size(1138, 49);
             guna2Panel3.TabIndex = 5;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
+            menuStrip1.Location = new Point(939, 11);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(218, 28);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menu_item_borowed, menu_item_registered });
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(60, 24);
+            menuToolStripMenuItem.Text = "Menu";
+            // 
+            // menu_item_borowed
+            // 
+            menu_item_borowed.Name = "menu_item_borowed";
+            menu_item_borowed.Size = new Size(224, 26);
+            menu_item_borowed.Text = "Sách đã mượn";
+            menu_item_borowed.Click += menu_item_borowed_Click;
+            // 
+            // menu_item_registered
+            // 
+            menu_item_registered.Name = "menu_item_registered";
+            menu_item_registered.Size = new Size(224, 26);
+            menu_item_registered.Text = "Sách đã đăng ký";
+            menu_item_registered.Click += menu_item_registered_Click;
             // 
             // pictureBox1
             // 
@@ -353,6 +397,54 @@
             btn_redo.Text = "=>";
             btn_redo.Click += btn_redo_Click;
             // 
+            // BottomToolStripPanel
+            // 
+            BottomToolStripPanel.Location = new Point(0, 0);
+            BottomToolStripPanel.Name = "BottomToolStripPanel";
+            BottomToolStripPanel.Orientation = Orientation.Horizontal;
+            BottomToolStripPanel.RowMargin = new Padding(4, 0, 0, 0);
+            BottomToolStripPanel.Size = new Size(0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            TopToolStripPanel.Location = new Point(0, 0);
+            TopToolStripPanel.Name = "TopToolStripPanel";
+            TopToolStripPanel.Orientation = Orientation.Horizontal;
+            TopToolStripPanel.RowMargin = new Padding(4, 0, 0, 0);
+            TopToolStripPanel.Size = new Size(0, 0);
+            // 
+            // miniToolStrip
+            // 
+            miniToolStrip.AccessibleName = "New item selection";
+            miniToolStrip.AccessibleRole = AccessibleRole.ComboBox;
+            miniToolStrip.AutoSize = false;
+            miniToolStrip.Dock = DockStyle.None;
+            miniToolStrip.ImageScalingSize = new Size(20, 20);
+            miniToolStrip.Location = new Point(6, 2);
+            miniToolStrip.Name = "miniToolStrip";
+            miniToolStrip.Size = new Size(188, 24);
+            miniToolStrip.TabIndex = 0;
+            // 
+            // RightToolStripPanel
+            // 
+            RightToolStripPanel.Location = new Point(0, 0);
+            RightToolStripPanel.Name = "RightToolStripPanel";
+            RightToolStripPanel.Orientation = Orientation.Horizontal;
+            RightToolStripPanel.RowMargin = new Padding(4, 0, 0, 0);
+            RightToolStripPanel.Size = new Size(0, 0);
+            // 
+            // LeftToolStripPanel
+            // 
+            LeftToolStripPanel.Location = new Point(0, 0);
+            LeftToolStripPanel.Name = "LeftToolStripPanel";
+            LeftToolStripPanel.Orientation = Orientation.Horizontal;
+            LeftToolStripPanel.RowMargin = new Padding(4, 0, 0, 0);
+            LeftToolStripPanel.Size = new Size(0, 0);
+            // 
+            // ContentPanel
+            // 
+            ContentPanel.Size = new Size(163, 219);
+            // 
             // Mainframe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -370,6 +462,8 @@
             Load += Mainframe_Load;
             guna2Panel3.ResumeLayout(false);
             guna2Panel3.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
@@ -398,5 +492,15 @@
         private Guna.UI2.WinForms.Guna2Button btn_redo;
         private PictureBox pictureBox1;
         private Label lb_name;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem menu_item_borowed;
+        private ToolStripMenuItem menu_item_registered;
+        private ToolStripPanel BottomToolStripPanel;
+        private ToolStripPanel TopToolStripPanel;
+        private MenuStrip miniToolStrip;
+        private ToolStripPanel RightToolStripPanel;
+        private ToolStripPanel LeftToolStripPanel;
+        private ToolStripContentPanel ContentPanel;
     }
 }

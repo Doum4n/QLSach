@@ -45,20 +45,20 @@ namespace QLSach.view
         private void btn_newlyUpdate_Click(object sender, EventArgs e)
         {
             pane.Controls.Clear();
-            pane.Controls.Add(new PaneRecent());
+            pane.Controls.Add(Singleton.getInstance.Initilize.PaneRecent);
         }
         
 
         private void btn_popula_Click(object sender, EventArgs e)
         {
             pane.Controls.Clear();
-            pane.Controls.Add(new PanePopular());
+            pane.Controls.Add(Singleton.getInstance.Initilize.PanePopular);
         }
 
         private void btn_mostView_Click(object sender, EventArgs e)
         {
             pane.Controls.Clear();
-            pane.Controls.Add(new PaneMostView());
+            pane.Controls.Add(Singleton.getInstance.Initilize.PaneMostView);
         }
     }
 }

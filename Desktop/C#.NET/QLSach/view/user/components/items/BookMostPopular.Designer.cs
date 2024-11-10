@@ -32,10 +32,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lb_index = new Label();
             picture = new PictureBox();
-            btn_wantToRead = new Guna.UI2.WinForms.Guna2Button();
+            btn_register = new Guna.UI2.WinForms.Guna2Button();
             rating = new Guna.UI2.WinForms.Guna2RatingStar();
             lb_author = new Label();
             lb_bookName = new Label();
+            lb_status = new Label();
+            label1 = new Label();
             tb_info = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             SuspendLayout();
@@ -59,22 +61,22 @@
             picture.TabStop = false;
             picture.Click += onClick;
             // 
-            // btn_wantToRead
+            // btn_register
             // 
-            btn_wantToRead.CustomizableEdges = customizableEdges3;
-            btn_wantToRead.DisabledState.BorderColor = Color.DarkGray;
-            btn_wantToRead.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_wantToRead.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_wantToRead.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_wantToRead.Font = new Font("Segoe UI", 9F);
-            btn_wantToRead.ForeColor = Color.White;
-            btn_wantToRead.Location = new Point(195, 196);
-            btn_wantToRead.Name = "btn_wantToRead";
-            btn_wantToRead.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btn_wantToRead.Size = new Size(225, 56);
-            btn_wantToRead.TabIndex = 11;
-            btn_wantToRead.Text = "Muốn đọc";
-            btn_wantToRead.Click += btn_wantToRead_Click;
+            btn_register.CustomizableEdges = customizableEdges3;
+            btn_register.DisabledState.BorderColor = Color.DarkGray;
+            btn_register.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_register.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_register.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_register.Font = new Font("Segoe UI", 9F);
+            btn_register.ForeColor = Color.White;
+            btn_register.Location = new Point(195, 196);
+            btn_register.Name = "btn_register";
+            btn_register.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_register.Size = new Size(225, 56);
+            btn_register.TabIndex = 11;
+            btn_register.Text = "Muốn đọc";
+            btn_register.Click += btn_wantToRead_Click;
             // 
             // rating
             // 
@@ -101,15 +103,31 @@
             lb_bookName.TabIndex = 8;
             lb_bookName.Text = "Tên sách";
             // 
+            // lb_status
+            // 
+            lb_status.AutoSize = true;
+            lb_status.Location = new Point(289, 276);
+            lb_status.Name = "lb_status";
+            lb_status.Size = new Size(22, 20);
+            lb_status.TabIndex = 17;
+            lb_status.Text = "lb";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(195, 276);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 18;
+            label1.Text = "Trạng thái:";
+            // 
             // tb_info
             // 
             tb_info.BorderStyle = BorderStyle.None;
-            tb_info.Location = new Point(195, 259);
+            tb_info.Location = new Point(199, 308);
             tb_info.Name = "tb_info";
-            tb_info.ReadOnly = true;
-            tb_info.ScrollBars = RichTextBoxScrollBars.Vertical;
-            tb_info.Size = new Size(554, 46);
-            tb_info.TabIndex = 16;
+            tb_info.Size = new Size(549, 49);
+            tb_info.TabIndex = 19;
             tb_info.Text = "";
             // 
             // BookMostPopular
@@ -118,14 +136,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             Controls.Add(tb_info);
+            Controls.Add(label1);
+            Controls.Add(lb_status);
             Controls.Add(lb_index);
             Controls.Add(picture);
-            Controls.Add(btn_wantToRead);
+            Controls.Add(btn_register);
             Controls.Add(rating);
             Controls.Add(lb_author);
             Controls.Add(lb_bookName);
             Name = "BookMostPopular";
-            Size = new Size(760, 313);
+            Size = new Size(760, 366);
             Load += BookMostPopular_Load;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             ResumeLayout(false);
@@ -136,10 +156,12 @@
 
         private Label lb_index;
         private PictureBox picture;
-        private Guna.UI2.WinForms.Guna2Button btn_wantToRead;
+        private Guna.UI2.WinForms.Guna2Button btn_register;
         private Guna.UI2.WinForms.Guna2RatingStar rating;
         private Label lb_author;
         private Label lb_bookName;
+        private Label lb_status;
+        private Label label1;
         private RichTextBox tb_info;
     }
 }

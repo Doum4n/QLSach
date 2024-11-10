@@ -12,11 +12,12 @@ using System.Xml.Linq;
 using QLSach.component;
 using QLSach.controllers;
 using QLSach.view.components;
+using QLSach.view.user;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace QLSach.view
 {
-  
+
     public partial class Mainframe : Form
     {
         private bool isBookSelected = false;
@@ -40,18 +41,24 @@ namespace QLSach.view
 
         private void btn_book_Click(object sender, EventArgs e)
         {
-            Singleton.getInstance.MainFrameHelper.MainPane = Pane_conten;
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-                    Singleton.getInstance.Initilize.DashBoard
-                    //new DashBoard()
-                );
+            LoadDashBoard();
 
             isBookSelected = !isBookSelected;
             pane_btnSach.Visible = isBookSelected;
         }
 
+        private void LoadDashBoard()
+        {
+            Singleton.getInstance.MainFrameHelper.MainPane = Pane_conten;
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
+                Singleton.getInstance.Initilize.DashBoard
+            );
+        }
+
         private void Mainframe_Load(object sender, EventArgs e)
         {
+            LoadDashBoard();
+
             lb_name.Text = Singleton.getInstance.Username;
             foreach (var genre in query.getGenre_name_id())
             {
@@ -63,6 +70,8 @@ namespace QLSach.view
                 btn.Name = genre.Key.ToString();
                 pane_btnSach.Controls.Add(btn);
             }
+
+            Singleton.getInstance.RegisterHelper.registration_data = new BindingSource();
         }
 
         private void onClick(object sender, EventArgs e)
@@ -108,7 +117,7 @@ namespace QLSach.view
         {
             Node cur = Singleton.getInstance.State;
             Node pre = cur.parent;
-            if ( cur.parent != null)
+            if (cur.parent != null)
             {
                 if (cur != pre)
                 {
@@ -125,6 +134,22 @@ namespace QLSach.view
                 Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
                 Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(control);
             }
+        }
+
+        private void menu_item_borowed_Click(object sender, EventArgs e)
+        {
+            BorrowedBooks borrowed = new BorrowedBooks();
+            borrowed.UserId = 9;
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(borrowed);
+        }
+
+        private void menu_item_registered_Click(object sender, EventArgs e)
+        {
+            RegistedBooks registed = new RegistedBooks();
+            registed.UserId = 9;
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(registed);
         }
     }
 }

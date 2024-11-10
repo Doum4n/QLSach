@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lb_bookName = new Label();
             lb_author = new Label();
             rating = new Guna.UI2.WinForms.Guna2RatingStar();
-            btn_wantToRead = new Guna.UI2.WinForms.Guna2Button();
+            btn_borrow = new Guna.UI2.WinForms.Guna2Button();
             picture = new PictureBox();
             lb_reading = new Label();
             lb_index = new Label();
+            label1 = new Label();
+            lb_status = new Label();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             SuspendLayout();
             // 
@@ -65,22 +67,22 @@
             rating.Size = new Size(150, 35);
             rating.TabIndex = 3;
             // 
-            // btn_wantToRead
+            // btn_borrow
             // 
-            btn_wantToRead.CustomizableEdges = customizableEdges3;
-            btn_wantToRead.DisabledState.BorderColor = Color.DarkGray;
-            btn_wantToRead.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_wantToRead.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_wantToRead.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_wantToRead.Font = new Font("Segoe UI", 9F);
-            btn_wantToRead.ForeColor = Color.White;
-            btn_wantToRead.Location = new Point(525, 87);
-            btn_wantToRead.Name = "btn_wantToRead";
-            btn_wantToRead.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btn_wantToRead.Size = new Size(225, 56);
-            btn_wantToRead.TabIndex = 4;
-            btn_wantToRead.Text = "Muốn đọc";
-            btn_wantToRead.Click += btn_wantToRead_Click;
+            btn_borrow.CustomizableEdges = customizableEdges1;
+            btn_borrow.DisabledState.BorderColor = Color.DarkGray;
+            btn_borrow.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_borrow.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_borrow.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_borrow.Font = new Font("Segoe UI", 9F);
+            btn_borrow.ForeColor = Color.White;
+            btn_borrow.Location = new Point(524, 87);
+            btn_borrow.Name = "btn_borrow";
+            btn_borrow.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btn_borrow.Size = new Size(225, 56);
+            btn_borrow.TabIndex = 4;
+            btn_borrow.Text = "Mượn";
+            btn_borrow.Click += btn_borrow_Click;
             // 
             // picture
             // 
@@ -110,13 +112,33 @@
             lb_index.TabIndex = 7;
             lb_index.Text = "#1";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(524, 178);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 8;
+            label1.Text = "Trạng thái:";
+            // 
+            // lb_status
+            // 
+            lb_status.AutoSize = true;
+            lb_status.Location = new Point(608, 178);
+            lb_status.Name = "lb_status";
+            lb_status.Size = new Size(50, 20);
+            lb_status.TabIndex = 9;
+            lb_status.Text = "label2";
+            // 
             // BookMostView
             // 
             AutoScaleMode = AutoScaleMode.None;
+            Controls.Add(lb_status);
+            Controls.Add(label1);
             Controls.Add(lb_index);
             Controls.Add(lb_reading);
             Controls.Add(picture);
-            Controls.Add(btn_wantToRead);
+            Controls.Add(btn_borrow);
             Controls.Add(rating);
             Controls.Add(lb_author);
             Controls.Add(lb_bookName);
@@ -132,9 +154,11 @@
         private Label lb_bookName;
         private Label lb_author;
         private Guna.UI2.WinForms.Guna2RatingStar rating;
-        private Guna.UI2.WinForms.Guna2Button btn_wantToRead;
+        private Guna.UI2.WinForms.Guna2Button btn_borrow;
         private PictureBox picture;
         private Label lb_reading;
         private Label lb_index;
+        private Label label1;
+        private Label lb_status;
     }
 }

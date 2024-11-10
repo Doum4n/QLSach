@@ -23,19 +23,25 @@ namespace QLSach.component
         //Intilize From
         private readonly FormInitilize initilize;
 
-        public BookHelper BookHelper { get; }
+        public loadImage LoadImg { get; }
 
         public Node State { get; set; }
 
         public string Username { get; set; }
         public string Password { get; set; }
+        public int UserId { get; set; }
+
+        public RegisterHelper RegisterHelper { get; set; }
+        public AdminHelper AdminHelper { get; set; }
 
         public Singleton()
         {
             db = new();
             mainFrameHelper = new();
             initilize = new();
-            BookHelper = new();
+            LoadImg = new();
+            RegisterHelper = new RegisterHelper();
+            AdminHelper = new AdminHelper();
         }
 
         public static Singleton getInstance

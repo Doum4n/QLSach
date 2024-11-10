@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLSach.components
 {
-    public class BookHelper
+    public class loadImage
     {
         public int genreId {  get; set; }
         public void ShowMyImage(PictureBox picture, string fileToDisplay, int xSize, int ySize)

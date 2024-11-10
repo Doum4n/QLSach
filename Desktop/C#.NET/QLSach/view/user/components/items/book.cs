@@ -21,7 +21,7 @@ namespace QLSach.view.components.items
         {
             InitializeComponent();
             String imagePath = ".\\resources\\images\\book.png";
-            Singleton.getInstance.BookHelper.ShowMyImage(picture, imagePath, 153, 203);
+            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 153, 203);
         }
 
         private void onClick(object sender, EventArgs e)

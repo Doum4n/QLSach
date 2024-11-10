@@ -24,8 +24,17 @@ namespace QLSach
             Singleton.getInstance.Username = tb_name.Text;
             Singleton.getInstance.Password = tb_pw.Text;
 
-            Mainframe mainframe = new Mainframe();
-            mainframe.Show();
+            if(tb_name.Text == "admin")
+            {
+                Admin admin = new Admin();
+                admin.Show();
+            }
+            else
+            {
+                Mainframe mainframe = new Mainframe();
+                Singleton.getInstance.UserId = 5;
+                mainframe.Show();
+            }
 
             this.Hide();
         }

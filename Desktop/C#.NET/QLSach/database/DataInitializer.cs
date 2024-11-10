@@ -50,10 +50,14 @@ namespace QLSach.database
 
             var BookId = 1;
             var id = 0;
+            Faker faker = new Faker();
+            int fake_quantity = faker.Random.Byte(0, 10);
             var fakeBook = new Faker<Book>()
                 .RuleFor(o => o.name, f => f.Lorem.Sentence())
                 .RuleFor(o => o.Id, f => BookId++)
                 .RuleFor(o => o.description, f => f.Lorem.Paragraph())
+                .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
+                .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
                 .RuleFor(o => o.year_public, f => f.Random.Int(1900, DateTime.Now.Year))
                 .RuleFor(o => o.updated_at, f => DateTime.Now)
@@ -97,6 +101,35 @@ namespace QLSach.database
             fakeComment.RuleFor(o => o.parent_id, f => f.PickRandom(comments.Select(o => o.Id)));
             var comments_0 = fakeComment.Generate(16);
 
+            //register
+            var register_id = 1;
+            var fakeRegister = new Faker<models.Register>()
+               .RuleFor(o => o.Id, f => register_id++)
+               .RuleFor(o => o.BookId, f => f.PickRandom(books.Select(o => o.Id)))
+               .RuleFor(o => o.UserId, f => f.PickRandom(users.Select(o => o.Id)))
+               .RuleFor(o => o.Status, f => f.PickRandom<Status_borrow>())
+               .RuleFor(o => o.register_at, f => f.Date.Recent(7))
+               .RuleFor(o => o.borrow_at, (f, o) =>
+                {
+                    if (o.Status == Status_borrow.Borrowed || o.Status == Status_borrow.Completed)
+                        return f.Date.Recent(6);
+                    return null;
+                })
+                .RuleFor(o => o.expected_at, (f, o) => 
+                {
+                    if (o.Status == Status_borrow.Canceled)
+                        return null;
+                    return o.register_at.AddDays(7); 
+                })
+                .RuleFor(o => o.return_at, (f, o) =>
+                {
+                    if (o.Status == Status_borrow.Completed)
+                        return f.Date.Recent(3);
+                    return null;
+                });
+
+            var register = fakeRegister.Generate(16);
+
             //assign data
             modelBuilder.Entity<Genre>().HasData(genres);
             modelBuilder.Entity<Book>().HasData(books);
@@ -105,6 +138,7 @@ namespace QLSach.database
             modelBuilder.Entity<models.User>().HasData(users);
             modelBuilder.Entity<Comment>().HasData(comments);
             modelBuilder.Entity<Comment>().HasData(comments_0);
+            modelBuilder.Entity<Register>().HasData(register);
         }
     }
 }

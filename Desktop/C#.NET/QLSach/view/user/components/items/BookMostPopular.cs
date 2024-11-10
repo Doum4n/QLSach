@@ -1,4 +1,5 @@
 ﻿using QLSach.component;
+using QLSach.dbContext.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,29 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Status = QLSach.dbContext.models.Status;
 
 namespace QLSach.view.components.items
 {
-    public partial class BookMostView : UserControl
+    public partial class BookMostPopular : UserControl
     {
         public string bookName { get; set; }
         public string author { get; set; }
         public int id { get; set; }
         public string index { get; set; }
-        public string views {  get; set; }
-        public BookMostView()
+        public string info { get; set; }
+        public dbContext.models.Status status { get; set; }
+        public BookMostPopular()
         {
             InitializeComponent();
             String imagePath = ".\\resources\\images\\book.png";
-            Singleton.getInstance.BookHelper.ShowMyImage(picture, imagePath, 153, 203);
-        }
-
-        private void BookMostView_Load(object sender, EventArgs e)
-        {
-            this.lb_author.Text = author;
-            this.lb_bookName.Text = bookName;
-            this.lb_index.Text = index;
-            this.lb_reading.Text = views.ToString();
+            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 153, 203);
         }
 
         private void btn_wantToRead_Click(object sender, EventArgs e)
@@ -44,5 +40,20 @@ namespace QLSach.view.components.items
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
         }
+
+        private void BookMostPopular_Load(object sender, EventArgs e)
+        {
+            this.lb_author.Text = author;
+            this.lb_bookName.Text = bookName;
+            this.lb_index.Text = index;
+            this.lb_status.Text = status.ToString();
+            this.tb_info.Text = info;
+
+            if (status == Status.borrowed)
+                btn_register.Text = "Đăng ký";
+            else
+                btn_register.Text = "Mượn";
+        }
+       
     }
 }

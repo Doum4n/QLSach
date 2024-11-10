@@ -12,6 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.6.1" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Jenga.NET" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,7 +25,6 @@
     <Folder Include="database\Migrations\" />
     <Folder Include="database\images\" />
     <Folder Include="Migrations\" />
-    <Folder Include="view\Interface\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -61,7 +61,7 @@
             // 
             tb_name.Cursor = Cursors.IBeam;
             tb_name.CustomizableEdges = customizableEdges3;
-            tb_name.DefaultText = "";
+            tb_name.DefaultText = "admin";
             tb_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_name.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);

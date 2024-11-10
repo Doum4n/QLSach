@@ -1,49 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="view\BookByGenre.cs">
+    <Compile Update="view\admin\addBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\admin\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\admin\book_management.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\BookDetail.cs">
+    <Compile Update="view\user\BookByGenre.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\book.cs">
+    <Compile Update="view\user\BookDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\BookMostPopular.cs">
+    <Compile Update="view\user\BorrowedBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\BookMostView.cs">
+    <Compile Update="view\user\components\items\book.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\comment.cs">
+    <Compile Update="view\user\components\items\BookMostPopular.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\PaneMostView.cs">
+    <Compile Update="view\user\components\items\BookMostView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\PanePopular.cs">
+    <Compile Update="view\user\components\items\comment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\PaneRecent.cs">
+    <Compile Update="view\user\components\items\PaneMostView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\CustomPictureBox.cs">
+    <Compile Update="view\user\components\items\PanePopular.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\user\components\items\PaneRecent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\user\CustomPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="view\DashBoard.cs">
+    <Compile Update="view\user\DashBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Mainframe.cs">
+    <Compile Update="view\user\Mainframe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\RecentUpdate.cs">
+    <Compile Update="view\user\RecentUpdate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\components\items\RecentUpdateByGenre.cs">
+    <Compile Update="view\user\components\items\RecentUpdateByGenre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\user\RegistedBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

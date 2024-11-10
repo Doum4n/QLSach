@@ -70,6 +70,16 @@ namespace QLSach.database
                 .HasOne(c => c.parent)
                 .WithMany(c => c.childrents)
                 .HasForeignKey(c => c.parent_id);
+
+            //Register
+            modelBuilder.Entity<User>()
+                .HasMany(o => o.Books)
+                .WithMany(u => u.Users)
+                .UsingEntity<Register>();
+
+            modelBuilder.Entity<Register>()
+                .Property(o => o.Status)
+                .HasConversion<String>();
         }
     }
 }

@@ -32,6 +32,7 @@ namespace QLSach.view.components.items
                 bookMostView.index = $"#{i++}";
                 bookMostView.views = $"Lượt xem: {item.views}";
                 bookMostView.id = item.Id;
+                bookMostView.status = item.status;
                 tbLayoutPanel.SetRow(bookMostView, tbLayoutPanel.RowCount++);
                 tbLayoutPanel.Controls.Add(bookMostView);
             }

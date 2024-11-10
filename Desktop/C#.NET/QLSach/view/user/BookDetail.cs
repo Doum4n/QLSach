@@ -36,7 +36,7 @@ namespace QLSach.view
 
             //string imagePath = Path.Combine("resources", "images", "poster.png");
             String imagePath = ".\\resources\\images\\book.png";
-            Singleton.getInstance.BookHelper.ShowMyImage(picture, imagePath, 223, 350);
+            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 223, 350);
 
             tb_pane_comment.RowCount = 0;
             //tb_pane_comment.size

@@ -32,6 +32,7 @@ namespace QLSach.view.components.items
                 popular.index = $"#{i++}";
                 popular.info = item.description;
                 popular.id = item.Id;
+                popular.status = item.status;
                 tbLayoutPanel.SetRow(popular, tbLayoutPanel.RowCount++);
                 tbLayoutPanel.Controls.Add(popular);
             }
