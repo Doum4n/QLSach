@@ -23,7 +23,6 @@ namespace QLSach.view
         public recentUpdate()
         {
             InitializeComponent();
-            //TableLayoutPanel have 1 column 1 row
             //VERY IMPORTANT!!!
             tablePane_recentUpdate.RowCount = 0;
             tablePane_recentUpdate.ColumnCount = 0;

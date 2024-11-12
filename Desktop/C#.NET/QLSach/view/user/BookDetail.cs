@@ -18,6 +18,8 @@ namespace QLSach.view
 {
     public partial class BookDetail : UserControl
     {
+        BookQuery query = new BookQuery();
+        Book? bookQuery = new Book();
         public BookDetail()
         {
             InitializeComponent();
@@ -26,24 +28,25 @@ namespace QLSach.view
 
         private void LoadData()
         {
-            BookQuery query = new BookQuery();
-            Book? book1 = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
-            Name.Text = book1?.name;
-            author.Text = query.getBookAuthor(book1.Id);
-            genre.Text = query.getBookGenre(book1.Id);
-            publication_year.Text = book1.year_public.ToString();
-            description.Text = book1.description;
+            bookQuery = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
+            Name.Text = bookQuery?.name;
+            author.Text = query.getBookAuthor(bookQuery.Id);
+            genre.Text = query.getBookGenre(bookQuery.Id);
+            publication_year.Text = bookQuery.year_public.ToString();
+            description.Text = bookQuery.description;
+            status.Text = bookQuery.remaining > 0 ? Status.available.ToString() : Status.borrowed.ToString();
+            lb_remaining.Text = bookQuery.remaining.ToString();
 
-            //string imagePath = Path.Combine("resources", "images", "poster.png");
             String imagePath = ".\\resources\\images\\book.png";
             Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 223, 350);
 
             tb_pane_comment.RowCount = 0;
-            //tb_pane_comment.size
         }
 
         private void BookDetail_Load(object sender, EventArgs e)
         {
+            bookQuery = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
+
             Node cur = Singleton.getInstance.State;
             Node node = new(this);
             cur.AddChild(node);
@@ -64,20 +67,22 @@ namespace QLSach.view
                 }
                 else
                 {
-
-                    //MessageBox.Show("Has " + comments.Count.ToString());
-                    //o.childrents.ForEach(o =>
-                    //{
                     comment comment = new comment();
                     comment.Content = o.content;
                     tb_pane_comment.RowCount++;
                     tb_pane_comment.SetRow(comment, tb_pane_comment.RowCount);
                     tb_pane_comment.Controls.Add(comment);
-                    //});
                 }
             });
-            //Singleton.getInstance.MainFrameHelper.Node.getLastChild().AddChild(Singleton.getInstance.State);
 
+            if (bookQuery.remaining > 0)
+            {
+                btn.Text = "Mượn";
+            }
+            else
+            {
+                btn.Text = "Đăng ký";
+            }
         }
 
         private void btn_send_Click(object sender, EventArgs e)
@@ -89,6 +94,23 @@ namespace QLSach.view
             );
 
             Singleton.getInstance.Data.SaveChanges();
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            if(status.Text == Status.borrowed.ToString())
+            {
+                Register register = new Register();
+                register.BookId = bookQuery.Id;
+                register.UserId = Singleton.getInstance.UserId;
+                register.Status = Status_borrow.Pending;
+                register.register_at = DateTime.Now;
+                Singleton.getInstance.Data.Register.Add(register);
+                Singleton.getInstance.Data.SaveChanges();
+                MessageBox.Show("Đăng ký thành công!");
+
+                Singleton.getInstance.RegisterHelper.registration_data.Add(new { register.BookId, register.register_at, register.Status });
+            }
         }
     }
 }

@@ -33,8 +33,11 @@ namespace QLSach.view.user
 
             data.DataSource = Singleton.getInstance.RegisterHelper.borrowed_data;
 
-            Singleton.getInstance.State = new(this);
-            Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
+            Node cur = Singleton.getInstance.State;
+            Node node = new Node(this);
+            cur.AddChild(node);
+            Singleton.getInstance.State = node;
+            //Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
         }
     }
 }
