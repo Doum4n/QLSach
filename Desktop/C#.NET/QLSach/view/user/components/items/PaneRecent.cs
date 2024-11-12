@@ -41,10 +41,8 @@ namespace QLSach.view.components.items
 
         private void more_newlyBook_Click(object sender, EventArgs e)
         {
-            //important
-            recentUpdate rc = new recentUpdate();
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(rc);
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new recentUpdate());
         }
     }
 }

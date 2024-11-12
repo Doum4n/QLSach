@@ -40,6 +40,9 @@
     <Compile Update="view\user\components\items\PaneRecent.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\user\components\items\SearchPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\user\CustomPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -48,6 +51,9 @@
     </Compile>
     <Compile Update="view\Login.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\user\LookupPane.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\user\Mainframe.cs">
       <SubType>Form</SubType>

@@ -65,13 +65,13 @@
             lb_name = new Label();
             label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             pane_btnDigitalBook = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            btn_digitalBook = new Guna.UI2.WinForms.Guna2Button();
+            btn_look_up = new Guna.UI2.WinForms.Guna2Button();
             pane_btnSach = new Guna.UI2.WinForms.Guna2Panel();
             btn_book = new Guna.UI2.WinForms.Guna2Button();
             Pane_conten = new Guna.UI2.WinForms.Guna2Panel();
@@ -98,7 +98,7 @@
             guna2Panel3.Controls.Add(lb_name);
             guna2Panel3.Controls.Add(label1);
             guna2Panel3.Controls.Add(guna2Button1);
-            guna2Panel3.Controls.Add(guna2TextBox1);
+            guna2Panel3.Controls.Add(tb_search);
             guna2Panel3.CustomizableEdges = customizableEdges5;
             guna2Panel3.Location = new Point(12, 15);
             guna2Panel3.Margin = new Padding(3, 4, 3, 4);
@@ -114,7 +114,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(939, 11);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(218, 28);
+            menuStrip1.Size = new Size(68, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -128,14 +128,14 @@
             // menu_item_borowed
             // 
             menu_item_borowed.Name = "menu_item_borowed";
-            menu_item_borowed.Size = new Size(224, 26);
+            menu_item_borowed.Size = new Size(200, 26);
             menu_item_borowed.Text = "Sách đã mượn";
             menu_item_borowed.Click += menu_item_borowed_Click;
             // 
             // menu_item_registered
             // 
             menu_item_registered.Name = "menu_item_registered";
-            menu_item_registered.Size = new Size(224, 26);
+            menu_item_registered.Size = new Size(200, 26);
             menu_item_registered.Text = "Sách đã đăng ký";
             menu_item_registered.Click += menu_item_registered_Click;
             // 
@@ -183,33 +183,33 @@
             guna2Button1.TabIndex = 1;
             guna2Button1.Text = "Tìm kiếm nâng cao";
             // 
-            // guna2TextBox1
+            // tb_search
             // 
-            guna2TextBox1.Cursor = Cursors.IBeam;
-            guna2TextBox1.CustomizableEdges = customizableEdges3;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(209, 2);
-            guna2TextBox1.Margin = new Padding(3, 5, 3, 5);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "Tìm kiếm";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2TextBox1.Size = new Size(355, 44);
-            guna2TextBox1.TabIndex = 0;
+            tb_search.Cursor = Cursors.IBeam;
+            tb_search.CustomizableEdges = customizableEdges3;
+            tb_search.DefaultText = "";
+            tb_search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_search.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_search.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_search.Font = new Font("Segoe UI", 9F);
+            tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_search.Location = new Point(209, 2);
+            tb_search.Margin = new Padding(3, 5, 3, 5);
+            tb_search.Name = "tb_search";
+            tb_search.PasswordChar = '\0';
+            tb_search.PlaceholderText = "Tìm kiếm";
+            tb_search.SelectedText = "";
+            tb_search.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            tb_search.Size = new Size(355, 44);
+            tb_search.TabIndex = 0;
             // 
             // guna2Panel2
             // 
             guna2Panel2.AutoScroll = true;
             guna2Panel2.Controls.Add(pane_btnDigitalBook);
-            guna2Panel2.Controls.Add(btn_digitalBook);
+            guna2Panel2.Controls.Add(btn_look_up);
             guna2Panel2.Controls.Add(pane_btnSach);
             guna2Panel2.Controls.Add(btn_book);
             guna2Panel2.CustomizableEdges = customizableEdges21;
@@ -292,24 +292,24 @@
             guna2Button2.TabIndex = 0;
             guna2Button2.Text = "guna2Button2";
             // 
-            // btn_digitalBook
+            // btn_look_up
             // 
-            btn_digitalBook.CustomizableEdges = customizableEdges15;
-            btn_digitalBook.DisabledState.BorderColor = Color.DarkGray;
-            btn_digitalBook.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_digitalBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_digitalBook.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_digitalBook.Dock = DockStyle.Top;
-            btn_digitalBook.Font = new Font("Segoe UI", 9F);
-            btn_digitalBook.ForeColor = Color.White;
-            btn_digitalBook.Location = new Point(0, 59);
-            btn_digitalBook.Margin = new Padding(3, 4, 3, 4);
-            btn_digitalBook.Name = "btn_digitalBook";
-            btn_digitalBook.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btn_digitalBook.Size = new Size(184, 59);
-            btn_digitalBook.TabIndex = 4;
-            btn_digitalBook.Text = "Sách điện tử";
-            btn_digitalBook.Click += btn_digitalBook_Click;
+            btn_look_up.CustomizableEdges = customizableEdges15;
+            btn_look_up.DisabledState.BorderColor = Color.DarkGray;
+            btn_look_up.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_look_up.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_look_up.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_look_up.Dock = DockStyle.Top;
+            btn_look_up.Font = new Font("Segoe UI", 9F);
+            btn_look_up.ForeColor = Color.White;
+            btn_look_up.Location = new Point(0, 59);
+            btn_look_up.Margin = new Padding(3, 4, 3, 4);
+            btn_look_up.Name = "btn_look_up";
+            btn_look_up.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btn_look_up.Size = new Size(184, 59);
+            btn_look_up.TabIndex = 4;
+            btn_look_up.Text = "Tra cứu";
+            btn_look_up.Click += btn_look_up_Click;
             // 
             // pane_btnSach
             // 
@@ -475,12 +475,12 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox tb_search;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel pane_btnSach;
         private Guna.UI2.WinForms.Guna2Button btn_book;
         private Guna.UI2.WinForms.Guna2Panel Pane_conten;
-        private Guna.UI2.WinForms.Guna2Button btn_digitalBook;
+        private Guna.UI2.WinForms.Guna2Button btn_look_up;
         private Guna.UI2.WinForms.Guna2Panel pane_btnDigitalBook;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;

@@ -24,11 +24,5 @@ namespace QLSach.view
             pagination.books = query.get10BooksByGenre(GenreId);
             pagination.LoadData();
         }
-
-        public bool isHasChild()
-        {
-            pagination.books = query.get10BooksByGenre(GenreId);
-            return pagination.books.Count > 0;
-        }
     }
 }

@@ -48,7 +48,7 @@ namespace QLSach.view
             bookQuery = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
 
             Node cur = Singleton.getInstance.State;
-            Node node = new(this);
+            Node node = new(new BookDetail());
             cur.AddChild(node);
 
             Singleton.getInstance.State = node;

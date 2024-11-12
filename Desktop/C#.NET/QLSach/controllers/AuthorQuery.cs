@@ -19,5 +19,10 @@ namespace QLSach.controllers
         {
             return Singleton.getInstance.Data.Authors.Select(o => o.name).ToList();
         }
+
+        public List<author> getAuthors()
+        {
+            return Singleton.getInstance.Data.Authors.ToList();
+        }
     }
 }

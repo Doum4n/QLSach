@@ -19,8 +19,7 @@ namespace QLSach.view
 {
     public partial class DashBoard : UserControl
     {
-        Node node;
-
+        //Node node;
         private controllers.BookQuery dashBoard = new controllers.BookQuery();
         private int currentIndex = 0;
 
@@ -28,8 +27,6 @@ namespace QLSach.view
         {
             InitializeComponent();
             Singleton.getInstance.MainFrameHelper.Path = "Trang chủ";
-            node = new Node(this);
-            Singleton.getInstance.MainFrameHelper.Node = node;
         }
 
         private void Init()
@@ -38,8 +35,8 @@ namespace QLSach.view
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
-            Singleton.getInstance.State = node;
-            Singleton.getInstance.MainFrameHelper.Node.AddChild(node);
+            Singleton.getInstance.State = new Node(new DashBoard());
+            Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
         }
 
         private void btn_newlyUpdate_Click(object sender, EventArgs e)

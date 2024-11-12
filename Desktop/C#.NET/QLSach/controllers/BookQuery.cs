@@ -52,5 +52,15 @@ namespace QLSach.controllers
         {
             return Singleton.getInstance.Data.Books.OrderByDescending(o => o.views).Take(50).ToList();
         }
+        public Book getBookByName(String name)
+        {
+            return Singleton.getInstance.Data.Books.Where(o => o.name == name).FirstOrDefault();
+        }
+
+        public List<Book> getBookByAuthorId(int AuthorId)
+        {
+            return Singleton.getInstance.Data.Books
+                .Where(o => o.author_id == AuthorId).ToList();
+        }
     }
 }

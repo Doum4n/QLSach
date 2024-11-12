@@ -57,6 +57,7 @@
             pictureBox_Banner.Size = new Size(824, 299);
             pictureBox_Banner.TabIndex = 0;
             pictureBox_Banner.TabStop = false;
+            pictureBox_Banner.VisibleChanged += DashBoard_Load;
             // 
             // btn_newlyUpdate
             // 

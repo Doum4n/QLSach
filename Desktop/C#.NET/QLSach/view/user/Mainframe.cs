@@ -9,10 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Jenga;
 using QLSach.component;
 using QLSach.controllers;
 using QLSach.view.components;
 using QLSach.view.user;
+using QLSach.view.user.components.items;
+using ServiceStack;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace QLSach.view
@@ -24,12 +27,16 @@ namespace QLSach.view
         private bool isDigitalSelected = false;
         private GenreQuery query = new GenreQuery();
         private BookQuery bookQuery = new BookQuery();
+        private AuthorQuery authorQuery = new AuthorQuery();
 
         int count = 1;
 
         public Mainframe()
         {
             InitializeComponent();
+            Node node = new Node(new DashBoard());
+            Singleton.getInstance.MainFrameHelper.Node = node;
+            Singleton.getInstance.State = node;
             Singleton.getInstance.MainFrameHelper.ActivePathChanged += OnActivated;
         }
 
@@ -51,13 +58,56 @@ namespace QLSach.view
         {
             Singleton.getInstance.MainFrameHelper.MainPane = Pane_conten;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-                Singleton.getInstance.Initilize.DashBoard
+                 new DashBoard()
             );
         }
 
         private void Mainframe_Load(object sender, EventArgs e)
         {
             LoadDashBoard();
+
+            tb_search.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            tb_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+            Dictionary<int, string> booksName = new Dictionary<int, string>();
+            bookQuery.getBooks().ForEach(book =>
+            {
+                booksName.Add(book.Id, book.name);
+            });
+
+            Dictionary<int, string> authorsName = new Dictionary<int, string>();
+            authorQuery.getAuthors().ForEach(author =>
+            {
+                authorsName.Add(author.Id, author.name);
+            });
+
+            collection.AddRange(bookQuery.getBooks().Select(o => o.name).ToArray());
+            collection.AddRange(authorQuery.getAuthorName().ToArray());
+            tb_search.AutoCompleteCustomSource = collection;
+            tb_search.KeyDown += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    string selectedSuggestion = tb_search.Text;
+                    Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+
+                    if (booksName.ContainsValue(selectedSuggestion))
+                    {
+                        Singleton.getInstance.MainFrameHelper.Id = booksName.First(o => o.Value == selectedSuggestion).Key;
+                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
+                    }
+                    if (authorsName.ContainsValue(selectedSuggestion))
+                    {
+                        SearchPane search = new SearchPane(
+                            selectedSuggestion,
+                            authorsName.First(o => o.Value == selectedSuggestion).Key
+                        );
+                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(search);
+                    }
+                    e.SuppressKeyPress = true;
+                }
+            };
 
             lb_name.Text = Singleton.getInstance.Username;
             foreach (var genre in query.getGenre_name_id())
@@ -97,11 +147,11 @@ namespace QLSach.view
             isBookSelected = !isBookSelected;
         }
 
-        private void btn_digitalBook_Click(object sender, EventArgs e)
-        {
-            isDigitalSelected = !isDigitalSelected;
-            pane_btnDigitalBook.Visible = isDigitalSelected;
-        }
+        //private void btn_digitalBook_Click(object sender, EventArgs e)
+        //{
+        //    isDigitalSelected = !isDigitalSelected;
+        //    pane_btnDigitalBook.Visible = isDigitalSelected;
+        //}
 
         private void btn_redo_Click(object sender, EventArgs e)
         {
@@ -150,6 +200,11 @@ namespace QLSach.view
             registed.UserId = 9;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(registed);
+        }
+
+        private void btn_look_up_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

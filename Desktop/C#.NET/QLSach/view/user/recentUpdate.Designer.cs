@@ -212,6 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             Controls.Add(lb_index);
             Controls.Add(btn_last);
             Controls.Add(btn_first);
@@ -225,6 +226,7 @@
             Name = "recentUpdate";
             Size = new Size(947, 892);
             Load += recentUpdate_Load;
+            VisibleChanged += recentUpdate_visible;
             ResumeLayout(false);
             PerformLayout();
         }

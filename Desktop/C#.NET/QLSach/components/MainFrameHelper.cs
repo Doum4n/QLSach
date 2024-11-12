@@ -108,9 +108,8 @@ namespace QLSach.component
             children.Remove(node);
             Traverse(node, delegate (Node node)
             {
-                children.Remove(node);
+                node.children.Remove(node);
             });
-            MessageBox.Show(children.Count.ToString());
         }
 
         public Node? getVisitedNode()

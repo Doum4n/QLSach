@@ -30,7 +30,6 @@ namespace QLSach.view
             Singleton.getInstance.MainFrameHelper.Path += " > Book";
         }
 
-
         private void btn_first_Click(object sender, EventArgs e)
         {
             pagination.btn_first_Click();
@@ -57,11 +56,21 @@ namespace QLSach.view
 
         private void recentUpdate_Load(object sender, EventArgs e)
         {
-            Singleton.getInstance.State = new(this);
-            Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
+            //Singleton.getInstance.State = new(new recentUpdate());
+            //Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
+
             pagination = new(tablePane_recentUpdate, 1, 4, 8);
             pagination.books = BookQuery.getRecentUpdateBooks();
             pagination.LoadData();
+        }
+
+        private void recentUpdate_visible(object sender, EventArgs e)
+        {
+            Node cur = Singleton.getInstance.State;
+            Node node = new(new recentUpdate());
+            cur.AddChild(node);
+
+            Singleton.getInstance.State = node;
         }
     }
 }
