@@ -80,6 +80,12 @@ namespace QLSach.database
             modelBuilder.Entity<Register>()
                 .Property(o => o.Status)
                 .HasConversion<String>();
+
+            //Category
+            modelBuilder.Entity<Category>()
+                .HasMany(o => o.Books)
+                .WithMany(o => o.Categories)
+                .UsingEntity<CategoryBook>();
         }
     }
 }

@@ -36,5 +36,7 @@ namespace QLSach.database
         public DbSet<User> Users { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Register> Register { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryBook> CategoriesBook { get; set; }
     }
 }

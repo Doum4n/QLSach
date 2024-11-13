@@ -8,8 +8,11 @@ namespace QLSach.components
 {
     public class AdminHelper
     {
-        public BindingSource book_data { get; set; }
 
+        public bool isPaneAdd {  get; set; } = false;
+        public bool isPaneModify {  get; set; } = false;
+        public BindingSource book_data { get; set; }
+        public Guna.UI2.WinForms.Guna2Panel mainPane { get; set; }
         public AdminHelper()
         {
             book_data = new BindingSource();

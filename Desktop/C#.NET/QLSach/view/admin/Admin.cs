@@ -1,4 +1,5 @@
-﻿using QLSach.view.admin;
+﻿using QLSach.component;
+using QLSach.view.admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,8 +21,21 @@ namespace QLSach.view
 
         private void btn_book_management_Click(object sender, EventArgs e)
         {
-            book_management manager = new book_management();
-            pane_main.Controls.Add(manager);
+            Singleton.getInstance.AdminHelper.mainPane.Controls.Clear();
+            BookManagement manager = new BookManagement();
+            Singleton.getInstance.AdminHelper.mainPane.Controls.Add(manager);
+        }
+
+        private void btn_category_Click(object sender, EventArgs e)
+        {
+            Singleton.getInstance.AdminHelper.mainPane.Controls.Clear();
+            PaneCategory category = new PaneCategory();
+            Singleton.getInstance.AdminHelper.mainPane.Controls.Add(category);
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            Singleton.getInstance.AdminHelper.mainPane = pane_main;
         }
     }
 }

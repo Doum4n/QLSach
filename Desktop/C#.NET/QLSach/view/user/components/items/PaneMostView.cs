@@ -26,12 +26,11 @@ namespace QLSach.view.components.items
             int i = 1;
             foreach (var item in query.getMostViewBooks())
             {
-                BookMostView bookMostView = new BookMostView();
+                BookMostView bookMostView = new BookMostView(item.Id);
                 bookMostView.bookName = item.name;
                 bookMostView.author = query.getBookAuthor(item.author_id);
                 bookMostView.index = $"#{i++}";
                 bookMostView.views = $"Lượt xem: {item.views}";
-                bookMostView.id = item.Id;
                 bookMostView.status = item.status;
                 tbLayoutPanel.SetRow(bookMostView, tbLayoutPanel.RowCount++);
                 tbLayoutPanel.Controls.Add(bookMostView);

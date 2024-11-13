@@ -43,7 +43,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            btn_category = new Guna.UI2.WinForms.Guna2Button();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -54,7 +54,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(guna2Button5);
+            guna2Panel1.Controls.Add(btn_category);
             guna2Panel1.Controls.Add(guna2Button4);
             guna2Panel1.Controls.Add(guna2Button3);
             guna2Panel1.Controls.Add(guna2Button2);
@@ -63,24 +63,25 @@
             guna2Panel1.Location = new Point(1, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel1.Size = new Size(201, 681);
+            guna2Panel1.Size = new Size(201, 831);
             guna2Panel1.TabIndex = 0;
             // 
-            // guna2Button5
+            // btn_category
             // 
-            guna2Button5.CustomizableEdges = customizableEdges1;
-            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button5.Font = new Font("Segoe UI", 9F);
-            guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(24, 618);
-            guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button5.Size = new Size(146, 38);
-            guna2Button5.TabIndex = 4;
-            guna2Button5.Text = "guna2Button5";
+            btn_category.CustomizableEdges = customizableEdges1;
+            btn_category.DisabledState.BorderColor = Color.DarkGray;
+            btn_category.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_category.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_category.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_category.Font = new Font("Segoe UI", 9F);
+            btn_category.ForeColor = Color.White;
+            btn_category.Location = new Point(24, 87);
+            btn_category.Name = "btn_category";
+            btn_category.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btn_category.Size = new Size(146, 38);
+            btn_category.TabIndex = 4;
+            btn_category.Text = "Danh mục";
+            btn_category.Click += btn_category_Click;
             // 
             // guna2Button4
             // 
@@ -91,12 +92,12 @@
             guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button4.Font = new Font("Segoe UI", 9F);
             guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(24, 195);
+            guna2Button4.Location = new Point(24, 261);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button4.Size = new Size(146, 38);
             guna2Button4.TabIndex = 3;
-            guna2Button4.Text = "guna2Button4";
+            guna2Button4.Text = "Thống kê";
             // 
             // guna2Button3
             // 
@@ -107,12 +108,12 @@
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(24, 142);
+            guna2Button3.Location = new Point(24, 203);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button3.Size = new Size(146, 38);
             guna2Button3.TabIndex = 2;
-            guna2Button3.Text = "guna2Button3";
+            guna2Button3.Text = "Mượn trả";
             // 
             // guna2Button2
             // 
@@ -123,12 +124,12 @@
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button2.Font = new Font("Segoe UI", 9F);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(24, 86);
+            guna2Button2.Location = new Point(24, 145);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button2.Size = new Size(146, 38);
             guna2Button2.TabIndex = 1;
-            guna2Button2.Text = "guna2Button2";
+            guna2Button2.Text = "Người dùng";
             // 
             // btn_book_management
             // 
@@ -144,7 +145,7 @@
             btn_book_management.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_book_management.Size = new Size(146, 38);
             btn_book_management.TabIndex = 0;
-            btn_book_management.Text = "Quản lý sách";
+            btn_book_management.Text = "Sách";
             btn_book_management.Click += btn_book_management_Click;
             // 
             // pane_main
@@ -154,18 +155,19 @@
             pane_main.Location = new Point(202, 0);
             pane_main.Name = "pane_main";
             pane_main.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            pane_main.Size = new Size(1277, 681);
+            pane_main.Size = new Size(1277, 831);
             pane_main.TabIndex = 1;
             // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1491, 682);
+            ClientSize = new Size(1491, 835);
             Controls.Add(pane_main);
             Controls.Add(guna2Panel1);
             Name = "Admin";
             Text = "Admin";
+            Load += Admin_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -173,11 +175,11 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button btn_book_management;
         private Guna.UI2.WinForms.Guna2Panel pane_main;
+        private Guna.UI2.WinForms.Guna2Button btn_category;
     }
 }

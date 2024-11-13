@@ -29,5 +29,10 @@ namespace QLSach.controllers
         {
             return Singleton.getInstance.Data.Genre.Find(id);
         }
+
+        public List<string> getGenreName()
+        {
+            return Singleton.getInstance.Data.Genre.Select( g => g.name ).ToList();
+        }
     }
 }

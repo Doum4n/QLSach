@@ -17,20 +17,20 @@ namespace QLSach.view.components.items
     {
         private int id;
 
-        public book()
+        public book(int id)
         {
+            this.id = id;
             InitializeComponent();
-            String imagePath = ".\\resources\\images\\book.png";
+            ImageQuery query = new ImageQuery();
+            String? imagePath = query.GetPhoto(id);
             Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 153, 203);
         }
 
         private void onClick(object sender, EventArgs e)
         {
-            Singleton.getInstance.MainFrameHelper.Id = id;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail(id));
         }
 
-        public int Id { get { return id; } set { id = value; } }
     }
 }

@@ -66,8 +66,7 @@ namespace QLSach.view.components
                 {
                     if (!books[i].Id.Equals(null))
                     {
-                        book book1 = new book();
-                        book1.Id = books[i].Id;
+                        book book1 = new book(books[i].Id);
                         setData(book1);
                     }
                 }

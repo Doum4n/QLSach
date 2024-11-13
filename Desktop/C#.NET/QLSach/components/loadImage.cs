@@ -9,21 +9,22 @@ namespace QLSach.components
     public class loadImage
     {
         public int genreId {  get; set; }
-        public void ShowMyImage(PictureBox picture, string fileToDisplay, int xSize, int ySize)
+        public void ShowMyImage(PictureBox picture, string? fileToDisplay, int xSize, int ySize)
         {
-
-            try
+            Bitmap MyImage;
+            if (fileToDisplay != null) 
             {
                 // Tải hình ảnh và gán vào PictureBox hiện tại
-                Bitmap MyImage = new Bitmap(fileToDisplay);
-                picture.SizeMode = PictureBoxSizeMode.StretchImage;
-                picture.ClientSize = new Size(xSize, ySize);
-                picture.Image = MyImage;
+                MyImage = new Bitmap(fileToDisplay);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error loading image: " + ex.Message);
+                MyImage = new Bitmap(".\\resources\\images\\book.png");
             }
+
+            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture.ClientSize = new Size(xSize, ySize);
+            picture.Image = MyImage;
         }
     }
 

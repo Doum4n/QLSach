@@ -94,8 +94,7 @@ namespace QLSach.view
 
                     if (booksName.ContainsValue(selectedSuggestion))
                     {
-                        Singleton.getInstance.MainFrameHelper.Id = booksName.First(o => o.Value == selectedSuggestion).Key;
-                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
+                        Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail(booksName.First(o => o.Value == selectedSuggestion).Key));
                     }
                     if (authorsName.ContainsValue(selectedSuggestion))
                     {
@@ -203,6 +202,11 @@ namespace QLSach.view
         }
 
         private void btn_look_up_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pane_conten_Paint(object sender, PaintEventArgs e)
         {
 
         }

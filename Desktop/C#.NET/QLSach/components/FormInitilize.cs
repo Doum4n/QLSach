@@ -30,9 +30,9 @@ namespace QLSach.component
         public recentUpdate RecentUpdate {
             get { _recentUpdate ??= new();  return _recentUpdate ; } 
         }
-        public BookDetail BookDetail {
-            get { _bookDetail ??= new(); return _bookDetail; }
-        }
+        //public BookDetail BookDetail {
+        //    get { _bookDetail ??= new(); return _bookDetail; }
+        //}
 
         public PaneMostView PaneMostView 
         { 

@@ -1,4 +1,5 @@
-﻿using QLSach.controllers;
+﻿using QLSach.component;
+using QLSach.controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,12 +27,11 @@ namespace QLSach.view.components.items
             int i = 1;
             foreach (var item in query.getMostViewBooks())
             {
-                BookMostPopular popular = new();
+                BookMostPopular popular = new(item.Id);
                 popular.bookName = item.name;
                 popular.author = query.getBookAuthor(item.author_id);
                 popular.index = $"#{i++}";
                 popular.info = item.description;
-                popular.id = item.Id;
                 popular.status = item.status;
                 tbLayoutPanel.SetRow(popular, tbLayoutPanel.RowCount++);
                 tbLayoutPanel.Controls.Add(popular);

@@ -16,9 +16,14 @@ namespace QLSach.controllers
     {
         public ImageQuery() { }
 
-        public Photo? GetPhoto(int id)
+        public string? GetPhoto(int id)
         {
-            return Singleton.getInstance.Data?.Photos.Where(photo => photo.book_id == id).FirstOrDefault();
+            return Singleton.getInstance.Data?.Photos.Where(photo => photo.book_id == id).Select(o => o.path).FirstOrDefault();
+        }
+
+        public Photo? GetImageBookId(int id)
+        {
+            return Singleton.getInstance.Data.Photos.Where(o => o.book_id == id).FirstOrDefault();
         }
     }
 }

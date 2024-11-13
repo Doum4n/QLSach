@@ -19,36 +19,39 @@ namespace QLSach.view
     public partial class BookDetail : UserControl
     {
         BookQuery query = new BookQuery();
-        Book? bookQuery = new Book();
-        public BookDetail()
+        Book? book = new Book();
+        private int id;
+        public BookDetail(int id)
         {
+            this.id = id;
             InitializeComponent();
             LoadData();
         }
 
         private void LoadData()
         {
-            bookQuery = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
-            Name.Text = bookQuery?.name;
-            author.Text = query.getBookAuthor(bookQuery.Id);
-            genre.Text = query.getBookGenre(bookQuery.Id);
-            publication_year.Text = bookQuery.year_public.ToString();
-            description.Text = bookQuery.description;
-            status.Text = bookQuery.remaining > 0 ? Status.available.ToString() : Status.borrowed.ToString();
-            lb_remaining.Text = bookQuery.remaining.ToString();
-
-            String imagePath = ".\\resources\\images\\book.png";
-            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 223, 350);
-
-            tb_pane_comment.RowCount = 0;
+            
         }
 
         private void BookDetail_Load(object sender, EventArgs e)
         {
-            bookQuery = query.getBook(Singleton.getInstance.MainFrameHelper.Id);
+            ImageQuery imageQuery = new ImageQuery();
+            book = query.getBook(id);
+            Name.Text = book?.name;
+            author.Text = query.getBookAuthor(book.Id);
+            genre.Text = query.getBookGenre(book.Id);
+            publication_year.Text = book.year_public.ToString();
+            description.Text = book.description;
+            status.Text = book.remaining > 0 ? Status.available.ToString() : Status.borrowed.ToString();
+            lb_remaining.Text = book.remaining.ToString();
+
+            String imagePath = imageQuery.GetPhoto(id);
+            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 223, 350);
+
+            tb_pane_comment.RowCount = 0;
 
             Node cur = Singleton.getInstance.State;
-            Node node = new(new BookDetail());
+            Node node = new(new BookDetail(id));
             cur.AddChild(node);
 
             Singleton.getInstance.State = node;
@@ -75,7 +78,7 @@ namespace QLSach.view
                 }
             });
 
-            if (bookQuery.remaining > 0)
+            if (book.remaining > 0)
             {
                 btn.Text = "Mượn";
             }
@@ -101,7 +104,7 @@ namespace QLSach.view
             if(status.Text == Status.borrowed.ToString())
             {
                 Register register = new Register();
-                register.BookId = bookQuery.Id;
+                register.BookId = book.Id;
                 register.UserId = Singleton.getInstance.UserId;
                 register.Status = Status_borrow.Pending;
                 register.register_at = DateTime.Now;

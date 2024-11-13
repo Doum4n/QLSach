@@ -4,10 +4,19 @@
     <Compile Update="view\admin\addBook.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\admin\addToCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\admin\book_management.cs">
+    <Compile Update="view\admin\BookManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\PaneCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\subPaneCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\user\BookByGenre.cs">

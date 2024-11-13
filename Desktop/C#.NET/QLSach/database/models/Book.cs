@@ -66,5 +66,6 @@ namespace QLSach.dbContext.models
         public List<Comment> Comments { get; set; }
         [Browsable(false)]
         public Genre Genre { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }

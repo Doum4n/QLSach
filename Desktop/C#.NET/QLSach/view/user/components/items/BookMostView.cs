@@ -1,4 +1,5 @@
 ﻿using QLSach.component;
+using QLSach.controllers;
 using QLSach.database;
 using QLSach.database.models;
 using QLSach.dbContext.models;
@@ -18,14 +19,16 @@ namespace QLSach.view.components.items
     {
         public string bookName { get; set; }
         public string author { get; set; }
-        public int id { get; set; }
+        private int id;
         public string index { get; set; }
         public string views { get; set; }
         public Status status { get; set; }
-        public BookMostView()
+        public BookMostView(int id)
         {
+            this.id = id;
             InitializeComponent();
-            String imagePath = ".\\resources\\images\\book.png";
+            ImageQuery query = new ImageQuery();
+            String? imagePath = query.GetPhoto(id);
             Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 153, 203);
         }
 
@@ -45,9 +48,8 @@ namespace QLSach.view.components.items
 
         private void onClick(object sender, EventArgs e)
         {
-            Singleton.getInstance.MainFrameHelper.Id = id;
             Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail());
+            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(new BookDetail(id));
         }
 
         private void btn_borrow_Click(object sender, EventArgs e)

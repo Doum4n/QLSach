@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lb_index = new Label();
             picture = new PictureBox();
             btn_register = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +63,7 @@
             // 
             // btn_register
             // 
-            btn_register.CustomizableEdges = customizableEdges3;
+            btn_register.CustomizableEdges = customizableEdges1;
             btn_register.DisabledState.BorderColor = Color.DarkGray;
             btn_register.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_register.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -72,11 +72,11 @@
             btn_register.ForeColor = Color.White;
             btn_register.Location = new Point(195, 196);
             btn_register.Name = "btn_register";
-            btn_register.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btn_register.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btn_register.Size = new Size(225, 56);
             btn_register.TabIndex = 11;
             btn_register.Text = "Muốn đọc";
-            btn_register.Click += btn_wantToRead_Click;
+            btn_register.Click += btn_register_Click;
             // 
             // rating
             // 

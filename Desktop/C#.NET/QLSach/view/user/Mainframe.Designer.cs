@@ -353,6 +353,7 @@
             Pane_conten.ShadowDecoration.CustomizableEdges = customizableEdges24;
             Pane_conten.Size = new Size(931, 765);
             Pane_conten.TabIndex = 3;
+            Pane_conten.Paint += Pane_conten_Paint;
             // 
             // lb_path
             // 

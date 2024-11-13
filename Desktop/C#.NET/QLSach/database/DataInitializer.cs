@@ -42,12 +42,16 @@ namespace QLSach.database
                 .RuleFor(o => o.id, f => GenreId++);
             var genres = fakeGenre.Generate(32);
 
-            //Book
-            modelBuilder.Entity<Book>()
-                    .Property(b => b.created_at)
-                    .ValueGeneratedOnAdd()
-                    .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            //Category
+            var categoryId = 1;
+            var fakeCategory = new Faker<Category>()
+                .RuleFor(o => o.Name, f => f.Lorem.Text())
+                .RuleFor(o => o.Id, f => categoryId++)
+                .RuleFor(o => o.Description, f => f.Lorem.Paragraph());
 
+            var category = fakeCategory.Generate(5);
+
+            //Book
             var BookId = 1;
             var id = 0;
             Faker faker = new Faker();
@@ -58,6 +62,7 @@ namespace QLSach.database
                 .RuleFor(o => o.description, f => f.Lorem.Paragraph())
                 .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
                 .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
+                //.RuleFor
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
                 .RuleFor(o => o.year_public, f => f.Random.Int(1900, DateTime.Now.Year))
                 .RuleFor(o => o.updated_at, f => DateTime.Now)
@@ -70,7 +75,8 @@ namespace QLSach.database
             String imagePath = ".\\resources\\images\\poster.png";
             var fakePath = "fake path";
             var fakeImage = new Faker<Photo>()
-                .RuleFor(o => o.path, f => (photoId++) + fakePath)
+                .RuleFor(o => o.Id, f => photoId++)
+                .RuleFor(o => o.path, f => imagePath)
                 .RuleFor(o => o.book_id, f => f.PickRandom(books.Select(o => o.Id)));
 
             var images = fakeImage.Generate(16);
@@ -130,6 +136,15 @@ namespace QLSach.database
 
             var register = fakeRegister.Generate(16);
 
+
+            var categoryBookId = 1;
+            var fakeCategoryBook = new Faker<CategoryBook>()
+                .RuleFor(o => o.Id, f => categoryBookId++)
+                .RuleFor(o => o.BookId, f => f.PickRandom(books.Select(o => o.Id)))
+                .RuleFor(o => o.CategoryId, f => f.PickRandom(category.Select(o => o.Id)));
+
+            var categoryBook = fakeCategoryBook.Generate(20);
+
             //assign data
             modelBuilder.Entity<Genre>().HasData(genres);
             modelBuilder.Entity<Book>().HasData(books);
@@ -139,6 +154,8 @@ namespace QLSach.database
             modelBuilder.Entity<Comment>().HasData(comments);
             modelBuilder.Entity<Comment>().HasData(comments_0);
             modelBuilder.Entity<Register>().HasData(register);
+            modelBuilder.Entity<Category>().HasData(category);
+            modelBuilder.Entity<CategoryBook>().HasData(categoryBook);
         }
     }
 }

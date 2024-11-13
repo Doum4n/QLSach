@@ -1,6 +1,6 @@
 ﻿namespace QLSach.view.admin
 {
-    partial class book_management
+    partial class BookManagement
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,10 +38,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,6 +54,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btn_add_book = new Guna.UI2.WinForms.Guna2Button();
             data = new DataGridView();
             label1 = new Label();
@@ -64,11 +66,13 @@
             tb_author_description = new Guna.UI2.WinForms.Guna2TextBox();
             label4 = new Label();
             label5 = new Label();
-            tb_genre_id = new Guna.UI2.WinForms.Guna2TextBox();
-            tb_genre_name = new Guna.UI2.WinForms.Guna2TextBox();
             tb_modify = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            combobox_genre_name = new Guna.UI2.WinForms.Guna2ComboBox();
             panel_modify = new Panel();
+            picture = new PictureBox();
+            btn_update = new Guna.UI2.WinForms.Guna2Button();
+            rtb_book_description = new RichTextBox();
             datePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             tb_remaining = new Guna.UI2.WinForms.Guna2TextBox();
             tb_quantity = new Guna.UI2.WinForms.Guna2TextBox();
@@ -81,9 +85,11 @@
             label7 = new Label();
             label6 = new Label();
             panel2 = new Panel();
-            tb_book_description = new RichTextBox();
+            tb_genre_id = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
+            guna2Panel1.SuspendLayout();
             panel_modify.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -222,51 +228,9 @@
             label5.TabIndex = 9;
             label5.Text = "Tên loại";
             // 
-            // tb_genre_id
-            // 
-            tb_genre_id.CustomizableEdges = customizableEdges9;
-            tb_genre_id.DefaultText = "";
-            tb_genre_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tb_genre_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tb_genre_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tb_genre_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tb_genre_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_genre_id.Font = new Font("Segoe UI", 9F);
-            tb_genre_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_genre_id.Location = new Point(128, 122);
-            tb_genre_id.Margin = new Padding(3, 4, 3, 4);
-            tb_genre_id.Name = "tb_genre_id";
-            tb_genre_id.PasswordChar = '\0';
-            tb_genre_id.PlaceholderText = "";
-            tb_genre_id.SelectedText = "";
-            tb_genre_id.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            tb_genre_id.Size = new Size(183, 37);
-            tb_genre_id.TabIndex = 10;
-            // 
-            // tb_genre_name
-            // 
-            tb_genre_name.CustomizableEdges = customizableEdges11;
-            tb_genre_name.DefaultText = "";
-            tb_genre_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tb_genre_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tb_genre_name.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tb_genre_name.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tb_genre_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_genre_name.Font = new Font("Segoe UI", 9F);
-            tb_genre_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_genre_name.Location = new Point(512, 120);
-            tb_genre_name.Margin = new Padding(3, 4, 3, 4);
-            tb_genre_name.Name = "tb_genre_name";
-            tb_genre_name.PasswordChar = '\0';
-            tb_genre_name.PlaceholderText = "";
-            tb_genre_name.SelectedText = "";
-            tb_genre_name.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tb_genre_name.Size = new Size(183, 37);
-            tb_genre_name.TabIndex = 11;
-            // 
             // tb_modify
             // 
-            tb_modify.CustomizableEdges = customizableEdges13;
+            tb_modify.CustomizableEdges = customizableEdges9;
             tb_modify.DisabledState.BorderColor = Color.DarkGray;
             tb_modify.DisabledState.CustomBorderColor = Color.DarkGray;
             tb_modify.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -275,7 +239,7 @@
             tb_modify.ForeColor = Color.White;
             tb_modify.Location = new Point(1102, 78);
             tb_modify.Name = "tb_modify";
-            tb_modify.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tb_modify.ShadowDecoration.CustomizableEdges = customizableEdges10;
             tb_modify.Size = new Size(116, 40);
             tb_modify.TabIndex = 12;
             tb_modify.Text = "Sửa";
@@ -283,18 +247,38 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.CustomizableEdges = customizableEdges15;
+            guna2Panel1.Controls.Add(combobox_genre_name);
+            guna2Panel1.CustomizableEdges = customizableEdges13;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Panel1.Size = new Size(1271, 168);
             guna2Panel1.TabIndex = 13;
             // 
+            // combobox_genre_name
+            // 
+            combobox_genre_name.BackColor = Color.Transparent;
+            combobox_genre_name.CustomizableEdges = customizableEdges11;
+            combobox_genre_name.DrawMode = DrawMode.OwnerDrawFixed;
+            combobox_genre_name.DropDownStyle = ComboBoxStyle.DropDownList;
+            combobox_genre_name.FocusedColor = Color.FromArgb(94, 148, 255);
+            combobox_genre_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            combobox_genre_name.Font = new Font("Segoe UI", 10F);
+            combobox_genre_name.ForeColor = Color.FromArgb(68, 88, 112);
+            combobox_genre_name.ItemHeight = 30;
+            combobox_genre_name.Location = new Point(508, 122);
+            combobox_genre_name.Name = "combobox_genre_name";
+            combobox_genre_name.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            combobox_genre_name.Size = new Size(175, 36);
+            combobox_genre_name.TabIndex = 0;
+            // 
             // panel_modify
             // 
-            panel_modify.BackColor = SystemColors.Info;
-            panel_modify.Controls.Add(tb_book_description);
+            panel_modify.BackColor = SystemColors.GradientActiveCaption;
+            panel_modify.Controls.Add(picture);
+            panel_modify.Controls.Add(btn_update);
+            panel_modify.Controls.Add(rtb_book_description);
             panel_modify.Controls.Add(datePicker);
             panel_modify.Controls.Add(tb_remaining);
             panel_modify.Controls.Add(tb_quantity);
@@ -312,13 +296,48 @@
             panel_modify.Size = new Size(1271, 200);
             panel_modify.TabIndex = 14;
             // 
+            // picture
+            // 
+            picture.Location = new Point(13, 13);
+            picture.Name = "picture";
+            picture.Size = new Size(149, 179);
+            picture.TabIndex = 17;
+            picture.TabStop = false;
+            picture.Click += picture_Click;
+            // 
+            // btn_update
+            // 
+            btn_update.CustomizableEdges = customizableEdges15;
+            btn_update.DisabledState.BorderColor = Color.DarkGray;
+            btn_update.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_update.Font = new Font("Segoe UI", 9F);
+            btn_update.ForeColor = Color.White;
+            btn_update.Location = new Point(658, 148);
+            btn_update.Name = "btn_update";
+            btn_update.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btn_update.Size = new Size(116, 42);
+            btn_update.TabIndex = 16;
+            btn_update.Text = "Cập nhật";
+            btn_update.Click += btn_update_Click;
+            // 
+            // rtb_book_description
+            // 
+            rtb_book_description.BorderStyle = BorderStyle.None;
+            rtb_book_description.Location = new Point(269, 91);
+            rtb_book_description.Name = "rtb_book_description";
+            rtb_book_description.Size = new Size(372, 101);
+            rtb_book_description.TabIndex = 2;
+            rtb_book_description.Text = "";
+            // 
             // datePicker
             // 
             datePicker.Checked = true;
             datePicker.CustomizableEdges = customizableEdges17;
             datePicker.Font = new Font("Segoe UI", 9F);
             datePicker.Format = DateTimePickerFormat.Long;
-            datePicker.Location = new Point(637, 95);
+            datePicker.Location = new Point(778, 93);
             datePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             datePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             datePicker.Name = "datePicker";
@@ -338,7 +357,7 @@
             tb_remaining.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_remaining.Font = new Font("Segoe UI", 9F);
             tb_remaining.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_remaining.Location = new Point(592, 55);
+            tb_remaining.Location = new Point(733, 53);
             tb_remaining.Margin = new Padding(3, 4, 3, 4);
             tb_remaining.Name = "tb_remaining";
             tb_remaining.PasswordChar = '\0';
@@ -359,7 +378,7 @@
             tb_quantity.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_quantity.Font = new Font("Segoe UI", 9F);
             tb_quantity.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_quantity.Location = new Point(592, 14);
+            tb_quantity.Location = new Point(733, 12);
             tb_quantity.Margin = new Padding(3, 4, 3, 4);
             tb_quantity.Name = "tb_quantity";
             tb_quantity.PasswordChar = '\0';
@@ -380,7 +399,7 @@
             tb_book_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_book_name.Font = new Font("Segoe UI", 9F);
             tb_book_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_book_name.Location = new Point(128, 55);
+            tb_book_name.Location = new Point(269, 53);
             tb_book_name.Margin = new Padding(3, 4, 3, 4);
             tb_book_name.Name = "tb_book_name";
             tb_book_name.PasswordChar = '\0';
@@ -401,7 +420,7 @@
             tb_book_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_book_id.Font = new Font("Segoe UI", 9F);
             tb_book_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_book_id.Location = new Point(128, 14);
+            tb_book_id.Location = new Point(269, 12);
             tb_book_id.Margin = new Padding(3, 4, 3, 4);
             tb_book_id.Name = "tb_book_id";
             tb_book_id.PasswordChar = '\0';
@@ -414,7 +433,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(514, 55);
+            label13.Location = new Point(655, 53);
             label13.Name = "label13";
             label13.Size = new Size(58, 20);
             label13.TabIndex = 7;
@@ -423,7 +442,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(514, 19);
+            label12.Location = new Point(655, 17);
             label12.Name = "label12";
             label12.Size = new Size(72, 20);
             label12.TabIndex = 6;
@@ -432,7 +451,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(517, 95);
+            label11.Location = new Point(658, 93);
             label11.Name = "label11";
             label11.Size = new Size(114, 20);
             label11.TabIndex = 5;
@@ -441,7 +460,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(41, 96);
+            label8.Location = new Point(182, 94);
             label8.Name = "label8";
             label8.Size = new Size(51, 20);
             label8.TabIndex = 2;
@@ -450,7 +469,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(41, 55);
+            label7.Location = new Point(182, 53);
             label7.Name = "label7";
             label7.Size = new Size(68, 20);
             label7.TabIndex = 1;
@@ -459,7 +478,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(43, 19);
+            label6.Location = new Point(184, 17);
             label6.Name = "label6";
             label6.Size = new Size(52, 20);
             label6.TabIndex = 0;
@@ -474,14 +493,26 @@
             panel2.Size = new Size(1271, 463);
             panel2.TabIndex = 15;
             // 
-            // tb_book_description
+            // tb_genre_id
             // 
-            tb_book_description.BorderStyle = BorderStyle.None;
-            tb_book_description.Location = new Point(128, 93);
-            tb_book_description.Name = "tb_book_description";
-            tb_book_description.Size = new Size(383, 101);
-            tb_book_description.TabIndex = 2;
-            tb_book_description.Text = "";
+            tb_genre_id.CustomizableEdges = customizableEdges27;
+            tb_genre_id.DefaultText = "";
+            tb_genre_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_genre_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_genre_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_genre_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_genre_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_genre_id.Font = new Font("Segoe UI", 9F);
+            tb_genre_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_genre_id.Location = new Point(128, 122);
+            tb_genre_id.Margin = new Padding(3, 4, 3, 4);
+            tb_genre_id.Name = "tb_genre_id";
+            tb_genre_id.PasswordChar = '\0';
+            tb_genre_id.PlaceholderText = "";
+            tb_genre_id.SelectedText = "";
+            tb_genre_id.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            tb_genre_id.Size = new Size(183, 37);
+            tb_genre_id.TabIndex = 10;
             // 
             // book_management
             // 
@@ -490,7 +521,6 @@
             Controls.Add(panel2);
             Controls.Add(panel_modify);
             Controls.Add(tb_modify);
-            Controls.Add(tb_genre_name);
             Controls.Add(tb_genre_id);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -506,8 +536,10 @@
             Size = new Size(1271, 856);
             Load += book_management_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
+            guna2Panel1.ResumeLayout(false);
             panel_modify.ResumeLayout(false);
             panel_modify.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picture).EndInit();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -525,8 +557,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_author_description;
         private Label label4;
         private Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox tb_genre_id;
-        private Guna.UI2.WinForms.Guna2TextBox tb_genre_name;
         private Guna.UI2.WinForms.Guna2Button tb_modify;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Panel panel_modify;
@@ -542,6 +572,10 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker datePicker;
         private Guna.UI2.WinForms.Guna2TextBox tb_remaining;
         private Guna.UI2.WinForms.Guna2TextBox tb_quantity;
-        private RichTextBox tb_book_description;
+        private RichTextBox rtb_book_description;
+        private Guna.UI2.WinForms.Guna2Button btn_update;
+        private PictureBox picture;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_genre_name;
+        private Guna.UI2.WinForms.Guna2TextBox tb_genre_id;
     }
 }
