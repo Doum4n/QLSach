@@ -10,13 +10,25 @@
     <Compile Update="view\admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\admin\BookManagement.cs">
+    <Compile Update="view\admin\BookManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\BorrowedManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\admin\PaneCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\admin\BorrowRegisterManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\RegisterManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\admin\subPaneCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\UserManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\user\BookByGenre.cs">

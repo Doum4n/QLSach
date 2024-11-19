@@ -1,15 +1,6 @@
 ﻿using QLSach.component;
-using QLSach.database.models;
 using ServiceStack;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view.user
 {
@@ -27,7 +18,8 @@ namespace QLSach.view.user
             Singleton.getInstance.RegisterHelper.registration_data.DataSource = Singleton.getInstance.Data.Register
             .Where(o => o.UserId == Singleton.getInstance.UserId)
             .Where(o => o.register_at != null)
-            .Select(o => new {
+            .Select(o => new
+            {
                 o.BookId,
                 o.register_at,
                 o.Status,
@@ -44,18 +36,18 @@ namespace QLSach.view.user
             data.CellClick += (sender, e) =>
             {
                 if (e.ColumnIndex == data.Columns["button"].Index)
-                    {
-                        var bookId = data.Rows[e.RowIndex].Cells["BookId"].Value;
-                        var register = Singleton.getInstance.Data.Register
-                            .First(
-                                o => o.BookId == (int)bookId && o.UserId == Singleton.getInstance.UserId
-                             );
-                        Singleton.getInstance.RegisterHelper.registration_data.RemoveAt(e.RowIndex);
-                        Singleton.getInstance.Data.Register.Remove(
-                            register
-                        );
-                        Singleton.getInstance.Data.SaveChanges();
-                        MessageBox.Show("Hủy thành công!");
+                {
+                    var bookId = data.Rows[e.RowIndex].Cells["BookId"].Value;
+                    var register = Singleton.getInstance.Data.Register
+                        .First(
+                            o => o.BookId == (int)bookId && o.UserId == Singleton.getInstance.UserId
+                         );
+                    Singleton.getInstance.RegisterHelper.registration_data.RemoveAt(e.RowIndex);
+                    Singleton.getInstance.Data.Register.Remove(
+                        register
+                    );
+                    Singleton.getInstance.Data.SaveChanges();
+                    MessageBox.Show("Hủy thành công!");
                 }
             };
             Singleton.getInstance.State = new(this);

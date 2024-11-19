@@ -40,7 +40,7 @@ namespace QLSach.view.components
                 curRow = 0;
             }
 
-            tablePane.SetCellPosition(bookItem,new TableLayoutPanelCellPosition(curCol,curRow));
+            tablePane.SetCellPosition(bookItem, new TableLayoutPanelCellPosition(curCol, curRow));
             tablePane.Controls.Add(bookItem);
             curCol++;
         }

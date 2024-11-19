@@ -1,11 +1,4 @@
-﻿using QLSach.database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace QLSach.component
+﻿namespace QLSach.component
 {
     public class MainFrameHelper
     {
@@ -20,7 +13,8 @@ namespace QLSach.component
 
         private Node root;
 
-        public MainFrameHelper() {
+        public MainFrameHelper()
+        {
         }
 
         public Panel MainPane

@@ -1,19 +1,13 @@
 ﻿using QLSach.component;
 using QLSach.view.admin;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view
 {
     public partial class Admin : Form
     {
+        private BindingList<string> bindingList = new BindingList<string>();
+        private UserManager userManager = new UserManager();
         public Admin()
         {
             InitializeComponent();
@@ -21,21 +15,32 @@ namespace QLSach.view
 
         private void btn_book_management_Click(object sender, EventArgs e)
         {
-            Singleton.getInstance.AdminHelper.mainPane.Controls.Clear();
-            BookManagement manager = new BookManagement();
-            Singleton.getInstance.AdminHelper.mainPane.Controls.Add(manager);
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(new BookManager());
         }
 
         private void btn_category_Click(object sender, EventArgs e)
         {
-            Singleton.getInstance.AdminHelper.mainPane.Controls.Clear();
-            PaneCategory category = new PaneCategory();
-            Singleton.getInstance.AdminHelper.mainPane.Controls.Add(category);
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(new PaneCategory());
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            Singleton.getInstance.AdminHelper.mainPane = pane_main;
+            pane_main.Controls.Add(new BookManager());
+        }
+
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(new UserManager());
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(new BorrowRegisterManager());
         }
     }
 }

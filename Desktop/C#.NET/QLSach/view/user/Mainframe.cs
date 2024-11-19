@@ -1,22 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using Jenga;
+﻿using Confluent.Kafka;
 using QLSach.component;
 using QLSach.controllers;
-using QLSach.view.components;
 using QLSach.view.user;
 using QLSach.view.user.components.items;
 using ServiceStack;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Data;
 
 namespace QLSach.view
 {
@@ -29,12 +17,14 @@ namespace QLSach.view
         private BookQuery bookQuery = new BookQuery();
         private AuthorQuery authorQuery = new AuthorQuery();
 
+        private bool isContent = false;
+
         int count = 1;
 
         public Mainframe()
         {
             InitializeComponent();
-            Node node = new Node(new DashBoard());
+            component.Node node = new component.Node(new DashBoard());
             Singleton.getInstance.MainFrameHelper.Node = node;
             Singleton.getInstance.State = node;
             Singleton.getInstance.MainFrameHelper.ActivePathChanged += OnActivated;
@@ -104,7 +94,7 @@ namespace QLSach.view
                         );
                         Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(search);
                     }
-                    e.SuppressKeyPress = true;
+                    //e.SuppressKeyPress = true;
                 }
             };
 
@@ -121,7 +111,96 @@ namespace QLSach.view
             }
 
             Singleton.getInstance.RegisterHelper.registration_data = new BindingSource();
+
+            ReadMessagesFromPartition(0);
+
+            pane_nofitication.Visible = isContent;
         }
+
+        public string ExtractMessage(string input)
+        {
+            int colonIndex = input.IndexOf("::");
+
+            if (colonIndex >= 0)
+            {
+                return input[(colonIndex + 2)..].Trim();
+            }
+
+            return input;
+        }
+
+        public string ExtractMessageTime(string input)
+        {
+            int colonIndex = input.IndexOf("::");
+
+            if (colonIndex >= 0)
+            {
+                return input[..(colonIndex)].Trim();
+            }
+
+            return input;
+        }
+
+        /*
+            test message kafka
+            */
+        public void ReadMessagesFromPartition(int partition)
+        {
+            var config = new ConsumerConfig
+            {
+                BootstrapServers = "localhost:9092",
+                AutoOffsetReset = AutoOffsetReset.Earliest, 
+                GroupId = "my-group",                     
+                ClientId = Singleton.getInstance.UserId.ToString(),
+                EnableAutoCommit = false,                 
+                BrokerAddressFamily = BrokerAddressFamily.V4,
+            };
+
+            using var consumer = new ConsumerBuilder<int, string>(config).Build();
+
+            // Chỉ định partition cụ thể
+            var topicPartition = new TopicPartition("my-topic", new Partition(partition));
+            consumer.Assign(new[] { topicPartition });
+
+            try
+            {
+                while (true)
+                {
+                    var consumeResult = consumer.Consume(TimeSpan.FromSeconds(1));
+                    if (consumeResult != null)
+                    {
+                        int userId = consumeResult.Message.Key;
+                        MessageBox.Show(userId.ToString() + ":" + consumeResult.Message.Key.ToString());
+                        if(userId == Singleton.getInstance.UserId){
+                            RichTextBox textBox = new RichTextBox();
+                            Label label = new Label();
+                            label.Text = ExtractMessageTime(consumeResult.Message.Value);
+                            label.Dock = DockStyle.Top;
+                            // Hiển thị tin nhắn trên giao diện
+                            textBox.Text = ExtractMessage(consumeResult.Message.Value);
+                            textBox.Dock = DockStyle.Top;
+                            pane_nofitication.Controls.Add(textBox);
+                            pane_nofitication.Controls.Add(label);
+                        }  
+
+                        //consumer.Commit(consumeResult);
+                    }
+                    else
+                    {
+                        break; // Không còn tin nhắn
+                    }
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                Console.WriteLine("Operation canceled.");
+            }
+            finally
+            {
+                consumer.Close();
+            }
+        }
+
 
         private void onClick(object sender, EventArgs e)
         {
@@ -154,7 +233,7 @@ namespace QLSach.view
 
         private void btn_redo_Click(object sender, EventArgs e)
         {
-            Node cur = Singleton.getInstance.State;
+            component.Node cur = Singleton.getInstance.State;
             if (cur != null && cur.getVisitedNode() != null)
             {
                 addControl(cur.getVisitedNode().getState());
@@ -164,8 +243,8 @@ namespace QLSach.view
 
         private void btn_undo_Click(object sender, EventArgs e)
         {
-            Node cur = Singleton.getInstance.State;
-            Node pre = cur.parent;
+            component.Node cur = Singleton.getInstance.State;
+            component.Node pre = cur.parent;
             if (cur.parent != null)
             {
                 if (cur != pre)
@@ -209,6 +288,18 @@ namespace QLSach.view
         private void Pane_conten_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lb_nofitication_Click(object sender, EventArgs e)
+        {
+            isContent = !isContent;
+            pane_nofitication.Visible = isContent;
+        }
+
+        private void tb_noftitication_Click(object sender, EventArgs e)
+        {
+            isContent = !isContent;
+            pane_nofitication.Visible = isContent;
         }
     }
 }

@@ -1,13 +1,6 @@
-﻿using Guna.UI2.AnimatorNS;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using QLSach.component;
-using QLSach.dbContext;
 using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSach.controllers
 {
@@ -28,14 +21,14 @@ namespace QLSach.controllers
             return Singleton.getInstance.Data?.Books?.Where(book => book.Id == id).FirstOrDefault();
         }
 
-        public string getBookGenre(int genreId)
+        public string getBookGenre(int bookId)
         {
-            return Singleton.getInstance.Data.Genre.Where(o => o.id == genreId).Select(o => o.name).FirstOrDefault();
+            return Singleton.getInstance.Data.Books.Include(o => o.Genre).Where(o => o.Id == bookId).Select(o => o.Genre.name).FirstOrDefault();
         }
 
-        public string getBookAuthor(int authorId)
+        public string getBookAuthor(int bookId)
         {
-            return Singleton.getInstance.Data.Authors.Where(o => o.Id == authorId).Select(o => o.name).FirstOrDefault();
+            return Singleton.getInstance.Data.Books.Include(o => o.author).Where(o => o.Id == bookId).Select(o => o.author.name).FirstOrDefault();
         }
 
         public List<Book> get10BooksByGenre(int genreId)

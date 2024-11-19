@@ -1,14 +1,5 @@
 ﻿using QLSach.components;
-using QLSach.controllers;
 using QLSach.database;
-using QLSach.dbContext;
-using QLSach.view;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashBoard = QLSach.view.DashBoard;
 
 namespace QLSach.component
 {

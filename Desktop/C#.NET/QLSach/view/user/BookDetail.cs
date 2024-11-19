@@ -1,18 +1,9 @@
-﻿using Guna.UI2.WinForms.Suite;
-using QLSach.component;
+﻿using QLSach.component;
 using QLSach.controllers;
 using QLSach.database.models;
 using QLSach.dbContext.models;
 using QLSach.view.components.items;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view
 {
@@ -30,7 +21,7 @@ namespace QLSach.view
 
         private void LoadData()
         {
-            
+
         }
 
         private void BookDetail_Load(object sender, EventArgs e)
@@ -101,7 +92,7 @@ namespace QLSach.view
 
         private void btn_Click(object sender, EventArgs e)
         {
-            if(status.Text == Status.borrowed.ToString())
+            if (status.Text == Status.borrowed.ToString())
             {
                 Register register = new Register();
                 register.BookId = book.Id;

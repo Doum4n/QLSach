@@ -1,12 +1,4 @@
 ﻿using QLSach.component;
-using QLSach.database;
-using QLSach.database.models;
-using QLSach.view.admin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Category = QLSach.database.models.Category;
 
 namespace QLSach.query
@@ -28,7 +20,7 @@ namespace QLSach.query
                 Name = category.Name,
                 Description = category.Description,
                 BookCount = 0,
-                create_at = category.create_at,  
+                create_at = category.create_at,
                 update_at = category.update_at
             };
         }
@@ -49,7 +41,7 @@ namespace QLSach.query
                     Description = category.Description,
                     create_at = category.create_at,
                     update_at = category.update_at,
-                    BookCount = categoryBooks.Count() 
+                    BookCount = categoryBooks.Count()
                 }
             )
             .ToList();
@@ -88,6 +80,11 @@ namespace QLSach.query
         public int getIdByName(string name)
         {
             return Singleton.getInstance.Data.Categories.Where(o => o.Name == name).Select(o => o.Id).First();
+        }
+
+        public Category GetCategoryById(int id)
+        {
+            return Singleton.getInstance.Data.Categories.Where(o => o.Id == id).FirstOrDefault();
         }
     }
 }

@@ -1,14 +1,5 @@
 ﻿using QLSach.component;
 using QLSach.view;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach
 {
@@ -24,15 +15,15 @@ namespace QLSach
             Singleton.getInstance.Username = tb_name.Text;
             Singleton.getInstance.Password = tb_pw.Text;
 
-            if(tb_name.Text == "admin")
+            if (tb_name.Text == "admin")
             {
                 Admin admin = new Admin();
                 admin.Show();
             }
             else
             {
+                Singleton.getInstance.UserId = Singleton.getInstance.Data.Users.Where(o => o.Name == tb_name.Text).Select(o => o.Id).First();
                 Mainframe mainframe = new Mainframe();
-                Singleton.getInstance.UserId = 5;
                 mainframe.Show();
             }
 

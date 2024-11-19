@@ -1,5 +1,5 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MoreLinq;
 using QLSach.component;
 using QLSach.controllers;
 using QLSach.database.models;
@@ -12,6 +12,8 @@ namespace QLSach.view.admin
         private CategoryQuery query = new CategoryQuery();
         private BookQuery bookQuery = new BookQuery();
         DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
+
+        private BindingSource bindingSource = new BindingSource();
         private int category_id;
         public addToCategory()
         {
@@ -30,7 +32,8 @@ namespace QLSach.view.admin
                 rtb_description.Text = query.getDiscriptionById(category_id).ToString();
             };
 
-            data.DataSource = Singleton.getInstance.Data.Books.Include(o => o.Genre).Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToList();
+            bindingSource.DataSource = Singleton.getInstance.Data.Books.Include(o => o.Genre).Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToDataTable();
+            data.DataSource = bindingSource;
             checkbox.HeaderText = "Thêm";
             checkbox.FalseValue = false;
             checkbox.TrueValue = true;
@@ -50,24 +53,54 @@ namespace QLSach.view.admin
 
                 }
             };
+
+
+            List<string> columnNames = new List<string>();
+
+            foreach (DataGridViewColumn column in data.Columns)
+            {
+                columnNames.Add(column.HeaderText);
+            }
+
+            combobox_fillter.DataSource = columnNames;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in data.Rows)
             {
-                if(row.Cells[checkbox.Name].Value != null)
+                if (row.Cells[checkbox.Name].Value != null)
                 {
                     var value = row.Cells[checkbox.Name].Value;
                     bool isChecked = value != null && (bool)value;
                     CategoryBook categoryBook = new CategoryBook();
                     categoryBook.CategoryId = category_id;
-                    categoryBook.BookId = (int)row.Cells["Id"].Value;
+                    categoryBook.BookId =  Convert.ToInt32(row.Cells["Id"].Value);
                     Singleton.getInstance.Data.CategoriesBook.Add(categoryBook);
                     Singleton.getInstance.Data.SaveChanges();
 
                     MessageBox.Show($"Thêm vào danh mục {combobox_category_name.Text} thành công");
                 }
+            }
+        }
+
+        private void onVisible(object sender, EventArgs e)
+        {
+
+            //List<string> columnNames = new List<string>();
+
+            //foreach (DataGridViewColumn column in data.Columns)
+            //{
+            //    columnNames.Add(column.HeaderText);
+            //}
+        }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            bindingSource.Filter = $"CONVERT({combobox_fillter.Text.Trim()}, System.String) LIKE '%{tb_search.Text.Trim()}%'";
+            if (tb_search.Text == "")
+            {
+                bindingSource.RemoveFilter();
             }
         }
     }

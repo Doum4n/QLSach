@@ -1,19 +1,4 @@
-﻿using QLSach.controllers;
-using QLSach.view.components.items;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using QLSach.controllers;
-using QLSach.database;
-using QLSach.component;
-using QLSach.dbContext.models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+﻿using QLSach.component;
 
 namespace QLSach.view
 {
@@ -44,7 +29,7 @@ namespace QLSach.view
             pane.Controls.Clear();
             pane.Controls.Add(Singleton.getInstance.Initilize.PaneRecent);
         }
-        
+
 
         private void btn_popula_Click(object sender, EventArgs e)
         {

@@ -45,19 +45,21 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btn_category = new Guna.UI2.WinForms.Guna2Button();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            btn_register = new Guna.UI2.WinForms.Guna2Button();
+            btn_user = new Guna.UI2.WinForms.Guna2Button();
             btn_book_management = new Guna.UI2.WinForms.Guna2Button();
             pane_main = new Guna.UI2.WinForms.Guna2Panel();
+            guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
             // 
+            guna2Panel1.AutoSize = true;
             guna2Panel1.Controls.Add(btn_category);
             guna2Panel1.Controls.Add(guna2Button4);
-            guna2Panel1.Controls.Add(guna2Button3);
-            guna2Panel1.Controls.Add(guna2Button2);
+            guna2Panel1.Controls.Add(btn_register);
+            guna2Panel1.Controls.Add(btn_user);
             guna2Panel1.Controls.Add(btn_book_management);
             guna2Panel1.CustomizableEdges = customizableEdges11;
             guna2Panel1.Location = new Point(1, 0);
@@ -99,37 +101,39 @@
             guna2Button4.TabIndex = 3;
             guna2Button4.Text = "Thống kê";
             // 
-            // guna2Button3
+            // btn_register
             // 
-            guna2Button3.CustomizableEdges = customizableEdges5;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.Font = new Font("Segoe UI", 9F);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(24, 203);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button3.Size = new Size(146, 38);
-            guna2Button3.TabIndex = 2;
-            guna2Button3.Text = "Mượn trả";
+            btn_register.CustomizableEdges = customizableEdges5;
+            btn_register.DisabledState.BorderColor = Color.DarkGray;
+            btn_register.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_register.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_register.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_register.Font = new Font("Segoe UI", 9F);
+            btn_register.ForeColor = Color.White;
+            btn_register.Location = new Point(24, 203);
+            btn_register.Name = "btn_register";
+            btn_register.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btn_register.Size = new Size(146, 38);
+            btn_register.TabIndex = 2;
+            btn_register.Text = "Mượn trả";
+            btn_register.Click += btn_register_Click;
             // 
-            // guna2Button2
+            // btn_user
             // 
-            guna2Button2.CustomizableEdges = customizableEdges7;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.Font = new Font("Segoe UI", 9F);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(24, 145);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button2.Size = new Size(146, 38);
-            guna2Button2.TabIndex = 1;
-            guna2Button2.Text = "Người dùng";
+            btn_user.CustomizableEdges = customizableEdges7;
+            btn_user.DisabledState.BorderColor = Color.DarkGray;
+            btn_user.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_user.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_user.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_user.Font = new Font("Segoe UI", 9F);
+            btn_user.ForeColor = Color.White;
+            btn_user.Location = new Point(24, 145);
+            btn_user.Name = "btn_user";
+            btn_user.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btn_user.Size = new Size(146, 38);
+            btn_user.TabIndex = 1;
+            btn_user.Text = "Người dùng";
+            btn_user.Click += btn_user_Click;
             // 
             // btn_book_management
             // 
@@ -151,6 +155,7 @@
             // pane_main
             // 
             pane_main.AutoScroll = true;
+            pane_main.AutoSize = true;
             pane_main.CustomizableEdges = customizableEdges13;
             pane_main.Location = new Point(202, 0);
             pane_main.Name = "pane_main";
@@ -158,10 +163,26 @@
             pane_main.Size = new Size(1277, 831);
             pane_main.TabIndex = 1;
             // 
+            // guna2ContextMenuStrip1
+            // 
+            guna2ContextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            guna2ContextMenuStrip1.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
+            guna2ContextMenuStrip1.RenderStyle.BorderColor = Color.Gainsboro;
+            guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = Color.White;
+            guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = Color.White;
+            guna2ContextMenuStrip1.RenderStyle.SeparatorColor = Color.Gainsboro;
+            guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            guna2ContextMenuStrip1.Size = new Size(61, 4);
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(1491, 835);
             Controls.Add(pane_main);
             Controls.Add(guna2Panel1);
@@ -170,16 +191,18 @@
             Load += Admin_Load;
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btn_register;
+        private Guna.UI2.WinForms.Guna2Button btn_user;
         private Guna.UI2.WinForms.Guna2Button btn_book_management;
         private Guna.UI2.WinForms.Guna2Panel pane_main;
         private Guna.UI2.WinForms.Guna2Button btn_category;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
     }
 }

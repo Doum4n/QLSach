@@ -1,12 +1,6 @@
 ﻿using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSach.database.models
 {
@@ -17,7 +11,7 @@ namespace QLSach.database.models
 
         public Comment()
         {
-            childrents = new List<Comment>();   
+            childrents = new List<Comment>();
         }
         public Comment(string content, int user_id, int book_id)
         {
@@ -30,7 +24,7 @@ namespace QLSach.database.models
         public int Id { get; set; }
         public string content { get; set; }
         public int UserId { get; set; }
-        public int BookId {  get; set; }
+        public int BookId { get; set; }
         [AllowNull]
         public int? parent_id { get; set; }
 

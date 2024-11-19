@@ -1,16 +1,7 @@
 ﻿using Bogus;
-using Bogus.DataSets;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.VisualBasic.ApplicationServices;
 using QLSach.database.models;
 using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSach.database
 {
@@ -25,7 +16,7 @@ namespace QLSach.database
         }
 
         public void Seed()
-        {   
+        {
             //Author
             var AuthorId = 1;
             var fakeAuthor = new Faker<author>()
@@ -62,12 +53,11 @@ namespace QLSach.database
                 .RuleFor(o => o.description, f => f.Lorem.Paragraph())
                 .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
                 .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
-                //.RuleFor
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
                 .RuleFor(o => o.year_public, f => f.Random.Int(1900, DateTime.Now.Year))
                 .RuleFor(o => o.updated_at, f => DateTime.Now)
                 .RuleFor(o => o.genre_id, f => f.PickRandom(genres.Select(o => o.id)));
-            
+
             var books = fakeBook.Generate(28);
 
             //Image
@@ -86,7 +76,9 @@ namespace QLSach.database
             var fakeUser = new Faker<models.User>()
                 .RuleFor(o => o.Id, f => user_id++)
                 .RuleFor(o => o.Password, f => f.Lorem.Text())
-                .RuleFor(o => o.UserName, f => f.Name.FullName());
+                .RuleFor(o => o.Name, f => f.Name.FullName())
+                .RuleFor(o => o.Role, f => f.PickRandom<Role>())
+                .RuleFor(o => o.UserName, f => f.Name.FirstName());
 
             var users = fakeUser.Generate(16);
 
@@ -121,11 +113,11 @@ namespace QLSach.database
                         return f.Date.Recent(6);
                     return null;
                 })
-                .RuleFor(o => o.expected_at, (f, o) => 
+                .RuleFor(o => o.expected_at, (f, o) =>
                 {
-                    if (o.Status == Status_borrow.Canceled)
+                    if (o.Status == Status_borrow.Canceled || o.Status == Status_borrow.Pending)
                         return null;
-                    return o.register_at.AddDays(7); 
+                    return o.register_at.AddDays(7);
                 })
                 .RuleFor(o => o.return_at, (f, o) =>
                 {
@@ -134,7 +126,7 @@ namespace QLSach.database
                     return null;
                 });
 
-            var register = fakeRegister.Generate(16);
+            var register = fakeRegister.Generate(40);
 
 
             var categoryBookId = 1;

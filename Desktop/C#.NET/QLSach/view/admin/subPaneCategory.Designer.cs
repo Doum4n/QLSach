@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,6 +50,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             paneMain = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             data = new DataGridView();
@@ -69,11 +75,15 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            combobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
+            tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             paneMain.SuspendLayout();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
             pane_add_category.SuspendLayout();
             pane_modify_category.SuspendLayout();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // paneMain
@@ -81,10 +91,11 @@
             paneMain.Controls.Add(guna2Panel3);
             paneMain.Controls.Add(pane_add_category);
             paneMain.Controls.Add(pane_modify_category);
-            paneMain.CustomizableEdges = customizableEdges21;
+            paneMain.Controls.Add(guna2Panel1);
+            paneMain.CustomizableEdges = customizableEdges27;
             paneMain.Location = new Point(6, 13);
             paneMain.Name = "paneMain";
-            paneMain.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            paneMain.ShadowDecoration.CustomizableEdges = customizableEdges28;
             paneMain.Size = new Size(1007, 933);
             paneMain.TabIndex = 10;
             // 
@@ -93,7 +104,7 @@
             guna2Panel3.Controls.Add(data);
             guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.Dock = DockStyle.Top;
-            guna2Panel3.Location = new Point(0, 292);
+            guna2Panel3.Location = new Point(0, 370);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel3.Size = new Size(1007, 597);
@@ -101,11 +112,12 @@
             // 
             // data
             // 
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(45, 25);
+            data.Location = new Point(72, 24);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(872, 569);
+            data.Size = new Size(872, 366);
             data.TabIndex = 3;
             // 
             // pane_add_category
@@ -117,7 +129,7 @@
             pane_add_category.Controls.Add(label1);
             pane_add_category.CustomizableEdges = customizableEdges9;
             pane_add_category.Dock = DockStyle.Top;
-            pane_add_category.Location = new Point(0, 160);
+            pane_add_category.Location = new Point(0, 238);
             pane_add_category.Name = "pane_add_category";
             pane_add_category.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pane_add_category.Size = new Size(1007, 132);
@@ -132,7 +144,7 @@
             btn_add.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_add.Font = new Font("Segoe UI", 9F);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(778, 19);
+            btn_add.Location = new Point(759, 43);
             btn_add.Name = "btn_add";
             btn_add.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_add.Size = new Size(123, 38);
@@ -185,7 +197,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(273, 19);
+            label2.Location = new Point(299, 19);
             label2.Name = "label2";
             label2.Size = new Size(48, 20);
             label2.TabIndex = 1;
@@ -213,10 +225,10 @@
             pane_modify_category.Controls.Add(label3);
             pane_modify_category.CustomizableEdges = customizableEdges19;
             pane_modify_category.Dock = DockStyle.Top;
-            pane_modify_category.Location = new Point(0, 0);
+            pane_modify_category.Location = new Point(0, 68);
             pane_modify_category.Name = "pane_modify_category";
             pane_modify_category.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            pane_modify_category.Size = new Size(1007, 160);
+            pane_modify_category.Size = new Size(1007, 170);
             pane_modify_category.TabIndex = 7;
             // 
             // btn_update
@@ -228,7 +240,7 @@
             btn_update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_update.Font = new Font("Segoe UI", 9F);
             btn_update.ForeColor = Color.White;
-            btn_update.Location = new Point(475, 113);
+            btn_update.Location = new Point(471, 117);
             btn_update.Name = "btn_update";
             btn_update.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btn_update.Size = new Size(142, 36);
@@ -247,7 +259,7 @@
             tb_books_amount.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_books_amount.Font = new Font("Segoe UI", 9F);
             tb_books_amount.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_books_amount.Location = new Point(141, 99);
+            tb_books_amount.Location = new Point(137, 103);
             tb_books_amount.Margin = new Padding(3, 4, 3, 4);
             tb_books_amount.Name = "tb_books_amount";
             tb_books_amount.PasswordChar = '\0';
@@ -260,7 +272,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(17, 107);
+            label6.Location = new Point(13, 111);
             label6.Name = "label6";
             label6.Size = new Size(102, 20);
             label6.TabIndex = 10;
@@ -269,7 +281,7 @@
             // rtb_descripton
             // 
             rtb_descripton.BorderStyle = BorderStyle.None;
-            rtb_descripton.Location = new Point(475, 15);
+            rtb_descripton.Location = new Point(471, 19);
             rtb_descripton.Name = "rtb_descripton";
             rtb_descripton.Size = new Size(375, 84);
             rtb_descripton.TabIndex = 9;
@@ -286,7 +298,7 @@
             tb_categoryName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_categoryName.Font = new Font("Segoe UI", 9F);
             tb_categoryName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_categoryName.Location = new Point(141, 48);
+            tb_categoryName.Location = new Point(137, 52);
             tb_categoryName.Margin = new Padding(3, 4, 3, 4);
             tb_categoryName.Name = "tb_categoryName";
             tb_categoryName.PasswordChar = '\0';
@@ -307,7 +319,7 @@
             tb_category_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_category_id.Font = new Font("Segoe UI", 9F);
             tb_category_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_category_id.Location = new Point(141, 7);
+            tb_category_id.Location = new Point(137, 11);
             tb_category_id.Margin = new Padding(3, 4, 3, 4);
             tb_category_id.Name = "tb_category_id";
             tb_category_id.PasswordChar = '\0';
@@ -320,7 +332,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(18, 15);
+            label5.Location = new Point(14, 19);
             label5.Name = "label5";
             label5.Size = new Size(99, 20);
             label5.TabIndex = 6;
@@ -329,7 +341,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(404, 12);
+            label4.Location = new Point(400, 16);
             label4.Name = "label4";
             label4.Size = new Size(48, 20);
             label4.TabIndex = 5;
@@ -338,11 +350,62 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(18, 50);
+            label3.Location = new Point(14, 54);
             label3.Name = "label3";
             label3.Size = new Size(101, 20);
             label3.TabIndex = 5;
             label3.Text = "Tên danh mục";
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.Controls.Add(combobox_fillter);
+            guna2Panel1.Controls.Add(tb_search);
+            guna2Panel1.CustomizableEdges = customizableEdges25;
+            guna2Panel1.Dock = DockStyle.Top;
+            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Panel1.Size = new Size(1007, 68);
+            guna2Panel1.TabIndex = 15;
+            // 
+            // combobox_fillter
+            // 
+            combobox_fillter.BackColor = Color.Transparent;
+            combobox_fillter.CustomizableEdges = customizableEdges21;
+            combobox_fillter.DrawMode = DrawMode.OwnerDrawFixed;
+            combobox_fillter.DropDownStyle = ComboBoxStyle.DropDownList;
+            combobox_fillter.FocusedColor = Color.FromArgb(94, 148, 255);
+            combobox_fillter.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            combobox_fillter.Font = new Font("Segoe UI", 10F);
+            combobox_fillter.ForeColor = Color.FromArgb(68, 88, 112);
+            combobox_fillter.ItemHeight = 30;
+            combobox_fillter.Location = new Point(235, 13);
+            combobox_fillter.Name = "combobox_fillter";
+            combobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            combobox_fillter.Size = new Size(153, 36);
+            combobox_fillter.TabIndex = 14;
+            // 
+            // tb_search
+            // 
+            tb_search.CustomizableEdges = customizableEdges23;
+            tb_search.DefaultText = "";
+            tb_search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_search.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_search.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_search.Font = new Font("Segoe UI", 9F);
+            tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_search.Location = new Point(24, 13);
+            tb_search.Margin = new Padding(3, 4, 3, 4);
+            tb_search.Name = "tb_search";
+            tb_search.PasswordChar = '\0';
+            tb_search.PlaceholderText = "";
+            tb_search.SelectedText = "";
+            tb_search.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            tb_search.Size = new Size(185, 36);
+            tb_search.TabIndex = 13;
+            tb_search.TextChanged += tb_search_TextChanged;
             // 
             // subPaneCategory
             // 
@@ -352,6 +415,7 @@
             Name = "subPaneCategory";
             Size = new Size(1018, 959);
             Load += subPaneCategory_Load;
+            VisibleChanged += onVisible;
             paneMain.ResumeLayout(false);
             guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
@@ -359,6 +423,7 @@
             pane_add_category.PerformLayout();
             pane_modify_category.ResumeLayout(false);
             pane_modify_category.PerformLayout();
+            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -383,5 +448,8 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_fillter;
+        private Guna.UI2.WinForms.Guna2TextBox tb_search;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

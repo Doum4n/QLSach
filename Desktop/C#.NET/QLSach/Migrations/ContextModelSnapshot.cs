@@ -82,42 +82,42 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Eaque sit minus magnam. Temporibus dolore non fuga quasi sit doloremque sit. Id hic pariatur qui autem.",
-                            Name = "voluptatem",
-                            create_at = new DateOnly(2024, 11, 13),
-                            update_at = new DateOnly(2024, 11, 13)
+                            Description = "Dignissimos quidem consequatur et praesentium nulla maxime quia mollitia. Consequatur aliquam neque nobis consequatur in sit temporibus. Et qui ullam quia deserunt et sit ducimus dolores. Cum beatae aut. Sint vero voluptates ducimus minima sapiente et in. Nisi pariatur maxime ratione assumenda corporis perspiciatis quasi.",
+                            Name = "Nostrum dolore officia libero dolorem.",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Voluptatem corporis eum sit eligendi. Sunt autem porro ipsam ex error eius ut vitae laboriosam. Non eum doloribus neque cum tempore enim laboriosam. Quasi eaque dicta officiis. Occaecati consequatur et tempora. Dolorem ea voluptates nostrum aut molestiae voluptatem.",
-                            Name = "Numquam earum repellendus incidunt in ipsam.\nLibero quo odio alias harum repudiandae vel perferendis blanditiis.\nLaborum nesciunt quae alias voluptas blanditiis.",
-                            create_at = new DateOnly(2024, 11, 13),
-                            update_at = new DateOnly(2024, 11, 13)
+                            Description = "Nobis non et esse accusamus eaque pariatur ut. Tenetur non ut aliquid architecto id dicta accusamus. Quibusdam et dicta ducimus sed corrupti pariatur molestiae sapiente. Corrupti id perspiciatis et suscipit rerum impedit dignissimos.",
+                            Name = "repudiandae",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 3,
-                            Description = "Dolor ut magni minima possimus soluta ad. Officiis voluptas ad architecto est laudantium nihil nobis. Ipsa at eligendi ad quia est sit. Omnis dignissimos velit placeat alias qui.",
-                            Name = "Quasi blanditiis neque quia quis.\nLibero cum ad reprehenderit sed voluptatibus sed sit.\nVoluptas reiciendis vitae velit.\nSoluta at libero est voluptas necessitatibus quae.\nIure libero quos non soluta voluptatum non inventore id aut.",
-                            create_at = new DateOnly(2024, 11, 13),
-                            update_at = new DateOnly(2024, 11, 13)
+                            Description = "Numquam at ut nesciunt doloremque velit illo et eveniet. At reiciendis nisi voluptatem ipsa non illo ut et. Qui quam nam mollitia eos sunt et et delectus. Nemo voluptatem aut nemo autem repellat nam sunt.",
+                            Name = "Qui ea animi minima rem sunt expedita.",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 4,
-                            Description = "Deserunt quidem eum est quas omnis. Esse reprehenderit ea omnis atque nam nihil est molestias vel. Illo voluptas ex deserunt reprehenderit dolores sapiente cumque mollitia.",
-                            Name = "Neque itaque in. Sit et cumque voluptatem aperiam est incidunt ut et. Velit itaque beatae exercitationem qui ut alias deserunt repudiandae quae. Qui porro consequuntur ut ut et. Et dolor non maxime omnis quo dolores vel dolores quam. Ea et quod.",
-                            create_at = new DateOnly(2024, 11, 13),
-                            update_at = new DateOnly(2024, 11, 13)
+                            Description = "Tenetur eius aut. Deleniti impedit qui. Ratione quidem et consequatur cumque esse iste. Molestiae perferendis impedit. Non laborum aliquid delectus inventore quis eaque minima quasi. Placeat eos expedita officiis similique quibusdam.",
+                            Name = "Consectetur fuga quaerat totam animi odit omnis. Id vitae dignissimos velit qui. Repellendus labore mollitia recusandae nisi mollitia omnis quos. Nesciunt explicabo minus.",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 5,
-                            Description = "Et a quam. Ab iusto est ab facere repellendus alias id consequatur. Beatae doloremque porro dolor dicta.",
-                            Name = "et",
-                            create_at = new DateOnly(2024, 11, 13),
-                            update_at = new DateOnly(2024, 11, 13)
+                            Description = "Aspernatur qui distinctio alias dolorem. Sit necessitatibus consequatur quia. Rerum magnam a totam ut quia. Rerum consequatur atque dolorem ducimus maxime optio excepturi aliquam. Quam libero nihil sit ipsum mollitia.",
+                            Name = "Qui quisquam error repellendus. Omnis eveniet ut quis aut eaque aliquid ipsa eius. Necessitatibus sequi consequatur earum ipsum blanditiis.",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         });
                 });
 
@@ -147,121 +147,121 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            BookId = 10,
+                            BookId = 14,
                             CategoryId = 4
                         },
                         new
                         {
                             Id = 2,
-                            BookId = 10,
-                            CategoryId = 2
+                            BookId = 20,
+                            CategoryId = 3
                         },
                         new
                         {
                             Id = 3,
-                            BookId = 8,
-                            CategoryId = 2
+                            BookId = 18,
+                            CategoryId = 4
                         },
                         new
                         {
                             Id = 4,
-                            BookId = 4,
+                            BookId = 1,
                             CategoryId = 5
                         },
                         new
                         {
                             Id = 5,
-                            BookId = 10,
-                            CategoryId = 4
-                        },
-                        new
-                        {
-                            Id = 6,
-                            BookId = 25,
-                            CategoryId = 5
-                        },
-                        new
-                        {
-                            Id = 7,
                             BookId = 28,
                             CategoryId = 3
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 6,
+                            BookId = 25,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            Id = 7,
                             BookId = 26,
+                            CategoryId = 5
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BookId = 22,
                             CategoryId = 3
                         },
                         new
                         {
                             Id = 9,
                             BookId = 28,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            BookId = 6,
                             CategoryId = 4
                         },
                         new
                         {
-                            Id = 11,
-                            BookId = 5,
-                            CategoryId = 5
-                        },
-                        new
-                        {
-                            Id = 12,
-                            BookId = 15,
-                            CategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            BookId = 6,
-                            CategoryId = 5
-                        },
-                        new
-                        {
-                            Id = 14,
-                            BookId = 23,
-                            CategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 15,
+                            Id = 10,
                             BookId = 19,
                             CategoryId = 3
                         },
                         new
                         {
-                            Id = 16,
-                            BookId = 24,
+                            Id = 11,
+                            BookId = 3,
+                            CategoryId = 4
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BookId = 28,
                             CategoryId = 1
                         },
                         new
                         {
-                            Id = 17,
+                            Id = 13,
+                            BookId = 5,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BookId = 17,
+                            CategoryId = 3
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BookId = 20,
+                            CategoryId = 1
+                        },
+                        new
+                        {
+                            Id = 16,
                             BookId = 8,
                             CategoryId = 3
                         },
                         new
                         {
+                            Id = 17,
+                            BookId = 16,
+                            CategoryId = 1
+                        },
+                        new
+                        {
                             Id = 18,
-                            BookId = 22,
+                            BookId = 6,
                             CategoryId = 4
                         },
                         new
                         {
                             Id = 19,
-                            BookId = 16,
-                            CategoryId = 3
+                            BookId = 11,
+                            CategoryId = 5
                         },
                         new
                         {
                             Id = 20,
-                            BookId = 16,
+                            BookId = 21,
                             CategoryId = 5
                         });
                 });
@@ -301,242 +301,242 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            BookId = 6,
+                            BookId = 8,
                             UserId = 14,
-                            content = "Enim sint reprehenderit et dolores et fugit deleniti sed sequi."
+                            content = "Impedit voluptatem qui sed reiciendis ipsa dolores repellendus inventore harum."
                         },
                         new
                         {
                             Id = 2,
-                            BookId = 13,
-                            UserId = 16,
-                            content = "Impedit iste aut ducimus quo est eius."
+                            BookId = 16,
+                            UserId = 5,
+                            content = "Beatae illo molestiae."
                         },
                         new
                         {
                             Id = 3,
-                            BookId = 27,
-                            UserId = 16,
-                            content = "Expedita omnis quia sint beatae magni saepe et et."
+                            BookId = 15,
+                            UserId = 14,
+                            content = "Cupiditate modi libero quos laborum nostrum quidem voluptas."
                         },
                         new
                         {
                             Id = 4,
-                            BookId = 3,
+                            BookId = 18,
                             UserId = 16,
-                            content = "Repellendus est a vel."
+                            content = "Velit expedita minus aut."
                         },
                         new
                         {
                             Id = 5,
-                            BookId = 1,
-                            UserId = 3,
-                            content = "Rerum in nisi et ab."
+                            BookId = 11,
+                            UserId = 16,
+                            content = "Molestias animi animi saepe aut mollitia voluptas."
                         },
                         new
                         {
                             Id = 6,
-                            BookId = 23,
-                            UserId = 1,
-                            content = "Aut ipsam quod quidem accusantium."
+                            BookId = 25,
+                            UserId = 11,
+                            content = "Sed cupiditate quia facilis non soluta."
                         },
                         new
                         {
                             Id = 7,
-                            BookId = 19,
-                            UserId = 13,
-                            content = "Nulla itaque recusandae voluptas."
+                            BookId = 7,
+                            UserId = 16,
+                            content = "Omnis laboriosam commodi laboriosam molestiae eos."
                         },
                         new
                         {
                             Id = 8,
-                            BookId = 2,
+                            BookId = 6,
                             UserId = 4,
-                            content = "Quibusdam quasi omnis voluptatem porro."
+                            content = "Excepturi aspernatur sequi ea."
                         },
                         new
                         {
                             Id = 9,
-                            BookId = 8,
+                            BookId = 10,
                             UserId = 3,
-                            content = "Et ea rem quibusdam atque saepe."
+                            content = "Commodi sint et totam labore ab."
                         },
                         new
                         {
                             Id = 10,
-                            BookId = 5,
-                            UserId = 13,
-                            content = "Officiis aut illum ut."
+                            BookId = 25,
+                            UserId = 15,
+                            content = "Nesciunt omnis corporis quod harum voluptates harum consequatur maxime saepe."
                         },
                         new
                         {
                             Id = 11,
-                            BookId = 19,
-                            UserId = 15,
-                            content = "Voluptatem magni quisquam quas sit maiores et quia."
+                            BookId = 16,
+                            UserId = 7,
+                            content = "Suscipit ullam quibusdam provident optio velit."
                         },
                         new
                         {
                             Id = 12,
-                            BookId = 21,
-                            UserId = 14,
-                            content = "Et commodi ad in culpa voluptas ut non occaecati."
+                            BookId = 10,
+                            UserId = 3,
+                            content = "Nihil est velit ea aut molestiae et soluta alias."
                         },
                         new
                         {
                             Id = 13,
-                            BookId = 17,
-                            UserId = 14,
-                            content = "Omnis ut dolores et qui molestiae."
+                            BookId = 21,
+                            UserId = 3,
+                            content = "Adipisci alias quam animi."
                         },
                         new
                         {
                             Id = 14,
-                            BookId = 3,
-                            UserId = 10,
-                            content = "Sed quas occaecati deleniti incidunt aut quo dolores."
+                            BookId = 18,
+                            UserId = 8,
+                            content = "Autem at nesciunt dolore."
                         },
                         new
                         {
                             Id = 15,
-                            BookId = 28,
-                            UserId = 5,
-                            content = "Dolor non qui expedita rerum sed dolorem iusto earum quam."
+                            BookId = 21,
+                            UserId = 9,
+                            content = "Quam architecto et quasi omnis."
                         },
                         new
                         {
                             Id = 16,
-                            BookId = 11,
-                            UserId = 4,
-                            content = "Sit animi itaque ea nam excepturi."
+                            BookId = 25,
+                            UserId = 1,
+                            content = "Et voluptatem sit eum vel vel."
                         },
                         new
                         {
                             Id = 17,
-                            BookId = 21,
-                            UserId = 1,
-                            content = "Dolor neque libero.",
-                            parent_id = 2
-                        },
-                        new
-                        {
-                            Id = 18,
                             BookId = 10,
-                            UserId = 3,
-                            content = "Quia illum itaque quisquam dignissimos.",
-                            parent_id = 1
-                        },
-                        new
-                        {
-                            Id = 19,
-                            BookId = 8,
-                            UserId = 15,
-                            content = "Porro odit hic voluptate beatae omnis est necessitatibus iste quis.",
+                            UserId = 5,
+                            content = "Sapiente nobis rem aut et.",
                             parent_id = 4
                         },
                         new
                         {
+                            Id = 18,
+                            BookId = 18,
+                            UserId = 4,
+                            content = "Corrupti quidem est dolor et placeat quia deserunt.",
+                            parent_id = 11
+                        },
+                        new
+                        {
+                            Id = 19,
+                            BookId = 1,
+                            UserId = 8,
+                            content = "Ut pariatur sequi voluptas ad voluptatem molestias similique est dignissimos.",
+                            parent_id = 6
+                        },
+                        new
+                        {
                             Id = 20,
-                            BookId = 25,
-                            UserId = 1,
-                            content = "Amet id cupiditate molestias quos autem tempora et sed.",
-                            parent_id = 5
+                            BookId = 8,
+                            UserId = 2,
+                            content = "Sint ea non voluptatem est sed a.",
+                            parent_id = 10
                         },
                         new
                         {
                             Id = 21,
-                            BookId = 28,
-                            UserId = 4,
-                            content = "Culpa non laboriosam.",
-                            parent_id = 12
+                            BookId = 23,
+                            UserId = 11,
+                            content = "Sequi culpa quo nihil illum ut laboriosam facere accusamus corrupti.",
+                            parent_id = 1
                         },
                         new
                         {
                             Id = 22,
-                            BookId = 20,
-                            UserId = 1,
-                            content = "Quasi rem hic fuga ipsum delectus eius numquam placeat dolor.",
-                            parent_id = 13
-                        },
-                        new
-                        {
-                            Id = 23,
-                            BookId = 13,
-                            UserId = 15,
-                            content = "Officiis rerum reiciendis.",
-                            parent_id = 1
-                        },
-                        new
-                        {
-                            Id = 24,
-                            BookId = 7,
-                            UserId = 2,
-                            content = "Consequatur dolore non vero eos hic est rerum.",
-                            parent_id = 9
-                        },
-                        new
-                        {
-                            Id = 25,
-                            BookId = 23,
-                            UserId = 5,
-                            content = "Vitae repudiandae quae.",
-                            parent_id = 1
-                        },
-                        new
-                        {
-                            Id = 26,
-                            BookId = 8,
-                            UserId = 4,
-                            content = "Voluptatibus earum ipsam recusandae debitis unde.",
-                            parent_id = 10
-                        },
-                        new
-                        {
-                            Id = 27,
-                            BookId = 23,
-                            UserId = 12,
-                            content = "Ipsam qui tempore et harum delectus.",
-                            parent_id = 10
-                        },
-                        new
-                        {
-                            Id = 28,
-                            BookId = 24,
-                            UserId = 8,
-                            content = "Sit qui ducimus.",
-                            parent_id = 5
-                        },
-                        new
-                        {
-                            Id = 29,
-                            BookId = 14,
-                            UserId = 5,
-                            content = "Et facere dolorem est earum omnis tempore.",
-                            parent_id = 13
-                        },
-                        new
-                        {
-                            Id = 30,
-                            BookId = 9,
-                            UserId = 1,
-                            content = "Ex quis laboriosam facere ea labore inventore.",
-                            parent_id = 9
-                        },
-                        new
-                        {
-                            Id = 31,
-                            BookId = 20,
-                            UserId = 11,
-                            content = "Eaque est perspiciatis nostrum odit est aut dolor iusto reprehenderit.",
+                            BookId = 6,
+                            UserId = 10,
+                            content = "Et aut quia dolore voluptas minima sit.",
                             parent_id = 2
                         },
                         new
                         {
-                            Id = 32,
-                            BookId = 3,
+                            Id = 23,
+                            BookId = 4,
+                            UserId = 16,
+                            content = "Magni delectus tempore quo doloribus ea quidem.",
+                            parent_id = 6
+                        },
+                        new
+                        {
+                            Id = 24,
+                            BookId = 18,
+                            UserId = 9,
+                            content = "Nostrum sit in non unde reiciendis.",
+                            parent_id = 4
+                        },
+                        new
+                        {
+                            Id = 25,
+                            BookId = 22,
+                            UserId = 5,
+                            content = "Sit veritatis corrupti laudantium veritatis vel.",
+                            parent_id = 13
+                        },
+                        new
+                        {
+                            Id = 26,
+                            BookId = 11,
+                            UserId = 2,
+                            content = "Cumque nam incidunt fugit.",
+                            parent_id = 5
+                        },
+                        new
+                        {
+                            Id = 27,
+                            BookId = 21,
+                            UserId = 7,
+                            content = "Quia dolorem praesentium sit aperiam.",
+                            parent_id = 1
+                        },
+                        new
+                        {
+                            Id = 28,
+                            BookId = 10,
+                            UserId = 7,
+                            content = "Dicta consequatur voluptas earum.",
+                            parent_id = 16
+                        },
+                        new
+                        {
+                            Id = 29,
+                            BookId = 24,
+                            UserId = 5,
+                            content = "Doloribus omnis delectus autem a accusantium suscipit dolores et.",
+                            parent_id = 4
+                        },
+                        new
+                        {
+                            Id = 30,
+                            BookId = 28,
                             UserId = 14,
-                            content = "Magnam debitis deleniti omnis.",
-                            parent_id = 3
+                            content = "Eos alias dolorum hic id quia dolor.",
+                            parent_id = 10
+                        },
+                        new
+                        {
+                            Id = 31,
+                            BookId = 7,
+                            UserId = 11,
+                            content = "Enim autem nam iure.",
+                            parent_id = 13
+                        },
+                        new
+                        {
+                            Id = 32,
+                            BookId = 17,
+                            UserId = 2,
+                            content = "Cum quod esse non soluta aut rerum.",
+                            parent_id = 9
                         });
                 });
 
@@ -560,162 +560,162 @@ namespace QLSach.Migrations
                         new
                         {
                             id = 1,
-                            name = "voluptas"
+                            name = "velit"
                         },
                         new
                         {
                             id = 2,
-                            name = "in"
+                            name = "quaerat"
                         },
                         new
                         {
                             id = 3,
-                            name = "eveniet"
-                        },
-                        new
-                        {
-                            id = 4,
-                            name = "temporibus"
-                        },
-                        new
-                        {
-                            id = 5,
-                            name = "laboriosam"
-                        },
-                        new
-                        {
-                            id = 6,
-                            name = "cumque"
-                        },
-                        new
-                        {
-                            id = 7,
-                            name = "quos"
-                        },
-                        new
-                        {
-                            id = 8,
-                            name = "eum"
-                        },
-                        new
-                        {
-                            id = 9,
-                            name = "labore"
-                        },
-                        new
-                        {
-                            id = 10,
-                            name = "minima"
-                        },
-                        new
-                        {
-                            id = 11,
-                            name = "eaque"
-                        },
-                        new
-                        {
-                            id = 12,
-                            name = "et"
-                        },
-                        new
-                        {
-                            id = 13,
-                            name = "voluptates"
-                        },
-                        new
-                        {
-                            id = 14,
-                            name = "doloribus"
-                        },
-                        new
-                        {
-                            id = 15,
-                            name = "rerum"
-                        },
-                        new
-                        {
-                            id = 16,
-                            name = "dolor"
-                        },
-                        new
-                        {
-                            id = 17,
-                            name = "et"
-                        },
-                        new
-                        {
-                            id = 18,
-                            name = "aliquam"
-                        },
-                        new
-                        {
-                            id = 19,
-                            name = "dolor"
-                        },
-                        new
-                        {
-                            id = 20,
-                            name = "omnis"
-                        },
-                        new
-                        {
-                            id = 21,
-                            name = "temporibus"
-                        },
-                        new
-                        {
-                            id = 22,
-                            name = "assumenda"
-                        },
-                        new
-                        {
-                            id = 23,
-                            name = "quas"
-                        },
-                        new
-                        {
-                            id = 24,
                             name = "voluptas"
                         },
                         new
                         {
-                            id = 25,
-                            name = "in"
+                            id = 4,
+                            name = "sit"
                         },
                         new
                         {
-                            id = 26,
-                            name = "in"
-                        },
-                        new
-                        {
-                            id = 27,
-                            name = "quia"
-                        },
-                        new
-                        {
-                            id = 28,
+                            id = 5,
                             name = "aperiam"
                         },
                         new
                         {
+                            id = 6,
+                            name = "qui"
+                        },
+                        new
+                        {
+                            id = 7,
+                            name = "iure"
+                        },
+                        new
+                        {
+                            id = 8,
+                            name = "dolorum"
+                        },
+                        new
+                        {
+                            id = 9,
+                            name = "eius"
+                        },
+                        new
+                        {
+                            id = 10,
+                            name = "reprehenderit"
+                        },
+                        new
+                        {
+                            id = 11,
+                            name = "vero"
+                        },
+                        new
+                        {
+                            id = 12,
+                            name = "delectus"
+                        },
+                        new
+                        {
+                            id = 13,
+                            name = "libero"
+                        },
+                        new
+                        {
+                            id = 14,
+                            name = "eum"
+                        },
+                        new
+                        {
+                            id = 15,
+                            name = "ipsa"
+                        },
+                        new
+                        {
+                            id = 16,
+                            name = "deleniti"
+                        },
+                        new
+                        {
+                            id = 17,
+                            name = "est"
+                        },
+                        new
+                        {
+                            id = 18,
+                            name = "labore"
+                        },
+                        new
+                        {
+                            id = 19,
+                            name = "et"
+                        },
+                        new
+                        {
+                            id = 20,
+                            name = "sunt"
+                        },
+                        new
+                        {
+                            id = 21,
+                            name = "ex"
+                        },
+                        new
+                        {
+                            id = 22,
+                            name = "et"
+                        },
+                        new
+                        {
+                            id = 23,
+                            name = "quidem"
+                        },
+                        new
+                        {
+                            id = 24,
+                            name = "culpa"
+                        },
+                        new
+                        {
+                            id = 25,
+                            name = "ratione"
+                        },
+                        new
+                        {
+                            id = 26,
+                            name = "non"
+                        },
+                        new
+                        {
+                            id = 27,
+                            name = "velit"
+                        },
+                        new
+                        {
+                            id = 28,
+                            name = "molestias"
+                        },
+                        new
+                        {
                             id = 29,
-                            name = "repudiandae"
+                            name = "ducimus"
                         },
                         new
                         {
                             id = 30,
-                            name = "dolor"
+                            name = "itaque"
                         },
                         new
                         {
                             id = 31,
-                            name = "officiis"
+                            name = "ipsam"
                         },
                         new
                         {
                             id = 32,
-                            name = "assumenda"
+                            name = "perspiciatis"
                         });
                 });
 
@@ -745,55 +745,55 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            book_id = 22,
+                            book_id = 26,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 2,
-                            book_id = 9,
-                            path = ".\\resources\\images\\poster.png"
-                        },
-                        new
-                        {
-                            Id = 3,
                             book_id = 8,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
+                            Id = 3,
+                            book_id = 18,
+                            path = ".\\resources\\images\\poster.png"
+                        },
+                        new
+                        {
                             Id = 4,
-                            book_id = 6,
+                            book_id = 11,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 5,
-                            book_id = 5,
+                            book_id = 8,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 6,
-                            book_id = 9,
+                            book_id = 1,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 7,
-                            book_id = 5,
+                            book_id = 17,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 8,
-                            book_id = 4,
+                            book_id = 6,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 9,
-                            book_id = 2,
+                            book_id = 20,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
@@ -811,19 +811,19 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 12,
-                            book_id = 2,
+                            book_id = 17,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 13,
-                            book_id = 8,
+                            book_id = 25,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
                         {
                             Id = 14,
-                            book_id = 9,
+                            book_id = 4,
                             path = ".\\resources\\images\\poster.png"
                         },
                         new
@@ -835,7 +835,7 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 16,
-                            book_id = 8,
+                            book_id = 20,
                             path = ".\\resources\\images\\poster.png"
                         });
                 });
@@ -882,155 +882,369 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            BookId = 14,
-                            Status = "Borrowed",
-                            UserId = 11,
-                            borrow_at = new DateTime(2024, 11, 12, 5, 25, 40, 861, DateTimeKind.Local).AddTicks(4714),
-                            expected_at = new DateTime(2024, 11, 14, 11, 28, 12, 411, DateTimeKind.Local).AddTicks(1146),
-                            register_at = new DateTime(2024, 11, 7, 11, 28, 12, 411, DateTimeKind.Local).AddTicks(1146)
+                            BookId = 20,
+                            Status = "Pending",
+                            UserId = 7,
+                            register_at = new DateTime(2024, 11, 14, 16, 15, 18, 820, DateTimeKind.Local).AddTicks(6978)
                         },
                         new
                         {
                             Id = 2,
-                            BookId = 21,
-                            Status = "Completed",
-                            UserId = 15,
-                            borrow_at = new DateTime(2024, 11, 8, 0, 0, 59, 388, DateTimeKind.Local).AddTicks(9467),
-                            expected_at = new DateTime(2024, 11, 18, 13, 23, 13, 885, DateTimeKind.Local).AddTicks(6917),
-                            register_at = new DateTime(2024, 11, 11, 13, 23, 13, 885, DateTimeKind.Local).AddTicks(6917),
-                            return_at = new DateTime(2024, 11, 11, 21, 46, 35, 391, DateTimeKind.Local).AddTicks(845)
+                            BookId = 12,
+                            Status = "Canceled",
+                            UserId = 11,
+                            register_at = new DateTime(2024, 11, 15, 15, 21, 30, 971, DateTimeKind.Local).AddTicks(7704)
                         },
                         new
                         {
                             Id = 3,
-                            BookId = 7,
-                            Status = "Completed",
-                            UserId = 7,
-                            borrow_at = new DateTime(2024, 11, 10, 21, 50, 42, 373, DateTimeKind.Local).AddTicks(5091),
-                            expected_at = new DateTime(2024, 11, 19, 17, 18, 37, 572, DateTimeKind.Local).AddTicks(3173),
-                            register_at = new DateTime(2024, 11, 12, 17, 18, 37, 572, DateTimeKind.Local).AddTicks(3173),
-                            return_at = new DateTime(2024, 11, 13, 5, 37, 14, 472, DateTimeKind.Local).AddTicks(8820)
+                            BookId = 17,
+                            Status = "Canceled",
+                            UserId = 10,
+                            register_at = new DateTime(2024, 11, 12, 22, 53, 11, 757, DateTimeKind.Local).AddTicks(8264)
                         },
                         new
                         {
                             Id = 4,
-                            BookId = 10,
+                            BookId = 17,
                             Status = "Pending",
-                            UserId = 1,
-                            expected_at = new DateTime(2024, 11, 14, 1, 51, 54, 495, DateTimeKind.Local).AddTicks(9683),
-                            register_at = new DateTime(2024, 11, 7, 1, 51, 54, 495, DateTimeKind.Local).AddTicks(9683)
+                            UserId = 10,
+                            register_at = new DateTime(2024, 11, 19, 2, 24, 39, 211, DateTimeKind.Local).AddTicks(991)
                         },
                         new
                         {
                             Id = 5,
-                            BookId = 1,
+                            BookId = 7,
                             Status = "Borrowed",
-                            UserId = 3,
-                            borrow_at = new DateTime(2024, 11, 12, 18, 38, 42, 246, DateTimeKind.Local).AddTicks(1090),
-                            expected_at = new DateTime(2024, 11, 18, 21, 21, 53, 953, DateTimeKind.Local).AddTicks(5164),
-                            register_at = new DateTime(2024, 11, 11, 21, 21, 53, 953, DateTimeKind.Local).AddTicks(5164)
+                            UserId = 15,
+                            borrow_at = new DateTime(2024, 11, 16, 1, 37, 54, 343, DateTimeKind.Local).AddTicks(6520),
+                            expected_at = new DateTime(2024, 11, 23, 11, 6, 41, 239, DateTimeKind.Local).AddTicks(1937),
+                            register_at = new DateTime(2024, 11, 16, 11, 6, 41, 239, DateTimeKind.Local).AddTicks(1937)
                         },
                         new
                         {
                             Id = 6,
                             BookId = 23,
-                            Status = "Borrowed",
-                            UserId = 7,
-                            borrow_at = new DateTime(2024, 11, 8, 16, 52, 12, 868, DateTimeKind.Local).AddTicks(9167),
-                            expected_at = new DateTime(2024, 11, 15, 1, 56, 3, 898, DateTimeKind.Local).AddTicks(3723),
-                            register_at = new DateTime(2024, 11, 8, 1, 56, 3, 898, DateTimeKind.Local).AddTicks(3723)
+                            Status = "Canceled",
+                            UserId = 10,
+                            register_at = new DateTime(2024, 11, 15, 9, 27, 37, 829, DateTimeKind.Local).AddTicks(3172)
                         },
                         new
                         {
                             Id = 7,
-                            BookId = 6,
-                            Status = "Canceled",
+                            BookId = 9,
+                            Status = "Borrowed",
                             UserId = 7,
-                            register_at = new DateTime(2024, 11, 6, 20, 39, 37, 96, DateTimeKind.Local).AddTicks(4873)
+                            borrow_at = new DateTime(2024, 11, 17, 10, 29, 35, 244, DateTimeKind.Local).AddTicks(8426),
+                            expected_at = new DateTime(2024, 11, 25, 8, 47, 50, 799, DateTimeKind.Local).AddTicks(2540),
+                            register_at = new DateTime(2024, 11, 18, 8, 47, 50, 799, DateTimeKind.Local).AddTicks(2540)
                         },
                         new
                         {
                             Id = 8,
-                            BookId = 17,
+                            BookId = 12,
                             Status = "Pending",
-                            UserId = 2,
-                            expected_at = new DateTime(2024, 11, 18, 7, 8, 52, 809, DateTimeKind.Local).AddTicks(9156),
-                            register_at = new DateTime(2024, 11, 11, 7, 8, 52, 809, DateTimeKind.Local).AddTicks(9156)
+                            UserId = 5,
+                            register_at = new DateTime(2024, 11, 17, 9, 37, 58, 59, DateTimeKind.Local).AddTicks(8015)
                         },
                         new
                         {
                             Id = 9,
-                            BookId = 25,
-                            Status = "Pending",
-                            UserId = 5,
-                            expected_at = new DateTime(2024, 11, 18, 19, 20, 18, 831, DateTimeKind.Local).AddTicks(8567),
-                            register_at = new DateTime(2024, 11, 11, 19, 20, 18, 831, DateTimeKind.Local).AddTicks(8567)
+                            BookId = 7,
+                            Status = "Completed",
+                            UserId = 8,
+                            borrow_at = new DateTime(2024, 11, 18, 19, 4, 30, 269, DateTimeKind.Local).AddTicks(527),
+                            expected_at = new DateTime(2024, 11, 22, 21, 22, 58, 353, DateTimeKind.Local).AddTicks(8476),
+                            register_at = new DateTime(2024, 11, 15, 21, 22, 58, 353, DateTimeKind.Local).AddTicks(8476),
+                            return_at = new DateTime(2024, 11, 18, 20, 34, 14, 700, DateTimeKind.Local).AddTicks(6730)
                         },
                         new
                         {
                             Id = 10,
-                            BookId = 6,
-                            Status = "Canceled",
-                            UserId = 6,
-                            register_at = new DateTime(2024, 11, 8, 1, 13, 33, 209, DateTimeKind.Local).AddTicks(3089)
+                            BookId = 2,
+                            Status = "Borrowed",
+                            UserId = 5,
+                            borrow_at = new DateTime(2024, 11, 17, 4, 4, 0, 322, DateTimeKind.Local).AddTicks(8576),
+                            expected_at = new DateTime(2024, 11, 24, 21, 10, 34, 829, DateTimeKind.Local).AddTicks(1631),
+                            register_at = new DateTime(2024, 11, 17, 21, 10, 34, 829, DateTimeKind.Local).AddTicks(1631)
                         },
                         new
                         {
                             Id = 11,
-                            BookId = 12,
+                            BookId = 9,
                             Status = "Borrowed",
-                            UserId = 9,
-                            borrow_at = new DateTime(2024, 11, 9, 8, 9, 52, 723, DateTimeKind.Local).AddTicks(4179),
-                            expected_at = new DateTime(2024, 11, 15, 10, 15, 3, 418, DateTimeKind.Local).AddTicks(6726),
-                            register_at = new DateTime(2024, 11, 8, 10, 15, 3, 418, DateTimeKind.Local).AddTicks(6726)
+                            UserId = 7,
+                            borrow_at = new DateTime(2024, 11, 14, 0, 49, 2, 422, DateTimeKind.Local).AddTicks(9389),
+                            expected_at = new DateTime(2024, 11, 23, 18, 19, 25, 4, DateTimeKind.Local).AddTicks(9703),
+                            register_at = new DateTime(2024, 11, 16, 18, 19, 25, 4, DateTimeKind.Local).AddTicks(9703)
                         },
                         new
                         {
                             Id = 12,
-                            BookId = 19,
-                            Status = "Borrowed",
-                            UserId = 9,
-                            borrow_at = new DateTime(2024, 11, 10, 20, 7, 2, 682, DateTimeKind.Local).AddTicks(1833),
-                            expected_at = new DateTime(2024, 11, 19, 11, 4, 4, 830, DateTimeKind.Local).AddTicks(9433),
-                            register_at = new DateTime(2024, 11, 12, 11, 4, 4, 830, DateTimeKind.Local).AddTicks(9433)
+                            BookId = 28,
+                            Status = "Pending",
+                            UserId = 14,
+                            register_at = new DateTime(2024, 11, 15, 22, 57, 18, 471, DateTimeKind.Local).AddTicks(6756)
                         },
                         new
                         {
                             Id = 13,
-                            BookId = 3,
+                            BookId = 8,
                             Status = "Borrowed",
-                            UserId = 11,
-                            borrow_at = new DateTime(2024, 11, 11, 11, 0, 20, 648, DateTimeKind.Local).AddTicks(848),
-                            expected_at = new DateTime(2024, 11, 16, 18, 41, 56, 185, DateTimeKind.Local).AddTicks(1143),
-                            register_at = new DateTime(2024, 11, 9, 18, 41, 56, 185, DateTimeKind.Local).AddTicks(1143)
+                            UserId = 5,
+                            borrow_at = new DateTime(2024, 11, 15, 10, 47, 11, 701, DateTimeKind.Local).AddTicks(6503),
+                            expected_at = new DateTime(2024, 11, 26, 19, 18, 23, 535, DateTimeKind.Local).AddTicks(8422),
+                            register_at = new DateTime(2024, 11, 19, 19, 18, 23, 535, DateTimeKind.Local).AddTicks(8422)
                         },
                         new
                         {
                             Id = 14,
-                            BookId = 16,
+                            BookId = 22,
                             Status = "Canceled",
-                            UserId = 12,
-                            register_at = new DateTime(2024, 11, 8, 0, 10, 23, 761, DateTimeKind.Local).AddTicks(7069)
+                            UserId = 16,
+                            register_at = new DateTime(2024, 11, 18, 18, 15, 54, 529, DateTimeKind.Local).AddTicks(1161)
                         },
                         new
                         {
                             Id = 15,
-                            BookId = 6,
-                            Status = "Borrowed",
-                            UserId = 14,
-                            borrow_at = new DateTime(2024, 11, 7, 17, 5, 11, 139, DateTimeKind.Local).AddTicks(4931),
-                            expected_at = new DateTime(2024, 11, 20, 10, 27, 22, 630, DateTimeKind.Local).AddTicks(2481),
-                            register_at = new DateTime(2024, 11, 13, 10, 27, 22, 630, DateTimeKind.Local).AddTicks(2481)
+                            BookId = 11,
+                            Status = "Pending",
+                            UserId = 13,
+                            register_at = new DateTime(2024, 11, 13, 22, 52, 33, 985, DateTimeKind.Local).AddTicks(8628)
                         },
                         new
                         {
                             Id = 16,
-                            BookId = 28,
+                            BookId = 5,
+                            Status = "Canceled",
+                            UserId = 2,
+                            register_at = new DateTime(2024, 11, 13, 10, 45, 23, 525, DateTimeKind.Local).AddTicks(3652)
+                        },
+                        new
+                        {
+                            Id = 17,
+                            BookId = 8,
+                            Status = "Pending",
+                            UserId = 2,
+                            register_at = new DateTime(2024, 11, 14, 6, 53, 0, 144, DateTimeKind.Local).AddTicks(4587)
+                        },
+                        new
+                        {
+                            Id = 18,
+                            BookId = 13,
+                            Status = "Canceled",
+                            UserId = 5,
+                            register_at = new DateTime(2024, 11, 17, 12, 37, 44, 738, DateTimeKind.Local).AddTicks(9930)
+                        },
+                        new
+                        {
+                            Id = 19,
+                            BookId = 21,
+                            Status = "Completed",
+                            UserId = 12,
+                            borrow_at = new DateTime(2024, 11, 15, 10, 28, 43, 80, DateTimeKind.Local).AddTicks(3769),
+                            expected_at = new DateTime(2024, 11, 24, 2, 13, 49, 875, DateTimeKind.Local).AddTicks(8729),
+                            register_at = new DateTime(2024, 11, 17, 2, 13, 49, 875, DateTimeKind.Local).AddTicks(8729),
+                            return_at = new DateTime(2024, 11, 17, 1, 58, 14, 534, DateTimeKind.Local).AddTicks(8818)
+                        },
+                        new
+                        {
+                            Id = 20,
+                            BookId = 25,
                             Status = "Borrowed",
-                            UserId = 3,
-                            borrow_at = new DateTime(2024, 11, 9, 15, 48, 27, 230, DateTimeKind.Local).AddTicks(5825),
-                            expected_at = new DateTime(2024, 11, 15, 1, 37, 28, 305, DateTimeKind.Local).AddTicks(1499),
-                            register_at = new DateTime(2024, 11, 8, 1, 37, 28, 305, DateTimeKind.Local).AddTicks(1499)
+                            UserId = 4,
+                            borrow_at = new DateTime(2024, 11, 18, 20, 45, 20, 651, DateTimeKind.Local).AddTicks(1039),
+                            expected_at = new DateTime(2024, 11, 20, 14, 25, 4, 895, DateTimeKind.Local).AddTicks(6571),
+                            register_at = new DateTime(2024, 11, 13, 14, 25, 4, 895, DateTimeKind.Local).AddTicks(6571)
+                        },
+                        new
+                        {
+                            Id = 21,
+                            BookId = 26,
+                            Status = "Canceled",
+                            UserId = 14,
+                            register_at = new DateTime(2024, 11, 13, 16, 44, 38, 722, DateTimeKind.Local).AddTicks(6799)
+                        },
+                        new
+                        {
+                            Id = 22,
+                            BookId = 21,
+                            Status = "Completed",
+                            UserId = 1,
+                            borrow_at = new DateTime(2024, 11, 16, 9, 31, 35, 32, DateTimeKind.Local).AddTicks(4293),
+                            expected_at = new DateTime(2024, 11, 21, 14, 59, 43, 392, DateTimeKind.Local).AddTicks(8467),
+                            register_at = new DateTime(2024, 11, 14, 14, 59, 43, 392, DateTimeKind.Local).AddTicks(8467),
+                            return_at = new DateTime(2024, 11, 16, 21, 55, 24, 60, DateTimeKind.Local).AddTicks(3033)
+                        },
+                        new
+                        {
+                            Id = 23,
+                            BookId = 19,
+                            Status = "Completed",
+                            UserId = 2,
+                            borrow_at = new DateTime(2024, 11, 17, 10, 34, 16, 166, DateTimeKind.Local).AddTicks(4540),
+                            expected_at = new DateTime(2024, 11, 21, 6, 10, 37, 36, DateTimeKind.Local).AddTicks(3142),
+                            register_at = new DateTime(2024, 11, 14, 6, 10, 37, 36, DateTimeKind.Local).AddTicks(3142),
+                            return_at = new DateTime(2024, 11, 18, 16, 28, 31, 695, DateTimeKind.Local).AddTicks(7833)
+                        },
+                        new
+                        {
+                            Id = 24,
+                            BookId = 1,
+                            Status = "Borrowed",
+                            UserId = 5,
+                            borrow_at = new DateTime(2024, 11, 17, 15, 1, 6, 692, DateTimeKind.Local).AddTicks(4733),
+                            expected_at = new DateTime(2024, 11, 24, 16, 6, 54, 680, DateTimeKind.Local).AddTicks(1857),
+                            register_at = new DateTime(2024, 11, 17, 16, 6, 54, 680, DateTimeKind.Local).AddTicks(1857)
+                        },
+                        new
+                        {
+                            Id = 25,
+                            BookId = 27,
+                            Status = "Borrowed",
+                            UserId = 8,
+                            borrow_at = new DateTime(2024, 11, 19, 15, 30, 59, 13, DateTimeKind.Local).AddTicks(7099),
+                            expected_at = new DateTime(2024, 11, 25, 18, 24, 57, 892, DateTimeKind.Local).AddTicks(1761),
+                            register_at = new DateTime(2024, 11, 18, 18, 24, 57, 892, DateTimeKind.Local).AddTicks(1761)
+                        },
+                        new
+                        {
+                            Id = 26,
+                            BookId = 3,
+                            Status = "Borrowed",
+                            UserId = 7,
+                            borrow_at = new DateTime(2024, 11, 19, 6, 17, 29, 695, DateTimeKind.Local).AddTicks(8505),
+                            expected_at = new DateTime(2024, 11, 25, 3, 41, 28, 695, DateTimeKind.Local).AddTicks(6541),
+                            register_at = new DateTime(2024, 11, 18, 3, 41, 28, 695, DateTimeKind.Local).AddTicks(6541)
+                        },
+                        new
+                        {
+                            Id = 27,
+                            BookId = 9,
+                            Status = "Pending",
+                            UserId = 12,
+                            register_at = new DateTime(2024, 11, 14, 23, 52, 1, 666, DateTimeKind.Local).AddTicks(2791)
+                        },
+                        new
+                        {
+                            Id = 28,
+                            BookId = 6,
+                            Status = "Pending",
+                            UserId = 16,
+                            register_at = new DateTime(2024, 11, 12, 22, 1, 50, 202, DateTimeKind.Local).AddTicks(4908)
+                        },
+                        new
+                        {
+                            Id = 29,
+                            BookId = 10,
+                            Status = "Canceled",
+                            UserId = 15,
+                            register_at = new DateTime(2024, 11, 18, 8, 8, 10, 698, DateTimeKind.Local).AddTicks(4942)
+                        },
+                        new
+                        {
+                            Id = 30,
+                            BookId = 15,
+                            Status = "Canceled",
+                            UserId = 2,
+                            register_at = new DateTime(2024, 11, 15, 11, 9, 44, 602, DateTimeKind.Local).AddTicks(9685)
+                        },
+                        new
+                        {
+                            Id = 31,
+                            BookId = 7,
+                            Status = "Borrowed",
+                            UserId = 8,
+                            borrow_at = new DateTime(2024, 11, 13, 22, 2, 39, 965, DateTimeKind.Local).AddTicks(2365),
+                            expected_at = new DateTime(2024, 11, 22, 10, 34, 40, 490, DateTimeKind.Local).AddTicks(402),
+                            register_at = new DateTime(2024, 11, 15, 10, 34, 40, 490, DateTimeKind.Local).AddTicks(402)
+                        },
+                        new
+                        {
+                            Id = 32,
+                            BookId = 28,
+                            Status = "Pending",
+                            UserId = 12,
+                            register_at = new DateTime(2024, 11, 14, 0, 25, 16, 965, DateTimeKind.Local).AddTicks(8548)
+                        },
+                        new
+                        {
+                            Id = 33,
+                            BookId = 16,
+                            Status = "Canceled",
+                            UserId = 11,
+                            register_at = new DateTime(2024, 11, 17, 9, 39, 9, 177, DateTimeKind.Local).AddTicks(1126)
+                        },
+                        new
+                        {
+                            Id = 34,
+                            BookId = 8,
+                            Status = "Borrowed",
+                            UserId = 4,
+                            borrow_at = new DateTime(2024, 11, 16, 10, 24, 30, 906, DateTimeKind.Local).AddTicks(382),
+                            expected_at = new DateTime(2024, 11, 22, 21, 56, 1, 267, DateTimeKind.Local).AddTicks(8753),
+                            register_at = new DateTime(2024, 11, 15, 21, 56, 1, 267, DateTimeKind.Local).AddTicks(8753)
+                        },
+                        new
+                        {
+                            Id = 35,
+                            BookId = 16,
+                            Status = "Completed",
+                            UserId = 6,
+                            borrow_at = new DateTime(2024, 11, 16, 5, 13, 11, 391, DateTimeKind.Local).AddTicks(880),
+                            expected_at = new DateTime(2024, 11, 21, 20, 42, 43, 65, DateTimeKind.Local).AddTicks(8290),
+                            register_at = new DateTime(2024, 11, 14, 20, 42, 43, 65, DateTimeKind.Local).AddTicks(8290),
+                            return_at = new DateTime(2024, 11, 19, 19, 24, 5, 989, DateTimeKind.Local).AddTicks(5622)
+                        },
+                        new
+                        {
+                            Id = 36,
+                            BookId = 10,
+                            Status = "Borrowed",
+                            UserId = 16,
+                            borrow_at = new DateTime(2024, 11, 16, 6, 43, 21, 896, DateTimeKind.Local).AddTicks(2274),
+                            expected_at = new DateTime(2024, 11, 25, 1, 54, 6, 868, DateTimeKind.Local).AddTicks(4403),
+                            register_at = new DateTime(2024, 11, 18, 1, 54, 6, 868, DateTimeKind.Local).AddTicks(4403)
+                        },
+                        new
+                        {
+                            Id = 37,
+                            BookId = 24,
+                            Status = "Completed",
+                            UserId = 12,
+                            borrow_at = new DateTime(2024, 11, 14, 10, 56, 36, 947, DateTimeKind.Local).AddTicks(4658),
+                            expected_at = new DateTime(2024, 11, 20, 6, 43, 13, 843, DateTimeKind.Local).AddTicks(6648),
+                            register_at = new DateTime(2024, 11, 13, 6, 43, 13, 843, DateTimeKind.Local).AddTicks(6648),
+                            return_at = new DateTime(2024, 11, 17, 20, 8, 50, 640, DateTimeKind.Local).AddTicks(4139)
+                        },
+                        new
+                        {
+                            Id = 38,
+                            BookId = 4,
+                            Status = "Borrowed",
+                            UserId = 11,
+                            borrow_at = new DateTime(2024, 11, 18, 3, 9, 7, 800, DateTimeKind.Local).AddTicks(2369),
+                            expected_at = new DateTime(2024, 11, 22, 3, 54, 54, 296, DateTimeKind.Local).AddTicks(3977),
+                            register_at = new DateTime(2024, 11, 15, 3, 54, 54, 296, DateTimeKind.Local).AddTicks(3977)
+                        },
+                        new
+                        {
+                            Id = 39,
+                            BookId = 28,
+                            Status = "Completed",
+                            UserId = 4,
+                            borrow_at = new DateTime(2024, 11, 14, 22, 0, 51, 314, DateTimeKind.Local).AddTicks(9960),
+                            expected_at = new DateTime(2024, 11, 20, 21, 33, 25, 759, DateTimeKind.Local).AddTicks(442),
+                            register_at = new DateTime(2024, 11, 13, 21, 33, 25, 759, DateTimeKind.Local).AddTicks(442),
+                            return_at = new DateTime(2024, 11, 17, 5, 59, 47, 52, DateTimeKind.Local).AddTicks(6968)
+                        },
+                        new
+                        {
+                            Id = 40,
+                            BookId = 27,
+                            Status = "Pending",
+                            UserId = 16,
+                            register_at = new DateTime(2024, 11, 18, 0, 13, 27, 830, DateTimeKind.Local).AddTicks(1009)
                         });
                 });
 
@@ -1042,13 +1256,27 @@ namespace QLSach.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<DateOnly>("create_at")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("update_at")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -1058,98 +1286,162 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            Password = "animi",
-                            UserName = "Oda Greenholt"
+                            Name = "Aric Corkery",
+                            Password = "Minus dignissimos iste a quo quis aut deserunt et ut.",
+                            Role = "User",
+                            UserName = "Braxton",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 2,
-                            Password = "Magnam molestiae suscipit similique fuga dignissimos et necessitatibus et. Sit id fuga consectetur in repudiandae. Est dolor tenetur sequi dignissimos.",
-                            UserName = "Justus Feil"
+                            Name = "Lamar Wyman",
+                            Password = "Fugiat facere odio illum harum minus iusto aliquid voluptatem molestiae.\nSint et fugiat et labore atque sint.",
+                            Role = "Admin",
+                            UserName = "Rosina",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 3,
-                            Password = "dignissimos",
-                            UserName = "Brendan Welch"
+                            Name = "Edythe McClure",
+                            Password = "ut",
+                            Role = "Admin",
+                            UserName = "Gisselle",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 4,
-                            Password = "Quos omnis esse.",
-                            UserName = "Britney Purdy"
+                            Name = "Hyman Wisoky",
+                            Password = "Deleniti praesentium molestiae porro et qui.\nAnimi quibusdam tempora voluptatem quibusdam autem ratione.\nAssumenda rerum corporis ut repudiandae quia nostrum ullam.\nConsequatur eligendi velit ipsa facere aliquam et animi.\nEt temporibus numquam error.",
+                            Role = "Admin",
+                            UserName = "Dameon",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 5,
-                            Password = "Nemo voluptatum modi tempora. Perferendis in similique cupiditate voluptatem quia exercitationem eos quisquam. Voluptatibus sunt ut aperiam nulla enim eos culpa tempore incidunt. Vero amet sit nisi qui qui autem asperiores et adipisci. Sit sed autem est saepe.",
-                            UserName = "Marcia Langworth"
+                            Name = "Keshawn Moore",
+                            Password = "Repellat nihil repellendus reprehenderit quos esse.\nExcepturi quia omnis placeat accusantium assumenda ex.\nIpsa eligendi vitae quia vel ad ipsum aliquam.",
+                            Role = "User",
+                            UserName = "Hannah",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 6,
-                            Password = "Repellat rerum animi beatae.",
-                            UserName = "Luciano Nikolaus"
+                            Name = "Jeremie Hermann",
+                            Password = "Maiores ut et illum natus fuga dolore.",
+                            Role = "Admin",
+                            UserName = "Gwendolyn",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 7,
-                            Password = "Enim quasi ex veritatis.",
-                            UserName = "Elsa Swaniawski"
+                            Name = "Jamel Schultz",
+                            Password = "Quis odio voluptate maxime rerum quia maxime incidunt mollitia reiciendis. Voluptatibus qui voluptatibus. Optio quam a iusto et rerum. Tempora quia excepturi. Nisi autem itaque ad eum sequi ea nisi aut.",
+                            Role = "User",
+                            UserName = "Leon",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 8,
-                            Password = "eum",
-                            UserName = "Llewellyn Bartoletti"
+                            Name = "Elian Mayert",
+                            Password = "Totam perferendis adipisci qui molestiae.\nNeque recusandae quae dolorem rem mollitia sapiente non recusandae.\nReiciendis sapiente quia possimus quo itaque ipsa.\nQuas aspernatur quas deleniti corporis quidem ut ut.\nAut quibusdam quas iure necessitatibus nihil dolorum harum eos excepturi.\nEius voluptatem mollitia exercitationem soluta velit blanditiis fuga.",
+                            Role = "User",
+                            UserName = "Aracely",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 9,
-                            Password = "Vel minus ut nam voluptate blanditiis sit. Natus sint suscipit repellendus molestiae voluptatem corrupti eaque fugiat. Placeat a aut voluptas earum sunt dolorem commodi adipisci. Dolore et tempore ut sunt quia dolor autem ab.",
-                            UserName = "Meredith Spinka"
+                            Name = "Vergie Brakus",
+                            Password = "Culpa non quia dolores.",
+                            Role = "Admin",
+                            UserName = "Demetrius",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 10,
-                            Password = "nemo",
-                            UserName = "Travis Ortiz"
+                            Name = "Hadley Connelly",
+                            Password = "Dolores id est ea numquam expedita ut sit dolorem reprehenderit.\nNecessitatibus et aut suscipit error error.\nHarum et officiis beatae perspiciatis minus est quis neque.",
+                            Role = "Admin",
+                            UserName = "Kenna",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 11,
-                            Password = "Eaque quaerat expedita.",
-                            UserName = "Adeline Kassulke"
+                            Name = "Shayna Rau",
+                            Password = "Culpa in animi.\nNumquam aut qui ad eum.",
+                            Role = "User",
+                            UserName = "Howard",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 12,
-                            Password = "sit",
-                            UserName = "Orval Considine"
+                            Name = "Paula Zemlak",
+                            Password = "accusantium",
+                            Role = "User",
+                            UserName = "Duncan",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 13,
-                            Password = "Ab numquam est magni.\nArchitecto accusantium est voluptatem.\nAut rem sed at.\nOccaecati perferendis qui dicta non.\nPlaceat voluptas aliquid amet.",
-                            UserName = "Royal Howell"
+                            Name = "Vanessa Fritsch",
+                            Password = "Vero sed delectus commodi assumenda.\nIure autem non quia necessitatibus aut.",
+                            Role = "User",
+                            UserName = "Catalina",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 14,
-                            Password = "Omnis ut quia neque esse hic eligendi repudiandae vel.",
-                            UserName = "Glennie Hamill"
+                            Name = "Heath Bernier",
+                            Password = "Voluptatibus et voluptas ipsum laboriosam et labore sint vitae quis.",
+                            Role = "User",
+                            UserName = "Abagail",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 15,
-                            Password = "Tempore eligendi dignissimos optio.",
-                            UserName = "Norberto Walker"
+                            Name = "Levi Schinner",
+                            Password = "Porro ut dolorum quia quis tenetur.",
+                            Role = "User",
+                            UserName = "Alexie",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         },
                         new
                         {
                             Id = 16,
-                            Password = "Fugiat ut impedit voluptatem et voluptatem.",
-                            UserName = "Deangelo Robel"
+                            Name = "Josue Emard",
+                            Password = "Corrupti ex cum dignissimos eos atque magni. Debitis enim pariatur sapiente iusto et consectetur nisi. Et suscipit voluptas sed repellendus dignissimos quos. Fuga velit non asperiores rerum molestiae consequatur. Vel officiis suscipit voluptates non sit itaque ipsam.",
+                            Role = "Admin",
+                            UserName = "Billy",
+                            create_at = new DateOnly(2024, 11, 19),
+                            update_at = new DateOnly(2024, 11, 19)
                         });
                 });
 
@@ -1209,422 +1501,422 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            author_id = 5,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(3024),
-                            description = "Voluptas rerum ut ut officiis modi ut doloribus. Accusamus labore officiis. Consequatur delectus quae est illum doloremque. Amet commodi qui delectus assumenda aut. Et dicta dolorem fuga aut velit nihil quo nesciunt.",
-                            genre_id = 28,
-                            name = "At sed et sequi.",
-                            quantity = (byte)6,
+                            author_id = 12,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(8404),
+                            description = "Temporibus ut adipisci sapiente consectetur quos et enim est eveniet. Inventore tempore molestias sapiente tenetur. Consectetur quod quia cumque ut fugit aspernatur porro similique optio. Id perspiciatis repudiandae.",
+                            genre_id = 12,
+                            name = "Fuga molestias officiis earum.",
+                            quantity = (byte)9,
                             rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(3510),
+                            remaining = (byte)2,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(8801),
                             views = 0,
-                            year_public = 1912
+                            year_public = 1937
                         },
                         new
                         {
                             Id = 2,
-                            author_id = 28,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(4612),
-                            description = "A nostrum aut sed. Odit perspiciatis dolor numquam itaque corporis perspiciatis provident voluptatem cumque. A architecto voluptatem officia aliquam placeat placeat veritatis quaerat. Aliquid occaecati asperiores eveniet quisquam quae tenetur sed consequuntur. Sunt et est ea aliquam.",
-                            genre_id = 13,
-                            name = "Vel quam itaque saepe voluptas facilis.",
+                            author_id = 23,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(9703),
+                            description = "Occaecati molestiae sit. Impedit rerum maxime error vel. Nostrum eius eos mollitia consequuntur placeat odio quasi quia tempora.",
+                            genre_id = 19,
+                            name = "Sint est reprehenderit reiciendis explicabo voluptatem quo.",
                             quantity = (byte)9,
                             rating = (byte)0,
-                            remaining = (byte)3,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(4809),
+                            remaining = (byte)0,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(9825),
                             views = 0,
-                            year_public = 1994
+                            year_public = 2024
                         },
                         new
                         {
                             Id = 3,
-                            author_id = 30,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(4822),
-                            description = "Optio consequuntur excepturi qui. Nisi quam alias sit qui voluptatibus error quos. Sed magni est officia velit ab et quia. Quis adipisci quo culpa sunt quo repudiandae ut totam officiis.",
-                            genre_id = 9,
-                            name = "Soluta doloribus consequatur et et nisi quae.",
-                            quantity = (byte)7,
+                            author_id = 7,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(9839),
+                            description = "Aspernatur velit ut provident architecto. Dolorem adipisci consequatur et necessitatibus labore quod aut quod quia. Eum et voluptate ut aut et in laboriosam qui tempore.",
+                            genre_id = 21,
+                            name = "Mollitia eaque vero.",
+                            quantity = (byte)8,
                             rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(4926),
+                            remaining = (byte)3,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(9946),
                             views = 0,
-                            year_public = 1944
+                            year_public = 1928
                         },
                         new
                         {
                             Id = 4,
-                            author_id = 28,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(4939),
-                            description = "Harum consectetur dolorum veritatis veritatis deleniti delectus. Non qui est eum sit repudiandae sunt dolorem quo autem. Ut eligendi aut rerum aut. Culpa earum sit dolorem soluta voluptate asperiores.",
-                            genre_id = 26,
-                            name = "Aliquid quas hic molestiae et sit ut expedita suscipit sit.",
-                            quantity = (byte)10,
+                            author_id = 30,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 586, DateTimeKind.Local).AddTicks(9959),
+                            description = "Inventore rerum non reprehenderit quia est et vel facilis accusantium. Tenetur quae fugit aliquam. Aut ut ea est est consequatur consequatur incidunt sit illum. Voluptatem et atque quia accusamus.",
+                            genre_id = 4,
+                            name = "Excepturi consequatur laborum.",
+                            quantity = (byte)9,
                             rating = (byte)0,
-                            remaining = (byte)3,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5036),
+                            remaining = (byte)1,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(49),
                             views = 0,
-                            year_public = 1953
+                            year_public = 2011
                         },
                         new
                         {
                             Id = 5,
-                            author_id = 14,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5047),
-                            description = "Consequatur nobis non doloribus eaque cumque saepe ea. Ea temporibus laboriosam. Et iusto tempora sed a ut et architecto. Atque impedit sed corrupti tenetur voluptatem autem ea.",
-                            genre_id = 5,
-                            name = "Nobis occaecati facere est.",
-                            quantity = (byte)9,
-                            rating = (byte)0,
-                            remaining = (byte)2,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5134),
-                            views = 0,
-                            year_public = 1992
-                        },
-                        new
-                        {
-                            Id = 6,
-                            author_id = 16,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5145),
-                            description = "Qui suscipit placeat suscipit iure ut ducimus suscipit consequatur. Suscipit unde doloribus quia dolorum quia voluptatibus ratione. Harum repellendus quia. Non ut dolor ea recusandae blanditiis et.",
-                            genre_id = 27,
-                            name = "Dolores beatae temporibus asperiores quo sit ea.",
-                            quantity = (byte)5,
-                            rating = (byte)0,
-                            remaining = (byte)4,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5238),
-                            views = 0,
-                            year_public = 1978
-                        },
-                        new
-                        {
-                            Id = 7,
-                            author_id = 30,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5248),
-                            description = "Rerum labore tempora deleniti fugiat tempora. Quia aut officia delectus fuga officiis excepturi. Nostrum earum nesciunt aut odit modi. Suscipit aut occaecati. Quia quia accusamus quod. Temporibus dolore sapiente assumenda officia.",
-                            genre_id = 14,
-                            name = "Non dolore nobis unde iure in iure et iure.",
-                            quantity = (byte)5,
+                            author_id = 10,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(61),
+                            description = "Velit reprehenderit doloribus tempore voluptatibus. Beatae id aut id qui impedit. Quas cupiditate harum facere sed qui eius cum veniam. Repellat sed temporibus dolores dolor voluptate sapiente tempora praesentium provident.",
+                            genre_id = 18,
+                            name = "Quia suscipit corrupti nam minus autem architecto et reiciendis aliquid.",
+                            quantity = (byte)7,
                             rating = (byte)0,
                             remaining = (byte)3,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5342),
-                            views = 0,
-                            year_public = 1949
-                        },
-                        new
-                        {
-                            Id = 8,
-                            author_id = 32,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5357),
-                            description = "Ex hic quia labore placeat similique. Pariatur doloribus minima amet veritatis placeat voluptatem. Inventore labore atque quos minima non qui rerum ut.",
-                            genre_id = 23,
-                            name = "Voluptatem et repellat itaque facere sed id omnis.",
-                            quantity = (byte)8,
-                            rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5432),
-                            views = 0,
-                            year_public = 1990
-                        },
-                        new
-                        {
-                            Id = 9,
-                            author_id = 23,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5442),
-                            description = "Sunt pariatur enim voluptatem ullam. Sit non numquam qui atque repudiandae voluptatem. Temporibus explicabo ullam labore.",
-                            genre_id = 18,
-                            name = "Dolore enim voluptatem minima ea facere.",
-                            quantity = (byte)10,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5509),
-                            views = 0,
-                            year_public = 1996
-                        },
-                        new
-                        {
-                            Id = 10,
-                            author_id = 12,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5519),
-                            description = "Tempore ipsa nostrum sit hic. Recusandae consequatur veniam dolore est molestiae hic excepturi. Deleniti est illum illum autem neque autem dignissimos quia. Ut omnis quisquam labore facilis velit sapiente dolor qui natus. Rerum officiis est voluptatem accusantium quos labore eius.",
-                            genre_id = 31,
-                            name = "Dolorem velit non eius id neque accusantium deserunt.",
-                            quantity = (byte)6,
-                            rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5630),
-                            views = 0,
-                            year_public = 1957
-                        },
-                        new
-                        {
-                            Id = 11,
-                            author_id = 7,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5641),
-                            description = "Nesciunt mollitia hic laudantium ex totam. Animi ipsum rem porro maxime dolores quasi. Qui officia distinctio sunt. Rerum at expedita nemo temporibus.",
-                            genre_id = 23,
-                            name = "Illum nesciunt in sapiente porro numquam quisquam fugit ea.",
-                            quantity = (byte)7,
-                            rating = (byte)0,
-                            remaining = (byte)0,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5720),
-                            views = 0,
-                            year_public = 1988
-                        },
-                        new
-                        {
-                            Id = 12,
-                            author_id = 10,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5731),
-                            description = "Qui ad voluptatum quo cumque omnis. Nulla voluptas non iure esse sit dolor eius enim. Vel repellat sit voluptas voluptatum sapiente in et. Explicabo possimus quia labore voluptate autem expedita. Omnis corporis ipsam ullam aut. Adipisci iste est in.",
-                            genre_id = 6,
-                            name = "Nemo est ad laudantium iste vero quos.",
-                            quantity = (byte)6,
-                            rating = (byte)0,
-                            remaining = (byte)4,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5844),
-                            views = 0,
-                            year_public = 1960
-                        },
-                        new
-                        {
-                            Id = 13,
-                            author_id = 17,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5854),
-                            description = "Debitis nihil voluptas aperiam voluptatem voluptatibus placeat. Dolor sed aspernatur consequuntur. Voluptatem quidem laborum porro modi et. Ipsum iure officia expedita qui.",
-                            genre_id = 21,
-                            name = "Provident quibusdam illo quibusdam in sed.",
-                            quantity = (byte)7,
-                            rating = (byte)0,
-                            remaining = (byte)2,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5936),
-                            views = 0,
-                            year_public = 2000
-                        },
-                        new
-                        {
-                            Id = 14,
-                            author_id = 1,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(5946),
-                            description = "Ea rerum assumenda autem ut enim. Quisquam assumenda eius et ut odio magni laborum et. Ipsa et quod ea animi hic sunt totam molestiae voluptatem. Omnis quis doloremque architecto. Aspernatur nostrum sit aliquid dignissimos dolor nemo nemo laborum.",
-                            genre_id = 32,
-                            name = "Quisquam fugiat aut id.",
-                            quantity = (byte)10,
-                            rating = (byte)0,
-                            remaining = (byte)4,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6050),
-                            views = 0,
-                            year_public = 1931
-                        },
-                        new
-                        {
-                            Id = 15,
-                            author_id = 12,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6060),
-                            description = "Eaque illo aut non ea ullam voluptas odit quas. Numquam est sit vel quia qui molestiae dolorem. Et cumque delectus dolorum. Non similique voluptatem dolores. Ducimus quasi quia iure.",
-                            genre_id = 6,
-                            name = "Impedit sequi repellendus officia corporis aut perferendis molestiae voluptatem.",
-                            quantity = (byte)6,
-                            rating = (byte)0,
-                            remaining = (byte)2,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6153),
-                            views = 0,
-                            year_public = 1902
-                        },
-                        new
-                        {
-                            Id = 16,
-                            author_id = 8,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6163),
-                            description = "Qui esse illum dolores. Ullam ea expedita rerum eos adipisci non nesciunt commodi minima. Modi deserunt ut id voluptate dolores.",
-                            genre_id = 25,
-                            name = "Tenetur similique qui dolore sit itaque.",
-                            quantity = (byte)5,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6236),
-                            views = 0,
-                            year_public = 1990
-                        },
-                        new
-                        {
-                            Id = 17,
-                            author_id = 23,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6247),
-                            description = "Temporibus sit et voluptatem excepturi vel enim est molestiae. Cumque quaerat non neque facilis at hic qui harum. Unde tenetur illum. Totam possimus ea nesciunt ipsum totam culpa id. Consectetur delectus reiciendis optio.",
-                            genre_id = 12,
-                            name = "Corporis velit sed.",
-                            quantity = (byte)8,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6341),
-                            views = 0,
-                            year_public = 1952
-                        },
-                        new
-                        {
-                            Id = 18,
-                            author_id = 13,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6352),
-                            description = "Sed quia quibusdam placeat natus quaerat consequatur. Rerum repudiandae officiis qui quia quia dicta ut qui nihil. Illum in qui neque.",
-                            genre_id = 14,
-                            name = "Ea qui tenetur excepturi consequuntur tenetur dicta.",
-                            quantity = (byte)5,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6425),
-                            views = 0,
-                            year_public = 2019
-                        },
-                        new
-                        {
-                            Id = 19,
-                            author_id = 29,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6436),
-                            description = "Sunt excepturi inventore omnis. Repellendus ut tempore cupiditate consequatur. Nisi est dignissimos accusamus architecto corporis quasi. Modi molestiae alias quod sit ea. Iusto vel alias aut aut atque rerum recusandae. Quia voluptas eligendi harum qui accusantium vero molestias.",
-                            genre_id = 14,
-                            name = "Ex nemo voluptatem.",
-                            quantity = (byte)6,
-                            rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6542),
-                            views = 0,
-                            year_public = 1915
-                        },
-                        new
-                        {
-                            Id = 20,
-                            author_id = 21,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6553),
-                            description = "Ut maiores aliquid quo accusantium cupiditate sapiente. Eaque voluptas aspernatur quam id dignissimos molestias ad. Quam porro facere sit aut minima officia. Pariatur laborum laboriosam voluptatem reiciendis omnis repudiandae rerum.",
-                            genre_id = 16,
-                            name = "Earum minus ut et ipsa a.",
-                            quantity = (byte)5,
-                            rating = (byte)0,
-                            remaining = (byte)4,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6646),
-                            views = 0,
-                            year_public = 1983
-                        },
-                        new
-                        {
-                            Id = 21,
-                            author_id = 14,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6657),
-                            description = "Error corporis ex omnis architecto. Nihil voluptates voluptatem voluptas voluptatum rem ut. Placeat unde eligendi ut rem magnam. Modi ipsam quis beatae possimus eum ea consequatur voluptatem quos.",
-                            genre_id = 22,
-                            name = "Odio et dolores.",
-                            quantity = (byte)7,
-                            rating = (byte)0,
-                            remaining = (byte)4,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6736),
-                            views = 0,
-                            year_public = 1904
-                        },
-                        new
-                        {
-                            Id = 22,
-                            author_id = 4,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6747),
-                            description = "Consequatur quo illum esse optio aut nam mollitia repellendus accusantium. Voluptatem qui labore magni. Qui minus ducimus. Est culpa odio quia ea enim ut totam. Aut numquam aspernatur enim deserunt iure corporis ut est illo.",
-                            genre_id = 16,
-                            name = "Non nam natus alias dolorum hic ex reprehenderit.",
-                            quantity = (byte)10,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6849),
-                            views = 0,
-                            year_public = 1980
-                        },
-                        new
-                        {
-                            Id = 23,
-                            author_id = 30,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6860),
-                            description = "Placeat voluptatem nisi ut qui maiores facere voluptate voluptas. Commodi fuga ut eum et veniam tempore dolor assumenda. Animi laborum fugit tempora et illo sunt eius. Earum sed molestiae ducimus. Voluptates quia nostrum natus et in in sint harum. Autem tempora esse dolores similique autem rerum et.",
-                            genre_id = 5,
-                            name = "Corrupti non et quia ut excepturi.",
-                            quantity = (byte)10,
-                            rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6982),
-                            views = 0,
-                            year_public = 1984
-                        },
-                        new
-                        {
-                            Id = 24,
-                            author_id = 22,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(6993),
-                            description = "Aut doloribus fuga dolorem adipisci et sit vel. Magni cum architecto ea eius explicabo accusamus ipsum nobis. Qui fugit explicabo et eaque aliquid maxime qui ea.",
-                            genre_id = 24,
-                            name = "Et maxime consequatur iusto dolorem animi nisi quia omnis rem.",
-                            quantity = (byte)8,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7200),
-                            views = 0,
-                            year_public = 1945
-                        },
-                        new
-                        {
-                            Id = 25,
-                            author_id = 8,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7212),
-                            description = "Eveniet omnis et nam. Excepturi nesciunt beatae et distinctio. Et harum id nihil qui ut magnam quo autem et. Iste dolorem autem expedita et repudiandae reprehenderit dicta delectus.",
-                            genre_id = 13,
-                            name = "Est possimus et eius perferendis voluptas debitis aut et tempora.",
-                            quantity = (byte)10,
-                            rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7306),
-                            views = 0,
-                            year_public = 1941
-                        },
-                        new
-                        {
-                            Id = 26,
-                            author_id = 8,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7317),
-                            description = "Quaerat labore quia dolorem laboriosam velit debitis. Totam maiores est voluptates. Maiores quod dolores rerum magnam dolor facere sequi at. Vitae odit maiores consequuntur saepe architecto. Voluptas nihil necessitatibus error vero veniam sequi non est nihil.",
-                            genre_id = 25,
-                            name = "Quo dolor ut eum tempora.",
-                            quantity = (byte)9,
-                            rating = (byte)0,
-                            remaining = (byte)5,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7415),
-                            views = 0,
-                            year_public = 1916
-                        },
-                        new
-                        {
-                            Id = 27,
-                            author_id = 7,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7425),
-                            description = "Natus non repudiandae rerum modi consectetur libero tempore eos. Praesentium vel sunt. Cumque beatae at minus autem omnis sint.",
-                            genre_id = 28,
-                            name = "Architecto sunt debitis atque.",
-                            quantity = (byte)6,
-                            rating = (byte)0,
-                            remaining = (byte)1,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7493),
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(181),
                             views = 0,
                             year_public = 2003
                         },
                         new
                         {
-                            Id = 28,
-                            author_id = 27,
-                            created_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7504),
-                            description = "Quidem dolores vel reiciendis in fugit. Quia fugiat aperiam suscipit quia. Pariatur nisi hic natus aut accusantium totam qui.",
-                            genre_id = 31,
-                            name = "Ipsam cumque perferendis magni sit vel corrupti est ut.",
+                            Id = 6,
+                            author_id = 6,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(193),
+                            description = "Hic totam qui. Eius itaque est eos dolor quam ex vero esse. Itaque ex et consequatur deserunt cumque. Quia est sit in officiis itaque voluptatibus tempora quibusdam sit. Quidem et aut. Consequatur qui minima animi ea voluptatibus in sit sit.",
+                            genre_id = 15,
+                            name = "Eum vitae aspernatur quisquam quos ipsum qui.",
+                            quantity = (byte)7,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(323),
+                            views = 0,
+                            year_public = 2016
+                        },
+                        new
+                        {
+                            Id = 7,
+                            author_id = 13,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(334),
+                            description = "Qui voluptas voluptatem. Amet recusandae maiores et nemo voluptates. Officia qui magni dolor temporibus cum corporis consequatur. Sapiente tempore quia aut laborum dolores ut accusantium necessitatibus vitae. Sed sequi qui aut alias.",
+                            genre_id = 27,
+                            name = "Et laborum id corporis.",
                             quantity = (byte)9,
                             rating = (byte)0,
-                            remaining = (byte)0,
-                            updated_at = new DateTime(2024, 11, 13, 15, 2, 26, 85, DateTimeKind.Local).AddTicks(7575),
+                            remaining = (byte)3,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(449),
                             views = 0,
-                            year_public = 1902
+                            year_public = 1952
+                        },
+                        new
+                        {
+                            Id = 8,
+                            author_id = 29,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(461),
+                            description = "Deserunt distinctio voluptas quae nesciunt omnis quisquam. Quod reprehenderit enim inventore consequatur. Ea ex amet quam aspernatur eos nemo quam odit.",
+                            genre_id = 23,
+                            name = "Qui est et porro quae impedit earum quis.",
+                            quantity = (byte)7,
+                            rating = (byte)0,
+                            remaining = (byte)1,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(535),
+                            views = 0,
+                            year_public = 1960
+                        },
+                        new
+                        {
+                            Id = 9,
+                            author_id = 24,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(565),
+                            description = "Corporis pariatur ipsam repellendus dolorem aliquam voluptatem id facere repudiandae. Ut cum quasi nobis ut repellendus. Qui aspernatur et facere aut neque eos sed expedita. Ipsum qui et. Consequatur aliquid occaecati nobis. Commodi molestiae quia magnam veritatis modi tempore cupiditate.",
+                            genre_id = 14,
+                            name = "Ut ipsa doloremque voluptates ut ad necessitatibus veniam nihil quia.",
+                            quantity = (byte)10,
+                            rating = (byte)0,
+                            remaining = (byte)4,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(680),
+                            views = 0,
+                            year_public = 1947
+                        },
+                        new
+                        {
+                            Id = 10,
+                            author_id = 23,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(691),
+                            description = "Asperiores qui earum aliquid explicabo facilis quia. Sed sed repudiandae non aliquam officiis rerum occaecati ullam. Deleniti dignissimos eligendi iste rem. Aut consequatur ab enim dolor error velit. Quisquam sed voluptas commodi doloribus atque id beatae et cumque. Omnis voluptatem sequi iste vitae.",
+                            genre_id = 19,
+                            name = "Minima magnam velit aspernatur.",
+                            quantity = (byte)5,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(824),
+                            views = 0,
+                            year_public = 1968
+                        },
+                        new
+                        {
+                            Id = 11,
+                            author_id = 14,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(836),
+                            description = "Sunt quia qui et tenetur eveniet reiciendis. Et nihil odit molestiae quia natus molestias est quo blanditiis. Recusandae optio ea amet asperiores adipisci non. Alias cupiditate aliquid cum dicta qui corporis vero beatae pariatur. Ea eveniet corrupti dolores aperiam ipsa. Quis non omnis et cumque exercitationem.",
+                            genre_id = 10,
+                            name = "Facere corrupti aut.",
+                            quantity = (byte)5,
+                            rating = (byte)0,
+                            remaining = (byte)0,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(959),
+                            views = 0,
+                            year_public = 1945
+                        },
+                        new
+                        {
+                            Id = 12,
+                            author_id = 9,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(970),
+                            description = "Inventore velit cupiditate maxime ut aperiam ab voluptas error quos. Quam non asperiores voluptatum sed delectus debitis at. Animi dolorem ut possimus soluta omnis deleniti. Sed earum est sit et delectus provident eligendi. Sit nostrum repudiandae ut qui blanditiis modi quia libero excepturi.",
+                            genre_id = 22,
+                            name = "Est repellat tempora accusamus.",
+                            quantity = (byte)6,
+                            rating = (byte)0,
+                            remaining = (byte)0,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1106),
+                            views = 0,
+                            year_public = 1930
+                        },
+                        new
+                        {
+                            Id = 13,
+                            author_id = 10,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1116),
+                            description = "Omnis nostrum consectetur esse illum dolores cupiditate labore ipsum. Omnis ut dolor quam omnis consectetur. Illum molestias qui perspiciatis nisi nihil. Qui est porro officiis et pariatur aut sit. Ex sint nihil beatae. Rem nobis inventore quia labore voluptates quia blanditiis itaque aut.",
+                            genre_id = 5,
+                            name = "Dolores rerum consectetur cupiditate qui ullam velit.",
+                            quantity = (byte)5,
+                            rating = (byte)0,
+                            remaining = (byte)2,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1260),
+                            views = 0,
+                            year_public = 2013
+                        },
+                        new
+                        {
+                            Id = 14,
+                            author_id = 5,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1271),
+                            description = "Neque provident possimus aut eius error adipisci blanditiis. Autem dolorum quidem fugit illum expedita qui. Quia distinctio non ea quidem eligendi commodi qui non.",
+                            genre_id = 6,
+                            name = "Dolor sed autem eligendi.",
+                            quantity = (byte)7,
+                            rating = (byte)0,
+                            remaining = (byte)0,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1367),
+                            views = 0,
+                            year_public = 1984
+                        },
+                        new
+                        {
+                            Id = 15,
+                            author_id = 17,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1377),
+                            description = "Est non eaque aperiam consequatur voluptatem est. Veniam dolorum eos magni nulla asperiores cumque quas aut. Recusandae placeat quod qui est et repellat velit dolor.",
+                            genre_id = 26,
+                            name = "Vero quibusdam illum deleniti.",
+                            quantity = (byte)7,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1448),
+                            views = 0,
+                            year_public = 1922
+                        },
+                        new
+                        {
+                            Id = 16,
+                            author_id = 20,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1459),
+                            description = "Non et itaque et sunt ut ea et. Dolores aut eaque. Veritatis voluptatum quia enim dolorem.",
+                            genre_id = 29,
+                            name = "Repudiandae exercitationem facere et laboriosam iusto.",
+                            quantity = (byte)10,
+                            rating = (byte)0,
+                            remaining = (byte)1,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1550),
+                            views = 0,
+                            year_public = 1960
+                        },
+                        new
+                        {
+                            Id = 17,
+                            author_id = 26,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1560),
+                            description = "Quaerat tempora minima ipsum ad quam corrupti nulla. Assumenda vel inventore aspernatur non delectus veniam corrupti voluptate nostrum. Quos necessitatibus voluptatibus laudantium. Ea blanditiis quo praesentium sit sed eos dolor.",
+                            genre_id = 13,
+                            name = "Similique tempore quas minus in autem iure ea quibusdam.",
+                            quantity = (byte)10,
+                            rating = (byte)0,
+                            remaining = (byte)3,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1672),
+                            views = 0,
+                            year_public = 1914
+                        },
+                        new
+                        {
+                            Id = 18,
+                            author_id = 16,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1683),
+                            description = "Incidunt et soluta. Blanditiis iusto unde sequi quia eveniet quo adipisci ipsa. Provident corrupti at corporis aliquam ut assumenda. Impedit libero voluptatem. Voluptatum vel velit voluptatem. Laborum at esse placeat.",
+                            genre_id = 31,
+                            name = "Quas voluptates molestias voluptatem aut maxime quis expedita est.",
+                            quantity = (byte)6,
+                            rating = (byte)0,
+                            remaining = (byte)2,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1781),
+                            views = 0,
+                            year_public = 1958
+                        },
+                        new
+                        {
+                            Id = 19,
+                            author_id = 12,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1816),
+                            description = "Quia delectus voluptatem. Numquam nihil voluptatem ipsa. Vel odio nobis eveniet dolor quibusdam eum dolorem.",
+                            genre_id = 19,
+                            name = "Id ratione sunt labore optio.",
+                            quantity = (byte)7,
+                            rating = (byte)0,
+                            remaining = (byte)3,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1876),
+                            views = 0,
+                            year_public = 1989
+                        },
+                        new
+                        {
+                            Id = 20,
+                            author_id = 22,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1886),
+                            description = "Voluptas ipsa rerum magnam. In et est vel voluptates vel soluta enim culpa. Aliquam impedit eos cumque ipsa maiores et quidem repellendus. Occaecati velit ducimus qui rerum.",
+                            genre_id = 9,
+                            name = "Sunt reiciendis sit aspernatur sed id qui quis doloremque saepe.",
+                            quantity = (byte)9,
+                            rating = (byte)0,
+                            remaining = (byte)4,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(1994),
+                            views = 0,
+                            year_public = 2012
+                        },
+                        new
+                        {
+                            Id = 21,
+                            author_id = 30,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2005),
+                            description = "Voluptate repellat dignissimos eos voluptate. Velit eos architecto temporibus fugit hic sed. Dolorem rerum iusto suscipit nesciunt quia animi beatae ad. Odit non officiis qui. Quia explicabo sunt odit eos ea vero. Libero voluptatem perspiciatis amet.",
+                            genre_id = 27,
+                            name = "Dolores vel ipsa autem qui dolorem.",
+                            quantity = (byte)9,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2120),
+                            views = 0,
+                            year_public = 1905
+                        },
+                        new
+                        {
+                            Id = 22,
+                            author_id = 14,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2131),
+                            description = "Sint est magnam perspiciatis dolores sit ut unde. Est molestiae consequuntur est. Cum magni nostrum et debitis. Temporibus ut voluptatem quia sed neque quisquam aut ea. Non autem laudantium vitae quos numquam quia maxime saepe repudiandae. Aspernatur nihil voluptas explicabo.",
+                            genre_id = 32,
+                            name = "Ex sit quis ea est repudiandae possimus occaecati aperiam doloremque.",
+                            quantity = (byte)10,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2271),
+                            views = 0,
+                            year_public = 1973
+                        },
+                        new
+                        {
+                            Id = 23,
+                            author_id = 13,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2281),
+                            description = "Et dolor ut. Expedita expedita quia neque culpa accusantium et nemo sed. Debitis ut distinctio cupiditate.",
+                            genre_id = 14,
+                            name = "Rerum eaque est dicta quaerat quidem repellendus autem.",
+                            quantity = (byte)6,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2348),
+                            views = 0,
+                            year_public = 1939
+                        },
+                        new
+                        {
+                            Id = 24,
+                            author_id = 23,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2358),
+                            description = "Voluptas rem adipisci nostrum ut consequatur sed quia minus. Et ut aut nam ipsa praesentium sunt explicabo unde. Aliquid optio aliquid laborum qui doloribus eos at. Quis quis dolore quia. Est consequatur sed. Qui doloribus enim architecto inventore quis quam laborum.",
+                            genre_id = 21,
+                            name = "Fugit vitae incidunt.",
+                            quantity = (byte)8,
+                            rating = (byte)0,
+                            remaining = (byte)2,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2491),
+                            views = 0,
+                            year_public = 1996
+                        },
+                        new
+                        {
+                            Id = 25,
+                            author_id = 22,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2502),
+                            description = "Pariatur facilis iusto laboriosam dolorem. Voluptatem consectetur debitis dolorem id perspiciatis sint qui perspiciatis. Hic minus architecto laboriosam. Ullam aut adipisci illo. Itaque eius quisquam dolore libero qui et eos corrupti. Saepe fugit accusantium blanditiis voluptatem sapiente.",
+                            genre_id = 25,
+                            name = "Nam voluptates libero dolor dolores possimus quibusdam.",
+                            quantity = (byte)5,
+                            rating = (byte)0,
+                            remaining = (byte)4,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2633),
+                            views = 0,
+                            year_public = 1920
+                        },
+                        new
+                        {
+                            Id = 26,
+                            author_id = 7,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2644),
+                            description = "Et optio molestiae aut quo magni temporibus. Ut non et. Harum asperiores aliquid consequatur aliquid voluptas itaque corporis odio quam. Sed ea autem inventore voluptatibus error sunt. Sit aperiam exercitationem pariatur deserunt aut cumque. Voluptatem quod rem omnis aliquam iste sit omnis.",
+                            genre_id = 28,
+                            name = "Voluptatem molestiae labore iste.",
+                            quantity = (byte)9,
+                            rating = (byte)0,
+                            remaining = (byte)4,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2903),
+                            views = 0,
+                            year_public = 1925
+                        },
+                        new
+                        {
+                            Id = 27,
+                            author_id = 24,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2914),
+                            description = "Ea aperiam libero. Laudantium error aut ipsum quod dignissimos. Illo quisquam enim distinctio. Rerum maiores corrupti iste.",
+                            genre_id = 14,
+                            name = "Sed rem nemo.",
+                            quantity = (byte)8,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2976),
+                            views = 0,
+                            year_public = 1929
+                        },
+                        new
+                        {
+                            Id = 28,
+                            author_id = 23,
+                            created_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(2986),
+                            description = "Ipsa ipsum ad id occaecati iste corporis consequuntur quibusdam necessitatibus. Non ipsa repellendus ut eos praesentium. Consequatur reiciendis sequi.",
+                            genre_id = 14,
+                            name = "Saepe dolorem molestiae quo magni molestias velit ut voluptas.",
+                            quantity = (byte)9,
+                            rating = (byte)0,
+                            remaining = (byte)5,
+                            updated_at = new DateTime(2024, 11, 19, 21, 16, 13, 587, DateTimeKind.Local).AddTicks(3084),
+                            views = 0,
+                            year_public = 1959
                         });
                 });
 
@@ -1652,194 +1944,194 @@ namespace QLSach.Migrations
                         new
                         {
                             Id = 1,
-                            description = "Possimus aliquid ipsum ut nulla recusandae.",
-                            name = "Harold"
+                            description = "Sed eum suscipit aspernatur dolor eius.",
+                            name = "Crystal"
                         },
                         new
                         {
                             Id = 2,
-                            description = "Repellendus alias rerum quod velit neque est assumenda tenetur corrupti.",
-                            name = "Fidel"
+                            description = "Est consequatur quia in ut corporis commodi eaque reiciendis.",
+                            name = "Earnestine"
                         },
                         new
                         {
                             Id = 3,
-                            description = "Rem et iure qui deserunt adipisci asperiores atque.",
-                            name = "Nelle"
+                            description = "Consectetur veniam commodi velit voluptatibus itaque.",
+                            name = "Mazie"
                         },
                         new
                         {
                             Id = 4,
-                            description = "Consequatur vel dolores praesentium corrupti.",
-                            name = "Verdie"
+                            description = "Enim dolores qui.",
+                            name = "Amiya"
                         },
                         new
                         {
                             Id = 5,
-                            description = "Veniam optio ab laboriosam temporibus.",
-                            name = "Vincent"
+                            description = "Quaerat et nihil consequatur fugiat placeat ipsa a quae ea.",
+                            name = "Wanda"
                         },
                         new
                         {
                             Id = 6,
-                            description = "Vero quis explicabo nobis et.",
-                            name = "Betsy"
+                            description = "Sed expedita unde voluptatem.",
+                            name = "Giles"
                         },
                         new
                         {
                             Id = 7,
-                            description = "Et harum voluptatum dicta et suscipit corporis architecto.",
-                            name = "Antone"
+                            description = "Eligendi iusto quaerat ex dolor voluptatem mollitia voluptas.",
+                            name = "Jovan"
                         },
                         new
                         {
                             Id = 8,
-                            description = "Magni assumenda nihil est autem quo quis modi tenetur.",
-                            name = "Nick"
+                            description = "Eos minus non.",
+                            name = "Annie"
                         },
                         new
                         {
                             Id = 9,
-                            description = "Soluta enim rem ea.",
-                            name = "Earl"
+                            description = "Atque deserunt recusandae quia ut dolor molestias quam distinctio.",
+                            name = "Tiara"
                         },
                         new
                         {
                             Id = 10,
-                            description = "Animi dolore exercitationem eveniet dolorem illo nam.",
-                            name = "Gerald"
+                            description = "Est assumenda voluptas et laborum provident deserunt.",
+                            name = "Marshall"
                         },
                         new
                         {
                             Id = 11,
-                            description = "Amet dicta eos qui.",
-                            name = "Lila"
+                            description = "Occaecati qui impedit.",
+                            name = "Guy"
                         },
                         new
                         {
                             Id = 12,
-                            description = "Aliquam sunt aut voluptas.",
-                            name = "Melany"
+                            description = "Numquam qui nemo.",
+                            name = "Eduardo"
                         },
                         new
                         {
                             Id = 13,
-                            description = "Voluptates perferendis non eaque voluptate deleniti.",
-                            name = "Laurence"
+                            description = "Illum nostrum nulla blanditiis.",
+                            name = "Salvatore"
                         },
                         new
                         {
                             Id = 14,
-                            description = "Et doloremque repellendus rem vero non recusandae omnis sunt laborum.",
-                            name = "Donny"
+                            description = "Explicabo autem sint laboriosam qui et esse iure aut velit.",
+                            name = "Lulu"
                         },
                         new
                         {
                             Id = 15,
-                            description = "Reprehenderit hic sequi minus aperiam quo.",
-                            name = "Shaina"
+                            description = "Consequatur qui maxime voluptas ratione officia ab.",
+                            name = "Katlyn"
                         },
                         new
                         {
                             Id = 16,
-                            description = "Nemo nemo velit laudantium suscipit.",
-                            name = "Bridie"
+                            description = "Rem iste officia nihil et eveniet omnis sint odit voluptatibus.",
+                            name = "Torrey"
                         },
                         new
                         {
                             Id = 17,
-                            description = "Dignissimos quibusdam omnis dignissimos occaecati consequatur labore ad iure.",
-                            name = "Kimberly"
+                            description = "Autem illo nesciunt vel sunt quia libero.",
+                            name = "Yvonne"
                         },
                         new
                         {
                             Id = 18,
-                            description = "Voluptatum esse harum quibusdam porro.",
-                            name = "Russ"
+                            description = "Quis laboriosam qui qui et eos.",
+                            name = "Edd"
                         },
                         new
                         {
                             Id = 19,
-                            description = "Ratione quae adipisci assumenda.",
-                            name = "Jermey"
+                            description = "Reprehenderit et deleniti et placeat laudantium harum labore accusamus.",
+                            name = "Verla"
                         },
                         new
                         {
                             Id = 20,
-                            description = "Cumque libero nihil ex.",
-                            name = "Bettie"
+                            description = "Alias temporibus necessitatibus atque animi sunt pariatur ut est inventore.",
+                            name = "Cleve"
                         },
                         new
                         {
                             Id = 21,
-                            description = "Provident dignissimos placeat repellat molestiae eveniet repudiandae et.",
-                            name = "Dariana"
+                            description = "At magni qui.",
+                            name = "Precious"
                         },
                         new
                         {
                             Id = 22,
-                            description = "Quam rem eligendi voluptas.",
-                            name = "Tabitha"
+                            description = "Qui cupiditate repudiandae sint nobis et sed.",
+                            name = "Gladyce"
                         },
                         new
                         {
                             Id = 23,
-                            description = "Blanditiis et ut veniam.",
-                            name = "Lacey"
+                            description = "Quam voluptas adipisci amet et voluptas voluptas vel.",
+                            name = "Hattie"
                         },
                         new
                         {
                             Id = 24,
-                            description = "Debitis quas veritatis et voluptatem itaque velit tenetur inventore.",
-                            name = "Forrest"
+                            description = "Quos accusamus atque consequatur eligendi modi.",
+                            name = "Granville"
                         },
                         new
                         {
                             Id = 25,
-                            description = "Neque quasi soluta fuga quaerat.",
-                            name = "Darian"
+                            description = "Autem quis et maxime est suscipit soluta laborum excepturi.",
+                            name = "Halle"
                         },
                         new
                         {
                             Id = 26,
-                            description = "Et quia adipisci est et voluptatibus ipsam asperiores sed.",
-                            name = "Joanne"
+                            description = "Necessitatibus suscipit nostrum saepe harum molestias esse pariatur voluptas.",
+                            name = "Alysha"
                         },
                         new
                         {
                             Id = 27,
-                            description = "Quasi illum distinctio provident sunt quisquam sit aut rerum.",
-                            name = "Dakota"
+                            description = "Voluptas itaque et.",
+                            name = "Marques"
                         },
                         new
                         {
                             Id = 28,
-                            description = "Facere architecto est vel.",
-                            name = "Blaze"
+                            description = "Earum aliquam quis quia rem animi amet.",
+                            name = "Dahlia"
                         },
                         new
                         {
                             Id = 29,
-                            description = "Maxime et et fugit.",
-                            name = "Trenton"
+                            description = "Quos fugit quibusdam qui.",
+                            name = "Abagail"
                         },
                         new
                         {
                             Id = 30,
-                            description = "Aut qui adipisci officia saepe fuga iste impedit.",
-                            name = "Lewis"
+                            description = "Unde ab eius ea dolores fugiat et architecto dolor facere.",
+                            name = "Abraham"
                         },
                         new
                         {
                             Id = 31,
-                            description = "Voluptas beatae nesciunt corporis eos deleniti blanditiis.",
-                            name = "Cicero"
+                            description = "Dignissimos voluptatibus voluptatem tenetur qui ea ut commodi praesentium.",
+                            name = "Kaycee"
                         },
                         new
                         {
                             Id = 32,
-                            description = "Facilis pariatur blanditiis exercitationem.",
-                            name = "Richmond"
+                            description = "Voluptatem velit atque sint aut quia doloremque.",
+                            name = "Garth"
                         });
                 });
 
@@ -1919,17 +2211,21 @@ namespace QLSach.Migrations
 
             modelBuilder.Entity("QLSach.database.models.Register", b =>
                 {
-                    b.HasOne("QLSach.dbContext.models.Book", null)
+                    b.HasOne("QLSach.dbContext.models.Book", "Book")
                         .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QLSach.database.models.User", null)
+                    b.HasOne("QLSach.database.models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QLSach.dbContext.models.Book", b =>

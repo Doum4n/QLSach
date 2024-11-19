@@ -1,7 +1,5 @@
 ﻿
 using QLSach.component;
-using QLSach.database.models;
-using QLSach.query;
 
 namespace QLSach.view.admin
 {
@@ -27,19 +25,15 @@ namespace QLSach.view.admin
             paneMain.Controls.Add(new subPaneCategory());
         }
 
-        private void btn_modify_category_Click(object sender, EventArgs e)
-        {
-            Singleton.getInstance.AdminHelper.isPaneAdd = false;
-            Singleton.getInstance.AdminHelper.isPaneModify = true;
-
-            paneMain.Controls.Clear();
-            paneMain.Controls.Add(new subPaneCategory());
-        }
-
         private void btn_modify_pagination_Click(object sender, EventArgs e)
         {
             paneMain.Controls.Clear();
             paneMain.Controls.Add(new addToCategory());
+        }
+
+        private void paneMain_Paint(object sender, PaintEventArgs e)
+        {
+            paneMain.Controls.Add(new subPaneCategory());
         }
     }
 }

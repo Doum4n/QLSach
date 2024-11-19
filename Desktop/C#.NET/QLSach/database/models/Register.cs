@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using QLSach.dbContext.models;
+using ServiceStack.DataAnnotations;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSach.database.models
 {
@@ -44,7 +42,7 @@ namespace QLSach.database.models
         {
             get
             {
-                if (this.Status == Status_borrow.Canceled)
+                if (this.Status == Status_borrow.Canceled || this.Status == Status_borrow.Pending)
                     return null;
                 return register_at.AddDays(7);
             }
@@ -70,5 +68,10 @@ namespace QLSach.database.models
 
 
         public Status_borrow Status { get; set; }
+
+        [Browsable(false)]
+        public User User { get; set; }
+        [Browsable (false)]
+        public Book Book { get; set; }
     }
 }

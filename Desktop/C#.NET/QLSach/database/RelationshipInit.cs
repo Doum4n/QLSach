@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QLSach.database.models;
 using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSach.database
 {
@@ -41,7 +36,7 @@ namespace QLSach.database
             modelBuilder.Entity<Book>()
                .HasMany(b => b.Comments)
                .WithOne(c => c.book)
-               .HasForeignKey(c => c.BookId)
+               .HasForeignKey(c => c.BookId).OnDelete(DeleteBehavior.Cascade)
                .IsRequired();
 
             //1 book belong to 1 genre, 1 genre have many books
@@ -86,6 +81,10 @@ namespace QLSach.database
                 .HasMany(o => o.Books)
                 .WithMany(o => o.Categories)
                 .UsingEntity<CategoryBook>();
+
+            modelBuilder.Entity<User>()
+                .Property(o => o.Role)
+                .HasConversion<String>();
         }
     }
 }

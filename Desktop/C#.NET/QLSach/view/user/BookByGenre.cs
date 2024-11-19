@@ -1,15 +1,6 @@
 ﻿using QLSach.component;
 using QLSach.controllers;
 using QLSach.view.components;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view
 {
@@ -53,7 +44,7 @@ namespace QLSach.view
             tablePane_genre.RowCount = 0;
             tablePane_genre.ColumnCount = 0;
 
-            lb_index.Text = 1.ToString(); 
+            lb_index.Text = 1.ToString();
             lb_genreName.Text = genreName;
             Singleton.getInstance.State = new(this);
             Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);

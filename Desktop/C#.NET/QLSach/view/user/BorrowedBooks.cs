@@ -1,13 +1,5 @@
 ﻿using QLSach.component;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view.user
 {
@@ -24,11 +16,12 @@ namespace QLSach.view.user
         {
             Singleton.getInstance.RegisterHelper.borrowed_data.DataSource = Singleton.getInstance.Data.Register
                 .Where(o => o.UserId == UserId)
-                .Where (o => o.borrow_at != null)
-                .Select(o => new {
-                    o.BookId, 
-                    o.borrow_at, 
-                    expected_return = o.borrow_at.Value.AddDays(7) 
+                .Where(o => o.borrow_at != null)
+                .Select(o => new
+                {
+                    o.BookId,
+                    o.borrow_at,
+                    expected_return = o.borrow_at.Value.AddDays(7)
                 }).ToList();
 
             data.DataSource = Singleton.getInstance.RegisterHelper.borrowed_data;

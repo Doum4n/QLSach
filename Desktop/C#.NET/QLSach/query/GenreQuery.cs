@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QLSach.component;
 using QLSach.database.models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSach.controllers
 {
@@ -32,7 +27,7 @@ namespace QLSach.controllers
 
         public List<string> getGenreName()
         {
-            return Singleton.getInstance.Data.Genre.Select( g => g.name ).ToList();
+            return Singleton.getInstance.Data.Genre.Select(g => g.name).ToList();
         }
     }
 }

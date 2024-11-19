@@ -1,18 +1,6 @@
 ﻿using QLSach.component;
 using QLSach.controllers;
 using QLSach.database.models;
-using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Status = QLSach.dbContext.models.Status;
 
 namespace QLSach.view.components.items

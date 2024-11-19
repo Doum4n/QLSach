@@ -1,17 +1,7 @@
 ﻿using QLSach.component;
 using QLSach.controllers;
-using QLSach.database;
 using QLSach.database.models;
 using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view.components.items
 {
@@ -65,12 +55,12 @@ namespace QLSach.view.components.items
                 Singleton.getInstance.Data.SaveChanges();
                 MessageBox.Show("Đăng ký thành công!");
 
-                Singleton.getInstance.RegisterHelper.registration_data.Add(new {register.BookId, register.register_at, register.Status});
+                Singleton.getInstance.RegisterHelper.registration_data.Add(new { register.BookId, register.register_at, register.Status });
             }
             else
             {
 
-            }        
+            }
         }
     }
 }

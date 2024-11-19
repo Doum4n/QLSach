@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace QLSach.database.models
 {
@@ -11,7 +6,7 @@ namespace QLSach.database.models
     {
         [Key]
         public int Id { get; set; }
-        public int CategoryId {  get; set; }
+        public int CategoryId { get; set; }
         public int BookId { get; set; }
     }
 }

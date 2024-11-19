@@ -6,7 +6,7 @@ namespace QLSach.view
     public partial class RecentUpdateByGenre : UserControl
     {
         public int GenreId { get; set; }
-        public string Genre {  get; set; }
+        public string Genre { get; set; }
         private Pagination pagination;
         private BookQuery query = new();
         public RecentUpdateByGenre()

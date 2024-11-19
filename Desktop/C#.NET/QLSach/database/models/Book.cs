@@ -1,15 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using QLSach.database.models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Bogus.DataSets.Name;
 
 namespace QLSach.dbContext.models
 {
@@ -21,7 +14,7 @@ namespace QLSach.dbContext.models
     public class Book
     {
         [Key]
-        public int Id {  get; set; }
+        public int Id { get; set; }
         [Required]
         //[Column(TypeName = "nvarchar(30)")]
         public string name { get; set; }
@@ -34,12 +27,13 @@ namespace QLSach.dbContext.models
         public byte rating { get; set; }
         public int year_public { get; set; }
         [DefaultValue(0)]
-        public int views {  get; set; }
+        public int views { get; set; }
         [NotMapped]
         public Status status
         {
-            get { 
-                if(this.remaining > 1)
+            get
+            {
+                if (this.remaining > 1)
                 {
                     return Status.borrowed;
                 }
@@ -66,6 +60,7 @@ namespace QLSach.dbContext.models
         public List<Comment> Comments { get; set; }
         [Browsable(false)]
         public Genre Genre { get; set; }
+        [Browsable(false)]
         public List<Category> Categories { get; set; }
     }
 }

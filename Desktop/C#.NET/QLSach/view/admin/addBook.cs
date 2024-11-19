@@ -3,15 +3,7 @@ using QLSach.controllers;
 using QLSach.database.models;
 using QLSach.dbContext.models;
 using ServiceStack;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.view.admin
 {
@@ -38,7 +30,7 @@ namespace QLSach.view.admin
 
         private void btn_post_Click(object sender, EventArgs e)
         {
-            
+
             var exist_author = Singleton.getInstance.Data.Authors.Where(o => o.name.Equals(combobox_author_name.Text));
             int author_id;
             if (!exist_author.Any())
@@ -54,6 +46,7 @@ namespace QLSach.view.admin
                 author_id = exist_author.Select(o => o.Id).FirstOrDefault();
             }
             Book book = new Book();
+            book.Id = Singleton.getInstance.Data.Books.Count() + 1;
             book.author_id = author_id;
             book.name = tb_book_name.Text;
             book.description = rtb_description.Text;
@@ -67,14 +60,33 @@ namespace QLSach.view.admin
             photo.path = filePath;
 
             Singleton.getInstance.Data.Books.Add(book);
-            Singleton.getInstance.Data.SaveChanges();
-            photo.book_id = Singleton.getInstance.Data.Books.Where(o => o.name == book.name).Select(o => o.Id).FirstOrDefault();
+            photo.book_id = Singleton.getInstance.Data.Books.Count() + 1;
             Singleton.getInstance.Data.Photos.Add(photo);
-            Singleton.getInstance.Data.SaveChanges();
+            //Singleton.getInstance.Data.SaveChanges();
+
+            DataTable BookDatatable = (DataTable)Singleton.getInstance.AdminHelper.book_data.DataSource;
+
+            DataRow newRow = BookDatatable.NewRow();
+            newRow["Id"] = book.Id;
+            newRow["name"] = book.name; 
+            newRow["description"] = book.description;
+            newRow["author_id"] = book.author_id;
+            newRow["year_public"] = book.year_public;
+            newRow["genre_id"] = book.genre_id;
+            newRow["quantity"] = book.quantity;
+            newRow["remaining"] = book.remaining;
+            newRow["rating"] = 0;
+            newRow["views"] = 0;
+            newRow["created_at"] = book.created_at;
+            newRow["updated_at"] = book.updated_at;
+            newRow["status"] = book.status;
+
+           
+            MessageBox.Show(newRow.ToString());
+
+            BookDatatable.Rows.Add(newRow);
 
             MessageBox.Show("Thêm sách thành công");
-
-            Singleton.getInstance.AdminHelper.book_data.Add(book);
         }
 
         private void addBook_Load(object sender, EventArgs e)
