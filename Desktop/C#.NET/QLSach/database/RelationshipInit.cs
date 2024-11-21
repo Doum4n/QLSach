@@ -57,14 +57,14 @@ namespace QLSach.database
             modelBuilder.Entity<BookInteraction>()
                .HasOne(i => i.comment)
                .WithOne(c => c.bookInteraction)
-               .HasForeignKey<BookInteraction>(b => b.CommentId);
+               .HasForeignKey<BookInteraction>(b => b.CommentId).OnDelete(DeleteBehavior.Cascade);
             //
 
             //Comment
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.parent)
                 .WithMany(c => c.childrents)
-                .HasForeignKey(c => c.parent_id);
+                .HasForeignKey(c => c.parent_id).OnDelete(DeleteBehavior.Cascade);
 
             //Register
             modelBuilder.Entity<User>()

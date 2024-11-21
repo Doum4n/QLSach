@@ -2,7 +2,7 @@
 using MoreLinq;
 using QLSach.component;
 using QLSach.database.models;
-using QLSach.query;
+using QLSach.database.query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,5 +1,4 @@
 ﻿using QLSach.dbContext.models;
-using ServiceStack.DataAnnotations;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 

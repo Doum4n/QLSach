@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using QLSach.component;
 using QLSach.database.models;
-using QLSach.query;
+using QLSach.database.query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,8 +82,6 @@ namespace QLSach.view.admin
         private void LoadTableData()
         {
             bindingSource.DataSource = Singleton.getInstance.Data.Register
-                .Include(o => o.Book)
-                .Include(o => o.User)
                 .Where(o => o.Status == Status_borrow.Borrowed)
                 .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.borrow_at, o.expected_at, o.Status }).ToFilteredDataTable();
             data.DataSource = bindingSource;

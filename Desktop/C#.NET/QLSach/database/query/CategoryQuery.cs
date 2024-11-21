@@ -1,7 +1,7 @@
 ﻿using QLSach.component;
 using Category = QLSach.database.models.Category;
 
-namespace QLSach.query
+namespace QLSach.database.query
 {
     public record CategoryDetail
     {
@@ -12,7 +12,7 @@ namespace QLSach.query
         public DateOnly create_at { get; set; }
         public DateOnly update_at { get; set; }
 
-        public static implicit operator CategoryDetail(database.models.Category category)
+        public static implicit operator CategoryDetail(Category category)
         {
             return new CategoryDetail
             {
@@ -56,7 +56,7 @@ namespace QLSach.query
                     categoryBook => categoryBook.CategoryId,
                     (category, categoryBooks) => new
                     {
-                        Id = category.Id,
+                        category.Id,
                         BookCount = categoryBooks.Count()
                     }
                 ).Where(o => o.Id == categoryId).Select(o => o.BookCount).FirstOrDefault();
@@ -67,12 +67,12 @@ namespace QLSach.query
             return Singleton.getInstance.Data.Categories.ToList();
         }
 
-        public List<String> getNameById(int id)
+        public List<string> getNameById(int id)
         {
             return Singleton.getInstance.Data.Categories.Where(o => o.Id == id).Select(o => o.Name).ToList();
         }
 
-        public String getDiscriptionById(int id)
+        public string getDiscriptionById(int id)
         {
             return Singleton.getInstance.Data.Categories.Where(o => o.Id == id).Select(o => o.Description).First();
         }

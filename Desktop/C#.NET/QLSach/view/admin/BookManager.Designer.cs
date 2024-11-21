@@ -66,17 +66,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             tb_author_id = new Guna.UI2.WinForms.Guna2TextBox();
-            tb_author_name = new Guna.UI2.WinForms.Guna2TextBox();
             label4 = new Label();
             label5 = new Label();
             combobox_genre_name = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_genre_id = new Guna.UI2.WinForms.Guna2TextBox();
             panel_modify = new Panel();
+            cbb_author_name = new Guna.UI2.WinForms.Guna2ComboBox();
             picture = new PictureBox();
             btn_update = new Guna.UI2.WinForms.Guna2Button();
             rtb_book_description = new RichTextBox();
@@ -102,6 +104,7 @@
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
             data = new DataGridView();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            btn_deleteData = new Guna.UI2.WinForms.Guna2Button();
             panel_modify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -149,27 +152,6 @@
             tb_author_id.Size = new Size(36, 37);
             tb_author_id.TabIndex = 5;
             // 
-            // tb_author_name
-            // 
-            tb_author_name.CustomizableEdges = customizableEdges3;
-            tb_author_name.DefaultText = "";
-            tb_author_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tb_author_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tb_author_name.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tb_author_name.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tb_author_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_author_name.Font = new Font("Segoe UI", 9F);
-            tb_author_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_author_name.Location = new Point(776, 134);
-            tb_author_name.Margin = new Padding(3, 4, 3, 4);
-            tb_author_name.Name = "tb_author_name";
-            tb_author_name.PasswordChar = '\0';
-            tb_author_name.PlaceholderText = "";
-            tb_author_name.SelectedText = "";
-            tb_author_name.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tb_author_name.Size = new Size(183, 37);
-            tb_author_name.TabIndex = 6;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -191,7 +173,7 @@
             // combobox_genre_name
             // 
             combobox_genre_name.BackColor = Color.Transparent;
-            combobox_genre_name.CustomizableEdges = customizableEdges5;
+            combobox_genre_name.CustomizableEdges = customizableEdges3;
             combobox_genre_name.DrawMode = DrawMode.OwnerDrawFixed;
             combobox_genre_name.DropDownStyle = ComboBoxStyle.DropDownList;
             combobox_genre_name.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -201,13 +183,13 @@
             combobox_genre_name.ItemHeight = 30;
             combobox_genre_name.Location = new Point(776, 91);
             combobox_genre_name.Name = "combobox_genre_name";
-            combobox_genre_name.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            combobox_genre_name.ShadowDecoration.CustomizableEdges = customizableEdges4;
             combobox_genre_name.Size = new Size(175, 36);
             combobox_genre_name.TabIndex = 0;
             // 
             // tb_genre_id
             // 
-            tb_genre_id.CustomizableEdges = customizableEdges7;
+            tb_genre_id.CustomizableEdges = customizableEdges5;
             tb_genre_id.DefaultText = "";
             tb_genre_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_genre_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -222,13 +204,14 @@
             tb_genre_id.PasswordChar = '\0';
             tb_genre_id.PlaceholderText = "";
             tb_genre_id.SelectedText = "";
-            tb_genre_id.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tb_genre_id.ShadowDecoration.CustomizableEdges = customizableEdges6;
             tb_genre_id.Size = new Size(55, 37);
             tb_genre_id.TabIndex = 10;
             // 
             // panel_modify
             // 
             panel_modify.BackColor = SystemColors.GradientActiveCaption;
+            panel_modify.Controls.Add(cbb_author_name);
             panel_modify.Controls.Add(picture);
             panel_modify.Controls.Add(btn_update);
             panel_modify.Controls.Add(tb_author_id);
@@ -239,7 +222,6 @@
             panel_modify.Controls.Add(label5);
             panel_modify.Controls.Add(datePicker);
             panel_modify.Controls.Add(tb_remaining);
-            panel_modify.Controls.Add(tb_author_name);
             panel_modify.Controls.Add(combobox_genre_name);
             panel_modify.Controls.Add(label2);
             panel_modify.Controls.Add(tb_quantity);
@@ -256,6 +238,23 @@
             panel_modify.Name = "panel_modify";
             panel_modify.Size = new Size(1271, 296);
             panel_modify.TabIndex = 14;
+            // 
+            // cbb_author_name
+            // 
+            cbb_author_name.BackColor = Color.Transparent;
+            cbb_author_name.CustomizableEdges = customizableEdges7;
+            cbb_author_name.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_author_name.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_author_name.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_author_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_author_name.Font = new Font("Segoe UI", 10F);
+            cbb_author_name.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_author_name.ItemHeight = 30;
+            cbb_author_name.Location = new Point(776, 135);
+            cbb_author_name.Name = "cbb_author_name";
+            cbb_author_name.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbb_author_name.Size = new Size(175, 36);
+            cbb_author_name.TabIndex = 18;
             // 
             // picture
             // 
@@ -607,14 +606,32 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(btn_deleteData);
             guna2Panel1.Controls.Add(data);
-            guna2Panel1.CustomizableEdges = customizableEdges39;
+            guna2Panel1.CustomizableEdges = customizableEdges41;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.Location = new Point(0, 402);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            guna2Panel1.Size = new Size(1271, 414);
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Panel1.Size = new Size(1271, 467);
             guna2Panel1.TabIndex = 20;
+            // 
+            // btn_deleteData
+            // 
+            btn_deleteData.CustomizableEdges = customizableEdges39;
+            btn_deleteData.DisabledState.BorderColor = Color.DarkGray;
+            btn_deleteData.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_deleteData.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_deleteData.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_deleteData.Font = new Font("Segoe UI", 9F);
+            btn_deleteData.ForeColor = Color.White;
+            btn_deleteData.Location = new Point(13, 389);
+            btn_deleteData.Name = "btn_deleteData";
+            btn_deleteData.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            btn_deleteData.Size = new Size(129, 56);
+            btn_deleteData.TabIndex = 2;
+            btn_deleteData.Text = "Xóa";
+            btn_deleteData.Click += btn_deleteData_Click;
             // 
             // BookManager
             // 
@@ -641,7 +658,6 @@
         private Label label1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox tb_author_id;
-        private Guna.UI2.WinForms.Guna2TextBox tb_author_name;
         private Label label4;
         private Label label5;
         private Panel panel_modify;
@@ -672,5 +688,7 @@
         private DataGridView data;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btn_update_data;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_author_name;
+        private Guna.UI2.WinForms.Guna2Button btn_deleteData;
     }
 }

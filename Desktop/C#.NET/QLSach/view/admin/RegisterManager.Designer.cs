@@ -90,6 +90,7 @@
             // 
             // data
             // 
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             data.Location = new Point(17, 176);
             data.Name = "data";

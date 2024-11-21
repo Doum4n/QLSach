@@ -2,8 +2,7 @@
 {
     public class loadImage
     {
-        public int genreId { get; set; }
-        public void ShowMyImage(PictureBox picture, string? fileToDisplay, int xSize, int ySize)
+        public static void ShowImage(PictureBox picture, string? fileToDisplay, int xSize, int ySize)
         {
             Bitmap MyImage;
             if (fileToDisplay != null)

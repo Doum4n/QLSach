@@ -16,16 +16,16 @@
     <Compile Update="view\admin\BorrowedManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\admin\PaneCategory.cs">
+    <Compile Update="view\admin\BorrowRegisterManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\admin\BorrowRegisterManager.cs">
+    <Compile Update="view\admin\MainPaneCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\admin\RegisterManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\admin\subPaneCategory.cs">
+    <Compile Update="view\admin\CategoryNavigation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\admin\UserManager.cs">

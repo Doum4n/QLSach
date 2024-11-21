@@ -14,7 +14,6 @@
     <PackageReference Include="Confluent.Kafka" Version="2.6.0" />
     <PackageReference Include="FastMember" Version="1.5.0" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
-    <PackageReference Include="Jenga.NET" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

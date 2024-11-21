@@ -1,4 +1,5 @@
-﻿using QLSach.dbContext.models;
+﻿using QLSach.database.query;
+using QLSach.dbContext.models;
 using QLSach.view.components.items;
 
 namespace QLSach.view.components
@@ -9,7 +10,7 @@ namespace QLSach.view.components
         public int currentIndex { get; set; } = 0;
         private TableLayoutPanel tablePane;
         public List<Book> books { get; set; }
-        private controllers.BookQuery bookQuery = new controllers.BookQuery();
+        private BookQuery bookQuery = new BookQuery();
         private int colCount;
         private int rowCount;
         private int pageSize;

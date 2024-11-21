@@ -1,8 +1,8 @@
 ﻿using QLSach.component;
-using QLSach.controllers;
+using QLSach.components;
 using QLSach.database.models;
+using QLSach.database.query;
 using QLSach.dbContext.models;
-using ServiceStack;
 using System.Data;
 
 namespace QLSach.view.admin
@@ -23,7 +23,7 @@ namespace QLSach.view.admin
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 filePath = ofd.FileName;
-                Singleton.getInstance.LoadImg.ShowMyImage(pictureBook, filePath, 162, 240);
+                loadImage.ShowImage(pictureBook, filePath, 162, 240);
             }
             //ofd.ShowDialog();
         }

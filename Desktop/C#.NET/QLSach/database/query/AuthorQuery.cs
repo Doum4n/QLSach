@@ -1,7 +1,7 @@
 ﻿using QLSach.component;
 using QLSach.dbContext.models;
 
-namespace QLSach.controllers
+namespace QLSach.database.query
 {
     public class AuthorQuery
     {
@@ -10,7 +10,7 @@ namespace QLSach.controllers
             return Singleton.getInstance.Data.Authors.Find(id);
         }
 
-        public List<String> getAuthorName()
+        public List<string> getAuthorName()
         {
             return Singleton.getInstance.Data.Authors.Select(o => o.name).ToList();
         }

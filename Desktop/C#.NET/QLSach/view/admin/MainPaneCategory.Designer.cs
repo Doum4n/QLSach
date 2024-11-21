@@ -1,6 +1,6 @@
 ﻿namespace QLSach.view.admin
 {
-    partial class subPaneCategory
+    partial class MainPaneCategory
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,6 +56,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             paneMain = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             data = new DataGridView();
@@ -78,6 +80,7 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             combobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_search = new Guna.UI2.WinForms.Guna2TextBox();
+            btn_delete_data = new Guna.UI2.WinForms.Guna2Button();
             paneMain.SuspendLayout();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
@@ -88,33 +91,35 @@
             // 
             // paneMain
             // 
+            paneMain.AutoSize = true;
             paneMain.Controls.Add(guna2Panel3);
             paneMain.Controls.Add(pane_add_category);
             paneMain.Controls.Add(pane_modify_category);
             paneMain.Controls.Add(guna2Panel1);
             paneMain.CustomizableEdges = customizableEdges27;
-            paneMain.Location = new Point(6, 13);
+            paneMain.Location = new Point(21, 17);
             paneMain.Name = "paneMain";
             paneMain.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            paneMain.Size = new Size(1007, 933);
-            paneMain.TabIndex = 10;
+            paneMain.Size = new Size(1007, 801);
+            paneMain.TabIndex = 11;
             // 
             // guna2Panel3
             // 
+            guna2Panel3.AutoSize = true;
             guna2Panel3.Controls.Add(data);
             guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.Dock = DockStyle.Top;
             guna2Panel3.Location = new Point(0, 370);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel3.Size = new Size(1007, 597);
+            guna2Panel3.Size = new Size(1007, 409);
             guna2Panel3.TabIndex = 8;
             // 
             // data
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(72, 24);
+            data.Location = new Point(72, 40);
             data.Name = "data";
             data.RowHeadersWidth = 51;
             data.Size = new Size(872, 366);
@@ -407,16 +412,36 @@
             tb_search.TabIndex = 13;
             tb_search.TextChanged += tb_search_TextChanged;
             // 
-            // subPaneCategory
+            // btn_delete_data
+            // 
+            btn_delete_data.CustomizableEdges = customizableEdges29;
+            btn_delete_data.DisabledState.BorderColor = Color.DarkGray;
+            btn_delete_data.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_delete_data.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_delete_data.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_delete_data.Font = new Font("Segoe UI", 9F);
+            btn_delete_data.ForeColor = Color.White;
+            btn_delete_data.Location = new Point(838, 824);
+            btn_delete_data.Name = "btn_delete_data";
+            btn_delete_data.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btn_delete_data.Size = new Size(127, 38);
+            btn_delete_data.TabIndex = 12;
+            btn_delete_data.Text = "Xóa";
+            btn_delete_data.Click += btn_delete_data_Click;
+            // 
+            // MainPaneCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            Controls.Add(btn_delete_data);
             Controls.Add(paneMain);
-            Name = "subPaneCategory";
-            Size = new Size(1018, 959);
-            Load += subPaneCategory_Load;
+            Name = "MainPaneCategory";
+            Size = new Size(1056, 885);
+            Load += CategoryMainPane_Load;
             VisibleChanged += onVisible;
             paneMain.ResumeLayout(false);
+            paneMain.PerformLayout();
             guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             pane_add_category.ResumeLayout(false);
@@ -425,6 +450,7 @@
             pane_modify_category.PerformLayout();
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -448,8 +474,9 @@
         private Label label5;
         private Label label4;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox tb_search;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button btn_delete_data;
     }
 }

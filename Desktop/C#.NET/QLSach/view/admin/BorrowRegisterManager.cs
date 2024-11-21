@@ -1,9 +1,4 @@
-﻿using Confluent.Kafka;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using QLSach.component;
-using QLSach.database.models;
-using QLSach.query;
+﻿
 
 namespace QLSach.view.admin
 {

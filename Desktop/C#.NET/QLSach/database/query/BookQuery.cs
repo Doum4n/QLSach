@@ -2,7 +2,7 @@
 using QLSach.component;
 using QLSach.dbContext.models;
 
-namespace QLSach.controllers
+namespace QLSach.database.query
 {
     public class BookQuery
     {
@@ -45,7 +45,7 @@ namespace QLSach.controllers
         {
             return Singleton.getInstance.Data.Books.OrderByDescending(o => o.views).Take(50).ToList();
         }
-        public Book getBookByName(String name)
+        public Book getBookByName(string name)
         {
             return Singleton.getInstance.Data.Books.Where(o => o.name == name).FirstOrDefault();
         }

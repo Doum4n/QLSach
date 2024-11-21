@@ -2,7 +2,7 @@
 using QLSach.component;
 using QLSach.database.models;
 
-namespace QLSach.controllers
+namespace QLSach.database.query
 {
     public class GenreQuery
     {

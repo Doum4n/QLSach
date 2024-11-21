@@ -1,14 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MoreLinq;
-using QLSach.component;
+﻿using QLSach.component;
 using QLSach.components;
-using QLSach.controllers;
+using QLSach.Controller;
 using QLSach.database.models;
+using QLSach.database.query;
 using QLSach.dbContext.models;
-using ServiceStack;
-using System.ComponentModel;
 using System.Data;
-using System.Reflection;
 
 namespace QLSach.view.admin
 {
@@ -23,11 +19,21 @@ namespace QLSach.view.admin
 
         BindingSource binding = new BindingSource();
 
+        Dictionary<int, DataRow> prevDataRow = new Dictionary<int, DataRow>();
 
+        private bool isModify = false;
+        private bool isDelete = false;
+
+        DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
+        private List<int> seletedIndex = new List<int>();
+        private List<int> seletedBookId = new List<int>();
+
+        private BookManagerController controller;
 
         public BookManager()
         {
             InitializeComponent();
+            controller = new BookManagerController(data, binding, tb_search, combobox_filter);
         }
 
         private void btn_add_book_Click(object sender, EventArgs e)
@@ -47,6 +53,29 @@ namespace QLSach.view.admin
                     assignDisplayValue(e);
                 }
             };
+
+            data.CellContentClick += (sender, e) =>
+            {
+                if (e.RowIndex > -1)
+                {
+                    var selectedRow = data.Rows[e.RowIndex];
+                    if (selectedRow.Cells[0].ColumnIndex == e.ColumnIndex)
+                    {
+                        var bookDataTable = (DataTable)binding.DataSource;
+
+                        seletedBookId.Add(BookId);
+
+                        controller.addPrevRows(e.RowIndex, bookDataTable.Rows[e.RowIndex]);
+                        seletedIndex.Add(e.RowIndex);
+                    }
+                }
+            };
+
+            data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            data.AllowUserToAddRows = false;
+            data.AllowUserToDeleteRows = false;
+            btn_update.Visible = isModify;
         }
 
         private void assignDisplayValue(DataGridViewCellEventArgs e)
@@ -72,12 +101,9 @@ namespace QLSach.view.admin
                 try
                 {
                     filePath = imageQuery.GetPhoto(Convert.ToInt32(bookId));
-                    loadImage.ShowMyImage(picture, filePath, 149, 179);
+                    loadImage.ShowImage(picture, filePath, 149, 179);
                 }
-                catch (Exception ex)
-                {
-
-                }
+                catch (Exception ex){}
 
                 tb_book_id.Text = bookId.ToString();
                 tb_book_name.Text = name.ToString();
@@ -85,11 +111,13 @@ namespace QLSach.view.admin
                 tb_remaining.Text = remaing.ToString();
                 tb_genre_id.Text = genre_id.ToString();
                 tb_author_id.Text = author_id.ToString();
-                tb_author_name.Text = author_name.ToString();
                 rtb_book_description.Text = description.ToString();
+                combobox_genre_name.SelectedValue = Convert.ToInt32(tb_genre_id.Text);
+                cbb_author_name.SelectedValue = Convert.ToInt32(tb_author_id.Text);
 
                 datePicker.Value = DateTime.Now;
             }
+
         }
 
         private void LoadData()
@@ -97,62 +125,30 @@ namespace QLSach.view.admin
             combobox_genre_name.DataSource = Singleton.getInstance.Data.Genre.ToList();
             combobox_genre_name.DisplayMember = "Name";
             combobox_genre_name.ValueMember = "Id";
-
-            binding.DataSource = Singleton.getInstance.Data.Books
-                //.Include(o => o.Genre)
-                //.Include(o => o.author)
-                .Select(o => new
-                {
-                    o.Id,
-                    o.name,
-                    o.description,
-                    o.year_public,
-                    o.author_id,
-                    o.genre_id,
-                    o.rating,
-                    o.views,
-                    AuthorName = o.author.name,
-                    GenreName = o.Genre.name,
-                    o.quantity,
-                    o.remaining,
-                    o.status,
-                    o.created_at,
-                    o.updated_at,
-                })
-                .ToFilteredDataTable();
-
-            data.DataSource = binding;
-
-            data.Columns["genre_id"].Visible = false;
-            data.Columns["author_id"].Visible = false;
-
-            Singleton.getInstance.AdminHelper.book_data = binding;
-
-            List<string> columnNames = new List<string>();
-
-            /*Combobox fillter*/
-            foreach (DataGridViewColumn column in data.Columns)
+            combobox_genre_name.SelectedValueChanged += (sender, e) =>
             {
-                columnNames.Add(column.HeaderText);
-            }
+                tb_genre_id.Text = combobox_genre_name.SelectedValue.ToString();
+            };
 
-            combobox_filter.DataSource = columnNames;
-            /**/
+            cbb_author_name.DataSource = Singleton.getInstance.Data.Authors.Select(o => new { o.Id, o.name }).ToList();
+            cbb_author_name.DisplayMember = "name";
+            cbb_author_name.ValueMember = "Id";
+            cbb_author_name.SelectedValueChanged += (sender, e) =>
+            {
+                tb_author_id.Text = cbb_author_name.SelectedValue.ToString();
+            };
 
-            data.Columns["Id"].HeaderText = "Mã sách";
-            data.Columns["name"].HeaderText = "Tên sách";
-            data.Columns["description"].HeaderText = "Mô tả";
-            data.Columns["year_public"].HeaderText = "Năm phát hành";
-            data.Columns["AuthorName"].HeaderText = "Tên tác giả";
-            data.Columns["GenreName"].HeaderText = "Tên thể loại";
-            data.Columns["rating"].HeaderText = "Đánh giá";
-            data.Columns["views"].HeaderText = "Lược xem";
-            data.Columns["quantity"].HeaderText = "Số lượng đã nhập";
-            data.Columns["remaining"].HeaderText = "Số lượng còn lại";
-            data.Columns["status"].HeaderText = "Trạng thái";
-            data.Columns["created_at"].HeaderText = "Ngày nhập";
-            data.Columns["updated_at"].HeaderText = "Ngày cập nhật";
+            btn_deleteData.Visible = isDelete;
 
+            checkbox.HeaderText = "Xóa";
+            checkbox.TrueValue = true;
+            checkbox.FalseValue = false;
+            data.Columns.Insert(0, checkbox);
+
+            controller.Load();
+
+            controller.setRollbackList(seletedIndex, seletedBookId);
+            controller.setPrevRows(prevDataRow);
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -165,11 +161,10 @@ namespace QLSach.view.admin
             Book book = BookQuery.getBook(BookId);
             Photo? photo = imageQuery.GetImageBookId(BookId);
 
-            book.Id = BookId;
-            book.author_id = int.Parse(tb_author_id.Text);
+            book.author_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
             book.name = tb_book_name.Text;
             book.description = rtb_book_description.Text;
-            book.year_public = datePicker.Value.Year;          
+            book.year_public = datePicker.Value.Year;
             book.genre_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
             book.quantity = byte.Parse(tb_quantity.Text);
             book.remaining = byte.Parse(tb_remaining.Text);
@@ -178,6 +173,7 @@ namespace QLSach.view.admin
             if (photo != null)
             {
                 photo.path = filePath;
+                photo.book_id = BookId;
             }
             else
             {
@@ -186,20 +182,19 @@ namespace QLSach.view.admin
                 photo.book_id = BookId;
             }
 
-            UpdateBook(book, photo);
+            UpdateDataTable(book, photo);
 
             Singleton.getInstance.Data.Books.Update(book);
             Singleton.getInstance.Data.Photos.Update(photo);
-            //Singleton.getInstance.Data.SaveChanges();
 
             MessageBox.Show("Cập nhật thành công!");
         }
 
-        private void UpdateBook(Book book, Photo? photo)
+        private void UpdateDataTable(Book book, Photo? photo)
         {
-            DataTable categoryDataTable = (DataTable)binding.DataSource;
+            var bookDataTable = (DataTable)binding.DataSource;
 
-            DataRow dataRow = categoryDataTable.NewRow();
+            DataRow dataRow = bookDataTable.NewRow();
             dataRow["Id"] = BookId;
             dataRow["name"] = book.name;
             dataRow["description"] = book.description;
@@ -214,10 +209,10 @@ namespace QLSach.view.admin
             dataRow["updated_at"] = book.updated_at;
             dataRow["status"] = book.status;
 
-            categoryDataTable.Rows.RemoveAt(index);
-            categoryDataTable.Rows.InsertAt(dataRow, index);
+            controller.addPrevRows(index, dataRow);
 
-    
+            bookDataTable.Rows.RemoveAt(index);
+            bookDataTable.Rows.InsertAt(dataRow, index);
         }
 
         private void picture_Click(object sender, EventArgs e)
@@ -227,7 +222,7 @@ namespace QLSach.view.admin
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 filePath = ofd.FileName;
-                Singleton.getInstance.LoadImg.ShowMyImage(picture, filePath, 149, 179);
+                loadImage.ShowImage(picture, filePath, 149, 179);
             }
         }
 
@@ -242,23 +237,33 @@ namespace QLSach.view.admin
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            isDelete = !isDelete;
+            checkbox.Visible = isDelete;
+            btn_deleteData.Visible = isDelete;
 
+            var bookDataTable = (DataTable)binding.DataSource;
+            bookDataTable.AcceptChanges();
         }
 
         private void btn_modify_Click(object sender, EventArgs e)
         {
-
+            isModify = !isModify;
+            btn_update.Visible = isModify;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-
+            controller.Rollback();
         }
 
         private void btn_update_data_Click(object sender, EventArgs e)
         {
-            Singleton.getInstance.Data.SaveChanges();
-            MessageBox.Show("Đã lưu vào cơ sở dữ liệu");
+            controller.SaveChange();
+        }
+
+        private void btn_deleteData_Click(object sender, EventArgs e)
+        {
+            controller.Delete();
         }
     }
 }

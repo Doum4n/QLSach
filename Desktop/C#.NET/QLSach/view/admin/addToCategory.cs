@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 using QLSach.component;
-using QLSach.controllers;
 using QLSach.database.models;
-using QLSach.query;
+using QLSach.database.query;
 
 namespace QLSach.view.admin
 {

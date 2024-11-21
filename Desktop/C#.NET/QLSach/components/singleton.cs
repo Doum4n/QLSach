@@ -1,4 +1,5 @@
 ﻿using QLSach.components;
+using QLSach.Components;
 using QLSach.database;
 
 namespace QLSach.component
@@ -24,6 +25,7 @@ namespace QLSach.component
 
         public RegisterHelper RegisterHelper { get; set; }
         public AdminHelper AdminHelper { get; set; }
+        public CategoryManagerHelper CategoryManagerHelper { get; set; }
 
         public Singleton()
         {
@@ -33,6 +35,7 @@ namespace QLSach.component
             LoadImg = new();
             RegisterHelper = new RegisterHelper();
             AdminHelper = new AdminHelper();
+            CategoryManagerHelper = new CategoryManagerHelper();
         }
 
         public static Singleton getInstance

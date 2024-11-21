@@ -1,5 +1,6 @@
 ﻿using QLSach.component;
-using QLSach.controllers;
+using QLSach.components;
+using QLSach.database.query;
 
 namespace QLSach.view.components.items
 {
@@ -13,7 +14,7 @@ namespace QLSach.view.components.items
             InitializeComponent();
             ImageQuery query = new ImageQuery();
             String? imagePath = query.GetPhoto(id);
-            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 153, 203);
+            loadImage.ShowImage(picture, imagePath, 153, 203);
         }
 
         private void onClick(object sender, EventArgs e)

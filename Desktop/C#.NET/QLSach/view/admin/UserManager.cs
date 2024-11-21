@@ -1,5 +1,6 @@
 ﻿using MoreLinq;
 using QLSach.component;
+using QLSach.Controller;
 using QLSach.database.models;
 using System.Data;
 using System.Windows.Forms;
@@ -10,15 +11,43 @@ namespace QLSach.view.admin
     {
         BindingSource bindingSource = new BindingSource();
         private bool isAdduser = false;
+        DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
+        private bool isDelete = false;
+        Dictionary<int, DataRow> prevDataRow = new Dictionary<int, DataRow>();
+        private List<int> seletedIndex = new List<int>();
+        private List<int> seletedUserId = new List<int>();
+
+        private UserManagerController controller;
+
         public UserManager()
         {
             InitializeComponent();
+            controller = new UserManagerController(bindingSource, data);
         }
 
         private void UserManager_Load(object sender, EventArgs e)
         {
-            bindingSource.DataSource = Singleton.getInstance.Data.Users.ToDataTable();
-            data.DataSource = bindingSource;
+            controller.Load();
+            controller.setPrevRows(prevDataRow);
+            controller.setRollbackList(seletedIndex, seletedUserId);
+
+            checkbox.HeaderText = "Xóa";
+            checkbox.TrueValue = true;
+            checkbox.FalseValue = false;
+            checkbox.Visible = isDelete;
+            data.Columns.Add(checkbox);
+
+            data.CellContentClick += (sender, e) =>
+            {
+                var selectedRow = data.Rows[e.RowIndex];
+                if (data.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
+                {
+                    seletedIndex.Add(e.RowIndex);
+                    seletedUserId.Add(Convert.ToInt32(selectedRow.Cells["Id"].Value));
+                    DataTable dataTable = (DataTable)bindingSource.DataSource;
+                    controller.addPrevRows(e.RowIndex, dataTable.Rows[e.RowIndex]);
+                }
+            };
 
             combobox_right.DataSource = Enum.GetValues(typeof(Role)).Cast<Role>();
 
@@ -50,11 +79,10 @@ namespace QLSach.view.admin
             );
 
             Singleton.getInstance.Data.Users.Add(user);
-            Singleton.getInstance.Data.SaveChanges();
 
             DataTable dataTable = (DataTable)bindingSource.DataSource;
             DataRow dataRow = dataTable.NewRow();
-            dataRow["Id"] = user.Id;
+            dataRow["Id"] = dataTable.Rows.Count + 1;
             dataRow[1] = user.Name;
             dataRow[2] = user.Password;
             dataRow[3] = user.UserName;
@@ -69,22 +97,12 @@ namespace QLSach.view.admin
         {
             isAdduser = !isAdduser;
             pane_add_user.Visible = isAdduser;
+            checkbox.Visible = false;
         }
 
         private void onVisible(object sender, EventArgs e)
         {
 
-            //List<string> columnNames = new List<string>();
-
-            //foreach (DataGridViewColumn column in data.Columns)
-            //{
-            //    columnNames.Add(column.HeaderText);
-            //}
-
-            //Singleton.getInstance.AdminHelper.fillterData.DataSource = null;
-            //Singleton.getInstance.AdminHelper.fillterData.DataSource = columnNames;
-            //Singleton.getInstance.AdminHelper.fillterString = columnNames.First();
-            //Singleton.getInstance.AdminHelper.OnActiveSearchHanler += onActiveUser;
         }
 
         private void tb_search_TextChanged(object sender, EventArgs e)
@@ -94,6 +112,27 @@ namespace QLSach.view.admin
             {
                 bindingSource.RemoveFilter();
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            isDelete = !isDelete;
+            checkbox.Visible = isDelete;
+        }
+
+        private void btn_delete_data_Click(object sender, EventArgs e)
+        {
+            controller.Delete();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            controller.Rollback();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            controller.SaveChange();
         }
     }
 }

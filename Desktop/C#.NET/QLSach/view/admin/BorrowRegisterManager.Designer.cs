@@ -75,6 +75,7 @@
             // 
             // pane_main
             // 
+            pane_main.AutoSize = true;
             pane_main.CustomizableEdges = customizableEdges5;
             pane_main.Location = new Point(17, 99);
             pane_main.Name = "pane_main";
@@ -86,6 +87,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(btn_registed);
             Controls.Add(btn_borrowed);
             Controls.Add(pane_main);
@@ -93,6 +95,7 @@
             Size = new Size(1013, 550);
             Load += RegisterManager_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

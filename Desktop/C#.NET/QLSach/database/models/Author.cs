@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QLSach.dbContext.models
 {
@@ -11,6 +13,7 @@ namespace QLSach.dbContext.models
         [Required]
         public String description { get; set; }
 
+        [NotMapped]
         public Book? Book { get; set; }
     }
 }

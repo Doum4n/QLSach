@@ -1,9 +1,8 @@
 ﻿using Confluent.Kafka;
 using QLSach.component;
-using QLSach.controllers;
+using QLSach.database.query;
 using QLSach.view.user;
 using QLSach.view.user.components.items;
-using ServiceStack;
 using System.Data;
 
 namespace QLSach.view
@@ -18,6 +17,7 @@ namespace QLSach.view
         private AuthorQuery authorQuery = new AuthorQuery();
 
         private bool isContent = false;
+        private bool isCategory = false;
 
         int count = 1;
 
@@ -110,11 +110,31 @@ namespace QLSach.view
                 pane_btnSach.Controls.Add(btn);
             }
 
+            foreach (var category in Singleton.getInstance.Data.Categories.ToList())
+            {
+                Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
+                btn.Text = category.Name;
+                btn.Dock = DockStyle.Top;
+                btn.FillColor = Color.Chocolate;
+                btn.Click += new EventHandler(onCategoryActive);
+                btn.Name = category.Id.ToString();
+                pane_category.Controls.Add(btn);
+            }
+
+            pane_category.Visible = isCategory;
+
             Singleton.getInstance.RegisterHelper.registration_data = new BindingSource();
 
             ReadMessagesFromPartition(0);
 
+            btn_look_up.Dock = DockStyle.Top;
+
             pane_nofitication.Visible = isContent;
+        }
+
+        private void onCategoryActive(object? sender, EventArgs e)
+        {
+            
         }
 
         public string ExtractMessage(string input)
@@ -149,16 +169,15 @@ namespace QLSach.view
             var config = new ConsumerConfig
             {
                 BootstrapServers = "localhost:9092",
-                AutoOffsetReset = AutoOffsetReset.Earliest, 
-                GroupId = "my-group",                     
+                AutoOffsetReset = AutoOffsetReset.Earliest,
+                GroupId = "my-group",
                 ClientId = Singleton.getInstance.UserId.ToString(),
-                EnableAutoCommit = false,                 
+                EnableAutoCommit = false,
                 BrokerAddressFamily = BrokerAddressFamily.V4,
             };
 
             using var consumer = new ConsumerBuilder<int, string>(config).Build();
 
-            // Chỉ định partition cụ thể
             var topicPartition = new TopicPartition("my-topic", new Partition(partition));
             consumer.Assign(new[] { topicPartition });
 
@@ -171,23 +190,24 @@ namespace QLSach.view
                     {
                         int userId = consumeResult.Message.Key;
                         MessageBox.Show(userId.ToString() + ":" + consumeResult.Message.Key.ToString());
-                        if(userId == Singleton.getInstance.UserId){
+                        if (userId == Singleton.getInstance.UserId)
+                        {
                             RichTextBox textBox = new RichTextBox();
                             Label label = new Label();
                             label.Text = ExtractMessageTime(consumeResult.Message.Value);
                             label.Dock = DockStyle.Top;
-                            // Hiển thị tin nhắn trên giao diện
+
                             textBox.Text = ExtractMessage(consumeResult.Message.Value);
                             textBox.Dock = DockStyle.Top;
                             pane_nofitication.Controls.Add(textBox);
                             pane_nofitication.Controls.Add(label);
-                        }  
+                        }
 
                         //consumer.Commit(consumeResult);
                     }
                     else
                     {
-                        break; // Không còn tin nhắn
+                        break;
                     }
                 }
             }
@@ -224,12 +244,6 @@ namespace QLSach.view
         {
             isBookSelected = !isBookSelected;
         }
-
-        //private void btn_digitalBook_Click(object sender, EventArgs e)
-        //{
-        //    isDigitalSelected = !isDigitalSelected;
-        //    pane_btnDigitalBook.Visible = isDigitalSelected;
-        //}
 
         private void btn_redo_Click(object sender, EventArgs e)
         {
@@ -282,7 +296,7 @@ namespace QLSach.view
 
         private void btn_look_up_Click(object sender, EventArgs e)
         {
-
+         
         }
 
         private void Pane_conten_Paint(object sender, PaintEventArgs e)
@@ -300,6 +314,12 @@ namespace QLSach.view
         {
             isContent = !isContent;
             pane_nofitication.Visible = isContent;
+        }
+
+        private void btn_category_Click(object sender, EventArgs e)
+        {
+            isCategory = !isCategory;
+            pane_category.Visible = isCategory;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using QLSach.component;
-using QLSach.controllers;
+using QLSach.components;
 using QLSach.database.models;
+using QLSach.database.query;
 using QLSach.dbContext.models;
 using QLSach.view.components.items;
 using System.Data;
@@ -37,7 +38,7 @@ namespace QLSach.view
             lb_remaining.Text = book.remaining.ToString();
 
             String imagePath = imageQuery.GetPhoto(id);
-            Singleton.getInstance.LoadImg.ShowMyImage(picture, imagePath, 223, 350);
+            loadImage.ShowImage(picture, imagePath, 223, 350);
 
             tb_pane_comment.RowCount = 0;
 

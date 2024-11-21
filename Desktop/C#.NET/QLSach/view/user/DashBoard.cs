@@ -1,11 +1,12 @@
 ﻿using QLSach.component;
+using QLSach.database.query;
 
 namespace QLSach.view
 {
     public partial class DashBoard : UserControl
     {
         //Node node;
-        private controllers.BookQuery dashBoard = new controllers.BookQuery();
+        private BookQuery dashBoard = new BookQuery();
         private int currentIndex = 0;
 
         public DashBoard()

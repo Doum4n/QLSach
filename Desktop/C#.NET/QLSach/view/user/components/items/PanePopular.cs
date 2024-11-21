@@ -1,4 +1,4 @@
-﻿using QLSach.controllers;
+﻿using QLSach.database.query;
 
 namespace QLSach.view.components.items
 {

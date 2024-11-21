@@ -1,14 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MySqlX.XDevAPI.Common;
+﻿
 using QLSach.component;
 using QLSach.database.models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace QLSach.query
+
+namespace QLSach.database.query
 {
     public class RegisterQuery
     {
@@ -27,6 +22,6 @@ namespace QLSach.query
             return Singleton.getInstance.Data.Register.Where(o => o.UserId == userId).Where(o => o.BookId == bookId).FirstOrDefault();
         }
         //SELECT UserId, BookId, MAX(register_at) AS `recent` FROM `Register` GROUP BY BookId, UserId 
-       
+
     }
 }

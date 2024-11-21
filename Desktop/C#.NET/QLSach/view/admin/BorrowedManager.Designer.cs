@@ -103,6 +103,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             Controls.Add(data);
             Controls.Add(combobox_filter);
             Controls.Add(tb_search);

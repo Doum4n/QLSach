@@ -1,5 +1,5 @@
 ﻿using QLSach.component;
-using QLSach.controllers;
+using QLSach.database.query;
 using QLSach.view.components;
 
 namespace QLSach.view

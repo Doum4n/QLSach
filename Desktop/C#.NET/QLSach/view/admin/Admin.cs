@@ -22,7 +22,7 @@ namespace QLSach.view
         private void btn_category_Click(object sender, EventArgs e)
         {
             pane_main.Controls.Clear();
-            pane_main.Controls.Add(new PaneCategory());
+            pane_main.Controls.Add(new CategoryNavigation());
         }
 
         private void Admin_Load(object sender, EventArgs e)
