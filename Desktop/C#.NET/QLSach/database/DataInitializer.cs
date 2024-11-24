@@ -54,11 +54,11 @@ namespace QLSach.database
                 .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
                 .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
-                .RuleFor(o => o.year_public, f => f.Random.Int(1900, DateTime.Now.Year))
+                .RuleFor(o => o.public_at, f => f.Date.BetweenDateOnly(DateOnly.Parse("1999-01-01"), DateOnly.FromDateTime(DateTime.Now)))
                 .RuleFor(o => o.updated_at, f => DateTime.Now)
                 .RuleFor(o => o.genre_id, f => f.PickRandom(genres.Select(o => o.id)));
 
-            var books = fakeBook.Generate(28);
+            var books = fakeBook.Generate(38);
 
             //Image
             var photoId = 1;

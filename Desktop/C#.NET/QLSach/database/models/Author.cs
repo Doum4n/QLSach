@@ -14,6 +14,7 @@ namespace QLSach.dbContext.models
         public String description { get; set; }
 
         [NotMapped]
+        [Browsable(false)]
         public Book? Book { get; set; }
     }
 }

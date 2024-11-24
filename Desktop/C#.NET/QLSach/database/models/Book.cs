@@ -25,7 +25,7 @@ namespace QLSach.dbContext.models
         public int genre_id { get; set; }
         [DefaultValue(0)]
         public byte rating { get; set; }
-        public int year_public { get; set; }
+        public DateOnly public_at { get; set; }
         [DefaultValue(0)]
         public int views { get; set; }
         [NotMapped]

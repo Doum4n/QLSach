@@ -57,6 +57,8 @@
           - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
         networks:
           - kafka
+        volumes:
+          - kafka:/var/lib/kafka/data
 
 networks:
     kafka:
@@ -64,4 +66,6 @@ networks:
         driver: bridge
 volumes:
     mysql:
+        driver: local
+    kafka:
         driver: local

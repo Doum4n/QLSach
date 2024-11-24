@@ -4,7 +4,9 @@ using QLSach.Controller;
 using QLSach.database.models;
 using QLSach.database.query;
 using QLSach.dbContext.models;
+using QLSach.ViewModel;
 using System.Data;
+using System.Globalization;
 
 namespace QLSach.view.admin
 {
@@ -17,23 +19,17 @@ namespace QLSach.view.admin
         private int index;
         private string filePath = "";
 
-        BindingSource binding = new BindingSource();
-
-        Dictionary<int, DataRow> prevDataRow = new Dictionary<int, DataRow>();
-
         private bool isModify = false;
         private bool isDelete = false;
 
         DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
-        private List<int> seletedIndex = new List<int>();
-        private List<int> seletedBookId = new List<int>();
 
-        private BookManagerController controller;
+        private BookManagerVM viewModel;
 
         public BookManager()
         {
             InitializeComponent();
-            controller = new BookManagerController(data, binding, tb_search, combobox_filter);
+            viewModel = new BookManagerVM(data);
         }
 
         private void btn_add_book_Click(object sender, EventArgs e)
@@ -44,6 +40,10 @@ namespace QLSach.view.admin
 
         private void book_management_Load(object sender, EventArgs e)
         {
+            data.DataSource = viewModel.Books;
+            viewModel.Load();
+            viewModel.AssignFillterList(combobox_filter);
+
             LoadData();
 
             data.CellClick += (sender, e) =>
@@ -56,17 +56,14 @@ namespace QLSach.view.admin
 
             data.CellContentClick += (sender, e) =>
             {
+                index = e.RowIndex;
+
                 if (e.RowIndex > -1)
                 {
                     var selectedRow = data.Rows[e.RowIndex];
                     if (selectedRow.Cells[0].ColumnIndex == e.ColumnIndex)
                     {
-                        var bookDataTable = (DataTable)binding.DataSource;
-
-                        seletedBookId.Add(BookId);
-
-                        controller.addPrevRows(e.RowIndex, bookDataTable.Rows[e.RowIndex]);
-                        seletedIndex.Add(e.RowIndex);
+                        viewModel.addPrevRows(e.RowIndex, "Id");
                     }
                 }
             };
@@ -76,12 +73,13 @@ namespace QLSach.view.admin
             data.AllowUserToAddRows = false;
             data.AllowUserToDeleteRows = false;
             btn_update.Visible = isModify;
+
+            tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
+            combobox_filter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void assignDisplayValue(DataGridViewCellEventArgs e)
         {
-            index = e.RowIndex;
-
             var selectedRow = data.Rows[e.RowIndex];
 
             if (e.RowIndex >= 0)
@@ -92,10 +90,11 @@ namespace QLSach.view.admin
                 var quantity = selectedRow.Cells["quantity"].Value;
                 var remaing = selectedRow.Cells["remaining"].Value;
                 var description = selectedRow.Cells["description"].Value;
-                var year_public = selectedRow.Cells["year_public"].Value;
+                var year_public = selectedRow.Cells["public_at"].Value;
                 var genre_id = selectedRow.Cells["genre_id"].Value;
                 var author_id = selectedRow.Cells["author_id"].Value;
                 var author_name = selectedRow.Cells["AuthorName"].Value;
+                var public_at = selectedRow.Cells["public_at"].Value;
 
                 loadImage loadImage = new loadImage();
                 try
@@ -106,16 +105,18 @@ namespace QLSach.view.admin
                 catch (Exception ex){}
 
                 tb_book_id.Text = bookId.ToString();
+                tb_book_id.Enabled = false;
                 tb_book_name.Text = name.ToString();
                 tb_quantity.Text = quantity.ToString();
                 tb_remaining.Text = remaing.ToString();
                 tb_genre_id.Text = genre_id.ToString();
+                tb_genre_id.Enabled = false;
+                tb_author_id.Enabled = false;
                 tb_author_id.Text = author_id.ToString();
                 rtb_book_description.Text = description.ToString();
                 combobox_genre_name.SelectedValue = Convert.ToInt32(tb_genre_id.Text);
                 cbb_author_name.SelectedValue = Convert.ToInt32(tb_author_id.Text);
-
-                datePicker.Value = DateTime.Now;
+                datePicker.Value = DateTime.Parse(public_at.ToString());
             }
 
         }
@@ -144,11 +145,8 @@ namespace QLSach.view.admin
             checkbox.TrueValue = true;
             checkbox.FalseValue = false;
             data.Columns.Insert(0, checkbox);
-
-            controller.Load();
-
-            controller.setRollbackList(seletedIndex, seletedBookId);
-            controller.setPrevRows(prevDataRow);
+            checkbox.Visible = false;
+            //data.Columns[0].Visible = false;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -164,7 +162,7 @@ namespace QLSach.view.admin
             book.author_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
             book.name = tb_book_name.Text;
             book.description = rtb_book_description.Text;
-            book.year_public = datePicker.Value.Year;
+            book.public_at = DateOnly.FromDateTime(datePicker.Value);
             book.genre_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
             book.quantity = byte.Parse(tb_quantity.Text);
             book.remaining = byte.Parse(tb_remaining.Text);
@@ -182,37 +180,12 @@ namespace QLSach.view.admin
                 photo.book_id = BookId;
             }
 
-            UpdateDataTable(book, photo);
+            viewModel.UpdateBook(book, index);
 
             Singleton.getInstance.Data.Books.Update(book);
             Singleton.getInstance.Data.Photos.Update(photo);
 
             MessageBox.Show("Cập nhật thành công!");
-        }
-
-        private void UpdateDataTable(Book book, Photo? photo)
-        {
-            var bookDataTable = (DataTable)binding.DataSource;
-
-            DataRow dataRow = bookDataTable.NewRow();
-            dataRow["Id"] = BookId;
-            dataRow["name"] = book.name;
-            dataRow["description"] = book.description;
-            dataRow["author_id"] = book.author_id;
-            dataRow["year_public"] = book.year_public;
-            dataRow["genre_id"] = book.genre_id;
-            dataRow["quantity"] = book.quantity;
-            dataRow["remaining"] = book.remaining;
-            dataRow["rating"] = book.rating;
-            dataRow["views"] = book.views;
-            dataRow["created_at"] = book.created_at;
-            dataRow["updated_at"] = book.updated_at;
-            dataRow["status"] = book.status;
-
-            controller.addPrevRows(index, dataRow);
-
-            bookDataTable.Rows.RemoveAt(index);
-            bookDataTable.Rows.InsertAt(dataRow, index);
         }
 
         private void picture_Click(object sender, EventArgs e)
@@ -228,11 +201,7 @@ namespace QLSach.view.admin
 
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
-            binding.Filter = $"CONVERT({combobox_filter.Text.Trim()}, System.String) LIKE '%{tb_search.Text.Trim()}%'";
-            if (tb_search.Text == "")
-            {
-                binding.RemoveFilter();
-            }
+            viewModel.Search();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -240,9 +209,6 @@ namespace QLSach.view.admin
             isDelete = !isDelete;
             checkbox.Visible = isDelete;
             btn_deleteData.Visible = isDelete;
-
-            var bookDataTable = (DataTable)binding.DataSource;
-            bookDataTable.AcceptChanges();
         }
 
         private void btn_modify_Click(object sender, EventArgs e)
@@ -253,17 +219,17 @@ namespace QLSach.view.admin
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            controller.Rollback();
+            viewModel.Rollback();
         }
 
         private void btn_update_data_Click(object sender, EventArgs e)
         {
-            controller.SaveChange();
+            viewModel.SaveChange();
         }
 
         private void btn_deleteData_Click(object sender, EventArgs e)
         {
-            controller.Delete();
+            viewModel.Delete();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace QLSach.view
 
         private void btn_user_Click(object sender, EventArgs e)
         {
-            
+
             pane_main.Controls.Clear();
             pane_main.Controls.Add(new UserManager());
         }
@@ -41,6 +41,18 @@ namespace QLSach.view
         {
             pane_main.Controls.Clear();
             pane_main.Controls.Add(new BorrowRegisterManager());
+        }
+
+        private void btn_Statistacs_Click(object sender, EventArgs e)
+        {
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(new Statistacs());
+        }
+
+        private void btn_author_Click(object sender, EventArgs e)
+        {
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(new AuthorManager());
         }
     }
 }

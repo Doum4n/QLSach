@@ -63,7 +63,7 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btn_cancel = new Guna.UI2.WinForms.Guna2Button();
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
-            conbobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
+            combobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             label1 = new Label();
@@ -116,7 +116,7 @@
             guna2Panel1.Controls.Add(btn_save);
             guna2Panel1.Controls.Add(btn_cancel);
             guna2Panel1.Controls.Add(btn_delete);
-            guna2Panel1.Controls.Add(conbobox_fillter);
+            guna2Panel1.Controls.Add(combobox_fillter);
             guna2Panel1.Controls.Add(btn_pane_addUser);
             guna2Panel1.Controls.Add(tb_search);
             guna2Panel1.CustomizableEdges = customizableEdges13;
@@ -163,20 +163,20 @@
             // 
             // conbobox_fillter
             // 
-            conbobox_fillter.BackColor = Color.Transparent;
-            conbobox_fillter.CustomizableEdges = customizableEdges9;
-            conbobox_fillter.DrawMode = DrawMode.OwnerDrawFixed;
-            conbobox_fillter.DropDownStyle = ComboBoxStyle.DropDownList;
-            conbobox_fillter.FocusedColor = Color.FromArgb(94, 148, 255);
-            conbobox_fillter.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            conbobox_fillter.Font = new Font("Segoe UI", 10F);
-            conbobox_fillter.ForeColor = Color.FromArgb(68, 88, 112);
-            conbobox_fillter.ItemHeight = 30;
-            conbobox_fillter.Location = new Point(281, 19);
-            conbobox_fillter.Name = "conbobox_fillter";
-            conbobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            conbobox_fillter.Size = new Size(175, 36);
-            conbobox_fillter.TabIndex = 3;
+            combobox_fillter.BackColor = Color.Transparent;
+            combobox_fillter.CustomizableEdges = customizableEdges9;
+            combobox_fillter.DrawMode = DrawMode.OwnerDrawFixed;
+            combobox_fillter.DropDownStyle = ComboBoxStyle.DropDownList;
+            combobox_fillter.FocusedColor = Color.FromArgb(94, 148, 255);
+            combobox_fillter.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            combobox_fillter.Font = new Font("Segoe UI", 10F);
+            combobox_fillter.ForeColor = Color.FromArgb(68, 88, 112);
+            combobox_fillter.ItemHeight = 30;
+            combobox_fillter.Location = new Point(281, 19);
+            combobox_fillter.Name = "conbobox_fillter";
+            combobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            combobox_fillter.Size = new Size(175, 36);
+            combobox_fillter.TabIndex = 3;
             // 
             // tb_search
             // 
@@ -408,7 +408,6 @@
             Name = "UserManager";
             Size = new Size(935, 908);
             Load += UserManager_Load;
-            VisibleChanged += onVisible;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel3.ResumeLayout(false);
@@ -433,7 +432,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox combobox_right;
         private Label label3;
         private Guna.UI2.WinForms.Guna2Button btn_add_user;
-        private Guna.UI2.WinForms.Guna2ComboBox conbobox_fillter;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox tb_search;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
         private Guna.UI2.WinForms.Guna2Button btn_delete_data;

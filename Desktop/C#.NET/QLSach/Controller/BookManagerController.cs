@@ -1,5 +1,6 @@
 ﻿using QLSach.Base;
 using QLSach.component;
+using QLSach.view.admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,8 @@ namespace QLSach.Controller
         {
             base.data = data;
             base.binding = binding;
-            base.tb_search = tb_search;
-            base.cbb_fillter = cbb_fillter;
+            //base.tb_search = tb_search;
+            //base.cbb_fillter = cbb_fillter;
         }
         public override void Add()
         {
@@ -31,7 +32,7 @@ namespace QLSach.Controller
                    o.Id,
                    o.name,
                    o.description,
-                   o.year_public,
+                   o.public_at,
                    o.author_id,
                    o.genre_id,
                    o.rating,
@@ -51,7 +52,7 @@ namespace QLSach.Controller
             data.Columns["Id"].HeaderText = "Mã sách";
             data.Columns["name"].HeaderText = "Tên sách";
             data.Columns["description"].HeaderText = "Mô tả";
-            data.Columns["year_public"].HeaderText = "Năm phát hành";
+            data.Columns["public_at"].HeaderText = "Ngày phát hành";
             data.Columns["AuthorName"].HeaderText = "Tên tác giả";
             data.Columns["GenreName"].HeaderText = "Tên thể loại";
             data.Columns["rating"].HeaderText = "Đánh giá";
@@ -66,15 +67,17 @@ namespace QLSach.Controller
             data.Columns["genre_id"].Visible = false;
             data.Columns["author_id"].Visible = false;
 
-            List<string> columnNames = new List<string>();
+            List<Columns> columnNames = new List<Columns>();
 
             /*Combobox fillter*/
             foreach (DataGridViewColumn column in data.Columns)
             {
-                columnNames.Add(column.HeaderText);
+                columnNames.Add(new Columns(column.HeaderText, column.Name));
             }
 
-            cbb_fillter.DataSource = columnNames;
+            //cbb_fillter.DataSource = columnNames;
+            //cbb_fillter.DisplayMember = "HeaderText";
+            //cbb_fillter.ValueMember = "Name";
             /**/
 
             // when add a new book

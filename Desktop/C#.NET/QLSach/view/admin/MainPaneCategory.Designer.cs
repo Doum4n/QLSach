@@ -439,7 +439,6 @@
             Name = "MainPaneCategory";
             Size = new Size(1056, 885);
             Load += CategoryMainPane_Load;
-            VisibleChanged += onVisible;
             paneMain.ResumeLayout(false);
             paneMain.PerformLayout();
             guna2Panel3.ResumeLayout(false);

@@ -40,5 +40,14 @@ namespace QLSach.Components
         {
             OnDelete?.Invoke();
         }
+
+        public void Unsubscribe()
+        {
+            OnAddCategory = null;
+            OnModifyCategory = null;
+            OnCancel = null;
+            OnSave = null;
+            OnDelete = null;
+        }
     }
 }

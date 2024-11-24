@@ -1,9 +1,9 @@
 ﻿using MoreLinq;
 using QLSach.Base;
 using QLSach.component;
-using QLSach.database.query;
 using QLSach.view.admin;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,36 +11,29 @@ using System.Threading.Tasks;
 
 namespace QLSach.Controller
 {
-    public class CategoryManagerController : ManagerBase
+    public class AuthorManagerController : ManagerBase
     {
-        private CategoryQuery CategoryQuery = new CategoryQuery();
-        public CategoryManagerController(BindingSource binding, DataGridView data, Guna.UI2.WinForms.Guna2TextBox tb_search, Guna.UI2.WinForms.Guna2ComboBox cbb_fillter)
+        public AuthorManagerController(DataGridView data, BindingSource binding, Guna.UI2.WinForms.Guna2TextBox tb_search, Guna.UI2.WinForms.Guna2ComboBox cbb_fillter)
         {
-            base.binding = binding;
             base.data = data;
+            base.binding = binding;
             //base.tb_search = tb_search;
             //base.cbb_fillter = cbb_fillter;
         }
-
         public override void Add()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            //AuthorManager authorManager = new AuthorManager();
+            //authorManager.
         }
 
         public override void Load()
         {
-            binding.DataSource = CategoryQuery.GetDetail().ToDataTable();
+            binding.DataSource = Singleton.getInstance.Data.Authors.ToDataTable();
             data.DataSource = binding;
 
-            data.Columns["Id"].HeaderText = "Mã sách";
-            data.Columns["Name"].HeaderText = "Tên sách";
-            data.Columns["Description"].HeaderText = "Mô tả";
-            data.Columns["BookCount"].HeaderText = "Số lượng sách";
-            data.Columns["create_at"].HeaderText = "Ngày tạo";
-            data.Columns["update_at"].HeaderText = "Ngày cập nhật";
 
             List<Columns> columnNames = new List<Columns>();
-
             foreach (DataGridViewColumn column in data.Columns)
             {
                 columnNames.Add(new Columns(column.HeaderText, column.Name));
@@ -58,16 +51,22 @@ namespace QLSach.Controller
 
         public override void Delete()
         {
-            var bookDataTable = (DataTable)binding.DataSource;
+            var DataTable = (DataTable)binding.DataSource;
 
             foreach (int index in seletedIndex)
             {
-                bookDataTable.Rows.RemoveAt(index);
-                MessageBox.Show("index" + index);
+                DataTable.Rows.RemoveAt(index);
             }
             foreach (int id in seletedId)
             {
-                Singleton.getInstance.Data.Categories.Remove(Singleton.getInstance.Data.Categories.Where(o => o.Id == id).First());
+                try
+                {
+                    Singleton.getInstance.Data.Authors.Remove(Singleton.getInstance.Data.Authors.Where(o => o.Id == id).First());
+                }
+                catch
+                {
+                    //MessageBox.Show();
+                }
             }
             MessageBox.Show("Xóa dữ liệu thành công");
 

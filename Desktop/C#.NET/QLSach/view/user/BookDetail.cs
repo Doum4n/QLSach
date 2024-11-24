@@ -32,7 +32,7 @@ namespace QLSach.view
             Name.Text = book?.name;
             author.Text = query.getBookAuthor(book.Id);
             genre.Text = query.getBookGenre(book.Id);
-            publication_year.Text = book.year_public.ToString();
+            publication_year.Text = book.public_at.ToString();
             description.Text = book.description;
             status.Text = book.remaining > 0 ? Status.available.ToString() : Status.borrowed.ToString();
             lb_remaining.Text = book.remaining.ToString();
@@ -83,9 +83,7 @@ namespace QLSach.view
         private void btn_send_Click(object sender, EventArgs e)
         {
             Singleton.getInstance.Data.Comments.Add(
-                new Comment(textBox_comment.Text,
-                            1,
-                            Singleton.getInstance.MainFrameHelper.Id)
+                new Comment(textBox_comment.Text, Singleton.getInstance.UserId, id)
             );
 
             Singleton.getInstance.Data.SaveChanges();
@@ -106,6 +104,14 @@ namespace QLSach.view
 
                 Singleton.getInstance.RegisterHelper.registration_data.Add(new { register.BookId, register.register_at, register.Status });
             }
+        }
+
+        private void RatingStar_ValueChanged(object sender, EventArgs e)
+        {
+            var book = Singleton.getInstance.Data.Books.Where(o => o.Id == id).First();
+            book.rating = (byte)((book.rating * 1.0 * RatingStar.Value));
+            Singleton.getInstance.Data.Update(book);
+            Singleton.getInstance.Data.SaveChanges();
         }
     }
 }

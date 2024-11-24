@@ -149,6 +149,7 @@
             RatingStar.Name = "RatingStar";
             RatingStar.Size = new Size(150, 35);
             RatingStar.TabIndex = 11;
+            RatingStar.ValueChanged += RatingStar_ValueChanged;
             // 
             // Name
             // 
@@ -216,7 +217,7 @@
             textBox_comment.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textBox_comment.Font = new Font("Segoe UI", 9F);
             textBox_comment.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBox_comment.Location = new Point(49, 861);
+            textBox_comment.Location = new Point(49, 857);
             textBox_comment.Margin = new Padding(3, 4, 3, 4);
             textBox_comment.Name = "textBox_comment";
             textBox_comment.PasswordChar = '\0';
@@ -235,7 +236,7 @@
             btn_send.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_send.Font = new Font("Segoe UI", 9F);
             btn_send.ForeColor = Color.White;
-            btn_send.Location = new Point(778, 958);
+            btn_send.Location = new Point(778, 953);
             btn_send.Name = "btn_send";
             btn_send.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_send.Size = new Size(93, 47);

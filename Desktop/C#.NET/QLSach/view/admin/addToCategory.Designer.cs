@@ -38,6 +38,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             data = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -48,6 +50,7 @@
             btn_add = new Guna.UI2.WinForms.Guna2Button();
             combobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_search = new Guna.UI2.WinForms.Guna2TextBox();
+            btn_delete = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
             SuspendLayout();
             // 
@@ -191,10 +194,28 @@
             tb_search.TabIndex = 15;
             tb_search.TextChanged += tb_search_TextChanged;
             // 
+            // btn_delete
+            // 
+            btn_delete.CustomizableEdges = customizableEdges11;
+            btn_delete.DisabledState.BorderColor = Color.DarkGray;
+            btn_delete.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_delete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_delete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_delete.Font = new Font("Segoe UI", 9F);
+            btn_delete.ForeColor = Color.White;
+            btn_delete.Location = new Point(901, 678);
+            btn_delete.Name = "btn_delete";
+            btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn_delete.Size = new Size(140, 40);
+            btn_delete.TabIndex = 17;
+            btn_delete.Text = "Xóa";
+            btn_delete.Click += btn_delete_Click;
+            // 
             // addToCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btn_delete);
             Controls.Add(combobox_fillter);
             Controls.Add(tb_search);
             Controls.Add(btn_add);
@@ -206,9 +227,8 @@
             Controls.Add(label1);
             Controls.Add(data);
             Name = "addToCategory";
-            Size = new Size(1081, 665);
+            Size = new Size(1088, 754);
             Load += addToCategory_Load;
-            VisibleChanged += onVisible;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -226,5 +246,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_add;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox tb_search;
+        private Guna.UI2.WinForms.Guna2Button btn_delete;
     }
 }

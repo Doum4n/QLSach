@@ -50,7 +50,7 @@ namespace QLSach.view.admin
             book.author_id = author_id;
             book.name = tb_book_name.Text;
             book.description = rtb_description.Text;
-            book.year_public = date_picker.Value.Year;
+            book.public_at = DateOnly.FromDateTime(date_picker.Value);
             int genre_id = Singleton.getInstance.Data.Genre.Where(o => o.name == combo_box_genre.Text).Select(o => o.id).FirstOrDefault();
             book.genre_id = genre_id;
             book.quantity = byte.Parse(tb_quantity.Text);
@@ -71,7 +71,7 @@ namespace QLSach.view.admin
             newRow["name"] = book.name; 
             newRow["description"] = book.description;
             newRow["author_id"] = book.author_id;
-            newRow["year_public"] = book.year_public;
+            newRow["public_at"] = book.public_at;
             newRow["genre_id"] = book.genre_id;
             newRow["quantity"] = book.quantity;
             newRow["remaining"] = book.remaining;

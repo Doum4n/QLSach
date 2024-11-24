@@ -1,7 +1,11 @@
 ﻿using MoreLinq;
 using QLSach.component;
+using QLSach.dbContext.models;
 using QLSach.interfaces;
+using QLSach.view.admin;
 using System.Data;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 
 namespace QLSach.Base
@@ -14,21 +18,31 @@ namespace QLSach.Base
 
         protected BindingSource binding = new BindingSource();
         protected DataGridView data = new DataGridView();
-        protected Guna.UI2.WinForms.Guna2TextBox tb_search;
-        protected Guna.UI2.WinForms.Guna2ComboBox cbb_fillter;
+
+        private List<int> CheckboxState = new List<int>();
+
+        protected string _searchText;
+        protected string _selectedFilter;
 
         public abstract void Add();
         public virtual void Delete()
         {
-            var bookDataTable = (DataTable)binding.DataSource;
+            var DataTable = (DataTable)binding.DataSource;
 
             foreach (int index in seletedIndex)
             {
-                bookDataTable.Rows.RemoveAt(index);
+                DataTable.Rows.RemoveAt(index);
             }
             foreach (int bookId in seletedId)
             {
-                Singleton.getInstance.Data.Books.Remove(Singleton.getInstance.Data.Books.Where(o => o.Id == bookId).First());
+                try
+                {
+                    Singleton.getInstance.Data.Books.Remove(Singleton.getInstance.Data.Books.Where(o => o.Id == bookId).First());
+                }
+                catch
+                {
+                    //MessageBox.Show();
+                }
             }
             MessageBox.Show("Xóa dữ liệu thành công");
 
@@ -78,22 +92,81 @@ namespace QLSach.Base
             this.prevDataRow = prevDataRow;
         }
 
-        public virtual void addPrevRows(int index, DataRow dataRow)
+        // Hoàn tác dữ liệu
+        public virtual void addPrevRows(int index, string IdColumnsName)
         {
             if (!prevDataRow.ContainsKey(index))
             {
-                //bookDataTable.AcceptChanges();
                 var bookDataTable = (DataTable)binding.DataSource;
 
-                // rollback when cancel is clicked
-                bookDataTable = (DataTable)binding.DataSource;
                 DataRow prevRow = bookDataTable.NewRow();
                 foreach (DataColumn column in bookDataTable.Columns)
                 {
                     prevRow[column.ColumnName] = bookDataTable.Rows[index][column];
                 }
+
+                seletedId.Add(Convert.ToInt32(data.Rows[index].Cells[IdColumnsName].Value));
                 prevDataRow.Add(index, prevRow);
             }
+        }
+
+        public virtual void Search()
+        {
+            binding.Filter = $"CONVERT({_selectedFilter}, System.String) LIKE '%{_searchText}%'";
+            if (_searchText == "")
+            {
+                binding.RemoveFilter();
+            }
+        }
+
+        public virtual void SaveCheckboxStates(DataGridViewCheckBoxColumn checkbox, List<int> EntitiesId)
+        {
+            CheckboxState.Clear();
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                if (data.Rows[i].Cells["Id"].Value != null)
+                {
+                    int id = Convert.ToInt32(data.Rows[i].Cells["Id"].Value);
+
+                    if (EntitiesId.Contains(id))
+                    {
+                        data.Rows[i].Cells[checkbox.Name].Value = true;
+                        CheckboxState.Add(id);
+                    }
+                    else
+                    {
+                        data.Rows[i].Cells[checkbox.Name].Value = false;
+                    }
+                }
+            }
+        }
+
+
+        public virtual void RestoreCheckboxStates(DataGridViewCheckBoxColumn checkbox)
+        {
+            for (int i = 0; i < binding.Count; i++)
+            {
+                if (CheckboxState.Contains(Convert.ToInt32(data.Rows[i].Cells["Id"].Value)))
+                {
+                    data.Rows[i].Cells[checkbox.Name].Value = true;
+                }
+                else
+                {
+                    data.Rows[i].Cells[checkbox.Name].Value = false;
+                }
+            }
+        }
+
+        public virtual void AssignFillterList(Guna.UI2.WinForms.Guna2ComboBox cbb_fillter)
+        {
+            List<Columns> Columns = new List<Columns>();
+            foreach (DataGridViewColumn column in data.Columns)
+            {
+                Columns.Add(new Columns(column.HeaderText, column.Name));
+            }
+            cbb_fillter.DataSource = Columns;
+            cbb_fillter.DisplayMember = "HeaderText";
+            cbb_fillter.ValueMember = "Name";
         }
     }
 }
