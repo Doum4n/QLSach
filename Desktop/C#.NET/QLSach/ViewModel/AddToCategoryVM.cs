@@ -1,18 +1,23 @@
 ﻿using Guna.UI2.AnimatorNS;
 using MoreLinq;
+using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheArtOfDevHtmlRenderer.Adapters;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace QLSach.ViewModel
 {
@@ -20,14 +25,30 @@ namespace QLSach.ViewModel
     {
         private BindingSource _bookCategory = new BindingSource();
         private string _categoryName;
+        DataTable booksDataTable;
+        private MySqlDataAdapter adapter = new MySqlDataAdapter();
+        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
 
         DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
 
-        public AddToCategoryVM(DataGridView data, DataGridViewCheckBoxColumn checkbox)
+        public AddToCategoryVM(DataGridView data)
         {
-            BookCategory.DataSource = Singleton.getInstance.Data.Books.Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToDataTable();
-            base.data = data;
-            this.checkbox = checkbox;
+            connection.Open();
+
+            booksDataTable = (DataTable)BookCategory.DataSource;
+
+            using (var context = new Context())
+            {
+                BookCategory.DataSource = context.Books.Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToDataTable();
+                base.data = data;
+            }
+
+            Configuration();
+        }
+        private void Configuration()
+        {
+            adapter = new MySqlDataAdapter("SELECT * FROM Books", connection);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
         }
 
         public BindingSource BookCategory
@@ -77,23 +98,6 @@ namespace QLSach.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        //public void AddBookToCategory(string name, string description)
-        //{
-        //    foreach (DataGridViewRow row in data.Rows)
-        //    {
-        //        var resultBool = Convert.ToBoolean(row.Cells[checkboxAdd.Name].Value);
-        //        if (row.Cells[checkboxAdd.Name].Value != null && resultBool == true)
-        //        {
-        //            var value = row.Cells[checkboxAdd.Name].Value;
-        //            bool isChecked = value != null && (bool)value;
-        //            CategoryBook categoryBook = new CategoryBook();
-        //            categoryBook.CategoryId = category_id;
-        //            categoryBook.BookId = Convert.ToInt32(row.Cells["Id"].Value);
-        //            Singleton.getInstance.Data.CategoriesBook.Add(categoryBook);
-        //        }
-        //    }
-        //    MessageBox.Show($"Thêm danh mục danh mục {combobox_category_name.Text} thành công");
-        //}
 
         public void updateCategory(int id, string name, string description, int bookCount, DateOnly create_at, int index)
         {
@@ -123,32 +127,22 @@ namespace QLSach.ViewModel
 
         public override void Delete()
         {
-            var DataTable = (DataTable)binding.DataSource;
+            booksDataTable.AcceptChanges();
 
             foreach (int index in prevDataRow.Keys)
             {
-                DataTable.Rows.RemoveAt(index);
-            }
-            foreach (int Id in seletedId)
-            {
-                try
-                {
-                    Singleton.getInstance.Data.Categories.Remove(Singleton.getInstance.Data.Categories.Where(o => o.Id == Id).First());
-                }
-                catch
-                {
-                    //MessageBox.Show();
-                }
-            }
-            MessageBox.Show("Xóa dữ liệu thành công");
+                Singleton.getInstance.DataSet.Tables["Books"].Rows[index].Delete();
 
-            seletedIndex.Clear();
-            seletedId.Clear();
+            }
+            adapter.Update(Singleton.getInstance.DataSet, "Books");
+
+            MessageBox.Show("Xóa sách thành công");
         }
 
         public void Ondeletehandler(int id)
         {
-            binding.DataSource = Singleton.getInstance.Data.Categories
+            using (var context = new Context())
+                binding.DataSource = context.Categories
              .Where(o => o.Id == id)
              .SelectMany(o => o.Books)
              .Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description })

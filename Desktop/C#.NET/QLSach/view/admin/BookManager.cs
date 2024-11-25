@@ -1,6 +1,7 @@
 ﻿using QLSach.component;
 using QLSach.components;
 using QLSach.Controller;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using QLSach.dbContext.models;
@@ -12,7 +13,6 @@ namespace QLSach.view.admin
 {
     public partial class BookManager : UserControl
     {
-        private ImageQuery imageQuery = new ImageQuery();
         private BookQuery BookQuery = new BookQuery();
 
         private int BookId;
@@ -40,10 +40,6 @@ namespace QLSach.view.admin
 
         private void book_management_Load(object sender, EventArgs e)
         {
-            data.DataSource = viewModel.Books;
-            viewModel.Load();
-            viewModel.AssignFillterList(combobox_filter);
-
             LoadData();
 
             data.CellClick += (sender, e) =>
@@ -68,10 +64,6 @@ namespace QLSach.view.admin
                 }
             };
 
-            data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            data.AllowUserToAddRows = false;
-            data.AllowUserToDeleteRows = false;
             btn_update.Visible = isModify;
 
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -95,14 +87,9 @@ namespace QLSach.view.admin
                 var author_id = selectedRow.Cells["author_id"].Value;
                 var author_name = selectedRow.Cells["AuthorName"].Value;
                 var public_at = selectedRow.Cells["public_at"].Value;
+                var photoPath = selectedRow.Cells["photoPath"].Value;
 
-                loadImage loadImage = new loadImage();
-                try
-                {
-                    filePath = imageQuery.GetPhoto(Convert.ToInt32(bookId));
-                    loadImage.ShowImage(picture, filePath, 149, 179);
-                }
-                catch (Exception ex){}
+                loadImage.ShowImage(picture, photoPath.ToString(), 149, 179);
 
                 tb_book_id.Text = bookId.ToString();
                 tb_book_id.Enabled = false;
@@ -123,30 +110,36 @@ namespace QLSach.view.admin
 
         private void LoadData()
         {
-            combobox_genre_name.DataSource = Singleton.getInstance.Data.Genre.ToList();
-            combobox_genre_name.DisplayMember = "Name";
-            combobox_genre_name.ValueMember = "Id";
-            combobox_genre_name.SelectedValueChanged += (sender, e) =>
+            data.DataSource = viewModel.Books;
+            viewModel.Load();
+            viewModel.AssignFillterList(combobox_filter);
+
+            using (var context = new Context())
             {
-                tb_genre_id.Text = combobox_genre_name.SelectedValue.ToString();
-            };
+                combobox_genre_name.DataSource = context.Genre.ToList();
+                combobox_genre_name.DisplayMember = "Name";
+                combobox_genre_name.ValueMember = "Id";
+                combobox_genre_name.SelectedValueChanged += (sender, e) =>
+                {
+                    tb_genre_id.Text = combobox_genre_name.SelectedValue.ToString();
+                };
 
-            cbb_author_name.DataSource = Singleton.getInstance.Data.Authors.Select(o => new { o.Id, o.name }).ToList();
-            cbb_author_name.DisplayMember = "name";
-            cbb_author_name.ValueMember = "Id";
-            cbb_author_name.SelectedValueChanged += (sender, e) =>
-            {
-                tb_author_id.Text = cbb_author_name.SelectedValue.ToString();
-            };
+                cbb_author_name.DataSource = context.Authors.Select(o => new { o.Id, o.name }).ToList();
+                cbb_author_name.DisplayMember = "name";
+                cbb_author_name.ValueMember = "Id";
+                cbb_author_name.SelectedValueChanged += (sender, e) =>
+                {
+                    tb_author_id.Text = cbb_author_name.SelectedValue.ToString();
+                };
 
-            btn_deleteData.Visible = isDelete;
+                btn_deleteData.Visible = isDelete;
 
-            checkbox.HeaderText = "Xóa";
-            checkbox.TrueValue = true;
-            checkbox.FalseValue = false;
-            data.Columns.Insert(0, checkbox);
-            checkbox.Visible = false;
-            //data.Columns[0].Visible = false;
+                checkbox.HeaderText = "Xóa";
+                checkbox.TrueValue = true;
+                checkbox.FalseValue = false;
+                data.Columns.Insert(0, checkbox);
+                checkbox.Visible = false;
+            }
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -156,36 +149,19 @@ namespace QLSach.view.admin
 
         private void Update()
         {
-            Book book = BookQuery.getBook(BookId);
-            Photo? photo = imageQuery.GetImageBookId(BookId);
+                Book book = BookQuery.getBook(BookId);
 
-            book.author_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
-            book.name = tb_book_name.Text;
-            book.description = rtb_book_description.Text;
-            book.public_at = DateOnly.FromDateTime(datePicker.Value);
-            book.genre_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
-            book.quantity = byte.Parse(tb_quantity.Text);
-            book.remaining = byte.Parse(tb_remaining.Text);
+                book.author_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
+                book.name = tb_book_name.Text;
+                book.description = rtb_book_description.Text;
+                book.public_at = DateOnly.FromDateTime(datePicker.Value);
+                book.genre_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
+                book.quantity = byte.Parse(tb_quantity.Text);
+                book.remaining = byte.Parse(tb_remaining.Text);
 
-            photo = imageQuery.GetImageBookId(BookId);
-            if (photo != null)
-            {
-                photo.path = filePath;
-                photo.book_id = BookId;
-            }
-            else
-            {
-                photo = new Photo();
-                photo.path = filePath;
-                photo.book_id = BookId;
-            }
+                viewModel.UpdateBook(book, index);
 
-            viewModel.UpdateBook(book, index);
-
-            Singleton.getInstance.Data.Books.Update(book);
-            Singleton.getInstance.Data.Photos.Update(photo);
-
-            MessageBox.Show("Cập nhật thành công!");
+                MessageBox.Show("Cập nhật thành công!");
         }
 
         private void picture_Click(object sender, EventArgs e)

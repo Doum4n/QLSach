@@ -9,17 +9,20 @@ namespace QLSach.database.query
     {
         public List<Register> GetBorrows()
         {
-            return Singleton.getInstance.Data.Register.Where(o => o.Status == Status_borrow.Borrowed).ToList();
+            using (var context = new Context())
+                return context.Register.Where(o => o.Status == Status_borrow.Borrowed).ToList();
         }
 
         public List<Register> GetRegister()
         {
-            return Singleton.getInstance.Data.Register.Where(o => o.Status == Status_borrow.Pending).ToList();
+            using (var context = new Context())
+                return context.Register.Where(o => o.Status == Status_borrow.Pending).ToList();
         }
 
         public Register getByUserIdBookId(int userId, int bookId)
         {
-            return Singleton.getInstance.Data.Register.Where(o => o.UserId == userId).Where(o => o.BookId == bookId).FirstOrDefault();
+            using (var context = new Context())
+                return context.Register.Where(o => o.UserId == userId).Where(o => o.BookId == bookId).FirstOrDefault();
         }
         //SELECT UserId, BookId, MAX(register_at) AS `recent` FROM `Register` GROUP BY BookId, UserId 
 

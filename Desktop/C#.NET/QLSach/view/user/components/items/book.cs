@@ -12,9 +12,9 @@ namespace QLSach.view.components.items
         {
             this.id = id;
             InitializeComponent();
-            ImageQuery query = new ImageQuery();
-            String? imagePath = query.GetPhoto(id);
-            loadImage.ShowImage(picture, imagePath, 153, 203);
+            //ImageQuery query = new ImageQuery();
+            //String? imagePath = query.GetPhoto(id);
+            //loadImage.ShowImage(picture, imagePath, 153, 203);
         }
 
         private void onClick(object sender, EventArgs e)

@@ -43,6 +43,8 @@ namespace QLSach.database
             var category = fakeCategory.Generate(5);
 
             //Book
+            String imagePath = ".\\resources\\images\\poster.png";
+
             var BookId = 1;
             var id = 0;
             Faker faker = new Faker();
@@ -52,6 +54,7 @@ namespace QLSach.database
                 .RuleFor(o => o.Id, f => BookId++)
                 .RuleFor(o => o.description, f => f.Lorem.Paragraph())
                 .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
+                .RuleFor(o => o.photoPath, f => imagePath)
                 .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
                 .RuleFor(o => o.public_at, f => f.Date.BetweenDateOnly(DateOnly.Parse("1999-01-01"), DateOnly.FromDateTime(DateTime.Now)))
@@ -62,14 +65,13 @@ namespace QLSach.database
 
             //Image
             var photoId = 1;
-            String imagePath = ".\\resources\\images\\poster.png";
-            var fakePath = "fake path";
-            var fakeImage = new Faker<Photo>()
-                .RuleFor(o => o.Id, f => photoId++)
-                .RuleFor(o => o.path, f => imagePath)
-                .RuleFor(o => o.book_id, f => f.PickRandom(books.Select(o => o.Id)));
+            //var fakePath = "fake path";
+            //var fakeImage = new Faker<Photo>()
+            //    .RuleFor(o => o.Id, f => photoId++)
+            //    .RuleFor(o => o.path, f => imagePath)
+            //    .RuleFor(o => o.book_id, f => f.PickRandom(books.Select(o => o.Id)));
 
-            var images = fakeImage.Generate(16);
+            //var images = fakeImage.Generate(16);
 
             //User
             var user_id = 1;
@@ -141,7 +143,7 @@ namespace QLSach.database
             modelBuilder.Entity<Genre>().HasData(genres);
             modelBuilder.Entity<Book>().HasData(books);
             modelBuilder.Entity<author>().HasData(authors);
-            modelBuilder.Entity<Photo>().HasData(images);
+            //modelBuilder.Entity<Photo>().HasData(images);
             modelBuilder.Entity<models.User>().HasData(users);
             modelBuilder.Entity<Comment>().HasData(comments);
             modelBuilder.Entity<Comment>().HasData(comments_0);

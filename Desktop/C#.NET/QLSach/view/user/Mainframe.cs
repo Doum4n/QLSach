@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.query;
 using QLSach.view.user;
 using QLSach.view.user.components.items;
@@ -110,15 +111,18 @@ namespace QLSach.view
                 pane_btnSach.Controls.Add(btn);
             }
 
-            foreach (var category in Singleton.getInstance.Data.Categories.ToList())
+            using (var context = new Context())
             {
-                Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
-                btn.Text = category.Name;
-                btn.Dock = DockStyle.Top;
-                btn.FillColor = Color.Chocolate;
-                btn.Click += new EventHandler(onCategoryActive);
-                btn.Name = category.Id.ToString();
-                pane_category.Controls.Add(btn);
+                foreach (var category in context.Categories.ToList())
+                {
+                    Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
+                    btn.Text = category.Name;
+                    btn.Dock = DockStyle.Top;
+                    btn.FillColor = Color.Chocolate;
+                    btn.Click += new EventHandler(onCategoryActive);
+                    btn.Name = category.Id.ToString();
+                    pane_category.Controls.Add(btn);
+                }
             }
 
             pane_category.Visible = isCategory;

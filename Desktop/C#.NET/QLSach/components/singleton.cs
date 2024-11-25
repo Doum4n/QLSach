@@ -1,6 +1,8 @@
-﻿using QLSach.components;
+﻿using MySqlConnector;
+using QLSach.components;
 using QLSach.Components;
 using QLSach.database;
+using System.Data;
 
 namespace QLSach.component
 {
@@ -10,6 +12,7 @@ namespace QLSach.component
         private static readonly object lockObj = new object();
         //database
         private readonly Context db;
+        public DataSet DataSet { get; private set; }
         //Mainframe
         private readonly MainFrameHelper mainFrameHelper;
         //Intilize From
@@ -23,12 +26,18 @@ namespace QLSach.component
         public string Password { get; set; }
         public int UserId { get; set; }
 
+        public readonly string connectionString = "Server=localhost;Database=qlsach;User ID=root;Password=pw;";
+        public MySqlConnection connection;
+
+
         public RegisterHelper RegisterHelper { get; set; }
         public AdminHelper AdminHelper { get; set; }
         public CategoryManagerHelper CategoryManagerHelper { get; set; }
 
         public Singleton()
         {
+            connection = new MySqlConnection(connectionString);
+            DataSet = new DataSet();
             db = new();
             mainFrameHelper = new();
             initilize = new();
@@ -50,7 +59,12 @@ namespace QLSach.component
             }
         }
 
-        public Context Data { get { return db; } }
+        public Context CreateContext()
+        {
+            return new Context();
+        }
+
+        //public Context Data { get { return CreateContext(); } }
         public MainFrameHelper MainFrameHelper { get { return mainFrameHelper; } }
         public FormInitilize Initilize { get { return initilize; } }
 

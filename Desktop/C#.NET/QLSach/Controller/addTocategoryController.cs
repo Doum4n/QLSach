@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 using QLSach.Base;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using QLSach.view.admin;
@@ -22,6 +23,7 @@ namespace QLSach.Controller
     {
         private CategoryQuery query = new CategoryQuery();
         DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
+        private readonly Context context = new Context();
 
         public addTocategoryController(DataGridView data, BindingSource binding, Guna.UI2.WinForms.Guna2TextBox tb_search, Guna.UI2.WinForms.Guna2ComboBox cbb_fillter, DataGridViewCheckBoxColumn checkbox)
         {
@@ -39,27 +41,29 @@ namespace QLSach.Controller
 
         public override void Load()
         {
-            List<Category> categories = query.getCategories();
-
-            binding.DataSource = Singleton.getInstance.Data.Books.Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToDataTable();
-            data.DataSource = binding;
-            checkbox.HeaderText = "Thêm";
-            checkbox.FalseValue = false;
-            checkbox.TrueValue = true;
-
-            data.Columns.Add(checkbox);
 
 
-            List<Columns> columnNames = new List<Columns>();
+                List<Category> categories = query.getCategories();
 
-            foreach (DataGridViewColumn column in data.Columns)
-            {
-                columnNames.Add(new Columns(column.HeaderText, column.Name));
-            }
+                binding.DataSource = context.Books.Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToDataTable();
+                data.DataSource = binding;
+                checkbox.HeaderText = "Thêm";
+                checkbox.FalseValue = false;
+                checkbox.TrueValue = true;
 
-            //cbb_fillter.DataSource = columnNames;
-            //cbb_fillter.DisplayMember = "Headertext";
-            //cbb_fillter.ValueMember = "Name";
+                data.Columns.Add(checkbox);
+
+
+                List<Columns> columnNames = new List<Columns>();
+
+                foreach (DataGridViewColumn column in data.Columns)
+                {
+                    columnNames.Add(new Columns(column.HeaderText, column.Name));
+                }
+
+                //cbb_fillter.DataSource = columnNames;
+                //cbb_fillter.DisplayMember = "Headertext";
+                //cbb_fillter.ValueMember = "Name";
         }
 
         public override void Update()
@@ -67,5 +71,10 @@ namespace QLSach.Controller
             throw new NotImplementedException();
         }
 
+        public override void SaveChange()
+        {
+            base.SaveChange();
+            context.SaveChanges();
+        }
     }
 }

@@ -1,20 +1,22 @@
-﻿using QLSach.component;
-using QLSach.database.models;
+﻿//using QLSach.component;
+//using QLSach.database.models;
 
-namespace QLSach.database.query
-{
-    public class ImageQuery
-    {
-        public ImageQuery() { }
+//namespace QLSach.database.query
+//{
+//    public class ImageQuery
+//    {
+//        public ImageQuery() { }
 
-        public string? GetPhoto(int id)
-        {
-            return Singleton.getInstance.Data?.Photos.Where(photo => photo.book_id == id).Select(o => o.path).FirstOrDefault();
-        }
+//        public string? GetPhoto(int id)
+//        {
+//            using (var context = new Context())
+//                return context?.Photos.Where(photo => photo.book_id == id).Select(o => o.path).FirstOrDefault();
+//        }
 
-        public Photo? GetImageBookId(int id)
-        {
-            return Singleton.getInstance.Data.Photos.Where(o => o.book_id == id).FirstOrDefault();
-        }
-    }
-}
+//        //public Photo? GetImageBookId(int id)
+//        //{
+//        //    using (var context = new Context())
+//        //        return context.Photos.Where(o => o.book_id == id).FirstOrDefault();
+//        //}
+//    }
+//}

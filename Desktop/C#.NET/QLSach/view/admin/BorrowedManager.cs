@@ -1,6 +1,7 @@
 ﻿using Confluent.Kafka;
 using Microsoft.EntityFrameworkCore;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using System;
@@ -40,48 +41,52 @@ namespace QLSach.view.admin
 
         private void addButtonColumn()
         {
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            button.HeaderText = "Cập nhật";
-            button.Text = "Đã trả";
-            button.UseColumnTextForButtonValue = true;
+                DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+                button.HeaderText = "Cập nhật";
+                button.Text = "Đã trả";
+                button.UseColumnTextForButtonValue = true;
 
-            data.Columns.Add(button);
+                data.Columns.Add(button);
 
-            // when button column is clicked
-            data.CellClick += (sender, e) =>
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                // when button column is clicked
+                data.CellClick += (sender, e) =>
                 {
-                    var selectedItem = data.Rows[e.RowIndex];
-                    if (data.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                     {
-                        selectedBookId = Convert.ToInt32(selectedItem.Cells["BookId"].Value);
-                        var register = registerQuery.getByUserIdBookId(Convert.ToInt32(selectedItem.Cells["UserId"].Value), Convert.ToInt32(selectedItem.Cells["BookId"].Value));
-                        register.Status = Status_borrow.Completed;
-                        register.return_at = DateTime.Now;
+                        var selectedItem = data.Rows[e.RowIndex];
+                        if (data.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                        {
+                            selectedBookId = Convert.ToInt32(selectedItem.Cells["BookId"].Value);
+                            var register = registerQuery.getByUserIdBookId(Convert.ToInt32(selectedItem.Cells["UserId"].Value), Convert.ToInt32(selectedItem.Cells["BookId"].Value));
+                            register.Status = Status_borrow.Completed;
+                            register.return_at = DateTime.Now;
 
-                        Singleton.getInstance.Data.Update(register);
-                        Singleton.getInstance.Data.SaveChanges();
+                            using (var context = new Context())
+                            {
+                                context.Update(register);
+                                context.SaveChanges();
+                            }
 
-                        DataTable dataTable = (DataTable)bindingSource.DataSource;
-                        //DataRow dataRow = dataTable.NewRow();
-                        //dataRow[0] = register.Id;
-                        //dataRow[1] = 
+                            DataTable dataTable = (DataTable)bindingSource.DataSource;
+                            //DataRow dataRow = dataTable.NewRow();
+                            //dataRow[0] = register.Id;
+                            //dataRow[1] = 
 
-                        //bindingSource.Insert(e.RowIndex, register);
-                        dataTable.Rows.RemoveAt(e.RowIndex);
+                            //bindingSource.Insert(e.RowIndex, register);
+                            dataTable.Rows.RemoveAt(e.RowIndex);
 
-                        MessageBox.Show("cập nhật thành công");
+                            MessageBox.Show("cập nhật thành công");
 
-                        Update();
+                            Update();
+                        }
                     }
-                }
-            };
+                };
         }
 
         private void LoadTableData()
         {
-            bindingSource.DataSource = Singleton.getInstance.Data.Register
+            using (var context = new Context())
+                bindingSource.DataSource = context.Register
                 .Where(o => o.Status == Status_borrow.Borrowed)
                 .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.borrow_at, o.expected_at, o.Status }).ToFilteredDataTable();
             data.DataSource = bindingSource;
@@ -114,7 +119,9 @@ namespace QLSach.view.admin
 
         private async void Update()
         {
-            var result = Singleton.getInstance.Data.Register
+            using (var context = new Context())
+            {
+                var result = context.Register
              .Where(r => r.BookId == selectedBookId)
              .GroupBy(r => new { r.UserId, r.BookId })
              .Select(g => new
@@ -127,16 +134,17 @@ namespace QLSach.view.admin
              .ThenBy(r => r.Recent)
              .FirstOrDefault();
 
-            Register register = registerQuery.getByUserIdBookId(result.UserId, result.BookId);
-            register.Status = Status_borrow.Pending;
-            register.borrow_at = DateTime.Now;
+                Register register = registerQuery.getByUserIdBookId(result.UserId, result.BookId);
+                register.Status = Status_borrow.Pending;
+                register.borrow_at = DateTime.Now;
 
-            Singleton.getInstance.Data.Register.Update(register);
-            Singleton.getInstance.Data.SaveChanges();
+                context.Register.Update(register);
+                context.SaveChanges();
 
-            string name = Singleton.getInstance.Data.Books.Where(o => o.Id == result.BookId).Select(o => o.name).First();
+                string name = context.Books.Where(o => o.Id == result.BookId).Select(o => o.name).First();
 
-            await CreateMessage(result.UserId, $"{DateTime.Now} :: Sách {name} đã có thể mượn");
+                await CreateMessage(result.UserId, $"{DateTime.Now} :: Sách {name} đã có thể mượn");
+            }
         }
 
         public async Task CreateMessage(int userId, string input)
@@ -166,6 +174,11 @@ namespace QLSach.view.admin
             {
                 bindingSource.RemoveFilter();
             }
+        }
+
+        private void combobox_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

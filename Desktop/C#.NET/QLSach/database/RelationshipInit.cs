@@ -23,14 +23,14 @@ namespace QLSach.database
               .IsRequired();
             //
 
-            modelBuilder.Entity<Photo>().Ignore(e => e.Book);
+            //modelBuilder.Entity<Photo>().Ignore(e => e.Book);
 
             //Book
-            modelBuilder.Entity<Book>()
-                .HasOne(e => e.photo)
-                .WithOne(e => e.Book)
-                .HasForeignKey<Photo>(e => e.book_id)
-                .IsRequired();
+            //modelBuilder.Entity<Book>()
+            //    .HasOne(e => e.photo)
+            //    .WithOne(e => e.Book)
+            //    .HasForeignKey<Photo>(e => e.book_id)
+            //    .IsRequired();
 
             //from Book join Comment on comment.book_id = book.id
             modelBuilder.Entity<Book>()

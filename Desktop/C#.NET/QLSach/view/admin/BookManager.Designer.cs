@@ -66,10 +66,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             tb_author_id = new Guna.UI2.WinForms.Guna2TextBox();
@@ -103,8 +103,9 @@
             btn_modify = new Guna.UI2.WinForms.Guna2Button();
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
             data = new DataGridView();
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btn_deleteData = new Guna.UI2.WinForms.Guna2Button();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            label3 = new Label();
             panel_modify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -139,6 +140,7 @@
             tb_author_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_author_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_author_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_author_id.FillColor = Color.FromArgb(233, 239, 236);
             tb_author_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_author_id.Font = new Font("Segoe UI", 9F);
             tb_author_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -195,6 +197,7 @@
             tb_genre_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_genre_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_genre_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_genre_id.FillColor = Color.FromArgb(233, 239, 236);
             tb_genre_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_genre_id.Font = new Font("Segoe UI", 9F);
             tb_genre_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -210,7 +213,7 @@
             // 
             // panel_modify
             // 
-            panel_modify.BackColor = SystemColors.GradientActiveCaption;
+            panel_modify.BackColor = Color.FromArgb(196, 218, 210);
             panel_modify.Controls.Add(cbb_author_name);
             panel_modify.Controls.Add(picture);
             panel_modify.Controls.Add(btn_update);
@@ -233,10 +236,9 @@
             panel_modify.Controls.Add(label8);
             panel_modify.Controls.Add(label7);
             panel_modify.Controls.Add(label6);
-            panel_modify.Dock = DockStyle.Top;
-            panel_modify.Location = new Point(0, 106);
+            panel_modify.Location = new Point(26, 106);
             panel_modify.Name = "panel_modify";
-            panel_modify.Size = new Size(1271, 296);
+            panel_modify.Size = new Size(1177, 296);
             panel_modify.TabIndex = 14;
             // 
             // cbb_author_name
@@ -258,6 +260,7 @@
             // 
             // picture
             // 
+            picture.BorderStyle = BorderStyle.FixedSingle;
             picture.Location = new Point(13, 13);
             picture.Name = "picture";
             picture.Size = new Size(149, 179);
@@ -295,6 +298,7 @@
             // 
             datePicker.Checked = true;
             datePicker.CustomizableEdges = customizableEdges11;
+            datePicker.FillColor = Color.FromArgb(196, 218, 210);
             datePicker.Font = new Font("Segoe UI", 9F);
             datePicker.Format = DateTimePickerFormat.Long;
             datePicker.Location = new Point(776, 12);
@@ -314,6 +318,7 @@
             tb_remaining.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_remaining.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_remaining.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_remaining.FillColor = Color.FromArgb(233, 239, 236);
             tb_remaining.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_remaining.Font = new Font("Segoe UI", 9F);
             tb_remaining.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -335,6 +340,7 @@
             tb_quantity.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_quantity.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_quantity.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_quantity.FillColor = Color.FromArgb(233, 239, 236);
             tb_quantity.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_quantity.Font = new Font("Segoe UI", 9F);
             tb_quantity.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -356,6 +362,7 @@
             tb_book_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_book_name.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_book_name.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_book_name.FillColor = Color.FromArgb(233, 239, 236);
             tb_book_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_book_name.Font = new Font("Segoe UI", 9F);
             tb_book_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -377,6 +384,7 @@
             tb_book_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_book_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             tb_book_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_book_id.FillColor = Color.FromArgb(233, 239, 236);
             tb_book_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_book_id.Font = new Font("Segoe UI", 9F);
             tb_book_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -395,54 +403,54 @@
             label13.AutoSize = true;
             label13.Location = new Point(191, 244);
             label13.Name = "label13";
-            label13.Size = new Size(58, 20);
+            label13.Size = new Size(55, 20);
             label13.TabIndex = 7;
-            label13.Text = "Còn lại:";
+            label13.Text = "Còn lại";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Location = new Point(191, 208);
             label12.Name = "label12";
-            label12.Size = new Size(72, 20);
+            label12.Size = new Size(69, 20);
             label12.TabIndex = 6;
-            label12.Text = "Số lượng:";
+            label12.Text = "Số lượng";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(653, 13);
+            label11.Location = new Point(656, 22);
             label11.Name = "label11";
-            label11.Size = new Size(114, 20);
+            label11.Size = new Size(111, 20);
             label11.TabIndex = 5;
-            label11.Text = "Năm phát hành:";
+            label11.Text = "Năm phát hành";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Location = new Point(182, 94);
             label8.Name = "label8";
-            label8.Size = new Size(51, 20);
+            label8.Size = new Size(48, 20);
             label8.TabIndex = 2;
-            label8.Text = "Mô tả:";
+            label8.Text = "Mô tả";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(182, 53);
             label7.Name = "label7";
-            label7.Size = new Size(68, 20);
+            label7.Size = new Size(65, 20);
             label7.TabIndex = 1;
-            label7.Text = "Tên sách:";
+            label7.Text = "Tên sách";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(184, 17);
             label6.Name = "label6";
-            label6.Size = new Size(52, 20);
+            label6.Size = new Size(49, 20);
             label6.TabIndex = 0;
-            label6.Text = "Mã số:";
+            label6.Text = "Mã số";
             // 
             // tb_search
             // 
@@ -459,7 +467,7 @@
             tb_search.Margin = new Padding(3, 4, 3, 4);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
-            tb_search.PlaceholderText = "";
+            tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
             tb_search.ShadowDecoration.CustomizableEdges = customizableEdges22;
             tb_search.Size = new Size(171, 36);
@@ -488,11 +496,10 @@
             guna2Panel2.Controls.Add(combobox_filter);
             guna2Panel2.Controls.Add(tb_search);
             guna2Panel2.CustomizableEdges = customizableEdges25;
-            guna2Panel2.Dock = DockStyle.Top;
-            guna2Panel2.Location = new Point(0, 0);
+            guna2Panel2.Location = new Point(3, 420);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2Panel2.Size = new Size(1271, 47);
+            guna2Panel2.Size = new Size(1214, 47);
             guna2Panel2.TabIndex = 18;
             // 
             // btn_add_book
@@ -502,6 +509,7 @@
             btn_add_book.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_add_book.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_add_book.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_add_book.FillColor = Color.FromArgb(106, 156, 137);
             btn_add_book.Font = new Font("Segoe UI", 9F);
             btn_add_book.ForeColor = Color.White;
             btn_add_book.Location = new Point(26, 11);
@@ -514,17 +522,17 @@
             // 
             // guna2Panel3
             // 
+            guna2Panel3.AutoSize = true;
             guna2Panel3.Controls.Add(btn_update_data);
             guna2Panel3.Controls.Add(btn_cancel);
             guna2Panel3.Controls.Add(btn_modify);
             guna2Panel3.Controls.Add(btn_delete);
             guna2Panel3.Controls.Add(btn_add_book);
             guna2Panel3.CustomizableEdges = customizableEdges37;
-            guna2Panel3.Dock = DockStyle.Top;
-            guna2Panel3.Location = new Point(0, 47);
+            guna2Panel3.Location = new Point(0, 41);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            guna2Panel3.Size = new Size(1271, 59);
+            guna2Panel3.Size = new Size(1200, 59);
             guna2Panel3.TabIndex = 2;
             // 
             // btn_update_data
@@ -534,6 +542,7 @@
             btn_update_data.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_update_data.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_update_data.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_update_data.FillColor = Color.FromArgb(106, 156, 137);
             btn_update_data.Font = new Font("Segoe UI", 9F);
             btn_update_data.ForeColor = Color.White;
             btn_update_data.Location = new Point(576, 11);
@@ -551,6 +560,7 @@
             btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_cancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_cancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
             btn_cancel.Location = new Point(437, 11);
@@ -568,6 +578,7 @@
             btn_modify.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_modify.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_modify.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_modify.FillColor = Color.FromArgb(106, 156, 137);
             btn_modify.Font = new Font("Segoe UI", 9F);
             btn_modify.ForeColor = Color.White;
             btn_modify.Location = new Point(298, 11);
@@ -585,6 +596,7 @@
             btn_delete.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_delete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_delete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
             btn_delete.Location = new Point(162, 11);
@@ -597,24 +609,13 @@
             // 
             // data
             // 
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(13, 17);
+            data.Location = new Point(26, 15);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(1187, 353);
-            data.TabIndex = 1;
-            // 
-            // guna2Panel1
-            // 
-            guna2Panel1.Controls.Add(btn_deleteData);
-            guna2Panel1.Controls.Add(data);
-            guna2Panel1.CustomizableEdges = customizableEdges41;
-            guna2Panel1.Dock = DockStyle.Top;
-            guna2Panel1.Location = new Point(0, 402);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            guna2Panel1.Size = new Size(1271, 467);
-            guna2Panel1.TabIndex = 20;
+            data.Size = new Size(1174, 347);
+            data.TabIndex = 3;
             // 
             // btn_deleteData
             // 
@@ -625,7 +626,7 @@
             btn_deleteData.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_deleteData.Font = new Font("Segoe UI", 9F);
             btn_deleteData.ForeColor = Color.White;
-            btn_deleteData.Location = new Point(13, 389);
+            btn_deleteData.Location = new Point(26, 377);
             btn_deleteData.Name = "btn_deleteData";
             btn_deleteData.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btn_deleteData.Size = new Size(129, 56);
@@ -633,16 +634,41 @@
             btn_deleteData.Text = "Xóa";
             btn_deleteData.Click += btn_deleteData_Click;
             // 
+            // guna2Panel1
+            // 
+            guna2Panel1.Controls.Add(data);
+            guna2Panel1.Controls.Add(btn_deleteData);
+            guna2Panel1.CustomizableEdges = customizableEdges41;
+            guna2Panel1.ForeColor = SystemColors.ActiveCaptionText;
+            guna2Panel1.Location = new Point(3, 473);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Panel1.Size = new Size(1211, 435);
+            guna2Panel1.TabIndex = 20;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(22, 66, 60);
+            label3.Location = new Point(13, -6);
+            label3.Name = "label3";
+            label3.Size = new Size(221, 46);
+            label3.TabIndex = 23;
+            label3.Text = "Quản lý sách";
+            // 
             // BookManager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            Controls.Add(guna2Panel3);
+            Controls.Add(label3);
             Controls.Add(guna2Panel1);
             Controls.Add(panel_modify);
-            Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel2);
             Name = "BookManager";
-            Size = new Size(1271, 920);
+            Size = new Size(1220, 917);
             Load += book_management_Load;
             panel_modify.ResumeLayout(false);
             panel_modify.PerformLayout();
@@ -652,6 +678,7 @@
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -685,10 +712,11 @@
         private Guna.UI2.WinForms.Guna2Button btn_cancel;
         private Guna.UI2.WinForms.Guna2Button btn_modify;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
-        private DataGridView data;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btn_update_data;
         private Guna.UI2.WinForms.Guna2ComboBox cbb_author_name;
+        private DataGridView data;
         private Guna.UI2.WinForms.Guna2Button btn_deleteData;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Label label3;
     }
 }

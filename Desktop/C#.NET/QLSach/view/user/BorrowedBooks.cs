@@ -1,4 +1,5 @@
 ﻿using QLSach.component;
+using QLSach.database;
 using System.Data;
 
 namespace QLSach.view.user
@@ -14,7 +15,9 @@ namespace QLSach.view.user
 
         private void BorrowedBooks_Load(object sender, EventArgs e)
         {
-            Singleton.getInstance.RegisterHelper.borrowed_data.DataSource = Singleton.getInstance.Data.Register
+            using (var context = new Context())
+            {
+                Singleton.getInstance.RegisterHelper.borrowed_data.DataSource = context.Register
                 .Where(o => o.UserId == UserId)
                 .Where(o => o.borrow_at != null)
                 .Select(o => new
@@ -24,13 +27,14 @@ namespace QLSach.view.user
                     expected_return = o.borrow_at.Value.AddDays(7)
                 }).ToList();
 
-            data.DataSource = Singleton.getInstance.RegisterHelper.borrowed_data;
+                data.DataSource = Singleton.getInstance.RegisterHelper.borrowed_data;
 
-            Node cur = Singleton.getInstance.State;
-            Node node = new Node(this);
-            cur.AddChild(node);
-            Singleton.getInstance.State = node;
-            //Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
+                Node cur = Singleton.getInstance.State;
+                Node node = new Node(this);
+                cur.AddChild(node);
+                Singleton.getInstance.State = node;
+                //Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
+            }
         }
     }
 }

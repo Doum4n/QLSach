@@ -23,6 +23,7 @@ namespace QLSach.dbContext.models
         [Required]
         public int author_id { get; set; }
         public int genre_id { get; set; }
+        public string photoPath {  get; set; }
         [DefaultValue(0)]
         public byte rating { get; set; }
         public DateOnly public_at { get; set; }
@@ -54,8 +55,8 @@ namespace QLSach.dbContext.models
         //navigation properties
         [Browsable(false)]
         public List<User> Users { get; set; } = [];
-        [Browsable(false)]
-        public Photo? photo { get; set; }
+        //[Browsable(false)]
+        //public Photo? photo { get; set; }
         [Browsable(false)]
         public List<Comment> Comments { get; set; }
         [Browsable(false)]

@@ -7,7 +7,9 @@ namespace QLSach.view
     public partial class Admin : Form
     {
         private BindingList<string> bindingList = new BindingList<string>();
-        private UserManager userManager = new UserManager();
+        private AuthorManager authorManager = new AuthorManager();
+        private UserManager UserManager = new UserManager();
+        private BookManager BookManager = new BookManager();
         public Admin()
         {
             InitializeComponent();
@@ -16,7 +18,7 @@ namespace QLSach.view
         private void btn_book_management_Click(object sender, EventArgs e)
         {
             pane_main.Controls.Clear();
-            pane_main.Controls.Add(new BookManager());
+            pane_main.Controls.Add(BookManager);
         }
 
         private void btn_category_Click(object sender, EventArgs e)
@@ -27,14 +29,15 @@ namespace QLSach.view
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            pane_main.Controls.Add(new BookManager());
+            pane_main.Controls.Add(BookManager);
+            sidebar.BackColor = Color.FromArgb(233, 239, 236);
         }
 
         private void btn_user_Click(object sender, EventArgs e)
         {
 
             pane_main.Controls.Clear();
-            pane_main.Controls.Add(new UserManager());
+            pane_main.Controls.Add(UserManager);
         }
 
         private void btn_register_Click(object sender, EventArgs e)
@@ -52,7 +55,7 @@ namespace QLSach.view
         private void btn_author_Click(object sender, EventArgs e)
         {
             pane_main.Controls.Clear();
-            pane_main.Controls.Add(new AuthorManager());
+            pane_main.Controls.Add(authorManager);
         }
     }
 }

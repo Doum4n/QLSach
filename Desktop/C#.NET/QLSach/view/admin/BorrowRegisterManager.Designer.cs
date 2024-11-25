@@ -46,6 +46,7 @@
             btn_borrowed.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_borrowed.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_borrowed.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_borrowed.FillColor = Color.FromArgb(106, 156, 137);
             btn_borrowed.Font = new Font("Segoe UI", 9F);
             btn_borrowed.ForeColor = Color.White;
             btn_borrowed.Location = new Point(31, 31);
@@ -63,6 +64,7 @@
             btn_registed.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_registed.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_registed.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_registed.FillColor = Color.FromArgb(106, 156, 137);
             btn_registed.Font = new Font("Segoe UI", 9F);
             btn_registed.ForeColor = Color.White;
             btn_registed.Location = new Point(197, 31);

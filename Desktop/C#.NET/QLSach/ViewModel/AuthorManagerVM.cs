@@ -1,30 +1,38 @@
-﻿using MoreLinq.Extensions;
+﻿using Bogus;
+using MoreLinq;
+using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
+using QLSach.database;
 using QLSach.dbContext.models;
-using QLSach.view.admin;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace QLSach.ViewModel
 {
     public class AuthorManagerVM : ManagerBase, INotifyPropertyChanged
     {
         private BindingSource _authors = new BindingSource();
+        private readonly Context context = new Context();
+        DataTable authorsDataTable;
+        MySqlDataAdapter adapter = new MySqlDataAdapter();
 
         private author _selectedAuthor;
         public AuthorManagerVM(DataGridView data)
         {
-            Authors.DataSource = Singleton.getInstance.Data.Authors.Select(o => new {o.Id, o.name, o.description}) .ToDataTable();
-            SelectedAuthor = Singleton.getInstance.Data.Authors.First();
             base.data = data;
+            Authors.DataSource = context.Authors.Select(o => new { o.Id, o.name, o.description }).ToDataTable();
+            SelectedAuthor = context.Authors.First();
+            authorsDataTable = (DataTable)Authors.DataSource;
+
+            // Gán tên cho DataTable trước khi thêm vào DataSet
+            authorsDataTable.TableName = "Authors";  // Đặt tên cho DataTable là "Authors"
+            Singleton.getInstance.DataSet.Tables.Add(authorsDataTable);
+
+            configuration();
+
         }
 
         public BindingSource Authors
@@ -63,6 +71,21 @@ namespace QLSach.ViewModel
             }
         }
 
+        private void configuration()
+        {
+            adapter.InsertCommand = new MySqlCommand("INSERT INTO Authors (name, description) VALUES (@name, @description)", Singleton.getInstance.connection);
+            adapter.InsertCommand.Parameters.Add("@name", MySqlDbType.LongText).SourceColumn = "name";
+            adapter.InsertCommand.Parameters.Add("@description", MySqlDbType.LongText).SourceColumn = "description";
+
+            adapter.UpdateCommand = new MySqlCommand("UPDATE Authors set name = @name, description = @description where Id = @id", Singleton.getInstance.connection);
+            adapter.UpdateCommand.Parameters.Add("@name", MySqlDbType.LongText).SourceColumn = "name";
+            adapter.UpdateCommand.Parameters.Add("@description", MySqlDbType.LongText).SourceColumn = "description";
+            adapter.UpdateCommand.Parameters.Add("@id", MySqlDbType.Int32).SourceColumn = "Id";
+
+            adapter.DeleteCommand = new MySqlCommand("DELETE from Authors where Id = @deletedId", Singleton.getInstance.connection);
+            adapter.DeleteCommand.Parameters.Add("@deletedId", MySqlDbType.Int32).SourceColumn = "Id";
+        }
+
         // Sự kiện PropertyChanged để thông báo View cập nhật
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -73,6 +96,9 @@ namespace QLSach.ViewModel
 
         public void AddAuthor(string name, string description)
         {
+            var bookDataTable = (DataTable)binding.DataSource;
+            bookDataTable.AcceptChanges();
+
             var newAuthor = new author { name = name, description = description };
 
             DataTable dataTable = (DataTable)Authors.DataSource;
@@ -80,30 +106,20 @@ namespace QLSach.ViewModel
             row["Id"] = dataTable.Rows.Count + 2;
             row["name"] = newAuthor.name;
             row["description"] = newAuthor.description;
-            dataTable.Rows.Add(row);
-
-            Singleton.getInstance.Data.Authors.Add(newAuthor);
+            Singleton.getInstance.DataSet.Tables["Authors"].Rows.Add(row);
 
             MessageBox.Show("Thêm tác giả thành công");
         }
 
         public void UpdateAuthor(int id, string name, string description, int index)
         {
-            author author = Singleton.getInstance.Data.Authors.Find(id);
-            author.name = name;
-            author.description = description;
+            authorsDataTable.AcceptChanges();
 
-            DataTable dataTable = (DataTable)Authors.DataSource;
-            DataRow row = dataTable.NewRow();
-            row["Id"] = author.Id;
-            row["name"] = author.name;
-            row["description"] = author.description;
-            dataTable.Rows.Remove(dataTable.Rows[index]);
-            dataTable.Rows.InsertAt(row, index);
+            DataRow row = Singleton.getInstance.DataSet.Tables[0].Rows[index];
+            row["name"] = name;
+            row["description"] = description;
 
-            Singleton.getInstance.Data.Authors.Update(author);
-
-            MessageBox.Show("Thêm tác giả thành công");
+            MessageBox.Show("Cập nhật tác giả thành công");
         }
 
         public void DeleteSelectedAuthor()
@@ -119,6 +135,7 @@ namespace QLSach.ViewModel
         public override void Load()
         {
             base.binding = Authors;
+
         }
 
         public override void Update()
@@ -128,27 +145,20 @@ namespace QLSach.ViewModel
 
         public override void Delete()
         {
-            var DataTable = (DataTable)binding.DataSource;
+            authorsDataTable.AcceptChanges();
 
             foreach (int index in prevDataRow.Keys)
             {
-                DataTable.Rows.RemoveAt(index);
-            }
-            foreach (int Id in seletedId)
-            {
-                try
-                {
-                    Singleton.getInstance.Data.Authors.Remove(Singleton.getInstance.Data.Authors.Where(o => o.Id == Id).First());
-                }
-                catch
-                {
-                    //MessageBox.Show();
-                }
-            }
-            MessageBox.Show("Xóa dữ liệu thành công");
+                Singleton.getInstance.DataSet.Tables["Authors"].Rows[index].Delete();
 
-            seletedIndex.Clear();
-            seletedId.Clear();
+            }
+            adapter.Update(Singleton.getInstance.DataSet, "Authors");
+
+        }
+
+        public override void SaveChange()
+        {
+            adapter.Update(Singleton.getInstance.DataSet, "Authors");
         }
     }
 }

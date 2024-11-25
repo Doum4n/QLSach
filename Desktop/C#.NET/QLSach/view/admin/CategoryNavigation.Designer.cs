@@ -49,6 +49,7 @@
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
             btn_add_category = new Guna.UI2.WinForms.Guna2Button();
             paneMain = new Guna.UI2.WinForms.Guna2Panel();
+            label7 = new Label();
             guna2Panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             guna2Panel2.Controls.Add(btn_delete);
             guna2Panel2.Controls.Add(btn_add_category);
             guna2Panel2.CustomizableEdges = customizableEdges11;
-            guna2Panel2.Location = new Point(8, 8);
+            guna2Panel2.Location = new Point(10, 49);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Panel2.Size = new Size(1007, 63);
@@ -73,6 +74,7 @@
             btn_save.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_save.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_save.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_save.FillColor = Color.FromArgb(106, 156, 137);
             btn_save.Font = new Font("Segoe UI", 9F);
             btn_save.ForeColor = Color.White;
             btn_save.Location = new Point(524, 13);
@@ -90,6 +92,7 @@
             btn_modify_pagination.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_modify_pagination.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_modify_pagination.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_modify_pagination.FillColor = Color.FromArgb(106, 156, 137);
             btn_modify_pagination.Font = new Font("Segoe UI", 9F);
             btn_modify_pagination.ForeColor = Color.White;
             btn_modify_pagination.Location = new Point(698, 13);
@@ -107,6 +110,7 @@
             btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_cancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_cancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
             btn_cancel.Location = new Point(356, 13);
@@ -124,6 +128,7 @@
             btn_delete.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_delete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_delete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
             btn_delete.Location = new Point(174, 13);
@@ -131,7 +136,7 @@
             btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btn_delete.Size = new Size(152, 40);
             btn_delete.TabIndex = 8;
-            btn_delete.Text = "Xóa danh mục";
+            btn_delete.Text = "Xóa";
             btn_delete.Click += btn_delete_Click;
             // 
             // btn_add_category
@@ -141,6 +146,7 @@
             btn_add_category.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_add_category.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_add_category.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_add_category.FillColor = Color.FromArgb(106, 156, 137);
             btn_add_category.Font = new Font("Segoe UI", 9F);
             btn_add_category.ForeColor = Color.White;
             btn_add_category.Location = new Point(12, 13);
@@ -155,21 +161,33 @@
             // 
             paneMain.AutoSize = true;
             paneMain.CustomizableEdges = customizableEdges13;
-            paneMain.Location = new Point(6, 77);
+            paneMain.Location = new Point(8, 118);
             paneMain.Name = "paneMain";
             paneMain.ShadowDecoration.CustomizableEdges = customizableEdges14;
             paneMain.Size = new Size(1007, 496);
             paneMain.TabIndex = 10;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(22, 66, 60);
+            label7.Location = new Point(10, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(309, 46);
+            label7.TabIndex = 1;
+            label7.Text = "Quản lý danh mục";
             // 
             // CategoryNavigation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            Controls.Add(label7);
             Controls.Add(paneMain);
             Controls.Add(guna2Panel2);
             Name = "CategoryNavigation";
-            Size = new Size(1018, 617);
+            Size = new Size(1020, 617);
             Load += CategoryNavigation_Load_1;
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -184,5 +202,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_delete;
         private Guna.UI2.WinForms.Guna2Button btn_add_category;
         private Guna.UI2.WinForms.Guna2Panel paneMain;
+        private Label label7;
     }
 }

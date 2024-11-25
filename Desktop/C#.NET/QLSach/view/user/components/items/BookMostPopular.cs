@@ -1,5 +1,6 @@
 ﻿using QLSach.component;
 using QLSach.components;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using Status = QLSach.dbContext.models.Status;
@@ -23,10 +24,10 @@ namespace QLSach.view.components.items
 
         private void loadData()
         {
-            ImageQuery query = new ImageQuery();
+            //ImageQuery query = new ImageQuery();
 
-            String? imagePath = query.GetPhoto(id);
-            loadImage.ShowImage(picture, imagePath, 153, 203);
+            //String? imagePath = query.GetPhoto(id);
+            //loadImage.ShowImage(picture, imagePath, 153, 203);
         }
 
         private void onClick(object sender, EventArgs e)
@@ -52,18 +53,22 @@ namespace QLSach.view.components.items
 
         private void btn_register_Click(object sender, EventArgs e)
         {
+
             if (status == Status.borrowed)
             {
-                Register register = new Register();
-                register.BookId = id;
-                register.UserId = Singleton.getInstance.UserId;
-                register.Status = Status_borrow.Pending;
-                register.register_at = DateTime.Now;
-                Singleton.getInstance.Data.Register.Add(register);
-                Singleton.getInstance.Data.SaveChanges();
-                MessageBox.Show("Đăng ký thành công!");
+                using (var context = new Context())
+                {
+                    Register register = new Register();
+                    register.BookId = id;
+                    register.UserId = Singleton.getInstance.UserId;
+                    register.Status = Status_borrow.Pending;
+                    register.register_at = DateTime.Now;
+                    context.Register.Add(register);
+                    context.SaveChanges();
+                    MessageBox.Show("Đăng ký thành công!");
 
-                Singleton.getInstance.RegisterHelper.registration_data.Add(new { register.BookId, register.register_at, register.Status });
+                    Singleton.getInstance.RegisterHelper.registration_data.Add(new { register.BookId, register.register_at, register.Status });
+                }
             }
             else
             {

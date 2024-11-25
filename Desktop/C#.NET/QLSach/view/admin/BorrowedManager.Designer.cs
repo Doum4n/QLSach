@@ -42,10 +42,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(25, 81);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(22, 66, 60);
+            label1.Location = new Point(22, 22);
             label1.Name = "label1";
-            label1.Size = new Size(274, 41);
+            label1.Size = new Size(326, 46);
             label1.TabIndex = 2;
             label1.Text = "Quản lý mượn sách";
             // 
@@ -60,11 +61,12 @@
             combobox_filter.Font = new Font("Segoe UI", 10F);
             combobox_filter.ForeColor = Color.FromArgb(68, 88, 112);
             combobox_filter.ItemHeight = 30;
-            combobox_filter.Location = new Point(213, 22);
+            combobox_filter.Location = new Point(223, 84);
             combobox_filter.Name = "combobox_filter";
             combobox_filter.ShadowDecoration.CustomizableEdges = customizableEdges2;
             combobox_filter.Size = new Size(144, 36);
             combobox_filter.TabIndex = 19;
+            combobox_filter.SelectedIndexChanged += combobox_filter_SelectedIndexChanged;
             // 
             // tb_search
             // 
@@ -77,11 +79,11 @@
             tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_search.Font = new Font("Segoe UI", 9F);
             tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_search.Location = new Point(25, 23);
+            tb_search.Location = new Point(35, 85);
             tb_search.Margin = new Padding(3, 4, 3, 4);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
-            tb_search.PlaceholderText = "";
+            tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
             tb_search.ShadowDecoration.CustomizableEdges = customizableEdges4;
             tb_search.Size = new Size(171, 36);
@@ -109,7 +111,7 @@
             Controls.Add(tb_search);
             Controls.Add(label1);
             Name = "BorrowedManager";
-            Size = new Size(1157, 661);
+            Size = new Size(1157, 564);
             Load += BorowedManager_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             ResumeLayout(false);

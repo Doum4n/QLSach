@@ -1,28 +1,35 @@
 ﻿using MoreLinq;
+using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.dbContext.models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLSach.ViewModel
 {
     public class UserManagerVM : ManagerBase, INotifyPropertyChanged
     {
         private BindingSource _users = new BindingSource();
-
+        private readonly Context context = new Context();
+        DataTable usersDataTable;
+        MySqlDataAdapter adapter = new MySqlDataAdapter();
+        MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
         public UserManagerVM(DataGridView data)
         {
-            Users.DataSource = Singleton.getInstance.Data.Users.ToDataTable();
+            Users.DataSource = context.Users.ToDataTable();
             base.data = data;
+
+            usersDataTable = (DataTable)Users.DataSource;
+
+            // Gán tên cho DataTable trước khi thêm vào DataSet
+            usersDataTable.TableName = "Users";  // Đặt tên cho DataTable là "Authors"
+            Singleton.getInstance.DataSet.Tables.Add(usersDataTable);
+            connection.Open();
+            configuration();
         }
 
         public BindingSource Users
@@ -55,6 +62,28 @@ namespace QLSach.ViewModel
             }
         }
 
+        private void configuration()
+        {
+       
+                adapter.InsertCommand = new MySqlCommand("INSERT INTO Users (Name, Password, UserName, Role, create_at, update_at) VALUES (@Name, @Password, @Username, @Role, @Create_at, @Update_at)", connection);
+                adapter.InsertCommand.Parameters.Add("@Name", MySqlDbType.LongText).SourceColumn = "Name";
+                adapter.InsertCommand.Parameters.Add("@Password", MySqlDbType.LongText).SourceColumn = "Password";
+                adapter.InsertCommand.Parameters.Add("@Username", MySqlDbType.LongText).SourceColumn = "Username";
+                adapter.InsertCommand.Parameters.Add("@Role", MySqlDbType.LongText).SourceColumn = "Role";
+                adapter.InsertCommand.Parameters.Add("@Create_at", MySqlDbType.Date).SourceColumn = "create_at";
+                adapter.InsertCommand.Parameters.Add("@Update_at", MySqlDbType.Date).SourceColumn = "update_at";
+
+
+                //adapter.UpdateCommand = new MySqlCommand("UPDATE Users set Name = @name, Password = @Password, UserName = @UserName, Role = @Role where Id = @id", Singleton.getInstance.connection);
+                //adapter.UpdateCommand.Parameters.Add("@Name", MySqlDbType.LongText).SourceColumn = "Name";
+                //adapter.UpdateCommand.Parameters.Add("@Password", MySqlDbType.LongText).SourceColumn = "Password";
+                //adapter.UpdateCommand.Parameters.Add("@Username", MySqlDbType.LongText).SourceColumn = "Username";
+                //adapter.UpdateCommand.Parameters.Add("@Role", MySqlDbType.LongText).SourceColumn = "Role";
+
+                adapter.DeleteCommand = new MySqlCommand("DELETE from Users where Id = @deletedId", connection);
+                adapter.DeleteCommand.Parameters.Add("@deletedId", MySqlDbType.LongText).SourceColumn = "id";
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -64,24 +93,18 @@ namespace QLSach.ViewModel
 
         public void AddUser(string name, string password, string username, Role role)
         {
-            User user = new User(
-                name,
-                password,
-                username,
-                role
-            );
-            DataTable dataTable = (DataTable)Users.DataSource;
-            DataRow row = dataTable.NewRow();
-            row["Id"] = dataTable.Rows.Count + 1;
-            row[1] = user.Name;
-            row[2] = user.Password;
-            row[3] = user.UserName;
-            row[4] = user.Role;
-            row[5] = user.create_at;
-            row[6] = user.update_at;
+            usersDataTable.AcceptChanges();
 
-            dataTable.Rows.Add(row);
-            Singleton.getInstance.Data.Users.Add(user);
+            DataRow row = Singleton.getInstance.DataSet.Tables["Users"].NewRow();
+            row["Id"] = usersDataTable.Rows.Count + 1;
+            row[1] = name;
+            row[2] = password;
+            row[3] = username;
+            row[4] = role;
+            row[5] = DateOnly.FromDateTime(DateTime.Now);
+            row[6] = DateOnly.FromDateTime(DateTime.Now);
+
+            Singleton.getInstance.DataSet.Tables["Users"].Rows.Add(row);
 
             MessageBox.Show("Thêm bạn đọc thành công");
         }
@@ -103,27 +126,19 @@ namespace QLSach.ViewModel
 
         public override void Delete()
         {
-            var DataTable = (DataTable)binding.DataSource;
+            usersDataTable.AcceptChanges();
 
             foreach (int index in prevDataRow.Keys)
             {
-                DataTable.Rows.RemoveAt(index);
-            }
-            foreach (int Id in seletedId)
-            {
-                try
-                {
-                    Singleton.getInstance.Data.Users.Remove(Singleton.getInstance.Data.Users.Where(o => o.Id == Id).First());
-                }
-                catch
-                {
-                    //MessageBox.Show();
-                }
-            }
-            MessageBox.Show("Xóa dữ liệu thành công");
+                Singleton.getInstance.DataSet.Tables["Users"].Rows[index].Delete();
 
-            seletedIndex.Clear();
-            seletedId.Clear();
+            }
+            adapter.Update(Singleton.getInstance.DataSet, "Users");
+        }
+
+        public override void SaveChange()
+        {
+            adapter.Update(Singleton.getInstance.DataSet, "Users");
         }
     }
 }

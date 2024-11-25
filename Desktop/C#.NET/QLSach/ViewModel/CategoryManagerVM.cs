@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MoreLinq;
 using QLSach.Base;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using System;
@@ -21,6 +22,7 @@ namespace QLSach.ViewModel
         private CategoryQuery CategoryQuery = new CategoryQuery();
 
         private BindingSource _categories = new BindingSource();
+        private readonly Context context = new Context();
 
         public CategoryManagerVM(DataGridView data)
         {
@@ -67,50 +69,63 @@ namespace QLSach.ViewModel
 
         public void AddCategory(string name, string description)
         {
-            Category category = new Category();
-            category.Name = name;
-            category.Description = description;
-            category.create_at = DateOnly.FromDateTime(DateTime.Now);
-            category.update_at = DateOnly.FromDateTime(DateTime.Now);
-            Singleton.getInstance.Data.Categories.Update(category);
 
-            DataTable dataTable = (DataTable)Category.DataSource;
+                Category category = new Category();
+                category.Name = name;
+                category.Description = description;
+                category.create_at = DateOnly.FromDateTime(DateTime.Now);
+                category.update_at = DateOnly.FromDateTime(DateTime.Now);
+                context.Categories.Update(category);
 
-            DataRow newRow = dataTable.NewRow();
-            newRow["Id"] = dataTable.Rows.Count + 2;
-            newRow["Name"] = name;
-            newRow["Description"] = description;
-            newRow["BookCount"] = 0;
-            newRow["create_at"] = DateOnly.FromDateTime(DateTime.Now);
-            newRow["update_at"] = DateOnly.FromDateTime(DateTime.Now);
+                DataTable dataTable = (DataTable)Category.DataSource;
 
-            dataTable.Rows.Add(newRow);
+                DataRow newRow = dataTable.NewRow();
+                newRow["Id"] = dataTable.Rows.Count + 2;
+                newRow["Name"] = name;
+                newRow["Description"] = description;
+                newRow["BookCount"] = 0;
+                newRow["create_at"] = DateOnly.FromDateTime(DateTime.Now);
+                newRow["update_at"] = DateOnly.FromDateTime(DateTime.Now);
 
-            MessageBox.Show("Thêm danh mục thành công liệu thành công");
+                dataTable.Rows.Add(newRow);
+
+                MessageBox.Show("Thêm danh mục thành công liệu thành công");
         }
 
         public void updateCategory(int id, string name, string description, int bookCount, DateOnly create_at, int index)
         {
-            Category category = CategoryQuery.GetCategoryById((id));
-            category.Name = name;
-            category.Description = description;
-            category.update_at = DateOnly.FromDateTime(DateTime.Now);
-            Singleton.getInstance.Data.Categories.Update(category);
-
             DataTable dataTable = (DataTable)Category.DataSource;
 
-            DataRow newRow = dataTable.NewRow();
-            newRow["Id"] = id;
-            newRow["Name"] = name;
-            newRow["Description"] = description;
-            newRow["BookCount"] = bookCount;
-            newRow["create_at"] = create_at;
-            newRow["update_at"] = DateOnly.FromDateTime(DateTime.Now);
+            Category category = CategoryQuery.GetCategoryById((id));
+                if (category != null)
+                {
+                    category.Name = name;
+                    category.Description = description;
+                    category.update_at = DateOnly.FromDateTime(DateTime.Now);
+                    context.Categories.Update(category);
+                }
+                else
+                {
+                    category = new Category();
+                    category.Id = dataTable.Rows.Count + 2;
+                    category.Name = name;
+                    category.Description = description;
+                    category.update_at = DateOnly.FromDateTime(DateTime.Now);
+                    context.Categories.Add(category);
+            }
 
-            dataTable.Rows.RemoveAt(index);
-            dataTable.Rows.InsertAt(newRow, index);
+                DataRow newRow = dataTable.NewRow();
+                newRow["Id"] = id;
+                newRow["Name"] = name;
+                newRow["Description"] = description;
+                newRow["BookCount"] = bookCount;
+                newRow["create_at"] = create_at;
+                newRow["update_at"] = DateOnly.FromDateTime(DateTime.Now);
 
-            MessageBox.Show("Thay đổi dữ liệu thành công");
+                dataTable.Rows.RemoveAt(index);
+                dataTable.Rows.InsertAt(newRow, index);
+
+                MessageBox.Show("Thay đổi dữ liệu thành công");
         }
 
         public override void Add()
@@ -140,7 +155,7 @@ namespace QLSach.ViewModel
             {
                 try
                 {
-                    Singleton.getInstance.Data.Categories.Remove(Singleton.getInstance.Data.Categories.Where(o => o.Id == Id).First());
+                        context.Categories.Remove(context.Categories.Where(o => o.Id == Id).First());
                 }
                 catch
                 {
@@ -151,6 +166,12 @@ namespace QLSach.ViewModel
 
             seletedIndex.Clear();
             seletedId.Clear();
+        }
+
+        public override void SaveChange()
+        {
+            base.SaveChange();
+            context.SaveChanges();
         }
     }
 }

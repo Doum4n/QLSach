@@ -1,6 +1,10 @@
 ﻿using MoreLinq.Extensions;
+using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
+using QLSach.database;
+using QLSach.database.models;
+using QLSach.database.query;
 using QLSach.dbContext.models;
 using QLSach.view.components.items;
 using System;
@@ -8,6 +12,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +24,14 @@ namespace QLSach.ViewModel
         private BindingSource _books = new BindingSource();
 
         private Book _selectedBook;
+        private readonly Context context = new Context();
+        DataTable booksDataTable;
+        MySqlDataAdapter adapter;
+        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString); 
         public BookManagerVM(DataGridView data)
         {
-            Books.DataSource = Singleton.getInstance.Data.Books
+            
+                Books.DataSource = context.Books
                .Select(o => new
                {
                    o.Id,
@@ -34,6 +44,7 @@ namespace QLSach.ViewModel
                    o.views,
                    AuthorName = o.author.name,
                    GenreName = o.Genre.name,
+                   o.photoPath,
                    o.quantity,
                    o.remaining,
                    o.status,
@@ -41,9 +52,22 @@ namespace QLSach.ViewModel
                    o.updated_at,
                }).ToDataTable();
 
+                booksDataTable = (DataTable)Books.DataSource;
 
-            SelectedAuthor = Singleton.getInstance.Data.Books.First();
-            base.data = data;
+                // Gán tên cho DataTable trước khi thêm vào DataSet
+                booksDataTable.TableName = "Books";  // Đặt tên cho DataTable là "Authors"
+                Singleton.getInstance.DataSet.Tables.Add(booksDataTable);
+
+                configuration();
+
+            SelectedAuthor = context.Books.First();
+                base.data = data;
+        }
+
+        private void configuration()
+        {
+                adapter = new MySqlDataAdapter("SELECT * FROM Books", connection);
+                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
         }
 
         public BindingSource Books
@@ -59,7 +83,7 @@ namespace QLSach.ViewModel
             {
                 _searchText = value;
                 OnPropertyChanged();
-                FilterAuthors();
+                base.Search();
             }
         }
 
@@ -92,65 +116,46 @@ namespace QLSach.ViewModel
 
         public void AddAuthor(Book book)
         {
-            DataTable dataTable = (DataTable)Books.DataSource;
-            DataRow row = dataTable.NewRow();
-            row["Id"] = book.Id;
-            row["name"] = book.name;
-            row["description"] = book.description;
-            row["author_id"] = book.author_id;
-            row["public_at"] = book.public_at;
-            row["genre_id"] = book.genre_id;
-            row["quantity"] = book.quantity;
-            row["remaining"] = book.remaining;
-            row["rating"] = book.rating;
-            row["views"] = book.views;
-            row["created_at"] = book.created_at;
-            row["updated_at"] = book.updated_at;
-            row["status"] = book.status;
-            dataTable.Rows.Add(row);
+                DataRow row = Singleton.getInstance.DataSet.Tables["Books"].NewRow();
+                row["Id"] = book.Id;
+                row["name"] = book.name;
+                row["description"] = book.description;
+                row["author_id"] = book.author_id;
+                row["public_at"] = book.public_at;
+                row["genre_id"] = book.genre_id;
+                row["quantity"] = book.quantity;
+                row["remaining"] = book.remaining;
+                row["rating"] = book.rating;
+                row["views"] = book.views;
+                row["created_at"] = book.created_at;
+                row["updated_at"] = book.updated_at;
+                row["status"] = book.status;
 
-            Singleton.getInstance.Data.Books.Add(book);
+                Singleton.getInstance.DataSet.Tables["Books"].Rows.Add(row);
 
-            MessageBox.Show("Thêm sách thành công");
+                MessageBox.Show("Thêm sách thành công");
         }
 
         public void UpdateBook(Book book, int index)
-        { 
-            DataTable dataTable = (DataTable)Books.DataSource;
-            DataRow row = dataTable.NewRow();
-            row["Id"] = book.Id;
-            row["name"] = book.name;
-            row["description"] = book.description;
-            row["author_id"] = book.author_id;
-            row["public_at"] = book.public_at;
-            row["genre_id"] = book.genre_id;
-            row["quantity"] = book.quantity;
-            row["remaining"] = book.remaining;
-            row["rating"] = book.rating;
-            row["views"] = book.views;
-            row["created_at"] = book.created_at;
-            row["updated_at"] = book.updated_at;
-            row["status"] = book.status;
-            dataTable.Rows.Remove(dataTable.Rows[index]);
-            dataTable.Rows.InsertAt(row, index);
-
-            Singleton.getInstance.Data.Books.Update(book);
-
-            MessageBox.Show("Cập nhật sách thành công");
-        }
-
-        public void DeleteSelectedAuthor()
         {
+            booksDataTable.AcceptChanges();
 
-        }
+                DataRow row = Singleton.getInstance.DataSet.Tables["Books"].Rows[index];
+                row["name"] = book.name;
+                row["description"] = book.description;
+                row["author_id"] = book.author_id;
+                row["public_at"] = book.public_at;
+                row["genre_id"] = book.genre_id;
+                row["quantity"] = book.quantity;
+                row["remaining"] = book.remaining;
+                row["rating"] = book.rating;
+                row["views"] = book.views;
+                row["created_at"] = book.created_at;
+                row["updated_at"] = book.updated_at;
+                row["status"] = book.status;
+                row["photoPath"] = book.photoPath;
 
-        private void FilterAuthors()
-        {
-            Books.Filter = $"CONVERT({SelectedFilter}, System.String) LIKE '%{SearchText}%'";
-            if (SearchText == "")
-            {
-                Books.RemoveFilter();
-            }
+                MessageBox.Show("Cập nhật sách thành công");
         }
 
         public override void Add()
@@ -178,6 +183,11 @@ namespace QLSach.ViewModel
 
             data.Columns["genre_id"].Visible = false;
             data.Columns["author_id"].Visible = false;
+            data.Columns["photoPath"].Visible = false;
+
+            data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data.AllowUserToAddRows = false;
+            data.AllowUserToDeleteRows = false;
         }
 
         public override void Update()
@@ -187,27 +197,22 @@ namespace QLSach.ViewModel
 
         public override void Delete()
         {
-            var DataTable = (DataTable)binding.DataSource;
+            booksDataTable.AcceptChanges();
 
             foreach (int index in prevDataRow.Keys)
             {
-                DataTable.Rows.RemoveAt(index);
-            }
-            foreach (int Id in seletedId)
-            {
-                try
-                {
-                    Singleton.getInstance.Data.Books.Remove(Singleton.getInstance.Data.Books.Where(o => o.Id == Id).First());
-                }
-                catch
-                {
-                    //MessageBox.Show();
-                }
-            }
-            MessageBox.Show("Xóa dữ liệu thành công");
+                Singleton.getInstance.DataSet.Tables["Books"].Rows[index].Delete();
 
-            seletedIndex.Clear();
-            seletedId.Clear();
+            }
+            adapter.Update(Singleton.getInstance.DataSet, "Books");
+
+            MessageBox.Show("Xóa sách thành công");
+        }
+
+        public override void SaveChange()
+        {
+            adapter.Update(Singleton.getInstance.DataSet, "Books");
+            MessageBox.Show("Cập nhật sách thành công");
         }
     }
 }

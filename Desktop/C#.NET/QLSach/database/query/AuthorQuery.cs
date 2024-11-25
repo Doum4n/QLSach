@@ -5,19 +5,23 @@ namespace QLSach.database.query
 {
     public class AuthorQuery
     {
+        
         public author getAuthorById(int id)
         {
-            return Singleton.getInstance.Data.Authors.Find(id);
+            using (var context = new Context())          
+                return context.Authors.Find(id);
         }
 
         public List<string> getAuthorName()
         {
-            return Singleton.getInstance.Data.Authors.Select(o => o.name).ToList();
+            using (var context = new Context())
+                return context.Authors.Select(o => o.name).ToList();
         }
 
         public List<author> getAuthors()
         {
-            return Singleton.getInstance.Data.Authors.ToList();
+            using (var context = new Context())            
+                return context.Authors.ToList();
         }
     }
 }

@@ -48,7 +48,7 @@ namespace QLSach.view.admin
             viewModel.updateCategory(
                 Convert.ToInt32(tb_category_id.Text),
                 tb_categoryName.Text,
-                tb_description.Text,
+                rtb_descripton.Text,
                 Convert.ToInt32(tb_books_amount.Text),
                 DateOnly.Parse(data.Rows[index].Cells["create_at"].Value.ToString()),
                 index

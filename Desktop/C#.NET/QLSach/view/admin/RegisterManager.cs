@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MoreLinq;
 using QLSach.component;
+using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using System;
@@ -39,7 +40,8 @@ namespace QLSach.view.admin
 
         private void LoadTableData()
         {
-            bindingSource.DataSource = Singleton.getInstance.Data.Register
+            using (var context = new Context())
+                bindingSource.DataSource = context.Register
                             .Where(o => o.Status == Status_borrow.Pending)
                             .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.Status }).ToFilteredDataTable();
             data.DataSource = bindingSource;
@@ -47,42 +49,46 @@ namespace QLSach.view.admin
 
         private void addButtonColumn()
         {
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-            button.HeaderText = "Cập nhật";
-            button.Text = "Đã mượn";
-            button.UseColumnTextForButtonValue = true;
 
-            data.Columns.Add(button);
+                DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+                button.HeaderText = "Cập nhật";
+                button.Text = "Đã mượn";
+                button.UseColumnTextForButtonValue = true;
 
-            // when button column is clicked
-            data.CellClick += (sender, e) =>
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                data.Columns.Add(button);
+
+                // when button column is clicked
+                data.CellClick += (sender, e) =>
                 {
-                    var selectedItem = data.Rows[e.RowIndex];
-                    selectedBookId = Convert.ToInt32(selectedItem.Cells["BookId"].Value);
-                    var selectedUserId = Convert.ToInt32(selectedItem.Cells["UserId"].Value);
-
-                    if (data.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                     {
-                        var register = registerQuery.getByUserIdBookId(Convert.ToInt32(selectedItem.Cells["UserId"].Value), Convert.ToInt32(selectedItem.Cells["BookId"].Value));
-                        register.Status = Status_borrow.Borrowed;
-                        register.borrow_at = DateTime.Now;
+                        var selectedItem = data.Rows[e.RowIndex];
+                        selectedBookId = Convert.ToInt32(selectedItem.Cells["BookId"].Value);
+                        var selectedUserId = Convert.ToInt32(selectedItem.Cells["UserId"].Value);
 
-                        Singleton.getInstance.Data.Update(register);
-                        Singleton.getInstance.Data.SaveChanges();
+                        if (data.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                        {
+                            var register = registerQuery.getByUserIdBookId(Convert.ToInt32(selectedItem.Cells["UserId"].Value), Convert.ToInt32(selectedItem.Cells["BookId"].Value));
+                            register.Status = Status_borrow.Borrowed;
+                            register.borrow_at = DateTime.Now;
 
-                        DataTable dataTable = (DataTable)bindingSource.DataSource;
+                            using (var context = new Context())
+                            {
+                                context.Update(register);
+                                context.SaveChanges();
+                            }
 
-                        //bindingSource.Insert(e.RowIndex, register);
-                        dataTable.Rows.RemoveAt(e.RowIndex);
+                            DataTable dataTable = (DataTable)bindingSource.DataSource;
 
-                        MessageBox.Show("cập nhật thành công");
+                            //bindingSource.Insert(e.RowIndex, register);
+                            dataTable.Rows.RemoveAt(e.RowIndex);
 
-                        Update();
+                            MessageBox.Show("cập nhật thành công");
+
+                            Update();
+                        }
                     }
-                }
-            };
+                };
         }
 
         private void setColumnHeaderText()
@@ -116,5 +122,6 @@ namespace QLSach.view.admin
                 bindingSource.RemoveFilter();
             }
         }
+
     }
 }

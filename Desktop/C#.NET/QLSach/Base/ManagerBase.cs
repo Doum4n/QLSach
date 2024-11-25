@@ -1,5 +1,6 @@
 ﻿using MoreLinq;
 using QLSach.component;
+using QLSach.database;
 using QLSach.dbContext.models;
 using QLSach.interfaces;
 using QLSach.view.admin;
@@ -37,7 +38,11 @@ namespace QLSach.Base
             {
                 try
                 {
-                    Singleton.getInstance.Data.Books.Remove(Singleton.getInstance.Data.Books.Where(o => o.Id == bookId).First());
+                    using (var context = new Context())
+                    {
+
+                        context.Books.Remove(context.Books.Where(o => o.Id == bookId).First());
+                    }
                 }
                 catch
                 {
@@ -54,30 +59,25 @@ namespace QLSach.Base
 
         public virtual void Rollback()
         {
-            if (prevDataRow.Count > 0)
-            {
-                var bookDataTable = (DataTable)binding.DataSource;
+            var bookDataTable = (DataTable)binding.DataSource;
+            //bookDataTable.RejectChanges();
+            //if (prevDataRow.Count > 0)
+            //{
+            //    prevDataRow.ForEach(row =>
+            //    {
+            //        bookDataTable.Rows.InsertAt(row.Value, row.Key);
+            //    });
+            //}
 
-                prevDataRow.ForEach(row =>
-                {
-                    bookDataTable.Rows.InsertAt(row.Value, row.Key);
-                });
+            //prevDataRow.Clear();
 
-                prevDataRow.Clear();
-
-                MessageBox.Show("Hoàn tác thành công");
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu để hoàn tác");
-            }
+            bookDataTable.RejectChanges();
+            MessageBox.Show("Hoàn tác thành công");
         }
 
         public virtual void SaveChange()
         {
-            Singleton.getInstance.Data.SaveChanges();
-            MessageBox.Show("Đã cập nhật vào cơ sở dữ liệu");
-            prevDataRow.Clear();
+            
         }
         public abstract void Update();
 
@@ -95,9 +95,9 @@ namespace QLSach.Base
         // Hoàn tác dữ liệu
         public virtual void addPrevRows(int index, string IdColumnsName)
         {
+            var bookDataTable = (DataTable)binding.DataSource;
             if (!prevDataRow.ContainsKey(index))
             {
-                var bookDataTable = (DataTable)binding.DataSource;
 
                 DataRow prevRow = bookDataTable.NewRow();
                 foreach (DataColumn column in bookDataTable.Columns)

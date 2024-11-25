@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             data = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -51,23 +53,26 @@
             combobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // data
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(95, 194);
+            data.Location = new Point(69, 235);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(946, 451);
+            data.Size = new Size(970, 451);
             data.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 83);
+            label1.Location = new Point(21, 26);
             label1.Name = "label1";
             label1.Size = new Size(101, 20);
             label1.TabIndex = 1;
@@ -76,7 +81,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(413, 75);
+            label2.Location = new Point(354, 18);
             label2.Name = "label2";
             label2.Size = new Size(48, 20);
             label2.TabIndex = 2;
@@ -85,7 +90,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 124);
+            label3.Location = new Point(24, 67);
             label3.Name = "label3";
             label3.Size = new Size(69, 20);
             label3.TabIndex = 3;
@@ -102,7 +107,7 @@
             combobox_category_name.Font = new Font("Segoe UI", 10F);
             combobox_category_name.ForeColor = Color.FromArgb(68, 88, 112);
             combobox_category_name.ItemHeight = 30;
-            combobox_category_name.Location = new Point(138, 75);
+            combobox_category_name.Location = new Point(128, 18);
             combobox_category_name.Name = "combobox_category_name";
             combobox_category_name.ShadowDecoration.CustomizableEdges = customizableEdges2;
             combobox_category_name.Size = new Size(175, 36);
@@ -111,9 +116,9 @@
             // rtb_description
             // 
             rtb_description.BorderStyle = BorderStyle.None;
-            rtb_description.Location = new Point(480, 75);
+            rtb_description.Location = new Point(421, 18);
             rtb_description.Name = "rtb_description";
-            rtb_description.Size = new Size(380, 80);
+            rtb_description.Size = new Size(357, 80);
             rtb_description.TabIndex = 5;
             rtb_description.Text = "";
             // 
@@ -128,7 +133,7 @@
             tb_count.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_count.Font = new Font("Segoe UI", 9F);
             tb_count.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_count.Location = new Point(138, 124);
+            tb_count.Location = new Point(128, 67);
             tb_count.Margin = new Padding(3, 4, 3, 4);
             tb_count.Name = "tb_count";
             tb_count.PasswordChar = '\0';
@@ -145,9 +150,10 @@
             btn_add.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_add.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_add.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_add.FillColor = Color.FromArgb(106, 156, 137);
             btn_add.Font = new Font("Segoe UI", 9F);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(901, 113);
+            btn_add.Location = new Point(811, 18);
             btn_add.Name = "btn_add";
             btn_add.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btn_add.Size = new Size(140, 42);
@@ -166,7 +172,9 @@
             combobox_fillter.Font = new Font("Segoe UI", 10F);
             combobox_fillter.ForeColor = Color.FromArgb(68, 88, 112);
             combobox_fillter.ItemHeight = 30;
-            combobox_fillter.Location = new Point(245, 21);
+            combobox_fillter.ItemsAppearance.ForeColor = Color.FromArgb(22, 66, 60);
+            combobox_fillter.ItemsAppearance.SelectedBackColor = Color.FromArgb(128, 175, 129);
+            combobox_fillter.Location = new Point(280, 192);
             combobox_fillter.Name = "combobox_fillter";
             combobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges8;
             combobox_fillter.Size = new Size(153, 36);
@@ -183,11 +191,11 @@
             tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_search.Font = new Font("Segoe UI", 9F);
             tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_search.Location = new Point(34, 21);
+            tb_search.Location = new Point(69, 192);
             tb_search.Margin = new Padding(3, 4, 3, 4);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
-            tb_search.PlaceholderText = "";
+            tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
             tb_search.ShadowDecoration.CustomizableEdges = customizableEdges10;
             tb_search.Size = new Size(185, 36);
@@ -201,9 +209,10 @@
             btn_delete.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_delete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_delete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
-            btn_delete.Location = new Point(901, 678);
+            btn_delete.Location = new Point(899, 722);
             btn_delete.Name = "btn_delete";
             btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btn_delete.Size = new Size(140, 40);
@@ -211,25 +220,50 @@
             btn_delete.Text = "Xóa";
             btn_delete.Click += btn_delete_Click;
             // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackColor = Color.FromArgb(196, 218, 210);
+            guna2Panel1.Controls.Add(btn_add);
+            guna2Panel1.Controls.Add(rtb_description);
+            guna2Panel1.Controls.Add(label1);
+            guna2Panel1.Controls.Add(tb_count);
+            guna2Panel1.Controls.Add(label2);
+            guna2Panel1.Controls.Add(label3);
+            guna2Panel1.Controls.Add(combobox_category_name);
+            guna2Panel1.CustomizableEdges = customizableEdges13;
+            guna2Panel1.Location = new Point(69, 58);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Panel1.Size = new Size(970, 127);
+            guna2Panel1.TabIndex = 18;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(22, 66, 60);
+            label4.Location = new Point(69, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(419, 46);
+            label4.TabIndex = 19;
+            label4.Text = "Thêm sách cho danh mục";
+            // 
             // addToCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label4);
             Controls.Add(btn_delete);
             Controls.Add(combobox_fillter);
             Controls.Add(tb_search);
-            Controls.Add(btn_add);
-            Controls.Add(tb_count);
-            Controls.Add(rtb_description);
-            Controls.Add(combobox_category_name);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(data);
+            Controls.Add(guna2Panel1);
             Name = "addToCategory";
-            Size = new Size(1088, 754);
+            Size = new Size(1088, 783);
             Load += addToCategory_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +281,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox combobox_fillter;
         private Guna.UI2.WinForms.Guna2TextBox tb_search;
         private Guna.UI2.WinForms.Guna2Button btn_delete;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Label label4;
     }
 }
