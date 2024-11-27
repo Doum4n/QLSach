@@ -66,6 +66,7 @@
             btn_newlyUpdate.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_newlyUpdate.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_newlyUpdate.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_newlyUpdate.FillColor = Color.FromArgb(106, 156, 137);
             btn_newlyUpdate.Font = new Font("Segoe UI", 9F);
             btn_newlyUpdate.ForeColor = Color.White;
             btn_newlyUpdate.Location = new Point(18, 340);
@@ -84,9 +85,10 @@
             btn_popula.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_popula.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_popula.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_popula.FillColor = Color.FromArgb(106, 156, 137);
             btn_popula.Font = new Font("Segoe UI", 9F);
             btn_popula.ForeColor = Color.White;
-            btn_popula.Location = new Point(218, 340);
+            btn_popula.Location = new Point(219, 340);
             btn_popula.Margin = new Padding(3, 4, 3, 4);
             btn_popula.Name = "btn_popula";
             btn_popula.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -102,6 +104,7 @@
             btn_mostView.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_mostView.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_mostView.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_mostView.FillColor = Color.FromArgb(106, 156, 137);
             btn_mostView.Font = new Font("Segoe UI", 9F);
             btn_mostView.ForeColor = Color.White;
             btn_mostView.Location = new Point(419, 340);

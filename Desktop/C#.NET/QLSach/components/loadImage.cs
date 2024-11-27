@@ -5,7 +5,7 @@
         public static void ShowImage(PictureBox picture, string? fileToDisplay, int xSize, int ySize)
         {
             Bitmap MyImage;
-            if (fileToDisplay != null)
+            if (fileToDisplay != "")
             {
                 // Tải hình ảnh và gán vào PictureBox hiện tại
                 MyImage = new Bitmap(fileToDisplay);

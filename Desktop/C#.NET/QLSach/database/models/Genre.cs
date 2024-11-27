@@ -8,8 +8,11 @@ namespace QLSach.database.models
     public class Genre
     {
         [Key]
+        [Required]
+        [Column(TypeName = "int")]
         public int id { get; set; }
         [Required]
+        [Column(TypeName = "nvarchar(50)")]
         public string name { get; set; }
         public List<Book> Books { get; set; }
     }

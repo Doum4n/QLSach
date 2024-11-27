@@ -55,7 +55,7 @@ namespace QLSach.view.admin
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            viewModel.Rollback();
+            viewModel.Rollback("Authors");
         }
 
         private void btn_add_author_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace QLSach.view.admin
 
         private void btn_delete_data_Click(object sender, EventArgs e)
         {
-            viewModel.Delete();
+            viewModel.Delete("Authors", "Id");
         }
 
         private void AuthorManager_Load(object sender, EventArgs e)
@@ -123,12 +123,10 @@ namespace QLSach.view.admin
 
                     if (data.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
                     {
-                        viewModel.addPrevRows(e.RowIndex, "Id");
+                        viewModel.addSelectedId(e.RowIndex, "Id");
                     }
                 }
             };
-
-            //this.clo
 
             pane_add_author.Visible = isAdd;
             pane_modify_author.Visible = isUpdate;

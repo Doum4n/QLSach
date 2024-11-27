@@ -1,4 +1,5 @@
-﻿using QLSach.database.query;
+﻿using QLSach.database;
+using QLSach.database.query;
 
 namespace QLSach.view.components.items
 {
@@ -15,16 +16,18 @@ namespace QLSach.view.components.items
 
             BookQuery query = new BookQuery();
             int i = 1;
-            foreach (var item in query.getMostViewBooks())
-            {
-                BookMostPopular popular = new(item.Id);
-                popular.bookName = item.name;
-                popular.author = query.getBookAuthor(item.author_id);
-                popular.index = $"#{i++}";
-                popular.info = item.description;
-                popular.status = item.status;
-                tbLayoutPanel.SetRow(popular, tbLayoutPanel.RowCount++);
-                tbLayoutPanel.Controls.Add(popular);
+            using (Context context = new Context()) {
+                foreach (var item in context.Books.OrderBy(o => o.rating).Take(10).ToList())
+                {
+                    BookMostPopular popular = new(item.Id);
+                    popular.bookName = item.name;
+                    popular.author = query.getBookAuthor(item.author_id);
+                    popular.index = $"#{i++}";
+                    popular.info = item.description;
+                    popular.status = item.status;
+                    tbLayoutPanel.SetRow(popular, tbLayoutPanel.RowCount++);
+                    tbLayoutPanel.Controls.Add(popular);
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace QLSach.view.components.items
 {
-    partial class book
+    partial class BookRecent
     {
         /// <summary> 
         /// Required designer variable.

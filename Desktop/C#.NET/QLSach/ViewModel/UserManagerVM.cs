@@ -24,6 +24,7 @@ namespace QLSach.ViewModel
             base.data = data;
 
             usersDataTable = (DataTable)Users.DataSource;
+            usersDataTable.AcceptChanges();
 
             // Gán tên cho DataTable trước khi thêm vào DataSet
             usersDataTable.TableName = "Users";  // Đặt tên cho DataTable là "Authors"
@@ -64,24 +65,8 @@ namespace QLSach.ViewModel
 
         private void configuration()
         {
-       
-                adapter.InsertCommand = new MySqlCommand("INSERT INTO Users (Name, Password, UserName, Role, create_at, update_at) VALUES (@Name, @Password, @Username, @Role, @Create_at, @Update_at)", connection);
-                adapter.InsertCommand.Parameters.Add("@Name", MySqlDbType.LongText).SourceColumn = "Name";
-                adapter.InsertCommand.Parameters.Add("@Password", MySqlDbType.LongText).SourceColumn = "Password";
-                adapter.InsertCommand.Parameters.Add("@Username", MySqlDbType.LongText).SourceColumn = "Username";
-                adapter.InsertCommand.Parameters.Add("@Role", MySqlDbType.LongText).SourceColumn = "Role";
-                adapter.InsertCommand.Parameters.Add("@Create_at", MySqlDbType.Date).SourceColumn = "create_at";
-                adapter.InsertCommand.Parameters.Add("@Update_at", MySqlDbType.Date).SourceColumn = "update_at";
-
-
-                //adapter.UpdateCommand = new MySqlCommand("UPDATE Users set Name = @name, Password = @Password, UserName = @UserName, Role = @Role where Id = @id", Singleton.getInstance.connection);
-                //adapter.UpdateCommand.Parameters.Add("@Name", MySqlDbType.LongText).SourceColumn = "Name";
-                //adapter.UpdateCommand.Parameters.Add("@Password", MySqlDbType.LongText).SourceColumn = "Password";
-                //adapter.UpdateCommand.Parameters.Add("@Username", MySqlDbType.LongText).SourceColumn = "Username";
-                //adapter.UpdateCommand.Parameters.Add("@Role", MySqlDbType.LongText).SourceColumn = "Role";
-
-                adapter.DeleteCommand = new MySqlCommand("DELETE from Users where Id = @deletedId", connection);
-                adapter.DeleteCommand.Parameters.Add("@deletedId", MySqlDbType.LongText).SourceColumn = "id";
+            adapter = new MySqlDataAdapter("SELECT * FROM Users", connection);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -106,6 +91,13 @@ namespace QLSach.ViewModel
 
             Singleton.getInstance.DataSet.Tables["Users"].Rows.Add(row);
 
+            User user = new User();
+                user.Name = name;
+                user.Password = password;
+                user.Role = role;
+                user.UserName = username;
+                context.Users.Add(user);
+
             MessageBox.Show("Thêm bạn đọc thành công");
         }
 
@@ -124,21 +116,11 @@ namespace QLSach.ViewModel
             throw new NotImplementedException();
         }
 
-        public override void Delete()
-        {
-            usersDataTable.AcceptChanges();
-
-            foreach (int index in prevDataRow.Keys)
-            {
-                Singleton.getInstance.DataSet.Tables["Users"].Rows[index].Delete();
-
-            }
-            adapter.Update(Singleton.getInstance.DataSet, "Users");
-        }
-
         public override void SaveChange()
         {
-            adapter.Update(Singleton.getInstance.DataSet, "Users");
+            //adapter.Update(Singleton.getInstance.DataSet, "Users");
+            usersDataTable.AcceptChanges();
+            context.SaveChanges();
         }
     }
 }

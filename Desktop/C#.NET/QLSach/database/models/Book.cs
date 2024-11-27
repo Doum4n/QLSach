@@ -16,18 +16,30 @@ namespace QLSach.dbContext.models
         [Key]
         public int Id { get; set; }
         [Required]
-        //[Column(TypeName = "nvarchar(30)")]
+        [Column(TypeName = "nvarchar(500)")]
         public string name { get; set; }
         [Required]
+        [Column(TypeName = "nvarchar(1000)")]
         public string description { get; set; }
         [Required]
+        [Column(TypeName = "int")]
         public int author_id { get; set; }
+        [Required]
+        [Column(TypeName = "int")]
         public int genre_id { get; set; }
+        [Required]
+        [Column (TypeName = "int")]
+        public int publisher_id{ get; set; }
+        [Required]
+        [Column(TypeName = "varchar(100)")]
         public string photoPath {  get; set; }
         [DefaultValue(0)]
-        public byte rating { get; set; }
+        [Column(TypeName = "float")]
+        public float rating { get; set; }
+        [Column(TypeName = "date")]
         public DateOnly public_at { get; set; }
         [DefaultValue(0)]
+        [Column(TypeName = "int")]
         public int views { get; set; }
         [NotMapped]
         public Status status
@@ -36,16 +48,22 @@ namespace QLSach.dbContext.models
             {
                 if (this.remaining > 1)
                 {
-                    return Status.borrowed;
+                    return Status.available;
                 }
-                return Status.available;
+                return Status.borrowed;
             }
         }
+        [Required]
+        [Column(TypeName = "int")]
         public byte quantity { get; set; }
+        [Required]
+        [Column(TypeName = "int")]
         public byte remaining { get; set; }
         [Required]
+        [Column(TypeName = "datetime")]
         public DateTime created_at { get; set; } = DateTime.Now;
         [Required]
+        [Column(TypeName = "datetime")]
         public DateTime updated_at { get; set; } = DateTime.Now;
 
         //foreign key
@@ -58,10 +76,9 @@ namespace QLSach.dbContext.models
         //[Browsable(false)]
         //public Photo? photo { get; set; }
         [Browsable(false)]
-        public List<Comment> Comments { get; set; }
-        [Browsable(false)]
         public Genre Genre { get; set; }
         [Browsable(false)]
         public List<Category> Categories { get; set; }
+        public Publisher Publisher { get; set; }
     }
 }

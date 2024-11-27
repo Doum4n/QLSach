@@ -10,6 +10,8 @@ namespace QLSach.view
         private AuthorManager authorManager = new AuthorManager();
         private UserManager UserManager = new UserManager();
         private BookManager BookManager = new BookManager();
+        private CategoryNavigation CategoryNavigation = new CategoryNavigation();
+        private PublisherManager PublisherManager = new PublisherManager();
         public Admin()
         {
             InitializeComponent();
@@ -24,13 +26,12 @@ namespace QLSach.view
         private void btn_category_Click(object sender, EventArgs e)
         {
             pane_main.Controls.Clear();
-            pane_main.Controls.Add(new CategoryNavigation());
+            pane_main.Controls.Add(CategoryNavigation);
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
             pane_main.Controls.Add(BookManager);
-            sidebar.BackColor = Color.FromArgb(233, 239, 236);
         }
 
         private void btn_user_Click(object sender, EventArgs e)
@@ -56,6 +57,17 @@ namespace QLSach.view
         {
             pane_main.Controls.Clear();
             pane_main.Controls.Add(authorManager);
+        }
+
+        private void btn_publisher_Click(object sender, EventArgs e)
+        {
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(PublisherManager);
+        }
+
+        private void btn_reader_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

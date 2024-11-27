@@ -44,7 +44,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(22, 66, 60);
-            label1.Location = new Point(17, 13);
+            label1.Location = new Point(3, 13);
             label1.Name = "label1";
             label1.Size = new Size(462, 46);
             label1.TabIndex = 3;
@@ -103,12 +103,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(245, 239, 230);
             Controls.Add(data);
             Controls.Add(combobox_filter);
             Controls.Add(tb_search);
             Controls.Add(label1);
             Name = "RegisterManager";
-            Size = new Size(974, 530);
+            Size = new Size(957, 530);
             Load += RegisterManager_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             ResumeLayout(false);

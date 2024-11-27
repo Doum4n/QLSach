@@ -1,6 +1,5 @@
 ﻿using MoreLinq;
 using QLSach.component;
-using QLSach.Controller;
 using QLSach.database.models;
 using QLSach.ViewModel;
 using System.Data;
@@ -10,7 +9,6 @@ namespace QLSach.view.admin
 {
     public partial class UserManager : UserControl
     {
-        BindingSource bindingSource = new BindingSource();
         private bool isAdduser = false;
         DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
         private bool isDelete = false;
@@ -40,7 +38,7 @@ namespace QLSach.view.admin
                 var selectedRow = data.Rows[e.RowIndex];
                 if (data.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
                 {
-                    viewModel.addPrevRows(e.RowIndex, "id");
+                    viewModel.addSelectedId(e.RowIndex, "Id");
                 }
             };
 
@@ -55,10 +53,12 @@ namespace QLSach.view.admin
         private void btn_add_user_Click(object sender, EventArgs e)
         {
             Role role;
-            if (combobox_right.Text == Role.Admin.ToString())
+            if (combobox_right.SelectedValue == Role.Admin.ToString())
                 role = Role.Admin;
-            else
+            else if(combobox_right.SelectedValue == Role.User.ToString())
                 role = Role.User;
+            else
+                role = Role.Staff;
 
             viewModel.AddUser(tb_name.Text, tb_password.Text, tb_username.Text, role);    
         }
@@ -83,12 +83,12 @@ namespace QLSach.view.admin
 
         private void btn_delete_data_Click(object sender, EventArgs e)
         {
-            viewModel.Delete();
+            viewModel.Delete("Users", "Id");
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            viewModel.Rollback();
+            viewModel.Rollback("Users");
         }
 
         private void btn_save_Click(object sender, EventArgs e)

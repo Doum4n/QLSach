@@ -24,12 +24,13 @@ namespace QLSach.database
         public DbSet<Genre> Genre { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<author> Authors { get; set; }
-        public DbSet<BookInteraction> BookInteractions { get; set; }
+        public DbSet<Feedback> BookInteractions { get; set; }
         //public DbSet<Photo> Photos { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Comment> Comments { get; set; }
         public DbSet<Register> Register { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryBook> CategoriesBook { get; set; }
+        public DbSet<Publisher> Publisher { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }

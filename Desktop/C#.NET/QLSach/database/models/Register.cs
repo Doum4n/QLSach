@@ -1,6 +1,7 @@
 ﻿using QLSach.dbContext.models;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QLSach.database.models
 {
@@ -14,15 +15,22 @@ namespace QLSach.database.models
     public class Register
     {
         [Key]
+        [Required]
+        [Column(TypeName = "int")]
         public int Id { get; set; }
+        [Required]
+        [Column(TypeName = "int")]
         public int UserId { get; set; }
+        [Required]
+        [Column(TypeName = "int")]
         public int BookId { get; set; }
+        [Required]
+        [Column(TypeName = "datetime")]
         public DateTime register_at { get; set; }
-
         private DateTime? _borrow_at;
         private DateTime? _return_at;
         private DateTime? _expected_at { get; set; }
-
+        [Column(TypeName = "datetime")]
         public DateTime? borrow_at
         {
             get
@@ -37,6 +45,7 @@ namespace QLSach.database.models
             }
         }
 
+        [Column(TypeName = "datetime")]
         public DateTime? expected_at
         {
             get
@@ -50,7 +59,7 @@ namespace QLSach.database.models
                 _expected_at = value;
             }
         }
-
+        [Column(TypeName = "datetime")]
         public DateTime? return_at
         {
             get
@@ -65,7 +74,8 @@ namespace QLSach.database.models
             }
         }
 
-
+        [Required]
+        [Column(TypeName = "nvarchar(40)")]
         public Status_borrow Status { get; set; }
 
         [Browsable(false)]

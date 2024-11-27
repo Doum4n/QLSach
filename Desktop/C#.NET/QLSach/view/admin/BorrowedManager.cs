@@ -1,9 +1,11 @@
 ﻿using Confluent.Kafka;
 using Microsoft.EntityFrameworkCore;
+using MoreLinq;
 using QLSach.component;
 using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
+using QLSach.dbContext.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +66,16 @@ namespace QLSach.view.admin
                             using (var context = new Context())
                             {
                                 context.Update(register);
+
+                                Book book = context.Books.Where(o => o.Id == selectedBookId).FirstOrDefault();
+                                if (book.remaining < book.quantity)
+                                {
+                                    book.remaining = Convert.ToByte(book.remaining + 1);
+                                    context.Update(book);
+                                }
+
                                 context.SaveChanges();
+
                             }
 
                             DataTable dataTable = (DataTable)bindingSource.DataSource;
@@ -88,7 +99,7 @@ namespace QLSach.view.admin
             using (var context = new Context())
                 bindingSource.DataSource = context.Register
                 .Where(o => o.Status == Status_borrow.Borrowed)
-                .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.borrow_at, o.expected_at, o.Status }).ToFilteredDataTable();
+                .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.borrow_at, o.expected_at, o.Status }).ToDataTable();
             data.DataSource = bindingSource;
         }
 

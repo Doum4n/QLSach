@@ -44,7 +44,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(22, 66, 60);
-            label1.Location = new Point(22, 22);
+            label1.Location = new Point(9, 10);
             label1.Name = "label1";
             label1.Size = new Size(326, 46);
             label1.TabIndex = 2;
@@ -61,7 +61,7 @@
             combobox_filter.Font = new Font("Segoe UI", 10F);
             combobox_filter.ForeColor = Color.FromArgb(68, 88, 112);
             combobox_filter.ItemHeight = 30;
-            combobox_filter.Location = new Point(223, 84);
+            combobox_filter.Location = new Point(210, 72);
             combobox_filter.Name = "combobox_filter";
             combobox_filter.ShadowDecoration.CustomizableEdges = customizableEdges2;
             combobox_filter.Size = new Size(144, 36);
@@ -79,7 +79,7 @@
             tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_search.Font = new Font("Segoe UI", 9F);
             tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_search.Location = new Point(35, 85);
+            tb_search.Location = new Point(22, 73);
             tb_search.Margin = new Padding(3, 4, 3, 4);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
@@ -95,7 +95,7 @@
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(35, 161);
+            data.Location = new Point(22, 125);
             data.Name = "data";
             data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             data.Size = new Size(1055, 373);
@@ -106,12 +106,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.FromArgb(245, 239, 230);
             Controls.Add(data);
             Controls.Add(combobox_filter);
             Controls.Add(tb_search);
             Controls.Add(label1);
             Name = "BorrowedManager";
-            Size = new Size(1157, 564);
+            Size = new Size(1105, 520);
             Load += BorowedManager_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             ResumeLayout(false);

@@ -19,23 +19,48 @@ namespace QLSach.view.components.items
         {
             this.id = id;
             InitializeComponent();
-            //ImageQuery query = new ImageQuery();
-            //String? imagePath = query.GetPhoto(id);
-            //loadImage.ShowImage(picture, imagePath, 153, 203);
+            using (Context context = new Context())
+            {
+                String? imagePath = context.Books.Where(o => o.Id == id).Select(o => o.photoPath).First();
+                loadImage.ShowImage(picture, imagePath, 153, 203);
+            }
+
+            timer1.Interval = 100; // Thiết lập khoảng thời gian giữa mỗi lần Tick (100ms)
+            timer1.Start(); // Khởi động timer
         }
 
         private void BookMostView_Load(object sender, EventArgs e)
         {
+            LoadDate();
+        }
+
+        private void LoadDate()
+        {
             this.lb_author.Text = author;
             this.lb_bookName.Text = bookName;
             this.lb_index.Text = index;
-            this.lb_reading.Text = views.ToString();
             this.lb_status.Text = status.ToString();
+            using (Context context1 = new Context())
+                this.lb_reading.Text = context1.Books.Where(o => o.Id == id).Select(o => o.views).First().ToString();
 
             if (status == Status.borrowed)
                 btn_borrow.Text = "Đăng ký";
             else
                 btn_borrow.Text = "Mượn";
+
+            using (Context context = new Context())
+            {
+                var rating = context.Feedbacks.Where(o => o.BookId == id).Select(o => o.rating).ToList();
+                int count = rating.Count;
+                float? sum = 0;
+                rating.ForEach(rating =>
+                {
+                    sum += rating;
+                });
+                if (count > 0)
+                    ratingStar.Value = (float)(sum / count);
+
+            }
         }
 
         private void onClick(object sender, EventArgs e)
@@ -66,6 +91,52 @@ namespace QLSach.view.components.items
 
                 }
             }
+        }
+
+        private void rating_click(object sender, EventArgs e)
+        {
+            using (var context = new Context())
+            {
+                Feedback? feedback = context.Feedbacks
+                                  .Where(o => o.UserId == Singleton.getInstance.UserId)
+                                  .Where(o => o.BookId == id)
+                                  .FirstOrDefault();
+
+                if (feedback == null)
+                {
+                    // Nếu feedback không tồn tại, tạo một feedback mới
+                    feedback = new Feedback
+                    {
+                        UserId = Singleton.getInstance.UserId,
+                        BookId = id,
+                        rating = ratingStar.Value, // Lấy giá trị từ RatingStar
+                        created_at = DateTime.Now,
+                        updated_at = DateTime.Now
+                    };
+                    context.Feedbacks.Add(feedback);
+                }
+                else
+                {
+                    // Nếu feedback tồn tại, cập nhật giá trị rating
+                    feedback.rating = ratingStar.Value;
+                    feedback.updated_at = DateTime.Now;
+
+                    context.Feedbacks.Update(feedback);
+                }
+
+                context.SaveChanges();
+            }
+        }
+
+        private void OnVisible(object sender, EventArgs e)
+        {
+            using (Context context1 = new Context())
+                this.lb_reading.Text = context1.Books.Where(o => o.Id == id).Select(o => o.views).First().ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

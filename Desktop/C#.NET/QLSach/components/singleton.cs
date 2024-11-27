@@ -27,7 +27,7 @@ namespace QLSach.component
         public int UserId { get; set; }
 
         public readonly string connectionString = "Server=localhost;Database=qlsach;User ID=root;Password=pw;";
-        public MySqlConnection connection;
+        //public MySqlConnection connection;
 
 
         public RegisterHelper RegisterHelper { get; set; }
@@ -36,7 +36,7 @@ namespace QLSach.component
 
         public Singleton()
         {
-            connection = new MySqlConnection(connectionString);
+            //connection = new MySqlConnection(connectionString);
             DataSet = new DataSet();
             db = new();
             mainFrameHelper = new();

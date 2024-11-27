@@ -4,6 +4,7 @@ using QLSach.component;
 using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
+using QLSach.dbContext.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,7 @@ namespace QLSach.view.admin
             using (var context = new Context())
                 bindingSource.DataSource = context.Register
                             .Where(o => o.Status == Status_borrow.Pending)
-                            .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.Status }).ToFilteredDataTable();
+                            .Select(o => new { o.UserId, Username = o.User.Name, o.BookId, BookName = o.Book.name, o.register_at, o.Status }).ToDataTable();
             data.DataSource = bindingSource;
         }
 
@@ -75,6 +76,14 @@ namespace QLSach.view.admin
                             using (var context = new Context())
                             {
                                 context.Update(register);
+
+                                Book book = context.Books.Where(o => o.Id == selectedBookId).FirstOrDefault();
+                                if (book.remaining > 0)
+                                {
+                                    book.remaining = Convert.ToByte(book.remaining - 1);
+                                    context.Update(book);
+                                }
+
                                 context.SaveChanges();
                             }
 

@@ -42,7 +42,7 @@ namespace QLSach.view
             LoadDashBoard();
 
             isBookSelected = !isBookSelected;
-            pane_btnSach.Visible = isBookSelected;
+            pane_genre.Visible = isBookSelected;
         }
 
         private void LoadDashBoard()
@@ -108,7 +108,7 @@ namespace QLSach.view
                 btn.FillColor = Color.Chocolate;
                 btn.Click += new EventHandler(onClick);
                 btn.Name = genre.Key.ToString();
-                pane_btnSach.Controls.Add(btn);
+                pane_genre.Controls.Add(btn);
             }
 
             using (var context = new Context())

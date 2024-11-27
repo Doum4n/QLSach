@@ -1,6 +1,5 @@
 ﻿using MoreLinq;
 using QLSach.component;
-using QLSach.Controller;
 using QLSach.database.models;
 using QLSach.database.query;
 using System.Data;
@@ -16,6 +15,8 @@ namespace QLSach.view.admin
         public event Action OnCancel;
         public event Action OnSave;
 
+        private MainPaneCategory MainPaneCategory = new MainPaneCategory();
+        private GenreManager GenreManager = new GenreManager();
 
         public CategoryNavigation()
         {
@@ -25,10 +26,9 @@ namespace QLSach.view.admin
 
         private void btn_add_category_Click(object sender, EventArgs e)
         {
-            Singleton.getInstance.CategoryManagerHelper.Add();
 
             paneMain.Controls.Clear();
-            paneMain.Controls.Add(new MainPaneCategory());
+            paneMain.Controls.Add(MainPaneCategory);
         }
 
         private void btn_modify_pagination_Click(object sender, EventArgs e)
@@ -51,17 +51,18 @@ namespace QLSach.view.admin
 
         private void CategoryNavigation_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void CategoryNavigation_Load_1(object sender, EventArgs e)
-        {
-            paneMain.Controls.Add(new MainPaneCategory());
+            paneMain.Controls.Add(MainPaneCategory);
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
             Singleton.getInstance.CategoryManagerHelper.Delete();
+        }
+
+        private void btn_genre_Click(object sender, EventArgs e)
+        {
+            paneMain.Controls.Clear();
+            paneMain.Controls.Add(GenreManager);
         }
     }
 }

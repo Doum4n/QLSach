@@ -56,20 +56,24 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             tb_author_id = new Guna.UI2.WinForms.Guna2TextBox();
@@ -78,9 +82,13 @@
             combobox_genre_name = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_genre_id = new Guna.UI2.WinForms.Guna2TextBox();
             panel_modify = new Panel();
+            label10 = new Label();
+            cbb_publisher = new Guna.UI2.WinForms.Guna2ComboBox();
+            tb_publisher_id = new Guna.UI2.WinForms.Guna2TextBox();
+            label9 = new Label();
             cbb_author_name = new Guna.UI2.WinForms.Guna2ComboBox();
             picture = new PictureBox();
-            btn_update = new Guna.UI2.WinForms.Guna2Button();
+            btn_action = new Guna.UI2.WinForms.Guna2Button();
             rtb_book_description = new RichTextBox();
             datePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             tb_remaining = new Guna.UI2.WinForms.Guna2TextBox();
@@ -214,9 +222,13 @@
             // panel_modify
             // 
             panel_modify.BackColor = Color.FromArgb(196, 218, 210);
+            panel_modify.Controls.Add(label10);
+            panel_modify.Controls.Add(cbb_publisher);
+            panel_modify.Controls.Add(tb_publisher_id);
+            panel_modify.Controls.Add(label9);
             panel_modify.Controls.Add(cbb_author_name);
             panel_modify.Controls.Add(picture);
-            panel_modify.Controls.Add(btn_update);
+            panel_modify.Controls.Add(btn_action);
             panel_modify.Controls.Add(tb_author_id);
             panel_modify.Controls.Add(label4);
             panel_modify.Controls.Add(label1);
@@ -236,15 +248,72 @@
             panel_modify.Controls.Add(label8);
             panel_modify.Controls.Add(label7);
             panel_modify.Controls.Add(label6);
-            panel_modify.Location = new Point(26, 106);
+            panel_modify.Location = new Point(23, 135);
             panel_modify.Name = "panel_modify";
             panel_modify.Size = new Size(1177, 296);
             panel_modify.TabIndex = 14;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(957, 177);
+            label10.Name = "label10";
+            label10.Size = new Size(128, 20);
+            label10.TabIndex = 22;
+            label10.Text = "Mã nhà xuất bảng";
+            // 
+            // cbb_publisher
+            // 
+            cbb_publisher.BackColor = Color.Transparent;
+            cbb_publisher.CustomizableEdges = customizableEdges7;
+            cbb_publisher.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_publisher.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_publisher.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_publisher.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_publisher.Font = new Font("Segoe UI", 10F);
+            cbb_publisher.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_publisher.ItemHeight = 30;
+            cbb_publisher.Location = new Point(776, 177);
+            cbb_publisher.Name = "cbb_publisher";
+            cbb_publisher.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbb_publisher.Size = new Size(175, 36);
+            cbb_publisher.TabIndex = 21;
+            // 
+            // tb_publisher_id
+            // 
+            tb_publisher_id.CustomizableEdges = customizableEdges9;
+            tb_publisher_id.DefaultText = "";
+            tb_publisher_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tb_publisher_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tb_publisher_id.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tb_publisher_id.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tb_publisher_id.FillColor = Color.FromArgb(233, 239, 236);
+            tb_publisher_id.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_publisher_id.Font = new Font("Segoe UI", 9F);
+            tb_publisher_id.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tb_publisher_id.Location = new Point(1091, 176);
+            tb_publisher_id.Margin = new Padding(3, 4, 3, 4);
+            tb_publisher_id.Name = "tb_publisher_id";
+            tb_publisher_id.PasswordChar = '\0';
+            tb_publisher_id.PlaceholderText = "";
+            tb_publisher_id.SelectedText = "";
+            tb_publisher_id.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            tb_publisher_id.Size = new Size(36, 37);
+            tb_publisher_id.TabIndex = 20;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(673, 176);
+            label9.Name = "label9";
+            label9.Size = new Size(97, 20);
+            label9.TabIndex = 19;
+            label9.Text = "Nhà xuất bản";
+            // 
             // cbb_author_name
             // 
             cbb_author_name.BackColor = Color.Transparent;
-            cbb_author_name.CustomizableEdges = customizableEdges7;
+            cbb_author_name.CustomizableEdges = customizableEdges11;
             cbb_author_name.DrawMode = DrawMode.OwnerDrawFixed;
             cbb_author_name.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_author_name.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -254,7 +323,7 @@
             cbb_author_name.ItemHeight = 30;
             cbb_author_name.Location = new Point(776, 135);
             cbb_author_name.Name = "cbb_author_name";
-            cbb_author_name.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbb_author_name.ShadowDecoration.CustomizableEdges = customizableEdges12;
             cbb_author_name.Size = new Size(175, 36);
             cbb_author_name.TabIndex = 18;
             // 
@@ -268,22 +337,23 @@
             picture.TabStop = false;
             picture.Click += picture_Click;
             // 
-            // btn_update
+            // btn_action
             // 
-            btn_update.CustomizableEdges = customizableEdges9;
-            btn_update.DisabledState.BorderColor = Color.DarkGray;
-            btn_update.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_update.Font = new Font("Segoe UI", 9F);
-            btn_update.ForeColor = Color.White;
-            btn_update.Location = new Point(669, 235);
-            btn_update.Name = "btn_update";
-            btn_update.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btn_update.Size = new Size(116, 42);
-            btn_update.TabIndex = 16;
-            btn_update.Text = "Cập nhật";
-            btn_update.Click += btn_update_Click;
+            btn_action.CustomizableEdges = customizableEdges13;
+            btn_action.DisabledState.BorderColor = Color.DarkGray;
+            btn_action.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_action.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_action.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_action.FillColor = Color.FromArgb(67, 104, 80);
+            btn_action.Font = new Font("Segoe UI", 9F);
+            btn_action.ForeColor = Color.White;
+            btn_action.Location = new Point(669, 235);
+            btn_action.Name = "btn_action";
+            btn_action.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btn_action.Size = new Size(116, 42);
+            btn_action.TabIndex = 16;
+            btn_action.Text = "Cập nhật";
+            btn_action.Click += btn_action_Click;
             // 
             // rtb_book_description
             // 
@@ -297,7 +367,7 @@
             // datePicker
             // 
             datePicker.Checked = true;
-            datePicker.CustomizableEdges = customizableEdges11;
+            datePicker.CustomizableEdges = customizableEdges15;
             datePicker.FillColor = Color.FromArgb(196, 218, 210);
             datePicker.Font = new Font("Segoe UI", 9F);
             datePicker.Format = DateTimePickerFormat.Long;
@@ -305,14 +375,14 @@
             datePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             datePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             datePicker.Name = "datePicker";
-            datePicker.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            datePicker.ShadowDecoration.CustomizableEdges = customizableEdges16;
             datePicker.Size = new Size(250, 42);
             datePicker.TabIndex = 15;
             datePicker.Value = new DateTime(2024, 11, 10, 16, 17, 1, 966);
             // 
             // tb_remaining
             // 
-            tb_remaining.CustomizableEdges = customizableEdges13;
+            tb_remaining.CustomizableEdges = customizableEdges17;
             tb_remaining.DefaultText = "";
             tb_remaining.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_remaining.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -328,13 +398,13 @@
             tb_remaining.PasswordChar = '\0';
             tb_remaining.PlaceholderText = "";
             tb_remaining.SelectedText = "";
-            tb_remaining.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            tb_remaining.ShadowDecoration.CustomizableEdges = customizableEdges18;
             tb_remaining.Size = new Size(127, 33);
             tb_remaining.TabIndex = 14;
             // 
             // tb_quantity
             // 
-            tb_quantity.CustomizableEdges = customizableEdges15;
+            tb_quantity.CustomizableEdges = customizableEdges19;
             tb_quantity.DefaultText = "";
             tb_quantity.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_quantity.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -350,13 +420,14 @@
             tb_quantity.PasswordChar = '\0';
             tb_quantity.PlaceholderText = "";
             tb_quantity.SelectedText = "";
-            tb_quantity.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tb_quantity.ShadowDecoration.CustomizableEdges = customizableEdges20;
             tb_quantity.Size = new Size(127, 33);
             tb_quantity.TabIndex = 13;
+            tb_quantity.TextChanged += tb_quantity_TextChanged;
             // 
             // tb_book_name
             // 
-            tb_book_name.CustomizableEdges = customizableEdges17;
+            tb_book_name.CustomizableEdges = customizableEdges21;
             tb_book_name.DefaultText = "";
             tb_book_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_book_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -372,13 +443,13 @@
             tb_book_name.PasswordChar = '\0';
             tb_book_name.PlaceholderText = "";
             tb_book_name.SelectedText = "";
-            tb_book_name.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            tb_book_name.ShadowDecoration.CustomizableEdges = customizableEdges22;
             tb_book_name.Size = new Size(178, 33);
             tb_book_name.TabIndex = 9;
             // 
             // tb_book_id
             // 
-            tb_book_id.CustomizableEdges = customizableEdges19;
+            tb_book_id.CustomizableEdges = customizableEdges23;
             tb_book_id.DefaultText = "";
             tb_book_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_book_id.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -394,7 +465,7 @@
             tb_book_id.PasswordChar = '\0';
             tb_book_id.PlaceholderText = "";
             tb_book_id.SelectedText = "";
-            tb_book_id.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            tb_book_id.ShadowDecoration.CustomizableEdges = customizableEdges24;
             tb_book_id.Size = new Size(178, 33);
             tb_book_id.TabIndex = 8;
             // 
@@ -454,7 +525,7 @@
             // 
             // tb_search
             // 
-            tb_search.CustomizableEdges = customizableEdges21;
+            tb_search.CustomizableEdges = customizableEdges25;
             tb_search.DefaultText = "";
             tb_search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -463,13 +534,13 @@
             tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_search.Font = new Font("Segoe UI", 9F);
             tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_search.Location = new Point(26, 4);
+            tb_search.Location = new Point(23, 10);
             tb_search.Margin = new Padding(3, 4, 3, 4);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
             tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
-            tb_search.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            tb_search.ShadowDecoration.CustomizableEdges = customizableEdges26;
             tb_search.Size = new Size(171, 36);
             tb_search.TabIndex = 16;
             tb_search.TextChanged += tb_search_TextChanged;
@@ -477,7 +548,7 @@
             // combobox_filter
             // 
             combobox_filter.BackColor = Color.Transparent;
-            combobox_filter.CustomizableEdges = customizableEdges23;
+            combobox_filter.CustomizableEdges = customizableEdges27;
             combobox_filter.DrawMode = DrawMode.OwnerDrawFixed;
             combobox_filter.DropDownStyle = ComboBoxStyle.DropDownList;
             combobox_filter.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -485,26 +556,30 @@
             combobox_filter.Font = new Font("Segoe UI", 10F);
             combobox_filter.ForeColor = Color.FromArgb(68, 88, 112);
             combobox_filter.ItemHeight = 30;
-            combobox_filter.Location = new Point(214, 3);
+            combobox_filter.Location = new Point(214, 10);
             combobox_filter.Name = "combobox_filter";
-            combobox_filter.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            combobox_filter.ShadowDecoration.CustomizableEdges = customizableEdges28;
             combobox_filter.Size = new Size(144, 36);
             combobox_filter.TabIndex = 17;
             // 
             // guna2Panel2
             // 
+            guna2Panel2.BorderThickness = 2;
             guna2Panel2.Controls.Add(combobox_filter);
             guna2Panel2.Controls.Add(tb_search);
-            guna2Panel2.CustomizableEdges = customizableEdges25;
-            guna2Panel2.Location = new Point(3, 420);
+            guna2Panel2.CustomBorderThickness = new Padding(0, 0, 2, 0);
+            guna2Panel2.CustomizableEdges = customizableEdges29;
+            guna2Panel2.Location = new Point(0, 454);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges30;
             guna2Panel2.Size = new Size(1214, 47);
             guna2Panel2.TabIndex = 18;
             // 
             // btn_add_book
             // 
-            btn_add_book.CustomizableEdges = customizableEdges27;
+            btn_add_book.BorderColor = Color.FromArgb(252, 255, 224);
+            btn_add_book.BorderThickness = 2;
+            btn_add_book.CustomizableEdges = customizableEdges31;
             btn_add_book.DisabledState.BorderColor = Color.DarkGray;
             btn_add_book.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_add_book.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -512,9 +587,9 @@
             btn_add_book.FillColor = Color.FromArgb(106, 156, 137);
             btn_add_book.Font = new Font("Segoe UI", 9F);
             btn_add_book.ForeColor = Color.White;
-            btn_add_book.Location = new Point(26, 11);
+            btn_add_book.Location = new Point(13, 9);
             btn_add_book.Name = "btn_add_book";
-            btn_add_book.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btn_add_book.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btn_add_book.Size = new Size(116, 42);
             btn_add_book.TabIndex = 18;
             btn_add_book.Text = "Thêm sách";
@@ -523,21 +598,24 @@
             // guna2Panel3
             // 
             guna2Panel3.AutoSize = true;
+            guna2Panel3.BackColor = Color.FromArgb(117, 164, 127);
             guna2Panel3.Controls.Add(btn_update_data);
             guna2Panel3.Controls.Add(btn_cancel);
             guna2Panel3.Controls.Add(btn_modify);
             guna2Panel3.Controls.Add(btn_delete);
             guna2Panel3.Controls.Add(btn_add_book);
-            guna2Panel3.CustomizableEdges = customizableEdges37;
-            guna2Panel3.Location = new Point(0, 41);
+            guna2Panel3.CustomizableEdges = customizableEdges41;
+            guna2Panel3.Location = new Point(23, 70);
             guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            guna2Panel3.Size = new Size(1200, 59);
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Panel3.Size = new Size(1174, 59);
             guna2Panel3.TabIndex = 2;
             // 
             // btn_update_data
             // 
-            btn_update_data.CustomizableEdges = customizableEdges29;
+            btn_update_data.BorderColor = Color.FromArgb(252, 255, 224);
+            btn_update_data.BorderThickness = 2;
+            btn_update_data.CustomizableEdges = customizableEdges33;
             btn_update_data.DisabledState.BorderColor = Color.DarkGray;
             btn_update_data.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_update_data.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -545,17 +623,19 @@
             btn_update_data.FillColor = Color.FromArgb(106, 156, 137);
             btn_update_data.Font = new Font("Segoe UI", 9F);
             btn_update_data.ForeColor = Color.White;
-            btn_update_data.Location = new Point(576, 11);
+            btn_update_data.Location = new Point(525, 9);
             btn_update_data.Name = "btn_update_data";
-            btn_update_data.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            btn_update_data.Size = new Size(143, 42);
+            btn_update_data.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btn_update_data.Size = new Size(144, 42);
             btn_update_data.TabIndex = 22;
             btn_update_data.Text = "Cập nhật dữ liệu";
             btn_update_data.Click += btn_update_data_Click;
             // 
             // btn_cancel
             // 
-            btn_cancel.CustomizableEdges = customizableEdges31;
+            btn_cancel.BorderColor = Color.FromArgb(252, 255, 224);
+            btn_cancel.BorderThickness = 2;
+            btn_cancel.CustomizableEdges = customizableEdges35;
             btn_cancel.DisabledState.BorderColor = Color.DarkGray;
             btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_cancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -563,9 +643,9 @@
             btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
-            btn_cancel.Location = new Point(437, 11);
+            btn_cancel.Location = new Point(400, 9);
             btn_cancel.Name = "btn_cancel";
-            btn_cancel.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btn_cancel.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btn_cancel.Size = new Size(116, 42);
             btn_cancel.TabIndex = 21;
             btn_cancel.Text = "Hủy";
@@ -573,7 +653,9 @@
             // 
             // btn_modify
             // 
-            btn_modify.CustomizableEdges = customizableEdges33;
+            btn_modify.BorderColor = Color.FromArgb(252, 255, 224);
+            btn_modify.BorderThickness = 2;
+            btn_modify.CustomizableEdges = customizableEdges37;
             btn_modify.DisabledState.BorderColor = Color.DarkGray;
             btn_modify.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_modify.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -581,9 +663,9 @@
             btn_modify.FillColor = Color.FromArgb(106, 156, 137);
             btn_modify.Font = new Font("Segoe UI", 9F);
             btn_modify.ForeColor = Color.White;
-            btn_modify.Location = new Point(298, 11);
+            btn_modify.Location = new Point(274, 9);
             btn_modify.Name = "btn_modify";
-            btn_modify.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btn_modify.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btn_modify.Size = new Size(116, 42);
             btn_modify.TabIndex = 20;
             btn_modify.Text = "Sửa";
@@ -591,7 +673,9 @@
             // 
             // btn_delete
             // 
-            btn_delete.CustomizableEdges = customizableEdges35;
+            btn_delete.BorderColor = Color.FromArgb(252, 255, 224);
+            btn_delete.BorderThickness = 2;
+            btn_delete.CustomizableEdges = customizableEdges39;
             btn_delete.DisabledState.BorderColor = Color.DarkGray;
             btn_delete.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_delete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -599,9 +683,9 @@
             btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
-            btn_delete.Location = new Point(162, 11);
+            btn_delete.Location = new Point(144, 9);
             btn_delete.Name = "btn_delete";
-            btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btn_delete.Size = new Size(116, 42);
             btn_delete.TabIndex = 19;
             btn_delete.Text = "Xóa";
@@ -611,7 +695,7 @@
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(26, 15);
+            data.Location = new Point(26, 3);
             data.Name = "data";
             data.RowHeadersWidth = 51;
             data.Size = new Size(1174, 347);
@@ -619,16 +703,19 @@
             // 
             // btn_deleteData
             // 
-            btn_deleteData.CustomizableEdges = customizableEdges39;
+            btn_deleteData.BorderColor = Color.FromArgb(18, 55, 42);
+            btn_deleteData.BorderThickness = 2;
+            btn_deleteData.CustomizableEdges = customizableEdges43;
             btn_deleteData.DisabledState.BorderColor = Color.DarkGray;
             btn_deleteData.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_deleteData.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_deleteData.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_deleteData.Font = new Font("Segoe UI", 9F);
-            btn_deleteData.ForeColor = Color.White;
+            btn_deleteData.FillColor = Color.FromArgb(251, 250, 218);
+            btn_deleteData.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_deleteData.ForeColor = Color.FromArgb(18, 55, 42);
             btn_deleteData.Location = new Point(26, 377);
             btn_deleteData.Name = "btn_deleteData";
-            btn_deleteData.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            btn_deleteData.ShadowDecoration.CustomizableEdges = customizableEdges44;
             btn_deleteData.Size = new Size(129, 56);
             btn_deleteData.TabIndex = 2;
             btn_deleteData.Text = "Xóa";
@@ -638,11 +725,11 @@
             // 
             guna2Panel1.Controls.Add(data);
             guna2Panel1.Controls.Add(btn_deleteData);
-            guna2Panel1.CustomizableEdges = customizableEdges41;
+            guna2Panel1.CustomizableEdges = customizableEdges45;
             guna2Panel1.ForeColor = SystemColors.ActiveCaptionText;
-            guna2Panel1.Location = new Point(3, 473);
+            guna2Panel1.Location = new Point(0, 502);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges46;
             guna2Panel1.Size = new Size(1211, 435);
             guna2Panel1.TabIndex = 20;
             // 
@@ -651,7 +738,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(22, 66, 60);
-            label3.Location = new Point(13, -6);
+            label3.Location = new Point(12, 10);
             label3.Name = "label3";
             label3.Size = new Size(221, 46);
             label3.TabIndex = 23;
@@ -661,14 +748,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
+            BackColor = Color.FromArgb(245, 239, 230);
             Controls.Add(guna2Panel3);
             Controls.Add(label3);
             Controls.Add(guna2Panel1);
             Controls.Add(panel_modify);
             Controls.Add(guna2Panel2);
             Name = "BookManager";
-            Size = new Size(1220, 917);
+            Size = new Size(1222, 953);
             Load += book_management_Load;
             panel_modify.ResumeLayout(false);
             panel_modify.PerformLayout();
@@ -700,7 +787,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_remaining;
         private Guna.UI2.WinForms.Guna2TextBox tb_quantity;
         private RichTextBox rtb_book_description;
-        private Guna.UI2.WinForms.Guna2Button btn_update;
+        private Guna.UI2.WinForms.Guna2Button btn_action;
         private PictureBox picture;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_genre_name;
         private Guna.UI2.WinForms.Guna2TextBox tb_genre_id;
@@ -718,5 +805,9 @@
         private Guna.UI2.WinForms.Guna2Button btn_deleteData;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2ComboBox cbb_publisher;
+        private Guna.UI2.WinForms.Guna2TextBox tb_publisher_id;
+        private Label label9;
+        private Label label10;
     }
 }

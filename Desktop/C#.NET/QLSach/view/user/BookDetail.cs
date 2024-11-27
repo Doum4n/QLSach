@@ -18,13 +18,8 @@ namespace QLSach.view
         {
             this.id = id;
             InitializeComponent();
-            LoadData();
         }
 
-        private void LoadData()
-        {
-
-        }
 
         private void BookDetail_Load(object sender, EventArgs e)
         {
@@ -40,8 +35,8 @@ namespace QLSach.view
                 status.Text = book.remaining > 0 ? Status.available.ToString() : Status.borrowed.ToString();
                 lb_remaining.Text = book.remaining.ToString();
 
-                //String imagePath = imageQuery.GetPhoto(id);
-                //loadImage.ShowImage(picture, imagePath, 223, 350);
+
+                loadImage.ShowImage(picture, book.photoPath, 223, 350);
 
                 tb_pane_comment.RowCount = 0;
 
@@ -51,27 +46,30 @@ namespace QLSach.view
 
                 Singleton.getInstance.State = node;
 
-                var comments = context.Comments.Where(o => o.BookId == Singleton.getInstance.MainFrameHelper.Id).ToList();
-                comments.ForEach(o =>
+                // Comments
+                var comments = context.Feedbacks.Where(o => o.BookId == id).Where(o => o.comment != null).Select(o => o.comment).ToList();
+                comments.ForEach(cmt =>
                 {
-                    if (o.parent_id.HasValue)
-                    {
-                        comment comment1 = new comment();
-                        comment1.Content = o.content;
-                        comment1.subComment();
-                        tb_pane_comment.RowCount++;
-                        tb_pane_comment.SetRow(comment1, tb_pane_comment.RowCount);
-                        tb_pane_comment.Controls.Add(comment1);
-                    }
-                    else
-                    {
                         comment comment = new comment();
-                        comment.Content = o.content;
+                        comment.Content = cmt;
                         tb_pane_comment.RowCount++;
                         tb_pane_comment.SetRow(comment, tb_pane_comment.RowCount);
                         tb_pane_comment.Controls.Add(comment);
-                    }
                 });
+
+                var rating = context.Feedbacks.Where(o => o.BookId == id).Select(o => o.rating).ToList();
+                int count = rating.Count;
+                float? sum = 0;
+                rating.ForEach(rating => {
+                    sum += rating;
+                });
+                if(count > 0)
+                    RatingStar.Value = (float)(sum / count);
+
+                //if(count > 0)
+                //    book.rating = sum / count;
+                //context.Books.Update(book);
+
 
                 if (book.remaining > 0)
                 {
@@ -81,6 +79,11 @@ namespace QLSach.view
                 {
                     btn.Text = "Đăng ký";
                 }
+
+                book.views = book.views + 1;
+                context.Books.Update(book);
+                context.SaveChanges();
+
             }
         }
 
@@ -88,9 +91,36 @@ namespace QLSach.view
         {
             using (var context = new Context())
             {
-                context.Comments.Add(
-                new Comment(textBox_comment.Text, Singleton.getInstance.UserId, id)
-            );
+                Feedback? feedback = context.Feedbacks
+                    .Where(o => o.UserId == Singleton.getInstance.UserId)
+                    .Where(o => o.BookId == id)
+                    .FirstOrDefault();
+
+                if (feedback == null)
+                {
+                    feedback = new Feedback();
+                    feedback.UserId = Singleton.getInstance.UserId;
+                    feedback.BookId = id;
+                    feedback.rating = RatingStar.Value;
+                    feedback.comment = textBox_comment.Text;
+                    context.Feedbacks.Add(feedback);
+
+                    comment comment = new comment();
+                    comment.Content = textBox_comment.Text;
+                    tb_pane_comment.RowCount++;
+                    tb_pane_comment.SetRow(comment, tb_pane_comment.RowCount);
+                    tb_pane_comment.Controls.Add(comment);
+                }
+                else
+                {
+                    feedback.comment = textBox_comment.Text;
+                    context.Feedbacks.Update(feedback);
+                    comment comment = new comment();
+                    comment.Content = textBox_comment.Text;
+                    tb_pane_comment.RowCount++;
+                    tb_pane_comment.SetRow(comment, tb_pane_comment.RowCount);
+                    tb_pane_comment.Controls.Add(comment);
+                }
 
                 context.SaveChanges();
             }
@@ -116,13 +146,37 @@ namespace QLSach.view
             }
         }
 
-        private void RatingStar_ValueChanged(object sender, EventArgs e)
+        private void RatingStar_click(object sender, EventArgs e)
         {
             using (var context = new Context())
             {
-                var book = context.Books.Where(o => o.Id == id).First();
-                book.rating = (byte)((book.rating * 1.0 * RatingStar.Value));
-                context.Update(book);
+                Feedback? feedback = context.Feedbacks
+                                  .Where(o => o.UserId == Singleton.getInstance.UserId)
+                                  .Where(o => o.BookId == id)
+                                  .FirstOrDefault();
+
+                if (feedback == null)
+                {
+                    // Nếu feedback không tồn tại, tạo một feedback mới
+                    feedback = new Feedback
+                    {
+                        UserId = Singleton.getInstance.UserId,
+                        BookId = id,
+                        rating = RatingStar.Value, // Lấy giá trị từ RatingStar
+                        created_at = DateTime.Now,
+                        updated_at = DateTime.Now
+                    };
+                    context.Feedbacks.Add(feedback);
+                }
+                else
+                {
+                    // Nếu feedback tồn tại, cập nhật giá trị rating
+                    feedback.rating = RatingStar.Value;
+                    feedback.updated_at = DateTime.Now;
+
+                    context.Feedbacks.Update(feedback);
+                }
+
                 context.SaveChanges();
             }
         }

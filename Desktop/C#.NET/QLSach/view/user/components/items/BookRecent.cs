@@ -1,20 +1,23 @@
 ﻿using QLSach.component;
 using QLSach.components;
+using QLSach.database;
 using QLSach.database.query;
 
 namespace QLSach.view.components.items
 {
-    public partial class book : UserControl
+    public partial class BookRecent : UserControl
     {
         private int id;
 
-        public book(int id)
+        public BookRecent(int id)
         {
             this.id = id;
             InitializeComponent();
-            //ImageQuery query = new ImageQuery();
-            //String? imagePath = query.GetPhoto(id);
-            //loadImage.ShowImage(picture, imagePath, 153, 203);
+            using (Context context = new Context())
+            {
+                String? imagePath = context.Books.Where(o => o.Id == id).Select(o => o.photoPath).First();
+                loadImage.ShowImage(picture, imagePath, 153, 203);
+            }
         }
 
         private void onClick(object sender, EventArgs e)

@@ -138,6 +138,7 @@
             btn_previous.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_previous.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_previous.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_previous.FillColor = Color.FromArgb(67, 104, 80);
             btn_previous.Font = new Font("Segoe UI", 9F);
             btn_previous.ForeColor = Color.White;
             btn_previous.Location = new Point(512, 835);
@@ -155,6 +156,7 @@
             btn_next.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_next.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_next.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_next.FillColor = Color.FromArgb(67, 104, 80);
             btn_next.Font = new Font("Segoe UI", 9F);
             btn_next.ForeColor = Color.White;
             btn_next.Location = new Point(657, 835);
@@ -172,9 +174,10 @@
             btn_first.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_first.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_first.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_first.FillColor = Color.FromArgb(67, 104, 80);
             btn_first.Font = new Font("Segoe UI", 9F);
             btn_first.ForeColor = Color.White;
-            btn_first.Location = new Point(352, 835);
+            btn_first.Location = new Point(362, 835);
             btn_first.Name = "btn_first";
             btn_first.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btn_first.Size = new Size(129, 40);
@@ -189,6 +192,7 @@
             btn_last.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_last.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_last.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_last.FillColor = Color.FromArgb(67, 104, 80);
             btn_last.Font = new Font("Segoe UI", 9F);
             btn_last.ForeColor = Color.White;
             btn_last.Location = new Point(801, 835);

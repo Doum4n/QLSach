@@ -62,16 +62,15 @@
             menuToolStripMenuItem = new ToolStripMenuItem();
             menu_item_registered = new ToolStripMenuItem();
             menu_item_borowed = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
             lb_name = new Label();
             label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             tb_search = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            pane_category = new Guna.UI2.WinForms.Guna2Panel();
             btn_look_up = new Guna.UI2.WinForms.Guna2Button();
+            pane_category = new Guna.UI2.WinForms.Guna2Panel();
             btn_category = new Guna.UI2.WinForms.Guna2Button();
-            pane_btnSach = new Guna.UI2.WinForms.Guna2Panel();
+            pane_genre = new Guna.UI2.WinForms.Guna2Panel();
             btn_book = new Guna.UI2.WinForms.Guna2Button();
             Pane_conten = new Guna.UI2.WinForms.Guna2Panel();
             lb_path = new Label();
@@ -87,7 +86,6 @@
             pane_nofitication = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3.SuspendLayout();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -95,7 +93,6 @@
             // 
             guna2Panel3.Controls.Add(tb_noftitication);
             guna2Panel3.Controls.Add(menuStrip1);
-            guna2Panel3.Controls.Add(pictureBox1);
             guna2Panel3.Controls.Add(lb_name);
             guna2Panel3.Controls.Add(label1);
             guna2Panel3.Controls.Add(guna2Button1);
@@ -116,12 +113,13 @@
             tb_noftitication.DisabledState.CustomBorderColor = Color.DarkGray;
             tb_noftitication.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             tb_noftitication.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            tb_noftitication.FillColor = Color.WhiteSmoke;
+            tb_noftitication.FillColor = Color.FromArgb(233, 239, 236);
             tb_noftitication.Font = new Font("Segoe UI", 9F);
             tb_noftitication.ForeColor = Color.White;
             tb_noftitication.Image = Properties.Resources.bell;
             tb_noftitication.ImageAlign = HorizontalAlignment.Right;
-            tb_noftitication.Location = new Point(872, 11);
+            tb_noftitication.ImeMode = ImeMode.Off;
+            tb_noftitication.Location = new Point(866, 11);
             tb_noftitication.Name = "tb_noftitication";
             tb_noftitication.ShadowDecoration.CustomizableEdges = customizableEdges2;
             tb_noftitication.Size = new Size(41, 26);
@@ -130,6 +128,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.FromArgb(196, 218, 210);
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
@@ -149,29 +148,21 @@
             // menu_item_registered
             // 
             menu_item_registered.Name = "menu_item_registered";
-            menu_item_registered.Size = new Size(200, 26);
+            menu_item_registered.Size = new Size(224, 26);
             menu_item_registered.Text = "Sách đã đăng ký";
             menu_item_registered.Click += menu_item_registered_Click;
             // 
             // menu_item_borowed
             // 
             menu_item_borowed.Name = "menu_item_borowed";
-            menu_item_borowed.Size = new Size(200, 26);
+            menu_item_borowed.Size = new Size(224, 26);
             menu_item_borowed.Text = "Sách đã mượn";
             menu_item_borowed.Click += menu_item_borowed_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(1023, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(46, 43);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
             // 
             // lb_name
             // 
             lb_name.AutoSize = true;
-            lb_name.Location = new Point(1075, 16);
+            lb_name.Location = new Point(1037, 17);
             lb_name.Name = "lb_name";
             lb_name.Size = new Size(50, 20);
             lb_name.TabIndex = 3;
@@ -194,6 +185,7 @@
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(67, 104, 80);
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(571, 5);
@@ -220,6 +212,7 @@
             tb_search.Margin = new Padding(3, 5, 3, 5);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
+            tb_search.PlaceholderForeColor = Color.FromArgb(22, 66, 60);
             tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
             tb_search.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -229,10 +222,10 @@
             // guna2Panel2
             // 
             guna2Panel2.AutoScroll = true;
-            guna2Panel2.Controls.Add(pane_category);
             guna2Panel2.Controls.Add(btn_look_up);
+            guna2Panel2.Controls.Add(pane_category);
             guna2Panel2.Controls.Add(btn_category);
-            guna2Panel2.Controls.Add(pane_btnSach);
+            guna2Panel2.Controls.Add(pane_genre);
             guna2Panel2.Controls.Add(btn_book);
             guna2Panel2.CustomizableEdges = customizableEdges19;
             guna2Panel2.Location = new Point(12, 89);
@@ -242,81 +235,90 @@
             guna2Panel2.Size = new Size(184, 792);
             guna2Panel2.TabIndex = 4;
             // 
-            // pane_category
-            // 
-            pane_category.AutoSize = true;
-            pane_category.CustomizableEdges = customizableEdges9;
-            pane_category.Dock = DockStyle.Top;
-            pane_category.Location = new Point(0, 115);
-            pane_category.Name = "pane_category";
-            pane_category.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            pane_category.Size = new Size(196, 0);
-            pane_category.TabIndex = 6;
-            // 
             // btn_look_up
             // 
-            btn_look_up.CustomizableEdges = customizableEdges11;
+            btn_look_up.BackColor = Color.FromArgb(106, 156, 137);
+            btn_look_up.CustomizableEdges = customizableEdges9;
             btn_look_up.DisabledState.BorderColor = Color.DarkGray;
             btn_look_up.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_look_up.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_look_up.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_look_up.Dock = DockStyle.Top;
+            btn_look_up.FillColor = Color.FromArgb(106, 156, 137);
             btn_look_up.Font = new Font("Segoe UI", 9F);
             btn_look_up.ForeColor = Color.White;
-            btn_look_up.Location = new Point(12, 135);
+            btn_look_up.Location = new Point(0, 315);
             btn_look_up.Margin = new Padding(3, 4, 3, 4);
             btn_look_up.Name = "btn_look_up";
-            btn_look_up.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn_look_up.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_look_up.Size = new Size(184, 59);
             btn_look_up.TabIndex = 4;
             btn_look_up.Text = "Tra cứu";
             btn_look_up.Click += btn_look_up_Click;
             // 
+            // pane_category
+            // 
+            pane_category.AutoSize = true;
+            pane_category.CustomizableEdges = customizableEdges11;
+            pane_category.Dock = DockStyle.Top;
+            pane_category.Location = new Point(0, 215);
+            pane_category.MinimumSize = new Size(0, 100);
+            pane_category.Name = "pane_category";
+            pane_category.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            pane_category.Size = new Size(184, 100);
+            pane_category.TabIndex = 6;
+            // 
             // btn_category
             // 
+            btn_category.BackColor = Color.FromArgb(106, 156, 137);
             btn_category.CustomizableEdges = customizableEdges13;
             btn_category.DisabledState.BorderColor = Color.DarkGray;
             btn_category.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_category.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_category.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_category.Dock = DockStyle.Top;
+            btn_category.FillColor = Color.FromArgb(106, 156, 137);
             btn_category.Font = new Font("Segoe UI", 9F);
             btn_category.ForeColor = Color.White;
-            btn_category.Location = new Point(0, 59);
+            btn_category.Location = new Point(0, 159);
             btn_category.Name = "btn_category";
             btn_category.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btn_category.Size = new Size(196, 56);
+            btn_category.Size = new Size(184, 56);
             btn_category.TabIndex = 5;
             btn_category.Text = "Danh mục";
             btn_category.Click += btn_category_Click;
             // 
-            // pane_btnSach
+            // pane_genre
             // 
-            pane_btnSach.AutoSize = true;
-            pane_btnSach.CustomizableEdges = customizableEdges15;
-            pane_btnSach.Dock = DockStyle.Top;
-            pane_btnSach.Location = new Point(0, 59);
-            pane_btnSach.Margin = new Padding(3, 4, 3, 4);
-            pane_btnSach.Name = "pane_btnSach";
-            pane_btnSach.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            pane_btnSach.Size = new Size(196, 0);
-            pane_btnSach.TabIndex = 3;
-            pane_btnSach.Visible = false;
+            pane_genre.AutoSize = true;
+            pane_genre.CustomizableEdges = customizableEdges15;
+            pane_genre.Dock = DockStyle.Top;
+            pane_genre.Location = new Point(0, 59);
+            pane_genre.Margin = new Padding(3, 4, 3, 4);
+            pane_genre.MinimumSize = new Size(0, 100);
+            pane_genre.Name = "pane_genre";
+            pane_genre.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            pane_genre.Size = new Size(184, 100);
+            pane_genre.TabIndex = 3;
+            pane_genre.Visible = false;
             // 
             // btn_book
             // 
+            btn_book.BackColor = Color.FromArgb(106, 156, 137);
             btn_book.CustomizableEdges = customizableEdges17;
             btn_book.DisabledState.BorderColor = Color.DarkGray;
             btn_book.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_book.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_book.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btn_book.Dock = DockStyle.Top;
+            btn_book.FillColor = Color.FromArgb(106, 156, 137);
             btn_book.Font = new Font("Segoe UI", 9F);
             btn_book.ForeColor = Color.White;
             btn_book.Location = new Point(0, 0);
             btn_book.Margin = new Padding(3, 4, 3, 4);
             btn_book.Name = "btn_book";
             btn_book.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btn_book.Size = new Size(196, 59);
+            btn_book.Size = new Size(184, 59);
             btn_book.TabIndex = 0;
             btn_book.Text = "Thể loại";
             btn_book.Click += btn_book_Click;
@@ -448,6 +450,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(233, 239, 236);
             ClientSize = new Size(1162, 892);
             Controls.Add(pane_nofitication);
             Controls.Add(btn_redo);
@@ -464,7 +467,6 @@
             guna2Panel3.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
             ResumeLayout(false);
@@ -485,7 +487,6 @@
         private Label lb_path;
         private Guna.UI2.WinForms.Guna2Button btn_undo;
         private Guna.UI2.WinForms.Guna2Button btn_redo;
-        private PictureBox pictureBox1;
         private Label lb_name;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem menuToolStripMenuItem;
@@ -502,5 +503,6 @@
         private Guna.UI2.WinForms.Guna2Panel pane_nofitication;
         private Guna.UI2.WinForms.Guna2Button btn_category;
         private Guna.UI2.WinForms.Guna2Panel pane_category;
+        private Guna.UI2.WinForms.Guna2Panel pane_genre;
     }
 }

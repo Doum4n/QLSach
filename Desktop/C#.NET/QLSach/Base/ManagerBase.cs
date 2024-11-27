@@ -1,4 +1,5 @@
 ﻿using MoreLinq;
+using MySqlConnector;
 using QLSach.component;
 using QLSach.database;
 using QLSach.dbContext.models;
@@ -7,11 +8,13 @@ using QLSach.view.admin;
 using System.Data;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 
 namespace QLSach.Base
 {
-    public abstract class ManagerBase : IManager
+    public abstract class ManagerBase
     {
         protected Dictionary<int, DataRow> prevDataRow = new Dictionary<int, DataRow>();
         protected List<int> seletedIndex = new List<int>();
@@ -26,88 +29,68 @@ namespace QLSach.Base
         protected string _selectedFilter;
 
         public abstract void Add();
-        public virtual void Delete()
+        public virtual void Delete(string tableName, string idColumn)
         {
-            var DataTable = (DataTable)binding.DataSource;
-
-            foreach (int index in seletedIndex)
+            foreach (int id in seletedId)
             {
-                DataTable.Rows.RemoveAt(index);
-            }
-            foreach (int bookId in seletedId)
-            {
-                try
+                foreach (DataRow row in Singleton.getInstance.DataSet.Tables[tableName].Rows)
                 {
-                    using (var context = new Context())
+                    if (row.RowState != DataRowState.Deleted && Convert.ToInt32(row[idColumn]) == id)
                     {
-
-                        context.Books.Remove(context.Books.Where(o => o.Id == bookId).First());
+                        row.Delete();
                     }
                 }
-                catch
-                {
-                    //MessageBox.Show();
-                }
             }
-            MessageBox.Show("Xóa dữ liệu thành công");
-
-            seletedIndex.Clear();
-            seletedId.Clear();
         }
+
 
         public abstract void Load();
 
-        public virtual void Rollback()
+        public virtual void Rollback(string tableName)
         {
-            var bookDataTable = (DataTable)binding.DataSource;
-            //bookDataTable.RejectChanges();
-            //if (prevDataRow.Count > 0)
-            //{
-            //    prevDataRow.ForEach(row =>
-            //    {
-            //        bookDataTable.Rows.InsertAt(row.Value, row.Key);
-            //    });
-            //}
+            // Hoàn tác các thay đổi hiện tại
+            //Singleton.getInstance.DataSet.Tables[tableName].RejectChanges();
 
-            //prevDataRow.Clear();
+            if (prevDataRow.Count > 0)
+            {
+                // Duyệt qua các dòng đã lưu trữ, sắp xếp theo vị trí (Key)
+                foreach (var row in prevDataRow.OrderBy(r => r.Key))
+                {
+                    Singleton.getInstance.DataSet.Tables[tableName].Rows.InsertAt(row.Value, row.Key);
+                    MessageBox.Show(row.Key.ToString());
+                }
+            }
 
-            bookDataTable.RejectChanges();
+            Singleton.getInstance.DataSet.Tables[tableName].AcceptChanges();
+
             MessageBox.Show("Hoàn tác thành công");
+            prevDataRow.Clear();
+            seletedId.Clear();
         }
 
         public virtual void SaveChange()
         {
             
         }
+
         public abstract void Update();
 
-        public virtual void setRollbackList(List<int> selectedIndex, List<int> seletedBookId)
-        {
-            this.seletedIndex = selectedIndex;
-            this.seletedId = seletedBookId;
-        }
-
-        public virtual void setPrevRows(Dictionary<int, DataRow> prevDataRow)
-        {
-            this.prevDataRow = prevDataRow;
-        }
-
         // Hoàn tác dữ liệu
-        public virtual void addPrevRows(int index, string IdColumnsName)
+        public virtual void addSelectedId(int index, string IdColumnsName)
         {
             var bookDataTable = (DataTable)binding.DataSource;
             if (!prevDataRow.ContainsKey(index))
             {
-
                 DataRow prevRow = bookDataTable.NewRow();
                 foreach (DataColumn column in bookDataTable.Columns)
                 {
                     prevRow[column.ColumnName] = bookDataTable.Rows[index][column];
                 }
-
-                seletedId.Add(Convert.ToInt32(data.Rows[index].Cells[IdColumnsName].Value));
                 prevDataRow.Add(index, prevRow);
             }
+
+            if (!seletedId.Contains(Convert.ToInt32(data.Rows[index].Cells[IdColumnsName].Value)))
+                seletedId.Add(Convert.ToInt32(data.Rows[index].Cells[IdColumnsName].Value));
         }
 
         public virtual void Search()

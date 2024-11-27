@@ -137,7 +137,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(31, 821);
+            label10.Location = new Point(49, 824);
             label10.Name = "label10";
             label10.Size = new Size(69, 20);
             label10.TabIndex = 10;
@@ -149,16 +149,16 @@
             RatingStar.Name = "RatingStar";
             RatingStar.Size = new Size(150, 35);
             RatingStar.TabIndex = 11;
-            RatingStar.ValueChanged += RatingStar_ValueChanged;
+            RatingStar.Click += RatingStar_click;
             // 
             // Name
             // 
             Name.AutoSize = true;
             Name.Location = new Point(413, 38);
             Name.Name = "Name";
-            Name.Size = new Size(58, 20);
+            Name.Size = new Size(83, 20);
             Name.TabIndex = 12;
-            Name.Text = "label11";
+            Name.Text = "BookDetail";
             // 
             // author
             // 
@@ -234,6 +234,7 @@
             btn_send.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_send.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_send.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_send.FillColor = Color.FromArgb(106, 156, 137);
             btn_send.Font = new Font("Segoe UI", 9F);
             btn_send.ForeColor = Color.White;
             btn_send.Location = new Point(778, 953);
@@ -295,6 +296,7 @@
             btn.DisabledState.CustomBorderColor = Color.DarkGray;
             btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn.FillColor = Color.FromArgb(106, 156, 137);
             btn.Font = new Font("Segoe UI", 9F);
             btn.ForeColor = Color.White;
             btn.Location = new Point(294, 330);
@@ -332,6 +334,7 @@
             Controls.Add(label1);
             Controls.Add(picture);
             Controls.Add(panel1);
+            Name.Text = "BookDetail";
             Size = new Size(909, 1288);
             Load += BookDetail_Load;
             ((System.ComponentModel.ISupportInitialize)picture).EndInit();

@@ -41,6 +41,7 @@
             more_newlyBook.DisabledState.CustomBorderColor = Color.DarkGray;
             more_newlyBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             more_newlyBook.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            more_newlyBook.FillColor = Color.FromArgb(67, 104, 80);
             more_newlyBook.Font = new Font("Segoe UI", 9F);
             more_newlyBook.ForeColor = Color.White;
             more_newlyBook.Location = new Point(681, 16);
@@ -69,6 +70,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.FromArgb(251, 250, 218);
             Controls.Add(more_newlyBook);
             Controls.Add(tbLayoutPanel);
             Name = "PaneRecent";

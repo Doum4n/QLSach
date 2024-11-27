@@ -49,7 +49,7 @@
             btn_borrowed.FillColor = Color.FromArgb(106, 156, 137);
             btn_borrowed.Font = new Font("Segoe UI", 9F);
             btn_borrowed.ForeColor = Color.White;
-            btn_borrowed.Location = new Point(31, 31);
+            btn_borrowed.Location = new Point(17, 14);
             btn_borrowed.Name = "btn_borrowed";
             btn_borrowed.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btn_borrowed.Size = new Size(139, 50);
@@ -67,7 +67,7 @@
             btn_registed.FillColor = Color.FromArgb(106, 156, 137);
             btn_registed.Font = new Font("Segoe UI", 9F);
             btn_registed.ForeColor = Color.White;
-            btn_registed.Location = new Point(197, 31);
+            btn_registed.Location = new Point(173, 14);
             btn_registed.Name = "btn_registed";
             btn_registed.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_registed.Size = new Size(139, 50);
@@ -79,7 +79,7 @@
             // 
             pane_main.AutoSize = true;
             pane_main.CustomizableEdges = customizableEdges5;
-            pane_main.Location = new Point(17, 99);
+            pane_main.Location = new Point(17, 70);
             pane_main.Name = "pane_main";
             pane_main.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pane_main.Size = new Size(975, 426);
@@ -90,11 +90,12 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.FromArgb(245, 239, 230);
             Controls.Add(btn_registed);
             Controls.Add(btn_borrowed);
             Controls.Add(pane_main);
             Name = "BorrowRegisterManager";
-            Size = new Size(1013, 550);
+            Size = new Size(1013, 511);
             Load += RegisterManager_Load;
             ResumeLayout(false);
             PerformLayout();

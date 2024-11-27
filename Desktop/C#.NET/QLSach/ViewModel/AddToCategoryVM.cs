@@ -47,7 +47,7 @@ namespace QLSach.ViewModel
         }
         private void Configuration()
         {
-            adapter = new MySqlDataAdapter("SELECT * FROM Books", connection);
+            adapter = new MySqlDataAdapter("SELECT * FROM Categories", connection);
             MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
         }
 
@@ -125,19 +125,19 @@ namespace QLSach.ViewModel
             throw new NotImplementedException();
         }
 
-        public override void Delete()
-        {
-            booksDataTable.AcceptChanges();
+        //public override void Delete()
+        //{
+        //    booksDataTable.AcceptChanges();
 
-            foreach (int index in prevDataRow.Keys)
-            {
-                Singleton.getInstance.DataSet.Tables["Books"].Rows[index].Delete();
+        //    foreach (int index in prevDataRow.Keys)
+        //    {
+        //        Singleton.getInstance.DataSet.Tables["Books"].Rows[index].Delete();
 
-            }
-            adapter.Update(Singleton.getInstance.DataSet, "Books");
+        //    }
+        //    adapter.Update(Singleton.getInstance.DataSet, "Books");
 
-            MessageBox.Show("Xóa sách thành công");
-        }
+        //    MessageBox.Show("Xóa sách thành công");
+        //}
 
         public void Ondeletehandler(int id)
         {

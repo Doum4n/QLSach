@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Runtime.CompilerServices;
 using TheArtOfDevHtmlRenderer.Adapters;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace QLSach.ViewModel
 {
@@ -19,13 +20,18 @@ namespace QLSach.ViewModel
         DataTable authorsDataTable;
         MySqlDataAdapter adapter = new MySqlDataAdapter();
 
+        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
+
         private author _selectedAuthor;
         public AuthorManagerVM(DataGridView data)
         {
+            connection.Open();
+
             base.data = data;
             Authors.DataSource = context.Authors.Select(o => new { o.Id, o.name, o.description }).ToDataTable();
             SelectedAuthor = context.Authors.First();
             authorsDataTable = (DataTable)Authors.DataSource;
+            authorsDataTable.AcceptChanges();
 
             // Gán tên cho DataTable trước khi thêm vào DataSet
             authorsDataTable.TableName = "Authors";  // Đặt tên cho DataTable là "Authors"
@@ -40,7 +46,6 @@ namespace QLSach.ViewModel
             get => _authors;
             set { _authors = value; OnPropertyChanged(); }
         }
-
         public string SearchText
         {
             get => _searchText;
@@ -51,7 +56,6 @@ namespace QLSach.ViewModel
                 base.Search();
             }
         }
-
         public author SelectedAuthor
         {
             get => _selectedAuthor;
@@ -73,17 +77,8 @@ namespace QLSach.ViewModel
 
         private void configuration()
         {
-            adapter.InsertCommand = new MySqlCommand("INSERT INTO Authors (name, description) VALUES (@name, @description)", Singleton.getInstance.connection);
-            adapter.InsertCommand.Parameters.Add("@name", MySqlDbType.LongText).SourceColumn = "name";
-            adapter.InsertCommand.Parameters.Add("@description", MySqlDbType.LongText).SourceColumn = "description";
-
-            adapter.UpdateCommand = new MySqlCommand("UPDATE Authors set name = @name, description = @description where Id = @id", Singleton.getInstance.connection);
-            adapter.UpdateCommand.Parameters.Add("@name", MySqlDbType.LongText).SourceColumn = "name";
-            adapter.UpdateCommand.Parameters.Add("@description", MySqlDbType.LongText).SourceColumn = "description";
-            adapter.UpdateCommand.Parameters.Add("@id", MySqlDbType.Int32).SourceColumn = "Id";
-
-            adapter.DeleteCommand = new MySqlCommand("DELETE from Authors where Id = @deletedId", Singleton.getInstance.connection);
-            adapter.DeleteCommand.Parameters.Add("@deletedId", MySqlDbType.Int32).SourceColumn = "Id";
+            adapter = new MySqlDataAdapter("SELECT * FROM Authors", connection);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
         }
 
         // Sự kiện PropertyChanged để thông báo View cập nhật
@@ -96,8 +91,8 @@ namespace QLSach.ViewModel
 
         public void AddAuthor(string name, string description)
         {
-            var bookDataTable = (DataTable)binding.DataSource;
-            bookDataTable.AcceptChanges();
+            authorsDataTable = (DataTable)Authors.DataSource;
+            //authorsDataTable.AcceptChanges();
 
             var newAuthor = new author { name = name, description = description };
 
@@ -113,7 +108,8 @@ namespace QLSach.ViewModel
 
         public void UpdateAuthor(int id, string name, string description, int index)
         {
-            authorsDataTable.AcceptChanges();
+            authorsDataTable = (DataTable)Authors.DataSource;
+            //authorsDataTable.AcceptChanges();
 
             DataRow row = Singleton.getInstance.DataSet.Tables[0].Rows[index];
             row["name"] = name;
@@ -143,18 +139,18 @@ namespace QLSach.ViewModel
             throw new NotImplementedException();
         }
 
-        public override void Delete()
-        {
-            authorsDataTable.AcceptChanges();
+        //public override void Delete()
+        //{
+        //    //authorsDataTable.AcceptChanges();
 
-            foreach (int index in prevDataRow.Keys)
-            {
-                Singleton.getInstance.DataSet.Tables["Authors"].Rows[index].Delete();
+        //    foreach (int index in prevDataRow.Keys)
+        //    {
+        //        Singleton.getInstance.DataSet.Tables["Authors"].Rows[index].Delete();
 
-            }
-            adapter.Update(Singleton.getInstance.DataSet, "Authors");
+        //    }
+        //    adapter.Update(Singleton.getInstance.DataSet, "Authors");
 
-        }
+        //}
 
         public override void SaveChange()
         {

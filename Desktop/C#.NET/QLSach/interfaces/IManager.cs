@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace QLSach.interfaces
 {
-    public interface IManager
-    {
-        void Load();
-        void Add();
-        void Delete();
-        void Update();
-        void Rollback();
-        void SaveChange();
-    }
+    //public interface IManager
+    //{
+    //    void Load();
+    //    void Add();
+    //    void Delete();
+    //    void Update();
+    //    void Rollback(string tableName);
+    //    void SaveChange();
+    //}
 }

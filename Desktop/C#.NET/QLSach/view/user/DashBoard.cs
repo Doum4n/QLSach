@@ -23,6 +23,7 @@ namespace QLSach.view
         {
             Singleton.getInstance.State = new Node(new DashBoard());
             Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
+            pane.Controls.Add(Singleton.getInstance.Initilize.PaneRecent);
         }
 
         private void btn_newlyUpdate_Click(object sender, EventArgs e)

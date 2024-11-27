@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="view\admin\addBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="view\admin\addToCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -22,7 +19,13 @@
     <Compile Update="view\admin\BorrowRegisterManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\admin\GenreManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\admin\MainPaneCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\PublisherManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\admin\RegisterManager.cs">
@@ -46,7 +49,7 @@
     <Compile Update="view\user\BorrowedBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="view\user\components\items\book.cs">
+    <Compile Update="view\user\components\items\BookRecent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="view\user\components\items\BookMostPopular.cs">
@@ -66,6 +69,9 @@
     </Compile>
     <Compile Update="view\user\components\items\PaneRecent.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\user\components\items\ProgressForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\user\components\items\SearchPane.cs">
       <SubType>UserControl</SubType>

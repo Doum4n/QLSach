@@ -109,6 +109,8 @@
             // 
             // btn_pane_addUser
             // 
+            btn_pane_addUser.BorderColor = Color.FromArgb(245, 239, 230);
+            btn_pane_addUser.BorderThickness = 2;
             btn_pane_addUser.CustomizableEdges = customizableEdges1;
             btn_pane_addUser.DisabledState.BorderColor = Color.DarkGray;
             btn_pane_addUser.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -178,6 +180,8 @@
             // 
             // btn_save
             // 
+            btn_save.BorderColor = Color.FromArgb(245, 239, 230);
+            btn_save.BorderThickness = 2;
             btn_save.CustomizableEdges = customizableEdges9;
             btn_save.DisabledState.BorderColor = Color.DarkGray;
             btn_save.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -196,6 +200,8 @@
             // 
             // btn_cancel
             // 
+            btn_cancel.BorderColor = Color.FromArgb(245, 239, 230);
+            btn_cancel.BorderThickness = 2;
             btn_cancel.CustomizableEdges = customizableEdges11;
             btn_cancel.DisabledState.BorderColor = Color.DarkGray;
             btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -214,6 +220,8 @@
             // 
             // btn_delete
             // 
+            btn_delete.BorderColor = Color.FromArgb(245, 239, 230);
+            btn_delete.BorderThickness = 2;
             btn_delete.CustomizableEdges = customizableEdges13;
             btn_delete.DisabledState.BorderColor = Color.DarkGray;
             btn_delete.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -244,7 +252,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 29);
+            label1.Location = new Point(18, 21);
             label1.Name = "label1";
             label1.Size = new Size(32, 20);
             label1.TabIndex = 0;
@@ -253,7 +261,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(18, 85);
+            label2.Location = new Point(18, 96);
             label2.Name = "label2";
             label2.Size = new Size(97, 20);
             label2.TabIndex = 1;
@@ -270,14 +278,14 @@
             tb_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_name.Font = new Font("Segoe UI", 9F);
             tb_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_name.Location = new Point(56, 18);
+            tb_name.Location = new Point(18, 45);
             tb_name.Margin = new Padding(3, 4, 3, 4);
             tb_name.Name = "tb_name";
             tb_name.PasswordChar = '\0';
             tb_name.PlaceholderText = "";
             tb_name.SelectedText = "";
             tb_name.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            tb_name.Size = new Size(240, 40);
+            tb_name.Size = new Size(240, 44);
             tb_name.TabIndex = 2;
             // 
             // tb_username
@@ -291,14 +299,14 @@
             tb_username.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_username.Font = new Font("Segoe UI", 9F);
             tb_username.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_username.Location = new Point(121, 73);
+            tb_username.Location = new Point(18, 120);
             tb_username.Margin = new Padding(3, 4, 3, 4);
             tb_username.Name = "tb_username";
             tb_username.PasswordChar = '\0';
             tb_username.PlaceholderText = "";
             tb_username.SelectedText = "";
             tb_username.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            tb_username.Size = new Size(240, 40);
+            tb_username.Size = new Size(240, 44);
             tb_username.TabIndex = 3;
             // 
             // pane_add_user
@@ -331,7 +339,7 @@
             btn_add_user.FillColor = Color.FromArgb(106, 156, 137);
             btn_add_user.Font = new Font("Segoe UI", 9F);
             btn_add_user.ForeColor = Color.White;
-            btn_add_user.Location = new Point(531, 129);
+            btn_add_user.Location = new Point(628, 45);
             btn_add_user.Name = "btn_add_user";
             btn_add_user.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btn_add_user.Size = new Size(148, 45);
@@ -350,7 +358,7 @@
             tb_password.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_password.Font = new Font("Segoe UI", 9F);
             tb_password.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_password.Location = new Point(531, 18);
+            tb_password.Location = new Point(326, 45);
             tb_password.Margin = new Padding(3, 4, 3, 4);
             tb_password.Name = "tb_password";
             tb_password.PasswordChar = '\0';
@@ -363,7 +371,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(435, 29);
+            label4.Location = new Point(326, 21);
             label4.Name = "label4";
             label4.Size = new Size(70, 20);
             label4.TabIndex = 6;
@@ -380,7 +388,7 @@
             combobox_right.Font = new Font("Segoe UI", 10F);
             combobox_right.ForeColor = Color.FromArgb(68, 88, 112);
             combobox_right.ItemHeight = 30;
-            combobox_right.Location = new Point(531, 77);
+            combobox_right.Location = new Point(326, 122);
             combobox_right.Name = "combobox_right";
             combobox_right.ShadowDecoration.CustomizableEdges = customizableEdges26;
             combobox_right.Size = new Size(175, 36);
@@ -389,7 +397,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(474, 88);
+            label3.Location = new Point(326, 99);
             label3.Name = "label3";
             label3.Size = new Size(51, 20);
             label3.TabIndex = 4;
@@ -397,14 +405,17 @@
             // 
             // btn_delete_data
             // 
+            btn_delete_data.BackColor = Color.FromArgb(22, 66, 60);
+            btn_delete_data.BorderColor = Color.FromArgb(22, 66, 60);
+            btn_delete_data.BorderThickness = 2;
             btn_delete_data.CustomizableEdges = customizableEdges29;
             btn_delete_data.DisabledState.BorderColor = Color.DarkGray;
             btn_delete_data.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_delete_data.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_delete_data.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_delete_data.FillColor = Color.FromArgb(106, 156, 137);
+            btn_delete_data.FillColor = Color.FromArgb(245, 239, 230);
             btn_delete_data.Font = new Font("Segoe UI", 9F);
-            btn_delete_data.ForeColor = Color.White;
+            btn_delete_data.ForeColor = Color.FromArgb(22, 66, 60);
             btn_delete_data.Location = new Point(653, 6);
             btn_delete_data.Name = "btn_delete_data";
             btn_delete_data.ShadowDecoration.CustomizableEdges = customizableEdges30;
@@ -418,7 +429,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(22, 66, 60);
-            label5.Location = new Point(3, 4);
+            label5.Location = new Point(3, -1);
             label5.Name = "label5";
             label5.Size = new Size(341, 46);
             label5.TabIndex = 10;
@@ -437,6 +448,7 @@
             // 
             // guna2Panel4
             // 
+            guna2Panel4.BackColor = Color.FromArgb(117, 164, 127);
             guna2Panel4.Controls.Add(btn_delete);
             guna2Panel4.Controls.Add(btn_save);
             guna2Panel4.Controls.Add(btn_pane_addUser);

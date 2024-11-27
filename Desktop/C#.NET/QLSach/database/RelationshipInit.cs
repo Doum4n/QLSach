@@ -23,22 +23,6 @@ namespace QLSach.database
               .IsRequired();
             //
 
-            //modelBuilder.Entity<Photo>().Ignore(e => e.Book);
-
-            //Book
-            //modelBuilder.Entity<Book>()
-            //    .HasOne(e => e.photo)
-            //    .WithOne(e => e.Book)
-            //    .HasForeignKey<Photo>(e => e.book_id)
-            //    .IsRequired();
-
-            //from Book join Comment on comment.book_id = book.id
-            modelBuilder.Entity<Book>()
-               .HasMany(b => b.Comments)
-               .WithOne(c => c.book)
-               .HasForeignKey(c => c.BookId).OnDelete(DeleteBehavior.Cascade)
-               .IsRequired();
-
             //1 book belong to 1 genre, 1 genre have many books
             modelBuilder.Entity<Book>()
                 .HasOne(o => o.Genre)
@@ -46,25 +30,26 @@ namespace QLSach.database
                 .HasForeignKey(o => o.genre_id)
                 .IsRequired(); //not null
 
+            modelBuilder.Entity<Book>()
+              .HasOne(o => o.Publisher)
+              .WithOne(o => o.Book)
+              .HasForeignKey<Book>(o => o.publisher_id)
+              .IsRequired(); //not null
+
             //
 
-            //Book Interaction
+            //Feedback
             modelBuilder.Entity<Book>()
                 .HasMany(b => b.Users)
                 .WithMany(u => u.Books)
-                .UsingEntity<BookInteraction>();
+                .UsingEntity<Feedback>();
 
-            modelBuilder.Entity<BookInteraction>()
-               .HasOne(i => i.comment)
-               .WithOne(c => c.bookInteraction)
-               .HasForeignKey<BookInteraction>(b => b.CommentId).OnDelete(DeleteBehavior.Cascade);
             //
 
-            //Comment
-            modelBuilder.Entity<Comment>()
-                .HasOne(c => c.parent)
-                .WithMany(c => c.childrents)
-                .HasForeignKey(c => c.parent_id).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Book>()
+              .HasMany(b => b.Categories)
+              .WithMany(u => u.Books)
+              .UsingEntity<CategoryBook>();
 
             //Register
             modelBuilder.Entity<User>()

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using QLSach.component;
-using QLSach.Controller;
 using QLSach.database.models;
 using QLSach.database.query;
 using QLSach.ViewModel;
@@ -19,10 +18,8 @@ namespace QLSach.view.admin
 {
     public partial class MainPaneCategory : UserControl
     {
-        private BindingSource BindingSource = new BindingSource();
         private CategoryQuery CategoryQuery = new CategoryQuery();
         private int index = 0;
-        CategoryNavigation navigation = new CategoryNavigation();
 
         DataGridViewButtonColumn button = new DataGridViewButtonColumn();
 
@@ -57,7 +54,7 @@ namespace QLSach.view.admin
 
         private void CategoryMainPane_Load(object sender, EventArgs e)
         {
-            data.DataSource = viewModel.Category;
+            data.DataSource = viewModel.Categories;
             viewModel.Load();
             viewModel.AssignFillterList(combobox_fillter);
 
@@ -74,7 +71,7 @@ namespace QLSach.view.admin
                         tb_categoryName.Text = selectedRow.Cells["Name"].Value.ToString();
                         tb_books_amount.Text = selectedRow.Cells["BookCount"].Value.ToString();
 
-                        viewModel.addPrevRows(e.RowIndex, "Id");
+                        viewModel.addSelectedId(e.RowIndex, "Id");
 
                         pane_modify_category.Visible = true;
                         pane_add_category.Visible = false;
@@ -90,9 +87,7 @@ namespace QLSach.view.admin
                     var selectedRow = data.Rows[e.RowIndex];
                     if (data.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
                     {
-                        var dataTable = (DataTable)BindingSource.DataSource;
-
-                        viewModel.addPrevRows(e.RowIndex, "Id");
+                        viewModel.addSelectedId(e.RowIndex, "Id");
                     }
                 }
             };
@@ -115,43 +110,8 @@ namespace QLSach.view.admin
 
             tb_books_amount.Enabled = false;
 
-            Singleton.getInstance.CategoryManagerHelper.OnSave += OnSaveHandler;
-            Singleton.getInstance.CategoryManagerHelper.OnCancel += OnCancelHandler;
-            Singleton.getInstance.CategoryManagerHelper.OnModifyCategory += OnModifyCategoryHandler;
-            Singleton.getInstance.CategoryManagerHelper.OnAddCategory += OnAddCategoryHandler;
-            Singleton.getInstance.CategoryManagerHelper.OnDelete += OnDeleteHandler;
-
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
             combobox_fillter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
-        }
-
-        private void OnSaveHandler()
-        {
-            viewModel.SaveChange();
-        }
-
-        private void OnCancelHandler()
-        {
-            viewModel.Rollback();
-        }
-
-        private void OnModifyCategoryHandler()
-        {
-            pane_add_category.Visible = false;
-            pane_modify_category.Visible = true;
-        }
-
-        private void OnAddCategoryHandler()
-        {
-            pane_add_category.Visible = true;
-            pane_modify_category.Visible = false;
-        }
-
-        private void OnDeleteHandler()
-        {
-            isDeleted = !isDeleted;
-            checkbox.Visible = isDeleted;
-            button.Visible = !isDeleted;
         }
 
         private void tb_search_TextChanged(object sender, EventArgs e)
@@ -161,7 +121,30 @@ namespace QLSach.view.admin
 
         private void btn_delete_data_Click(object sender, EventArgs e)
         {
-            viewModel.Delete();
+            viewModel.Delete("Categories", "Id");
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            viewModel.SaveChange();
+        }
+
+        private void btn_addPaneAdd_Click(object sender, EventArgs e)
+        {
+            pane_add_category.Visible = true;
+            pane_modify_category.Visible = false;
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            isDeleted = !isDeleted;
+            checkbox.Visible = isDeleted;
+            button.Visible = !isDeleted;
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            viewModel.Rollback("Categories");
         }
     }
 }

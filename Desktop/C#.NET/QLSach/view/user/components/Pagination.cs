@@ -28,7 +28,7 @@ namespace QLSach.view.components
             tablePane.ColumnCount = colCount;
             tablePane.RowCount = rowCount;
         }
-        public void setData(book bookItem)
+        public void setData(BookRecent bookItem)
         {
             if (curCol == colCount)
             {
@@ -67,7 +67,7 @@ namespace QLSach.view.components
                 {
                     if (!books[i].Id.Equals(null))
                     {
-                        book book1 = new book(books[i].Id);
+                        BookRecent book1 = new BookRecent(books[i].Id);
                         setData(book1);
                     }
                 }
