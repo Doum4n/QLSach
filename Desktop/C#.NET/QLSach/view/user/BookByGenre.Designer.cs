@@ -1,6 +1,6 @@
 ﻿namespace QLSach.view
 {
-    partial class BookByGenre
+    partial class BookByFillter
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,7 +42,7 @@
             lb_index = new Label();
             btn_next_Click = new Guna.UI2.WinForms.Guna2Button();
             btn_last_Click = new Guna.UI2.WinForms.Guna2Button();
-            lb_genreName = new Label();
+            lb_Name = new Label();
             SuspendLayout();
             // 
             // tablePane_genre
@@ -142,26 +142,26 @@
             // 
             // lb_genreName
             // 
-            lb_genreName.AutoSize = true;
-            lb_genreName.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lb_genreName.Location = new Point(22, 13);
-            lb_genreName.Name = "lb_genreName";
-            lb_genreName.Size = new Size(76, 31);
-            lb_genreName.TabIndex = 14;
-            lb_genreName.Text = "label1";
+            lb_Name.AutoSize = true;
+            lb_Name.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_Name.Location = new Point(22, 13);
+            lb_Name.Name = "lb_genreName";
+            lb_Name.Size = new Size(76, 31);
+            lb_Name.TabIndex = 14;
+            lb_Name.Text = "label1";
             // 
             // BookByGenre
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lb_genreName);
+            Controls.Add(lb_Name);
             Controls.Add(lb_index);
             Controls.Add(btn_last_Click);
             Controls.Add(btn_next_Click);
             Controls.Add(btn_first);
             Controls.Add(btn_previous);
             Controls.Add(tablePane_genre);
-            Name = "BookByGenre";
+            base.Name = "BookByGenre";
             Size = new Size(872, 723);
             Load += BookByGenre_Load;
             ResumeLayout(false);
@@ -176,6 +176,6 @@
         private Label lb_index;
         private Guna.UI2.WinForms.Guna2Button btn_next_Click;
         private Guna.UI2.WinForms.Guna2Button btn_last_Click;
-        private Label lb_genreName;
+        private Label lb_Name;
     }
 }

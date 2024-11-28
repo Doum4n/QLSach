@@ -141,7 +141,7 @@
             btn_previous.FillColor = Color.FromArgb(67, 104, 80);
             btn_previous.Font = new Font("Segoe UI", 9F);
             btn_previous.ForeColor = Color.White;
-            btn_previous.Location = new Point(512, 835);
+            btn_previous.Location = new Point(503, 627);
             btn_previous.Name = "btn_previous";
             btn_previous.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_previous.Size = new Size(129, 40);
@@ -159,7 +159,7 @@
             btn_next.FillColor = Color.FromArgb(67, 104, 80);
             btn_next.Font = new Font("Segoe UI", 9F);
             btn_next.ForeColor = Color.White;
-            btn_next.Location = new Point(657, 835);
+            btn_next.Location = new Point(648, 627);
             btn_next.Name = "btn_next";
             btn_next.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btn_next.Size = new Size(129, 40);
@@ -177,7 +177,7 @@
             btn_first.FillColor = Color.FromArgb(67, 104, 80);
             btn_first.Font = new Font("Segoe UI", 9F);
             btn_first.ForeColor = Color.White;
-            btn_first.Location = new Point(362, 835);
+            btn_first.Location = new Point(353, 627);
             btn_first.Name = "btn_first";
             btn_first.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btn_first.Size = new Size(129, 40);
@@ -195,7 +195,7 @@
             btn_last.FillColor = Color.FromArgb(67, 104, 80);
             btn_last.Font = new Font("Segoe UI", 9F);
             btn_last.ForeColor = Color.White;
-            btn_last.Location = new Point(801, 835);
+            btn_last.Location = new Point(792, 627);
             btn_last.Name = "btn_last";
             btn_last.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btn_last.Size = new Size(129, 40);
@@ -228,7 +228,7 @@
             Controls.Add(guna2Button1);
             Controls.Add(tablePane_recentUpdate);
             Name = "recentUpdate";
-            Size = new Size(947, 892);
+            Size = new Size(947, 679);
             Load += recentUpdate_Load;
             VisibleChanged += recentUpdate_visible;
             ResumeLayout(false);

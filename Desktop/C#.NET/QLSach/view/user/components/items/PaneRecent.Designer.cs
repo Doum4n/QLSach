@@ -44,7 +44,7 @@
             more_newlyBook.FillColor = Color.FromArgb(67, 104, 80);
             more_newlyBook.Font = new Font("Segoe UI", 9F);
             more_newlyBook.ForeColor = Color.White;
-            more_newlyBook.Location = new Point(681, 16);
+            more_newlyBook.Location = new Point(689, 16);
             more_newlyBook.Margin = new Padding(3, 4, 3, 4);
             more_newlyBook.Name = "more_newlyBook";
             more_newlyBook.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -56,6 +56,7 @@
             // tbLayoutPanel
             // 
             tbLayoutPanel.AutoSize = true;
+            tbLayoutPanel.BackColor = Color.FromArgb(251, 250, 218);
             tbLayoutPanel.ColumnCount = 1;
             tbLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tbLayoutPanel.Location = new Point(13, 89);
@@ -70,11 +71,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.FromArgb(251, 250, 218);
+            BackColor = Color.White;
             Controls.Add(more_newlyBook);
             Controls.Add(tbLayoutPanel);
             Name = "PaneRecent";
-            Size = new Size(819, 306);
+            Size = new Size(834, 306);
             Load += PaneRecent_Load;
             ResumeLayout(false);
             PerformLayout();

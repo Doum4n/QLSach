@@ -48,14 +48,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainframe));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             tb_noftitication = new Guna.UI2.WinForms.Guna2Button();
             menuStrip1 = new MenuStrip();
@@ -71,22 +72,22 @@
             pane_category = new Guna.UI2.WinForms.Guna2Panel();
             btn_category = new Guna.UI2.WinForms.Guna2Button();
             pane_genre = new Guna.UI2.WinForms.Guna2Panel();
-            btn_book = new Guna.UI2.WinForms.Guna2Button();
+            btn_genre = new Guna.UI2.WinForms.Guna2Button();
             Pane_conten = new Guna.UI2.WinForms.Guna2Panel();
             lb_path = new Label();
             btn_undo = new Guna.UI2.WinForms.Guna2Button();
             btn_redo = new Guna.UI2.WinForms.Guna2Button();
             BottomToolStripPanel = new ToolStripPanel();
             TopToolStripPanel = new ToolStripPanel();
-            miniToolStrip = new MenuStrip();
             RightToolStripPanel = new ToolStripPanel();
             LeftToolStripPanel = new ToolStripPanel();
             ContentPanel = new ToolStripContentPanel();
-            guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             pane_nofitication = new Guna.UI2.WinForms.Guna2Panel();
+            miniToolStrip = new MenuStrip();
             guna2Panel3.SuspendLayout();
             menuStrip1.SuspendLayout();
             guna2Panel2.SuspendLayout();
+            Pane_conten.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel3
@@ -119,7 +120,7 @@
             tb_noftitication.Image = Properties.Resources.bell;
             tb_noftitication.ImageAlign = HorizontalAlignment.Right;
             tb_noftitication.ImeMode = ImeMode.Off;
-            tb_noftitication.Location = new Point(866, 11);
+            tb_noftitication.Location = new Point(869, 14);
             tb_noftitication.Name = "tb_noftitication";
             tb_noftitication.ShadowDecoration.CustomizableEdges = customizableEdges2;
             tb_noftitication.Size = new Size(41, 26);
@@ -132,7 +133,7 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
-            menuStrip1.Location = new Point(939, 11);
+            menuStrip1.Location = new Point(933, 14);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(68, 28);
             menuStrip1.TabIndex = 0;
@@ -148,21 +149,21 @@
             // menu_item_registered
             // 
             menu_item_registered.Name = "menu_item_registered";
-            menu_item_registered.Size = new Size(224, 26);
+            menu_item_registered.Size = new Size(200, 26);
             menu_item_registered.Text = "Sách đã đăng ký";
             menu_item_registered.Click += menu_item_registered_Click;
             // 
             // menu_item_borowed
             // 
             menu_item_borowed.Name = "menu_item_borowed";
-            menu_item_borowed.Size = new Size(224, 26);
+            menu_item_borowed.Size = new Size(200, 26);
             menu_item_borowed.Text = "Sách đã mượn";
             menu_item_borowed.Click += menu_item_borowed_Click;
             // 
             // lb_name
             // 
             lb_name.AutoSize = true;
-            lb_name.Location = new Point(1037, 17);
+            lb_name.Location = new Point(1017, 18);
             lb_name.Name = "lb_name";
             lb_name.Size = new Size(50, 20);
             lb_name.TabIndex = 3;
@@ -188,7 +189,7 @@
             guna2Button1.FillColor = Color.FromArgb(67, 104, 80);
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(571, 5);
+            guna2Button1.Location = new Point(513, 5);
             guna2Button1.Margin = new Padding(3, 4, 3, 4);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -216,7 +217,7 @@
             tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
             tb_search.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            tb_search.Size = new Size(355, 44);
+            tb_search.Size = new Size(298, 44);
             tb_search.TabIndex = 0;
             // 
             // guna2Panel2
@@ -226,7 +227,7 @@
             guna2Panel2.Controls.Add(pane_category);
             guna2Panel2.Controls.Add(btn_category);
             guna2Panel2.Controls.Add(pane_genre);
-            guna2Panel2.Controls.Add(btn_book);
+            guna2Panel2.Controls.Add(btn_genre);
             guna2Panel2.CustomizableEdges = customizableEdges19;
             guna2Panel2.Location = new Point(12, 89);
             guna2Panel2.Margin = new Padding(3, 4, 3, 4);
@@ -302,36 +303,37 @@
             pane_genre.TabIndex = 3;
             pane_genre.Visible = false;
             // 
-            // btn_book
+            // btn_genre
             // 
-            btn_book.BackColor = Color.FromArgb(106, 156, 137);
-            btn_book.CustomizableEdges = customizableEdges17;
-            btn_book.DisabledState.BorderColor = Color.DarkGray;
-            btn_book.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_book.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_book.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_book.Dock = DockStyle.Top;
-            btn_book.FillColor = Color.FromArgb(106, 156, 137);
-            btn_book.Font = new Font("Segoe UI", 9F);
-            btn_book.ForeColor = Color.White;
-            btn_book.Location = new Point(0, 0);
-            btn_book.Margin = new Padding(3, 4, 3, 4);
-            btn_book.Name = "btn_book";
-            btn_book.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btn_book.Size = new Size(184, 59);
-            btn_book.TabIndex = 0;
-            btn_book.Text = "Thể loại";
-            btn_book.Click += btn_book_Click;
+            btn_genre.BackColor = Color.FromArgb(106, 156, 137);
+            btn_genre.CustomizableEdges = customizableEdges17;
+            btn_genre.DisabledState.BorderColor = Color.DarkGray;
+            btn_genre.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn_genre.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn_genre.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_genre.Dock = DockStyle.Top;
+            btn_genre.FillColor = Color.FromArgb(106, 156, 137);
+            btn_genre.Font = new Font("Segoe UI", 9F);
+            btn_genre.ForeColor = Color.White;
+            btn_genre.Location = new Point(0, 0);
+            btn_genre.Margin = new Padding(3, 4, 3, 4);
+            btn_genre.Name = "btn_genre";
+            btn_genre.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btn_genre.Size = new Size(184, 59);
+            btn_genre.TabIndex = 0;
+            btn_genre.Text = "Thể loại";
+            btn_genre.Click += btn_genre_Click;
             // 
             // Pane_conten
             // 
             Pane_conten.AutoScroll = true;
-            Pane_conten.CustomizableEdges = customizableEdges21;
+            Pane_conten.Controls.Add(pane_nofitication);
+            Pane_conten.CustomizableEdges = customizableEdges23;
             Pane_conten.Location = new Point(219, 113);
             Pane_conten.Margin = new Padding(3, 4, 3, 4);
             Pane_conten.Name = "Pane_conten";
-            Pane_conten.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            Pane_conten.Size = new Size(931, 765);
+            Pane_conten.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            Pane_conten.Size = new Size(900, 765);
             Pane_conten.TabIndex = 3;
             Pane_conten.Paint += Pane_conten_Paint;
             // 
@@ -346,36 +348,38 @@
             // 
             // btn_undo
             // 
-            btn_undo.CustomizableEdges = customizableEdges23;
+            btn_undo.CustomizableEdges = customizableEdges25;
             btn_undo.DisabledState.BorderColor = Color.DarkGray;
             btn_undo.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_undo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_undo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_undo.FillColor = Color.FromArgb(193, 207, 161);
             btn_undo.Font = new Font("Segoe UI", 9F);
             btn_undo.ForeColor = Color.White;
-            btn_undo.Location = new Point(951, 71);
+            btn_undo.Image = (Image)resources.GetObject("btn_undo.Image");
+            btn_undo.Location = new Point(920, 71);
             btn_undo.Name = "btn_undo";
-            btn_undo.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btn_undo.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btn_undo.Size = new Size(92, 35);
             btn_undo.TabIndex = 7;
-            btn_undo.Text = "<=";
             btn_undo.Click += btn_undo_Click;
             // 
             // btn_redo
             // 
-            btn_redo.CustomizableEdges = customizableEdges25;
+            btn_redo.CustomizableEdges = customizableEdges27;
             btn_redo.DisabledState.BorderColor = Color.DarkGray;
             btn_redo.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_redo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_redo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_redo.FillColor = Color.FromArgb(193, 207, 161);
             btn_redo.Font = new Font("Segoe UI", 9F);
             btn_redo.ForeColor = Color.White;
-            btn_redo.Location = new Point(1058, 71);
+            btn_redo.Image = (Image)resources.GetObject("btn_redo.Image");
+            btn_redo.Location = new Point(1027, 71);
             btn_redo.Name = "btn_redo";
-            btn_redo.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btn_redo.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btn_redo.Size = new Size(92, 35);
             btn_redo.TabIndex = 8;
-            btn_redo.Text = "=>";
             btn_redo.Click += btn_redo_Click;
             // 
             // BottomToolStripPanel
@@ -393,18 +397,6 @@
             TopToolStripPanel.Orientation = Orientation.Horizontal;
             TopToolStripPanel.RowMargin = new Padding(4, 0, 0, 0);
             TopToolStripPanel.Size = new Size(0, 0);
-            // 
-            // miniToolStrip
-            // 
-            miniToolStrip.AccessibleName = "New item selection";
-            miniToolStrip.AccessibleRole = AccessibleRole.ComboBox;
-            miniToolStrip.AutoSize = false;
-            miniToolStrip.Dock = DockStyle.None;
-            miniToolStrip.ImageScalingSize = new Size(20, 20);
-            miniToolStrip.Location = new Point(6, 2);
-            miniToolStrip.Name = "miniToolStrip";
-            miniToolStrip.Size = new Size(188, 24);
-            miniToolStrip.TabIndex = 0;
             // 
             // RightToolStripPanel
             // 
@@ -426,11 +418,6 @@
             // 
             ContentPanel.Size = new Size(163, 219);
             // 
-            // guna2HtmlToolTip1
-            // 
-            guna2HtmlToolTip1.AllowLinksHandling = true;
-            guna2HtmlToolTip1.MaximumSize = new Size(0, 0);
-            // 
             // pane_nofitication
             // 
             pane_nofitication.AutoScroll = true;
@@ -438,21 +425,32 @@
             pane_nofitication.BackgroundImageLayout = ImageLayout.Stretch;
             pane_nofitication.BorderColor = Color.Black;
             pane_nofitication.BorderThickness = 2;
-            pane_nofitication.CustomizableEdges = customizableEdges27;
-            pane_nofitication.Location = new Point(887, 71);
+            pane_nofitication.CustomizableEdges = customizableEdges21;
+            pane_nofitication.Location = new Point(634, 3);
             pane_nofitication.MaximumSize = new Size(263, 300);
             pane_nofitication.Name = "pane_nofitication";
-            pane_nofitication.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            pane_nofitication.ShadowDecoration.CustomizableEdges = customizableEdges22;
             pane_nofitication.Size = new Size(263, 156);
             pane_nofitication.TabIndex = 0;
+            // 
+            // miniToolStrip
+            // 
+            miniToolStrip.AccessibleName = "New item selection";
+            miniToolStrip.AccessibleRole = AccessibleRole.ComboBox;
+            miniToolStrip.AutoSize = false;
+            miniToolStrip.Dock = DockStyle.None;
+            miniToolStrip.ImageScalingSize = new Size(20, 20);
+            miniToolStrip.Location = new Point(6, 2);
+            miniToolStrip.Name = "miniToolStrip";
+            miniToolStrip.Size = new Size(188, 24);
+            miniToolStrip.TabIndex = 0;
             // 
             // Mainframe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(233, 239, 236);
-            ClientSize = new Size(1162, 892);
-            Controls.Add(pane_nofitication);
+            ClientSize = new Size(1124, 892);
             Controls.Add(btn_redo);
             Controls.Add(btn_undo);
             Controls.Add(lb_path);
@@ -469,6 +467,8 @@
             menuStrip1.PerformLayout();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
+            Pane_conten.ResumeLayout(false);
+            Pane_conten.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -479,7 +479,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tb_search;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel pane_btnSach;
-        private Guna.UI2.WinForms.Guna2Button btn_book;
+        private Guna.UI2.WinForms.Guna2Button btn_genre;
         private Guna.UI2.WinForms.Guna2Panel Pane_conten;
         private Guna.UI2.WinForms.Guna2Button btn_look_up;
         private System.Windows.Forms.Label label1;
@@ -488,21 +488,20 @@
         private Guna.UI2.WinForms.Guna2Button btn_undo;
         private Guna.UI2.WinForms.Guna2Button btn_redo;
         private Label lb_name;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem menu_item_borowed;
-        private ToolStripMenuItem menu_item_registered;
         private ToolStripPanel BottomToolStripPanel;
         private ToolStripPanel TopToolStripPanel;
-        private MenuStrip miniToolStrip;
         private ToolStripPanel RightToolStripPanel;
         private ToolStripPanel LeftToolStripPanel;
         private ToolStripContentPanel ContentPanel;
         private Guna.UI2.WinForms.Guna2Button tb_noftitication;
-        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
         private Guna.UI2.WinForms.Guna2Panel pane_nofitication;
         private Guna.UI2.WinForms.Guna2Button btn_category;
         private Guna.UI2.WinForms.Guna2Panel pane_category;
         private Guna.UI2.WinForms.Guna2Panel pane_genre;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem menu_item_registered;
+        private ToolStripMenuItem menu_item_borowed;
+        private MenuStrip miniToolStrip;
     }
 }

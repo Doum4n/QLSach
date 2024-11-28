@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,17 +39,23 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox_Banner = new Guna.UI2.WinForms.Guna2PictureBox();
             btn_newlyUpdate = new Guna.UI2.WinForms.Guna2Button();
             btn_popula = new Guna.UI2.WinForms.Guna2Button();
             btn_mostView = new Guna.UI2.WinForms.Guna2Button();
             pane = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).BeginInit();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox_Banner
             // 
             pictureBox_Banner.CustomizableEdges = customizableEdges1;
+            pictureBox_Banner.Image = (Image)resources.GetObject("pictureBox_Banner.Image");
+            pictureBox_Banner.ImageLocation = "0,0";
             pictureBox_Banner.ImageRotate = 0F;
             pictureBox_Banner.Location = new Point(18, 21);
             pictureBox_Banner.Margin = new Padding(3, 4, 3, 4);
@@ -69,7 +76,7 @@
             btn_newlyUpdate.FillColor = Color.FromArgb(106, 156, 137);
             btn_newlyUpdate.Font = new Font("Segoe UI", 9F);
             btn_newlyUpdate.ForeColor = Color.White;
-            btn_newlyUpdate.Location = new Point(18, 340);
+            btn_newlyUpdate.Location = new Point(3, 4);
             btn_newlyUpdate.Margin = new Padding(3, 4, 3, 4);
             btn_newlyUpdate.Name = "btn_newlyUpdate";
             btn_newlyUpdate.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -88,7 +95,7 @@
             btn_popula.FillColor = Color.FromArgb(106, 156, 137);
             btn_popula.Font = new Font("Segoe UI", 9F);
             btn_popula.ForeColor = Color.White;
-            btn_popula.Location = new Point(219, 340);
+            btn_popula.Location = new Point(204, 4);
             btn_popula.Margin = new Padding(3, 4, 3, 4);
             btn_popula.Name = "btn_popula";
             btn_popula.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -107,7 +114,7 @@
             btn_mostView.FillColor = Color.FromArgb(106, 156, 137);
             btn_mostView.Font = new Font("Segoe UI", 9F);
             btn_mostView.ForeColor = Color.White;
-            btn_mostView.Location = new Point(419, 340);
+            btn_mostView.Location = new Point(404, 4);
             btn_mostView.Margin = new Padding(3, 4, 3, 4);
             btn_mostView.Name = "btn_mostView";
             btn_mostView.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -119,21 +126,34 @@
             // pane
             // 
             pane.AutoSize = true;
+            pane.CustomBorderThickness = new Padding(0, 3, 0, 0);
             pane.CustomizableEdges = customizableEdges9;
-            pane.Location = new Point(18, 412);
+            pane.Location = new Point(18, 416);
             pane.Name = "pane";
             pane.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            pane.Size = new Size(824, 240);
+            pane.Size = new Size(824, 236);
             pane.TabIndex = 14;
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.Controls.Add(btn_mostView);
+            guna2Panel1.Controls.Add(btn_newlyUpdate);
+            guna2Panel1.Controls.Add(btn_popula);
+            guna2Panel1.CustomBorderColor = Color.Green;
+            guna2Panel1.CustomBorderThickness = new Padding(0, 0, 0, 3);
+            guna2Panel1.CustomizableEdges = customizableEdges11;
+            guna2Panel1.Location = new Point(18, 327);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Panel1.Size = new Size(824, 69);
+            guna2Panel1.TabIndex = 0;
             // 
             // DashBoard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            Controls.Add(btn_mostView);
-            Controls.Add(btn_popula);
-            Controls.Add(btn_newlyUpdate);
+            Controls.Add(guna2Panel1);
             Controls.Add(pictureBox_Banner);
             Controls.Add(pane);
             Margin = new Padding(3, 4, 3, 4);
@@ -141,6 +161,7 @@
             Size = new Size(872, 675);
             Load += DashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox_Banner).EndInit();
+            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,5 +173,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_popula;
         private Guna.UI2.WinForms.Guna2Button btn_mostView;
         private Guna.UI2.WinForms.Guna2Panel pane;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

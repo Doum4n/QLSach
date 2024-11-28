@@ -2,6 +2,7 @@
 using QLSach.component;
 using QLSach.database;
 using QLSach.database.query;
+using QLSach.dbContext.models;
 using QLSach.view.user;
 using QLSach.view.user.components.items;
 using System.Data;
@@ -37,7 +38,7 @@ namespace QLSach.view
         }
 
 
-        private void btn_book_Click(object sender, EventArgs e)
+        private void btn_genre_Click(object sender, EventArgs e)
         {
             LoadDashBoard();
 
@@ -106,7 +107,7 @@ namespace QLSach.view
                 btn.Text = genre.Value;
                 btn.Dock = DockStyle.Top;
                 btn.FillColor = Color.Chocolate;
-                btn.Click += new EventHandler(onClick);
+                btn.Click += new EventHandler(onGenreActive);
                 btn.Name = genre.Key.ToString();
                 pane_genre.Controls.Add(btn);
             }
@@ -138,7 +139,9 @@ namespace QLSach.view
 
         private void onCategoryActive(object? sender, EventArgs e)
         {
-            
+            Guna.UI2.WinForms.Guna2Button btn = sender as Guna.UI2.WinForms.Guna2Button;
+            if (btn != null)
+                loadBookByCategory(int.Parse(btn.Name), btn.Text);
         }
 
         public string ExtractMessage(string input)
@@ -226,7 +229,7 @@ namespace QLSach.view
         }
 
 
-        private void onClick(object sender, EventArgs e)
+        private void onGenreActive(object sender, EventArgs e)
         {
             Guna.UI2.WinForms.Guna2Button btn = sender as Guna.UI2.WinForms.Guna2Button;
             if (btn != null)
@@ -235,13 +238,40 @@ namespace QLSach.view
 
         private void loadBookByGenre(int GenreId, string GenreName)
         {
-            BookByGenre bookByGenre = new BookByGenre();
-            bookByGenre.genreId = GenreId;
-            bookByGenre.genreName = GenreName;
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
-            Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
-               bookByGenre
-            );
+            using (Context context = new Context()) {
+                BookByFillter bookByGenre = new BookByFillter(context.Books.Where(o => o.genre_id == GenreId).ToList());
+                bookByGenre.Name = GenreName;
+                bookByGenre.Name = GenreName;
+                Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+                Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
+                   bookByGenre
+                );
+            }
+        }
+
+        // temp
+        private void loadBookByCategory(int CategoryId, string GenreName)
+        {
+            using (Context context = new Context())
+            {
+                List<Book> books = context.Books
+                    .Join(
+                        context.CategoriesBook,
+                        b => b.Id,                         
+                        cb => cb.BookId, 
+                        (b, cb) => new { Book = b, cb.CategoryId }
+                    )
+                    .Where(joined => joined.CategoryId == CategoryId)
+                    .Select(joined => joined.Book)
+                    .ToList();
+
+                BookByFillter bookByFillter = new BookByFillter(books);
+                bookByFillter.Name = GenreName;
+                Singleton.getInstance.MainFrameHelper.MainPane.Controls.Clear();
+                Singleton.getInstance.MainFrameHelper.MainPane.Controls.Add(
+                   bookByFillter
+                );
+            }
         }
 
         private void toggle()

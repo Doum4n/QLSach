@@ -50,7 +50,7 @@
             AutoSize = true;
             Controls.Add(tbLayoutPanel);
             Name = "PanePopular";
-            Size = new Size(771, 260);
+            Size = new Size(834, 260);
             Load += PanePopular_Load;
             ResumeLayout(false);
             PerformLayout();

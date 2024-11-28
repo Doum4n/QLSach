@@ -24,6 +24,8 @@ namespace QLSach.view
             Singleton.getInstance.State = new Node(new DashBoard());
             Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
             pane.Controls.Add(Singleton.getInstance.Initilize.PaneRecent);
+
+            pictureBox_Banner.Image = Image.FromFile("C:\\Users\\penso\\Desktop\\C#.NET\\QLSach\\resources\\images\\banner.png");
         }
 
         private void btn_newlyUpdate_Click(object sender, EventArgs e)

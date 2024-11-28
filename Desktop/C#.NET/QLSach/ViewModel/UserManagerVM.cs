@@ -18,6 +18,7 @@ namespace QLSach.ViewModel
         DataTable usersDataTable;
         MySqlDataAdapter adapter = new MySqlDataAdapter();
         MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
+
         public UserManagerVM(DataGridView data)
         {
             Users.DataSource = context.Users.ToDataTable();
@@ -78,9 +79,8 @@ namespace QLSach.ViewModel
 
         public void AddUser(string name, string password, string username, Role role)
         {
-            usersDataTable.AcceptChanges();
-
-            DataRow row = Singleton.getInstance.DataSet.Tables["Users"].NewRow();
+            DataTable dataTable = (DataTable)Users.DataSource;
+            DataRow row = dataTable.NewRow();
             row["Id"] = usersDataTable.Rows.Count + 1;
             row[1] = name;
             row[2] = password;
@@ -90,15 +90,18 @@ namespace QLSach.ViewModel
             row[6] = DateOnly.FromDateTime(DateTime.Now);
 
             Singleton.getInstance.DataSet.Tables["Users"].Rows.Add(row);
+            MessageBox.Show("Thêm tài khoản thành công");
+        }
 
-            User user = new User();
-                user.Name = name;
-                user.Password = password;
-                user.Role = role;
-                user.UserName = username;
-                context.Users.Add(user);
+        public void UpdateUser(string name, string username, Role role, int index)
+        {
+            DataRow row = Singleton.getInstance.DataSet.Tables["Users"].Rows[index];
+            row["Name"] = name;
+            row["UserName"] = username;
+            row["Role"] = role;
+            row["update_at"] = DateOnly.FromDateTime(DateTime.Now);
 
-            MessageBox.Show("Thêm bạn đọc thành công");
+            MessageBox.Show("Cập nhật thành tài khoản thành công công");
         }
 
         public override void Add()
@@ -109,6 +112,8 @@ namespace QLSach.ViewModel
         public override void Load()
         {
             base.binding = Users;
+
+            data.Columns["Password"].Visible = false;
         }
 
         public override void Update()
@@ -118,7 +123,7 @@ namespace QLSach.ViewModel
 
         public override void SaveChange()
         {
-            //adapter.Update(Singleton.getInstance.DataSet, "Users");
+            adapter.Update(Singleton.getInstance.DataSet, "Users");
             usersDataTable.AcceptChanges();
             context.SaveChanges();
         }

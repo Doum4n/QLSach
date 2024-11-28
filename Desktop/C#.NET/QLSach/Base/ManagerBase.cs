@@ -31,18 +31,24 @@ namespace QLSach.Base
         public abstract void Add();
         public virtual void Delete(string tableName, string idColumn)
         {
+            List<DataRow> toDelete = new List<DataRow>();
+
             foreach (int id in seletedId)
             {
                 foreach (DataRow row in Singleton.getInstance.DataSet.Tables[tableName].Rows)
                 {
                     if (row.RowState != DataRowState.Deleted && Convert.ToInt32(row[idColumn]) == id)
                     {
-                        row.Delete();
+                        toDelete.Add(row);
                     }
                 }
             }
-        }
 
+            foreach (DataRow dr in toDelete)
+            {
+                dr.Delete();
+            }
+        }
 
         public abstract void Load();
 
@@ -102,6 +108,9 @@ namespace QLSach.Base
             }
         }
 
+        // Sử dụng trong chức năng thêm sách cho danh mục
+        // lưu trạng thái của checkbox
+        // Phục vụ mục đích tìm kiếm
         public virtual void SaveCheckboxStates(DataGridViewCheckBoxColumn checkbox, List<int> EntitiesId)
         {
             CheckboxState.Clear();
@@ -124,7 +133,7 @@ namespace QLSach.Base
             }
         }
 
-
+        // Phục hồi trạng thái của checkbox khi tìm kiếm
         public virtual void RestoreCheckboxStates(DataGridViewCheckBoxColumn checkbox)
         {
             for (int i = 0; i < binding.Count; i++)

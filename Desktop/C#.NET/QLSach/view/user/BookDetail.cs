@@ -27,7 +27,7 @@ namespace QLSach.view
             {
                 //ImageQuery imageQuery = new ImageQuery();
                 book = query.getBook(id);
-                Name.Text = book?.name;
+                NameBook.Text = book?.name;
                 author.Text = query.getBookAuthor(book.Id);
                 genre.Text = query.getBookGenre(book.Id);
                 publication_year.Text = book.public_at.ToString();

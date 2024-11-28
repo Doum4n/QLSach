@@ -49,6 +49,9 @@
     <Compile Update="view\user\BorrowedBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\user\components\BookByCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\user\components\items\BookRecent.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -18,7 +18,6 @@ namespace QLSach.ViewModel
         DataTable booksDataTable;
         MySqlDataAdapter adapter;
         private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
-
         public BookManagerVM(DataGridView data)
         {
             connection.Open();
@@ -202,12 +201,38 @@ namespace QLSach.ViewModel
         //}
         public override void SaveChange()
         {
-            //booksDataTable.AcceptChanges();
-            adapter.Update(Singleton.getInstance.DataSet, "Books");
-            MessageBox.Show("Cập nhật sách thành công");
-            //booksDataTable.AcceptChanges();
-            prevDataRow.Clear();
-            seletedId.Clear();
+            try
+            {
+                //booksDataTable.AcceptChanges();
+                adapter.Update(Singleton.getInstance.DataSet, "Books");
+                MessageBox.Show("Cập nhật sách thành công");
+                booksDataTable.AcceptChanges();
+                //adapter.Fill(Singleton.getInstance.DataSet.Tables["Books"]);
+                prevDataRow.Clear();
+                seletedId.Clear();
+            }catch(DBConcurrencyException e)
+            {
+                DialogResult result = MessageBox.Show("Dữ liệu đã bị thay đổi bởi người khác. Bạn có muốn tải lại dữ liệu?", "Cảnh báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Làm sạch dữ liệu cũ trong DataTable
+                        Singleton.getInstance.DataSet.Tables["Books"].Clear();
+
+                        // Tải lại dữ liệu từ cơ sở dữ liệu
+                        adapter.Fill(Singleton.getInstance.DataSet.Tables["Books"]);
+
+                        MessageBox.Show("Dữ liệu đã được làm mới.");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Xử lý nếu có lỗi xảy ra
+                        MessageBox.Show($"Lỗi khi tải lại dữ liệu: {ex.Message}");
+                    }
+                }
+
+            }
         }
     }
 }

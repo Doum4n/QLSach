@@ -56,7 +56,7 @@ namespace QLSach.database
             Faker faker = new Faker();
             int fake_quantity = faker.Random.Byte(0, 10);
             var fakeBook = new Faker<Book>()
-                .RuleFor(o => o.name, f => f.Lorem.Text())
+                .RuleFor(o => o.name, f => f.Lorem.Word())
                 .RuleFor(o => o.Id, f => BookId++)
                 .RuleFor(o => o.description, f => f.Lorem.Paragraph())
                 .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
@@ -64,7 +64,7 @@ namespace QLSach.database
                 .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
                 .RuleFor(o => o.publisher_id, f => f.PickRandom(publisher.Select(o => o.Id)))
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
-                .RuleFor(o => o.public_at, f => f.Date.BetweenDateOnly(DateOnly.Parse("1999-01-01"), DateOnly.FromDateTime(DateTime.Now)))
+                .RuleFor(o => o.public_at, f => f.Date.BetweenDateOnly(DateOnly.Parse("1999-01-01"),DateOnly.FromDateTime(DateTime.Now)))
                 .RuleFor(o => o.updated_at, f => DateTime.Now)
                 .RuleFor(o => o.genre_id, f => f.PickRandom(genres.Select(o => o.id)));
 

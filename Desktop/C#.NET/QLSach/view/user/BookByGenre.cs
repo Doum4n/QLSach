@@ -1,18 +1,20 @@
 ﻿using QLSach.component;
 using QLSach.database.query;
+using QLSach.dbContext.models;
 using QLSach.view.components;
 
 namespace QLSach.view
 {
-    public partial class BookByGenre : UserControl
+    public partial class BookByFillter : UserControl
     {
         private Pagination pagination;
         private BookQuery query = new BookQuery();
-        public int genreId { get; set; }
-        public string genreName { get; set; }
-        public BookByGenre()
+        public string Name { get; set; }
+        private List<Book> list;
+        public BookByFillter(List<Book> list)
         {
             InitializeComponent();
+            this.list = list;
         }
 
         private void btn_first_Click(object sender, EventArgs e)
@@ -45,11 +47,11 @@ namespace QLSach.view
             tablePane_genre.ColumnCount = 0;
 
             lb_index.Text = 1.ToString();
-            lb_genreName.Text = genreName;
+            lb_Name.Text = Name;
             Singleton.getInstance.State = new(this);
             Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
             pagination = new Pagination(tablePane_genre, 1, 4, 8);
-            pagination.books = query.getBooksByGenre(this.genreId);
+            pagination.books = list;
             pagination.LoadData();
         }
     }

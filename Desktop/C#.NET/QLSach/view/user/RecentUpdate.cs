@@ -45,9 +45,6 @@ namespace QLSach.view
 
         private void recentUpdate_Load(object sender, EventArgs e)
         {
-            //Singleton.getInstance.State = new(new recentUpdate());
-            //Singleton.getInstance.MainFrameHelper.Node.AddChild(Singleton.getInstance.State);
-
             pagination = new(tablePane_recentUpdate, 1, 4, 8);
             pagination.books = BookQuery.getRecentUpdateBooks();
             pagination.LoadData();
