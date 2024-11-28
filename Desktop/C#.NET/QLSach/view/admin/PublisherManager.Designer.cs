@@ -54,6 +54,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
             btn_save = new Guna.UI2.WinForms.Guna2Button();
             btn_cancel = new Guna.UI2.WinForms.Guna2Button();
@@ -70,11 +72,13 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btn_delete_data = new Guna.UI2.WinForms.Guna2Button();
             data = new DataGridView();
+            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3.SuspendLayout();
             pane_add.SuspendLayout();
             guna2Panel2.SuspendLayout();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
+            guna2Panel4.SuspendLayout();
             SuspendLayout();
             // 
             // btn_delete
@@ -317,7 +321,7 @@
             btn_delete_data.FillColor = Color.FromArgb(251, 250, 218);
             btn_delete_data.Font = new Font("Segoe UI", 9F);
             btn_delete_data.ForeColor = Color.FromArgb(18, 55, 42);
-            btn_delete_data.Location = new Point(20, 628);
+            btn_delete_data.Location = new Point(560, 349);
             btn_delete_data.Name = "btn_delete_data";
             btn_delete_data.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btn_delete_data.Size = new Size(141, 50);
@@ -329,25 +333,36 @@
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(20, 283);
+            data.Location = new Point(9, 15);
             data.Name = "data";
             data.RowHeadersWidth = 51;
             data.Size = new Size(692, 329);
             data.TabIndex = 30;
+            // 
+            // guna2Panel4
+            // 
+            guna2Panel4.Controls.Add(data);
+            guna2Panel4.Controls.Add(btn_delete_data);
+            guna2Panel4.CustomizableEdges = customizableEdges27;
+            guna2Panel4.Dock = DockStyle.Top;
+            guna2Panel4.Location = new Point(0, 263);
+            guna2Panel4.Name = "guna2Panel4";
+            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2Panel4.Size = new Size(731, 402);
+            guna2Panel4.TabIndex = 36;
             // 
             // PublisherManager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 239, 230);
+            Controls.Add(guna2Panel4);
             Controls.Add(guna2Panel3);
             Controls.Add(pane_add);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
-            Controls.Add(btn_delete_data);
-            Controls.Add(data);
             Name = "PublisherManager";
-            Size = new Size(731, 703);
+            Size = new Size(731, 671);
             Load += PublisherManager_Load;
             guna2Panel3.ResumeLayout(false);
             pane_add.ResumeLayout(false);
@@ -356,6 +371,7 @@
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
+            guna2Panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -377,5 +393,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btn_delete_data;
         private DataGridView data;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
     }
 }

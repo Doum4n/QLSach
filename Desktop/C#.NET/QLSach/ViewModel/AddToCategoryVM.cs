@@ -26,15 +26,11 @@ namespace QLSach.ViewModel
         private BindingSource _bookCategory = new BindingSource();
         private string _categoryName;
         DataTable booksDataTable;
-        private MySqlDataAdapter adapter = new MySqlDataAdapter();
-        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
 
         DataGridViewCheckBoxColumn checkbox = new DataGridViewCheckBoxColumn();
 
-        public AddToCategoryVM(DataGridView data)
+        public AddToCategoryVM(DataGridView data) : base(data)
         {
-            connection.Open();
-
             booksDataTable = (DataTable)BookCategory.DataSource;
 
             using (var context = new Context())
@@ -43,12 +39,7 @@ namespace QLSach.ViewModel
                 base.data = data;
             }
 
-            Configuration();
-        }
-        private void Configuration()
-        {
-            adapter = new MySqlDataAdapter("SELECT * FROM Categories", connection);
-            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            configuration("SELECT * FROM Categories");
         }
 
         public BindingSource BookCategory
@@ -104,11 +95,6 @@ namespace QLSach.ViewModel
             
         }
 
-        public override void Add()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Load()
         {
             base.binding = BookCategory;
@@ -119,26 +105,6 @@ namespace QLSach.ViewModel
 
             data.Columns.Add(checkbox);
         }
-
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        //public override void Delete()
-        //{
-        //    booksDataTable.AcceptChanges();
-
-        //    foreach (int index in prevDataRow.Keys)
-        //    {
-        //        Singleton.getInstance.DataSet.Tables["Books"].Rows[index].Delete();
-
-        //    }
-        //    adapter.Update(Singleton.getInstance.DataSet, "Books");
-
-        //    MessageBox.Show("Xóa sách thành công");
-        //}
-
         public void Ondeletehandler(int id)
         {
             using (var context = new Context())

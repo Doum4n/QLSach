@@ -20,14 +20,10 @@ namespace QLSach.ViewModel
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         DataTable genresDataTable;
-        MySqlDataAdapter adapter = new MySqlDataAdapter();
-        private Context context = new Context();
         private BindingSource _genres = new BindingSource();
-        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
 
-        public GenreManagerVM(DataGridView data)
+        public GenreManagerVM(DataGridView data) : base(data)
         {
-            base.data = data;
             Genres.DataSource = context.Genre.ToDataTable();
 
             genresDataTable = (DataTable)Genres.DataSource;
@@ -35,44 +31,14 @@ namespace QLSach.ViewModel
 
             genresDataTable.TableName = "Genres";
             Singleton.getInstance.DataSet.Tables.Add(genresDataTable);
-            connection.Open();
-            configuration();
+            configuration("SELECT * FROM Genres");
         }
 
-        private void configuration()
-        {
-            adapter = new MySqlDataAdapter("SELECT * FROM Genres", connection);
-            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-        }
 
         public BindingSource Genres
         {
             get => _genres;
             set { _genres = value; OnPropertyChanged(); }
-        }
-
-        public string SearchText
-        {
-            get => _searchText;
-            set
-            {
-                _searchText = value;
-                OnPropertyChanged();
-                base.Search();
-            }
-        }
-
-        public string SelectedFilter
-        {
-            get => _selectedFilter;
-            set
-            {
-                if (_selectedFilter != value)
-                {
-                    _selectedFilter = value;
-                    OnPropertyChanged();
-                }
-            }
         }
 
         public void addGenre(string genreName)
@@ -92,20 +58,11 @@ namespace QLSach.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public override void Add()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Load()
         {
             base.binding = Genres;
         }
 
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
 
         public override void SaveChange()
         {

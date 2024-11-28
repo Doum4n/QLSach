@@ -16,18 +16,15 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace QLSach.ViewModel
 {
-    public class PublisherManagerVM : ManagerBase, INotifyPropertyChanged
+    public class PublisherManagerVM : ManagerBase
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
         DataTable publisherDataTable;
-        MySqlDataAdapter adapter = new MySqlDataAdapter();
-        private Context context = new Context();
-        private BindingSource _genres = new BindingSource();
-        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
 
-        public PublisherManagerVM(DataGridView data)
+        private BindingSource _genres = new BindingSource();
+
+        public PublisherManagerVM(DataGridView data) : base(data)
         {
-            base.data = data;
+
             Publishers.DataSource = context.Publisher.Select(o => new { o.Id, o.Name }) .ToDataTable();
 
             publisherDataTable = (DataTable)Publishers.DataSource;
@@ -38,44 +35,13 @@ namespace QLSach.ViewModel
                 publisherDataTable.TableName = "Publishers";
                 Singleton.getInstance.DataSet.Tables.Add(publisherDataTable);
             }
-            connection.Open();
-            configuration();
-        }
-
-        private void configuration()
-        {
-            adapter = new MySqlDataAdapter("SELECT * FROM Publishers", connection);
-            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            configuration("select * from Publishers");
         }
 
         public BindingSource Publishers
         {
             get => _genres;
             set { _genres = value; OnPropertyChanged(); }
-        }
-
-        public string SearchText
-        {
-            get => _searchText;
-            set
-            {
-                _searchText = value;
-                OnPropertyChanged();
-                base.Search();
-            }
-        }
-
-        public string SelectedFilter
-        {
-            get => _selectedFilter;
-            set
-            {
-                if (_selectedFilter != value)
-                {
-                    _selectedFilter = value;
-                    OnPropertyChanged();
-                }
-            }
         }
 
         public void addPublisher(string genreName)
@@ -90,31 +56,16 @@ namespace QLSach.ViewModel
             MessageBox.Show("Thêm nhà cung cấp thành công!");
         }
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public override void Add()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void Load()
         {
             base.binding = Publishers;
-        }
-
-        public override void Update()
-        {
-            throw new NotImplementedException();
         }
 
         public override void SaveChange()
         {
             adapter.Update(Singleton.getInstance.DataSet, "Publishers");
             publisherDataTable.AcceptChanges();
-            MessageBox.Show("Cập nhật thành công");
+            MessageBox.Show("Cập nhật thành công", "");
         }
     }
 }

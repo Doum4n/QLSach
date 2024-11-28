@@ -88,6 +88,9 @@
     <Compile Update="view\Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\user\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\user\LookupPane.cs">
       <SubType>UserControl</SubType>
     </Compile>

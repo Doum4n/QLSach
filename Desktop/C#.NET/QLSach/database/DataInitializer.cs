@@ -42,6 +42,13 @@ namespace QLSach.database
 
             var category = fakeCategory.Generate(5);
 
+            //Storage Location
+            var fakeStorageLocationId = new Faker<StorageLocation>()
+                .RuleFor(o => o.Name, f => $"{f.Random.String(1, 'A', 'Z')}{f.Random.Number(1, 9)}")
+                .RuleFor(o => o.Description, f => f.Lorem.Sentence(20));
+
+            var storageLocations = fakeStorageLocationId.Generate(5);
+
             var PublisherId = 1;
             var fakePublisher = new Faker<Publisher>()
                 .RuleFor(o => o.Name, f => f.Lorem.Word())
@@ -62,6 +69,7 @@ namespace QLSach.database
                 .RuleFor(o => o.remaining, f => f.Random.Byte(0, 5))
                 .RuleFor(o => o.photoPath, f => imagePath)
                 .RuleFor(o => o.quantity, f => f.Random.Byte(5, 10))
+                .RuleFor(o => o.storage_location, f => f.PickRandom(storageLocations.Select(o => o.Name)))
                 .RuleFor(o => o.publisher_id, f => f.PickRandom(publisher.Select(o => o.Id)))
                 .RuleFor(o => o.author_id, f => f.PickRandom(authors.Select(o => o.Id)))
                 .RuleFor(o => o.public_at, f => f.Date.BetweenDateOnly(DateOnly.Parse("1999-01-01"),DateOnly.FromDateTime(DateTime.Now)))
@@ -70,22 +78,14 @@ namespace QLSach.database
 
             var books = fakeBook.Generate(38);
 
-            //Image
-            var photoId = 1;
-            //var fakePath = "fake path";
-            //var fakeImage = new Faker<Photo>()
-            //    .RuleFor(o => o.Id, f => photoId++)
-            //    .RuleFor(o => o.path, f => imagePath)
-            //    .RuleFor(o => o.book_id, f => f.PickRandom(books.Select(o => o.Id)));
-
-            //var images = fakeImage.Generate(16);
-
             //User
             var user_id = 1;
             var fakeUser = new Faker<models.User>()
                 .RuleFor(o => o.Id, f => user_id++)
                 .RuleFor(o => o.Password, f => f.Lorem.Word())
                 .RuleFor(o => o.Name, f => f.Name.FullName())
+                .RuleFor(o => o.Gender, f => f.PickRandom(new[] { "Male", "Female", "Other" }))
+                .RuleFor(o => o.Age, f => f.Random.Int(18, 60))
                 .RuleFor(o => o.Role, f => f.PickRandom<Role>())
                 .RuleFor(o => o.UserName, f => f.Name.FirstName());
 
@@ -137,6 +137,7 @@ namespace QLSach.database
             modelBuilder.Entity<Category>().HasData(category);
             modelBuilder.Entity<CategoryBook>().HasData(categoryBook);
             modelBuilder.Entity<Publisher>().HasData(publisher);
+            modelBuilder.Entity<StorageLocation>().HasData(storageLocations);
         }
     }
 }

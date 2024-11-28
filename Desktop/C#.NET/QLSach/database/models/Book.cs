@@ -36,6 +36,8 @@ namespace QLSach.dbContext.models
         [DefaultValue(0)]
         [Column(TypeName = "float")]
         public float rating { get; set; }
+        [Column(TypeName = "nvarchar(40)")]
+        public string storage_location { get; set; }
         [Column(TypeName = "date")]
         public DateOnly public_at { get; set; }
         [DefaultValue(0)]
@@ -80,5 +82,8 @@ namespace QLSach.dbContext.models
         [Browsable(false)]
         public List<Category> Categories { get; set; }
         public Publisher Publisher { get; set; }
+        [NotMapped]
+        [Browsable(false)]
+        public StorageLocation storageLocation { get; set; }
     }
 }

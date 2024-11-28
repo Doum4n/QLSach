@@ -29,6 +29,12 @@ namespace QLSach.database.models
         [Column(TypeName = "nvarchar(100)")]
         public string UserName { get; set; }
         [Required]
+        [Column(TypeName = "int")]
+        public int Age { get; set; }
+        [Required]
+        [Column(TypeName = "varchar(10)")]
+        public string Gender { get; set; }
+        [Required]
         public Role Role { get; set; }
         [Required]
         [Column(TypeName = "date")]

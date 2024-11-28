@@ -70,6 +70,12 @@ namespace QLSach.database
             modelBuilder.Entity<User>()
                 .Property(o => o.Role)
                 .HasConversion<String>();
+
+            //StorageLocation
+            modelBuilder.Entity<StorageLocation>()
+                .HasMany(o => o.Books)
+                .WithOne(o => o.storageLocation)
+                .HasForeignKey(o => o.storage_location);
         }
     }
 }

@@ -124,6 +124,7 @@ namespace QLSach.view.admin
                 combobox_genre_name.SelectedValue = Convert.ToInt32(tb_genre_id.Text);
                 cbb_author_name.SelectedValue = Convert.ToInt32(tb_author_id.Text);
                 cbb_publisher.SelectedValue = Convert.ToInt32(tb_publisher_id.Text);
+                cbb_storageLocation.SelectedItem = selectedRow.Cells["storage_location"].Value.ToString();
                 datePicker.Value = DateTime.Parse(public_at.ToString());
             }
         }
@@ -159,6 +160,10 @@ namespace QLSach.view.admin
                     tb_publisher_id.Text = cbb_publisher.SelectedValue.ToString();
                 };
 
+                cbb_storageLocation.DataSource = context.StorageLocations.Select(o => o.Name).ToList();
+                //cbb_storageLocation.ValueMember = "Name";
+                //cbb_storageLocation.DisplayMember = "Name";
+
                 btn_deleteData.Visible = isDelete;
 
                 checkbox.HeaderText = "Xóa";
@@ -186,6 +191,7 @@ namespace QLSach.view.admin
             book.public_at = DateOnly.FromDateTime(datePicker.Value);
             book.genre_id = Convert.ToInt32(combobox_genre_name.SelectedValue);
             book.publisher_id = Convert.ToInt32(cbb_publisher.SelectedValue);
+            book.storage_location = cbb_storageLocation.Text;
             try
             {
                 byte quantity = byte.Parse(tb_quantity.Text);
@@ -225,6 +231,7 @@ namespace QLSach.view.admin
                 book.quantity = byte.Parse(tb_quantity.Text);
                 book.remaining = byte.Parse(tb_remaining.Text);
                 book.photoPath = filePath;
+                book.storage_location = cbb_storageLocation.Text;
 
                 viewModel.UpdateBook(book, index);
 

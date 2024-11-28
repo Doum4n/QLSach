@@ -14,14 +14,9 @@ namespace QLSach.ViewModel
     {
         private BindingSource _books = new BindingSource();
 
-        private Book _selectedBook;
         DataTable booksDataTable;
-        MySqlDataAdapter adapter;
-        private MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
-        public BookManagerVM(DataGridView data)
+        public BookManagerVM(DataGridView data) : base(data)
         {
-            connection.Open();
-            base.data = data;
             using (Context context = new Context())
             {
                 Books.DataSource = context.Books
@@ -39,6 +34,7 @@ namespace QLSach.ViewModel
                        AuthorName = o.author.name,
                        GenreName = o.Genre.name,
                        PublisherName = o.Publisher.Name,
+                       o.storage_location,
                        o.photoPath,
                        o.quantity,
                        o.remaining,
@@ -53,50 +49,13 @@ namespace QLSach.ViewModel
             booksDataTable.TableName = "Books";
             Singleton.getInstance.DataSet.Tables.Add(booksDataTable);
 
-            configuration();
-        }
-
-        private void configuration()
-        {
-            adapter = new MySqlDataAdapter("SELECT * FROM Books", connection);
-            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            configuration("SELECT * FROM Books");
         }
 
         public BindingSource Books
         {
             get => _books;
             set { _books = value; OnPropertyChanged(); }
-        }
-
-        public string SearchText
-        {
-            get => _searchText;
-            set
-            {
-                _searchText = value;
-                OnPropertyChanged();
-                base.Search();
-            }
-        }
-
-        public string SelectedFilter
-        {
-            get => _selectedFilter;
-            set
-            {
-                if (_selectedFilter != value)
-                {
-                    _selectedFilter = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        // Sự kiện PropertyChanged để thông báo View cập nhật
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public void AddBook(Book book)
@@ -124,6 +83,7 @@ namespace QLSach.ViewModel
             row["updated_at"] = book.updated_at;
             row["status"] = book.status;
             row["photoPath"] = book.photoPath;
+            row["storage_location"] = book.storage_location;
 
             Singleton.getInstance.DataSet.Tables["Books"].Rows.Add(row);
 
@@ -147,13 +107,9 @@ namespace QLSach.ViewModel
             row["updated_at"] = book.updated_at;
             row["status"] = book.status;
             row["photoPath"] = book.photoPath;
+            row["storage_location"] = book.storage_location;
 
             MessageBox.Show("Cập nhật sách thành công");
-        }
-
-        public override void Add()
-        {
-            throw new NotImplementedException();
         }
 
         public override void Load()
@@ -174,6 +130,7 @@ namespace QLSach.ViewModel
             data.Columns["created_at"].HeaderText = "Ngày nhập";
             data.Columns["updated_at"].HeaderText = "Ngày cập nhật";
             data.Columns["PublisherName"].HeaderText = "Tên nhà xuất bản";
+            data.Columns["storage_location"].HeaderText = "Vị trí";
 
             data.Columns["genre_id"].Visible = false;
             data.Columns["author_id"].Visible = false;
@@ -185,20 +142,6 @@ namespace QLSach.ViewModel
             data.AllowUserToDeleteRows = false;
         }
 
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        //public override void Delete()
-        //{
-        //    foreach (int index in prevDataRow.Keys)
-        //    {
-        //        Singleton.getInstance.DataSet.Tables["Books"].Rows[index].Delete();
-
-        //    }
-        //    MessageBox.Show("Xóa sách thành công");
-        //}
         public override void SaveChange()
         {
             try

@@ -100,7 +100,6 @@ namespace QLSach.view
                 }
             };
 
-            lb_name.Text = Singleton.getInstance.Username;
             foreach (var genre in query.getGenre_name_id())
             {
                 Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
@@ -238,7 +237,8 @@ namespace QLSach.view
 
         private void loadBookByGenre(int GenreId, string GenreName)
         {
-            using (Context context = new Context()) {
+            using (Context context = new Context())
+            {
                 BookByFillter bookByGenre = new BookByFillter(context.Books.Where(o => o.genre_id == GenreId).ToList());
                 bookByGenre.Name = GenreName;
                 bookByGenre.Name = GenreName;
@@ -257,8 +257,8 @@ namespace QLSach.view
                 List<Book> books = context.Books
                     .Join(
                         context.CategoriesBook,
-                        b => b.Id,                         
-                        cb => cb.BookId, 
+                        b => b.Id,
+                        cb => cb.BookId,
                         (b, cb) => new { Book = b, cb.CategoryId }
                     )
                     .Where(joined => joined.CategoryId == CategoryId)
@@ -330,7 +330,7 @@ namespace QLSach.view
 
         private void btn_look_up_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void Pane_conten_Paint(object sender, PaintEventArgs e)
@@ -354,6 +354,12 @@ namespace QLSach.view
         {
             isCategory = !isCategory;
             pane_category.Visible = isCategory;
+        }
+
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+            UserProfile userProfile = new UserProfile();
+            userProfile.ShowDialog();
         }
     }
 }

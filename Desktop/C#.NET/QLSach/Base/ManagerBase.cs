@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using TheArtOfDevHtmlRenderer.Adapters;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 
 namespace QLSach.Base
 {
-    public abstract class ManagerBase
+    public abstract class ManagerBase : INotifyPropertyChanged
     {
         protected Dictionary<int, DataRow> prevDataRow = new Dictionary<int, DataRow>();
         protected List<int> seletedIndex = new List<int>();
@@ -28,7 +30,48 @@ namespace QLSach.Base
         protected string _searchText;
         protected string _selectedFilter;
 
-        public abstract void Add();
+        protected MySqlDataAdapter adapter = new MySqlDataAdapter();
+        protected Context context = new Context();
+        protected MySqlConnection connection = new MySqlConnection(Singleton.getInstance.connectionString);
+
+        // Sự kiện khi một thuộc tính đăng ký thay đổi
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected ManagerBase(DataGridView data)
+        {
+            this.data = data;
+            connection.Open();
+        }
+
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged();
+                Search();
+            }
+        }
+
+        public string SelectedFilter
+        {
+            get => _selectedFilter;
+            set
+            {
+                if (_selectedFilter != value)
+                {
+                    _selectedFilter = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public virtual void Delete(string tableName, string idColumn)
         {
             List<DataRow> toDelete = new List<DataRow>();
@@ -48,6 +91,12 @@ namespace QLSach.Base
             {
                 dr.Delete();
             }
+        }
+
+        protected void configuration(string selectString)
+        {
+            adapter = new MySqlDataAdapter(selectString, connection);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
         }
 
         public abstract void Load();
@@ -78,8 +127,6 @@ namespace QLSach.Base
         {
             
         }
-
-        public abstract void Update();
 
         // Hoàn tác dữ liệu
         public virtual void addSelectedId(int index, string IdColumnsName)

@@ -40,6 +40,11 @@ namespace QLSach.view.admin
             checkbox.Visible = isDelete;
             data.Columns.Add(checkbox);
 
+            tb_age.Enabled = false;
+            tb_modified_name.Enabled = false;
+            tb_modified_username.Enabled = false;
+            cbb_gender.Enabled = false;
+
             data.CellContentClick += (sender, e) =>
             {
                 var selectedRow = data.Rows[e.RowIndex];
@@ -50,30 +55,40 @@ namespace QLSach.view.admin
             };
 
             // Khi cập nhật dữ liệu
-            data.CellClick += (sender, e) => 
+            data.CellClick += (sender, e) =>
             {
+                var selectedRow = data.Rows[e.RowIndex];
+
                 if (isModify)
                 {
-                    var selectedRow = data.Rows[e.RowIndex];
-
                     updatedIndex = e.RowIndex;
                     updatedId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-                    MessageBox.Show(updatedId.ToString());
 
                     tb_modified_name.Text = selectedRow.Cells["Name"].Value.ToString();
                     tb_modified_username.Text = selectedRow.Cells["UserName"].Value.ToString();
                     cbb_modified_role.SelectedValue = Convert.ToInt32(selectedRow.Cells["Role"].Value);
+                    tb_age.Text = selectedRow.Cells["Age"].Value.ToString();
+                    cbb_gender.SelectedItem = selectedRow.Cells["Gender"].Value.ToString();
                 }
             };
 
+            init();
+        }
+
+        private void init()
+        {
             var roles = Enum.GetValues(typeof(Role))
-            .Cast<Role>()
-            .Select(r => new { Value = (int)r, Name = r.ToString() })
-            .ToList();
+                        .Cast<Role>()
+                        .Select(r => new { Value = (int)r, Name = r.ToString() })
+                        .ToList();
 
             cbb_modified_role.DataSource = roles;
             cbb_modified_role.DisplayMember = "Name";
             cbb_modified_role.ValueMember = "Value";
+
+            string[] sex = new string[] { "Male", "Female", "Other" };
+            cbb_gender.DataSource = sex;
+            cbb_added_gender.DataSource = sex;
 
             combobox_right.DataSource = Enum.GetValues(typeof(Role)).Cast<Role>();
             pane_add_user.Visible = isAdduser;
@@ -81,12 +96,14 @@ namespace QLSach.view.admin
 
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
             combobox_fillter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
+            //cbb_sex.DataBindings.Add("SelectedItem", viewModel, "selectedUser.Gender", true, DataSourceUpdateMode.OnPropertyChanged);
+            tb_age.DataBindings.Add("Text", viewModel, "selectedUser.Age", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void btn_add_user_Click(object sender, EventArgs e)
         {
             Role role = setRole(combobox_right.SelectedValue.ToString());
-            viewModel.AddUser(tb_name.Text, tb_password.Text, tb_username.Text, role);
+            viewModel.AddUser(tb_name.Text, tb_password.Text, tb_username.Text,Convert.ToInt32(tb_added_age.Text), cbb_added_gender.Text, role);
         }
 
         private Role setRole(string role)
@@ -106,6 +123,7 @@ namespace QLSach.view.admin
             isAdduser = !isAdduser;
             pane_add_user.Visible = isAdduser;
             checkbox.Visible = false;
+            pane_modify_user.Visible = false;
         }
 
         private void tb_search_TextChanged(object sender, EventArgs e)
@@ -139,6 +157,7 @@ namespace QLSach.view.admin
         {
             isModify = !isModify;
             pane_modify_user.Visible = isModify;
+            pane_add_user.Visible = false;
         }
 
         private void btn_reset_password_Click(object sender, EventArgs e)
@@ -146,6 +165,8 @@ namespace QLSach.view.admin
             User user = Context.Users.Where(o => o.Id == updatedId).First();
             user.Password = "123";
             Context.Users.Update(user);
+
+            MessageBox.Show("Đặt lại mặt khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_update_data_Click(object sender, EventArgs e)
