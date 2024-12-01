@@ -166,7 +166,7 @@ namespace QLSach.view.admin
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            viewModel.Rollback("Categories");
+            //viewModel.Rollback("Categories");
         }
 
         private void btn_save_Click(object sender, EventArgs e)

@@ -46,8 +46,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             data = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -62,7 +60,6 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label4 = new Label();
             btn_save = new Guna.UI2.WinForms.Guna2Button();
-            btn_cancel = new Guna.UI2.WinForms.Guna2Button();
             btn_deletePane = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
             guna2Panel1.SuspendLayout();
@@ -267,7 +264,7 @@
             btn_save.FillColor = Color.FromArgb(106, 156, 137);
             btn_save.Font = new Font("Segoe UI", 9F);
             btn_save.ForeColor = Color.White;
-            btn_save.Location = new Point(270, 60);
+            btn_save.Location = new Point(143, 60);
             btn_save.Name = "btn_save";
             btn_save.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btn_save.Size = new Size(111, 39);
@@ -275,27 +272,9 @@
             btn_save.Text = "Cập nhật";
             btn_save.Click += btn_save_Click;
             // 
-            // btn_cancel
-            // 
-            btn_cancel.CustomizableEdges = customizableEdges17;
-            btn_cancel.DisabledState.BorderColor = Color.DarkGray;
-            btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_cancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_cancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
-            btn_cancel.Font = new Font("Segoe UI", 9F);
-            btn_cancel.ForeColor = Color.White;
-            btn_cancel.Location = new Point(143, 60);
-            btn_cancel.Name = "btn_cancel";
-            btn_cancel.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btn_cancel.Size = new Size(111, 39);
-            btn_cancel.TabIndex = 21;
-            btn_cancel.Text = "Hủy";
-            btn_cancel.Click += btn_cancel_Click;
-            // 
             // btn_deletePane
             // 
-            btn_deletePane.CustomizableEdges = customizableEdges19;
+            btn_deletePane.CustomizableEdges = customizableEdges17;
             btn_deletePane.DisabledState.BorderColor = Color.DarkGray;
             btn_deletePane.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_deletePane.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -305,7 +284,7 @@
             btn_deletePane.ForeColor = Color.White;
             btn_deletePane.Location = new Point(15, 60);
             btn_deletePane.Name = "btn_deletePane";
-            btn_deletePane.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btn_deletePane.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btn_deletePane.Size = new Size(111, 39);
             btn_deletePane.TabIndex = 20;
             btn_deletePane.Text = "Xóa";
@@ -317,7 +296,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 239, 230);
             Controls.Add(btn_save);
-            Controls.Add(btn_cancel);
             Controls.Add(btn_deletePane);
             Controls.Add(label4);
             Controls.Add(btn_delete);
@@ -351,7 +329,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label label4;
         private Guna.UI2.WinForms.Guna2Button btn_save;
-        private Guna.UI2.WinForms.Guna2Button btn_cancel;
         private Guna.UI2.WinForms.Guna2Button btn_deletePane;
     }
 }

@@ -17,7 +17,7 @@ namespace QLSach.database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            String ConnectionString = "server=localhost; Database=qlsach; Port=3306; uid=root; Password=pw;";
+            String ConnectionString = "server=localhost; Database=qlsach; Port=3306; uid=root; Password=vertrigo;";
             optionsBuilder.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
         }
 

@@ -54,6 +54,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -86,7 +90,13 @@
             guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             pane_categories = new Guna.UI2.WinForms.Guna2Panel();
             category = new Label();
-            label19 = new Label();
+            label15 = new Label();
+            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            lb_returnedBooks = new Label();
+            label11 = new Label();
+            guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            lb_overdueBooks = new Label();
+            label14 = new Label();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             guna2Panel3.SuspendLayout();
@@ -97,6 +107,8 @@
             label13.SuspendLayout();
             guna2Panel10.SuspendLayout();
             guna2Panel11.SuspendLayout();
+            guna2Panel4.SuspendLayout();
+            guna2Panel9.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -150,7 +162,7 @@
             guna2Panel2.Controls.Add(label2);
             guna2Panel2.CustomizableEdges = customizableEdges3;
             guna2Panel2.Font = new Font("Verdana", 9F);
-            guna2Panel2.Location = new Point(52, 333);
+            guna2Panel2.Location = new Point(52, 405);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel2.Size = new Size(336, 93);
@@ -174,7 +186,7 @@
             guna2Panel3.Controls.Add(label3);
             guna2Panel3.CustomizableEdges = customizableEdges5;
             guna2Panel3.Font = new Font("Verdana", 9F);
-            guna2Panel3.Location = new Point(226, 432);
+            guna2Panel3.Location = new Point(226, 504);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Panel3.Size = new Size(162, 99);
@@ -288,15 +300,16 @@
             // 
             // guna2Panel7
             // 
+            guna2Panel7.AutoSize = true;
             guna2Panel7.BackColor = Color.FromArgb(233, 239, 236);
             guna2Panel7.Controls.Add(pane_books);
             guna2Panel7.Controls.Add(label8);
             guna2Panel7.CustomizableEdges = customizableEdges13;
             guna2Panel7.Font = new Font("Verdana", 9F);
-            guna2Panel7.Location = new Point(425, 96);
+            guna2Panel7.Location = new Point(394, 195);
             guna2Panel7.Name = "guna2Panel7";
             guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel7.Size = new Size(216, 400);
+            guna2Panel7.Size = new Size(205, 408);
             guna2Panel7.TabIndex = 4;
             // 
             // pane_books
@@ -305,7 +318,7 @@
             pane_books.AutoSize = true;
             pane_books.CustomizableEdges = customizableEdges11;
             pane_books.Font = new Font("Verdana", 9F);
-            pane_books.Location = new Point(25, 66);
+            pane_books.Location = new Point(23, 78);
             pane_books.Name = "pane_books";
             pane_books.ShadowDecoration.CustomizableEdges = customizableEdges12;
             pane_books.Size = new Size(159, 73);
@@ -328,7 +341,7 @@
             guna2Panel8.Controls.Add(new_users_amount);
             guna2Panel8.CustomizableEdges = customizableEdges15;
             guna2Panel8.Font = new Font("Verdana", 9F);
-            guna2Panel8.Location = new Point(52, 432);
+            guna2Panel8.Location = new Point(52, 504);
             guna2Panel8.Name = "guna2Panel8";
             guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Panel8.Size = new Size(168, 99);
@@ -341,9 +354,9 @@
             label9.ForeColor = Color.FromArgb(233, 239, 236);
             label9.Location = new Point(9, 11);
             label9.Name = "label9";
-            label9.Size = new Size(102, 18);
+            label9.Size = new Size(125, 18);
             label9.TabIndex = 1;
-            label9.Text = "Đăng ký mới";
+            label9.Text = "Người dùng mới";
             // 
             // new_users_amount
             // 
@@ -364,17 +377,17 @@
             label13.Controls.Add(label10);
             label13.CustomizableEdges = customizableEdges17;
             label13.Font = new Font("Verdana", 9F);
-            label13.Location = new Point(52, 572);
+            label13.Location = new Point(394, 96);
             label13.Name = "label13";
             label13.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            label13.Size = new Size(336, 93);
+            label13.Size = new Size(205, 93);
             label13.TabIndex = 5;
             // 
             // lb_return_rate
             // 
             lb_return_rate.AutoSize = true;
             lb_return_rate.Font = new Font("Verdana", 16.2F);
-            lb_return_rate.Location = new Point(101, 38);
+            lb_return_rate.Location = new Point(35, 43);
             lb_return_rate.Name = "lb_return_rate";
             lb_return_rate.Size = new Size(120, 34);
             lb_return_rate.TabIndex = 7;
@@ -393,6 +406,7 @@
             // 
             // guna2Panel10
             // 
+            guna2Panel10.AutoScroll = true;
             guna2Panel10.AutoSize = true;
             guna2Panel10.BackColor = Color.FromArgb(233, 239, 236);
             guna2Panel10.Controls.Add(pane_genres);
@@ -400,11 +414,11 @@
             guna2Panel10.Controls.Add(label18);
             guna2Panel10.CustomizableEdges = customizableEdges21;
             guna2Panel10.Font = new Font("Verdana", 9F);
-            guna2Panel10.Location = new Point(673, 99);
+            guna2Panel10.Location = new Point(605, 96);
             guna2Panel10.MaximumSize = new Size(0, 400);
             guna2Panel10.Name = "guna2Panel10";
             guna2Panel10.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Panel10.Size = new Size(185, 173);
+            guna2Panel10.Size = new Size(217, 173);
             guna2Panel10.TabIndex = 6;
             // 
             // pane_genres
@@ -416,7 +430,7 @@
             pane_genres.Location = new Point(12, 75);
             pane_genres.Name = "pane_genres";
             pane_genres.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            pane_genres.Size = new Size(159, 73);
+            pane_genres.Size = new Size(184, 73);
             pane_genres.TabIndex = 3;
             // 
             // genre
@@ -433,7 +447,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Verdana", 9F);
-            label18.Location = new Point(23, 25);
+            label18.Location = new Point(12, 25);
             label18.Name = "label18";
             label18.Size = new Size(65, 18);
             label18.TabIndex = 1;
@@ -441,21 +455,23 @@
             // 
             // guna2Panel11
             // 
+            guna2Panel11.AutoScroll = true;
             guna2Panel11.AutoSize = true;
             guna2Panel11.BackColor = Color.FromArgb(233, 239, 236);
             guna2Panel11.Controls.Add(pane_categories);
             guna2Panel11.Controls.Add(category);
-            guna2Panel11.Controls.Add(label19);
+            guna2Panel11.Controls.Add(label15);
             guna2Panel11.CustomizableEdges = customizableEdges25;
             guna2Panel11.Font = new Font("Verdana", 9F);
-            guna2Panel11.Location = new Point(892, 99);
+            guna2Panel11.Location = new Point(828, 96);
             guna2Panel11.Name = "guna2Panel11";
             guna2Panel11.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2Panel11.Size = new Size(216, 173);
+            guna2Panel11.Size = new Size(217, 173);
             guna2Panel11.TabIndex = 7;
             // 
             // pane_categories
             // 
+            pane_categories.AutoScroll = true;
             pane_categories.AutoSize = true;
             pane_categories.CustomizableEdges = customizableEdges23;
             pane_categories.Font = new Font("Verdana", 9F);
@@ -475,15 +491,87 @@
             category.TabIndex = 3;
             category.Text = "label11";
             // 
-            // label19
+            // label15
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Verdana", 9F);
-            label19.Location = new Point(23, 25);
-            label19.Name = "label19";
-            label19.Size = new Size(83, 18);
-            label19.TabIndex = 1;
-            label19.Text = "Danh mục";
+            label15.AutoSize = true;
+            label15.Font = new Font("Verdana", 9F);
+            label15.Location = new Point(23, 25);
+            label15.Name = "label15";
+            label15.Size = new Size(83, 18);
+            label15.TabIndex = 1;
+            label15.Text = "Danh mục";
+            // 
+            // guna2Panel4
+            // 
+            guna2Panel4.BackColor = Color.FromArgb(106, 156, 137);
+            guna2Panel4.Controls.Add(lb_returnedBooks);
+            guna2Panel4.Controls.Add(label11);
+            guna2Panel4.CustomizableEdges = customizableEdges27;
+            guna2Panel4.Font = new Font("Verdana", 9F);
+            guna2Panel4.Location = new Point(52, 300);
+            guna2Panel4.Name = "guna2Panel4";
+            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2Panel4.Size = new Size(168, 99);
+            guna2Panel4.TabIndex = 4;
+            // 
+            // lb_returnedBooks
+            // 
+            lb_returnedBooks.AutoSize = true;
+            lb_returnedBooks.Font = new Font("Verdana", 9F);
+            lb_returnedBooks.ForeColor = Color.FromArgb(233, 239, 236);
+            lb_returnedBooks.Location = new Point(50, 50);
+            lb_returnedBooks.Name = "lb_returnedBooks";
+            lb_returnedBooks.Size = new Size(61, 18);
+            lb_returnedBooks.TabIndex = 2;
+            lb_returnedBooks.Text = "label12";
+            lb_returnedBooks.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Verdana", 9F);
+            label11.ForeColor = Color.FromArgb(233, 239, 236);
+            label11.Location = new Point(9, 10);
+            label11.Name = "label11";
+            label11.Size = new Size(116, 18);
+            label11.TabIndex = 0;
+            label11.Text = "Số sách đã trả";
+            // 
+            // guna2Panel9
+            // 
+            guna2Panel9.BackColor = Color.FromArgb(106, 156, 137);
+            guna2Panel9.Controls.Add(lb_overdueBooks);
+            guna2Panel9.Controls.Add(label14);
+            guna2Panel9.CustomizableEdges = customizableEdges29;
+            guna2Panel9.Font = new Font("Verdana", 9F);
+            guna2Panel9.Location = new Point(226, 300);
+            guna2Panel9.Name = "guna2Panel9";
+            guna2Panel9.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2Panel9.Size = new Size(162, 99);
+            guna2Panel9.TabIndex = 8;
+            // 
+            // lb_overdueBooks
+            // 
+            lb_overdueBooks.AutoSize = true;
+            lb_overdueBooks.Font = new Font("Verdana", 9F);
+            lb_overdueBooks.ForeColor = Color.FromArgb(233, 239, 236);
+            lb_overdueBooks.Location = new Point(50, 50);
+            lb_overdueBooks.Name = "lb_overdueBooks";
+            lb_overdueBooks.Size = new Size(61, 18);
+            lb_overdueBooks.TabIndex = 2;
+            lb_overdueBooks.Text = "label12";
+            lb_overdueBooks.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Verdana", 9F);
+            label14.ForeColor = Color.FromArgb(233, 239, 236);
+            label14.Location = new Point(9, 10);
+            label14.Name = "label14";
+            label14.Size = new Size(131, 18);
+            label14.TabIndex = 0;
+            label14.Text = "Số sách quá hạn";
             // 
             // Statistacs
             // 
@@ -491,6 +579,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(196, 218, 210);
+            Controls.Add(guna2Panel9);
+            Controls.Add(guna2Panel4);
             Controls.Add(guna2Panel11);
             Controls.Add(guna2Panel10);
             Controls.Add(label13);
@@ -525,6 +615,10 @@
             guna2Panel10.PerformLayout();
             guna2Panel11.ResumeLayout(false);
             guna2Panel11.PerformLayout();
+            guna2Panel4.ResumeLayout(false);
+            guna2Panel4.PerformLayout();
+            guna2Panel9.ResumeLayout(false);
+            guna2Panel9.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -557,12 +651,18 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Label label18;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
-        private Label label19;
+        private Label label15;
         private Label genre;
         private Label category;
         private Label lb_return_rate;
         private Guna.UI2.WinForms.Guna2Panel pane_genres;
         private Guna.UI2.WinForms.Guna2Panel pane_categories;
         private Guna.UI2.WinForms.Guna2Panel pane_books;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Label lb_returnedBooks;
+        private Label label11;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Label lb_overdueBooks;
+        private Label label14;
     }
 }

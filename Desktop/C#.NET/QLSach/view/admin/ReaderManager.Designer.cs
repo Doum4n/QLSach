@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             combobox_fillter = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_search = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,7 +59,7 @@
             // combobox_fillter
             // 
             combobox_fillter.BackColor = Color.Transparent;
-            combobox_fillter.CustomizableEdges = customizableEdges25;
+            combobox_fillter.CustomizableEdges = customizableEdges1;
             combobox_fillter.DrawMode = DrawMode.OwnerDrawFixed;
             combobox_fillter.DropDownStyle = ComboBoxStyle.DropDownList;
             combobox_fillter.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -69,13 +69,13 @@
             combobox_fillter.ItemHeight = 30;
             combobox_fillter.Location = new Point(280, 91);
             combobox_fillter.Name = "combobox_fillter";
-            combobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            combobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges2;
             combobox_fillter.Size = new Size(143, 36);
             combobox_fillter.TabIndex = 6;
             // 
             // tb_search
             // 
-            tb_search.CustomizableEdges = customizableEdges27;
+            tb_search.CustomizableEdges = customizableEdges3;
             tb_search.DefaultText = "";
             tb_search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -90,9 +90,10 @@
             tb_search.PasswordChar = '\0';
             tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
-            tb_search.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            tb_search.ShadowDecoration.CustomizableEdges = customizableEdges4;
             tb_search.Size = new Size(245, 36);
             tb_search.TabIndex = 5;
+            tb_search.TextChanged += tb_search_TextChanged;
             // 
             // dataBook
             // 
@@ -108,7 +109,7 @@
             // cbb_history
             // 
             cbb_history.BackColor = Color.Transparent;
-            cbb_history.CustomizableEdges = customizableEdges29;
+            cbb_history.CustomizableEdges = customizableEdges5;
             cbb_history.DrawMode = DrawMode.OwnerDrawFixed;
             cbb_history.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_history.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -118,7 +119,7 @@
             cbb_history.ItemHeight = 30;
             cbb_history.Location = new Point(654, 383);
             cbb_history.Name = "cbb_history";
-            cbb_history.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            cbb_history.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbb_history.Size = new Size(158, 36);
             cbb_history.TabIndex = 13;
             // 

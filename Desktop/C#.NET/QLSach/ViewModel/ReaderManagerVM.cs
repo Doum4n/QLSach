@@ -72,12 +72,7 @@ namespace QLSach.ViewModel
 
         public override void Load()
         {
-            data.Columns["id"].HeaderText = "Mã sách";
-            data.Columns["name"].HeaderText = "Tên sách";
-            data.Columns["description"].HeaderText = "Mô tả";
-            data.Columns["genreName"].HeaderText = "Tên thể loại";
-            data.Columns["authorName"].HeaderText = "Tên tác giả";
-            data.Columns["publisherName"].HeaderText = "Tên nhà xuất bản";
+            base.binding = Reader;
         }
     }
 }

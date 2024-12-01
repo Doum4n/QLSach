@@ -91,7 +91,6 @@ namespace QLSach.view.admin
 
         private void btn_add_genre_Click(object sender, EventArgs e)
         {
-            MessageBox.Show((Convert.ToInt32(data.Rows[data.RowCount - 2].Cells["id"].Value) + 1).ToString());
             viewModel.addGenre(tb_genre_name.Text);
         }
 

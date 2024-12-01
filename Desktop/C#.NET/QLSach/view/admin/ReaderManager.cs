@@ -14,17 +14,20 @@ namespace QLSach.view.admin
 {
     public partial class ReaderManager : UserControl
     {
-        private ReaderManagerVM viewModel; 
+        private ReaderManagerVM viewModel;
         public ReaderManager()
         {
             InitializeComponent();
             viewModel = new ReaderManagerVM(dataReader);
+
+            tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
+            combobox_fillter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void ReaderManager_Load(object sender, EventArgs e)
         {
             dataBook.DataSource = viewModel.Books;
-
+            viewModel.Load();
             dataReader.DataSource = viewModel.Reader;
             viewModel.AssignFillterList(combobox_fillter);
 
@@ -37,7 +40,7 @@ namespace QLSach.view.admin
 
             dataReader.CellClick += (sender, e) =>
             {
-                if(e.RowIndex > 0)
+                if (e.RowIndex > 0)
                 {
                     var selectedRow = dataReader.Rows[e.RowIndex];
                     viewModel.UserId = Convert.ToInt32(selectedRow.Cells["id"].Value);
@@ -61,7 +64,11 @@ namespace QLSach.view.admin
             dataReader.Columns["Age"].HeaderText = "Tuổi";
             dataReader.Columns["Gender"].HeaderText = "Giới tính";
             dataReader.Columns["create_at"].HeaderText = "Ngày đăng ký";
+        }
 
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            viewModel.Search();
         }
     }
 }

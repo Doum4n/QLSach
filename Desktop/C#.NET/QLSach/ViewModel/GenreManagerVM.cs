@@ -40,7 +40,7 @@ namespace QLSach.ViewModel
         public BindingSource Genres
         {
             get => _genres;
-            set { _genres = value; OnPropertyChanged(); }
+            set { _genres = value;}
         }
 
         public void addGenre(string genreName)

@@ -66,8 +66,6 @@ namespace QLSach.view.admin
 
             button.Visible = true;
             checkbox.Visible = false;
-
-            btn_update.Text = "Thêm";
         }
 
         private void btn_delete_data_Click(object sender, EventArgs e)
