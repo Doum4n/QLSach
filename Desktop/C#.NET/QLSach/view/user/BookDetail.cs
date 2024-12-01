@@ -4,6 +4,7 @@ using QLSach.database;
 using QLSach.database.models;
 using QLSach.database.query;
 using QLSach.dbContext.models;
+using QLSach.view.components;
 using QLSach.view.components.items;
 using System.Data;
 
@@ -12,6 +13,7 @@ namespace QLSach.view
     public partial class BookDetail : UserControl
     {
         BookQuery query = new BookQuery();
+        private Pagination pagination;
         Book? book = new Book();
         private int id;
         public BookDetail(int id)
@@ -47,11 +49,12 @@ namespace QLSach.view
                 Singleton.getInstance.State = node;
 
                 // Comments
-                var comments = context.Feedbacks.Where(o => o.BookId == id).Where(o => o.comment != null).Select(o => o.comment).ToList();
+                var comments = context.Feedbacks.Where(o => o.BookId == id).Where(o => o.comment != null).ToList();
                 comments.ForEach(cmt =>
                 {
                         comment comment = new comment();
-                        comment.Content = cmt;
+                        comment.Content = cmt.comment;
+                        comment.Name = context.Users.Where(o => o.Id == cmt.UserId).Select(o => o.Name).First();
                         tb_pane_comment.RowCount++;
                         tb_pane_comment.SetRow(comment, tb_pane_comment.RowCount);
                         tb_pane_comment.Controls.Add(comment);
@@ -83,6 +86,10 @@ namespace QLSach.view
                 book.views = book.views + 1;
                 context.Books.Update(book);
                 context.SaveChanges();
+
+                pagination = new(tbLayoutPane_book, 1, 4, 4);
+                pagination.books = context.Books.Where(o => o.genre_id == book.genre_id).Take(10).ToList(); 
+                pagination.LoadData();
 
             }
         }
@@ -167,6 +174,7 @@ namespace QLSach.view
                         updated_at = DateTime.Now
                     };
                     context.Feedbacks.Add(feedback);
+
                 }
                 else
                 {
@@ -176,6 +184,10 @@ namespace QLSach.view
 
                     context.Feedbacks.Update(feedback);
                 }
+
+                var book = context.Books.Where(o => o.Id == id).First();
+                book.rating = RatingStar.Value;
+                context.Books.Update(book);
 
                 context.SaveChanges();
             }

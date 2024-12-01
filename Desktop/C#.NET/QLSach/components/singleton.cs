@@ -2,6 +2,7 @@
 using QLSach.components;
 using QLSach.Components;
 using QLSach.database;
+using QLSach.database.models;
 using System.Data;
 
 namespace QLSach.component
@@ -25,6 +26,7 @@ namespace QLSach.component
         public string Username { get; set; }
         public string Password { get; set; }
         public int UserId { get; set; }
+        public Role Role { get; set; }
 
         public readonly string connectionString = "Server=localhost;Database=qlsach;User ID=root;Password=pw;";
         //public MySqlConnection connection;

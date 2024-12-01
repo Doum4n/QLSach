@@ -31,7 +31,8 @@ namespace QLSach.ViewModel
 
             // Gán tên cho DataTable trước khi thêm vào DataSet
             usersDataTable.TableName = "Users";  // Đặt tên cho DataTable là "Authors"
-            Singleton.getInstance.DataSet.Tables.Add(usersDataTable);
+            if (!Singleton.getInstance.DataSet.Tables.Contains(usersDataTable.TableName))
+                Singleton.getInstance.DataSet.Tables.Add(usersDataTable);
             configuration("SELECT * FROM Users");
 
             selectedUser = context.Users.First();
@@ -77,13 +78,24 @@ namespace QLSach.ViewModel
             base.binding = Users;
 
             data.Columns["Password"].Visible = false;
+
+            data.Columns["Id"].HeaderText = "Mã tài khoản";
+            data.Columns["Name"].HeaderText = "Tên người dùng";
+            data.Columns["UserName"].HeaderText = "Tên tài khoản";
+            data.Columns["Age"].HeaderText = "Tuổi";
+            data.Columns["Gender"].HeaderText = "Giới tính";
+            data.Columns["Role"].HeaderText = "Vai trò";
+            data.Columns["create_at"].HeaderText = "Ngày tạo";
+            data.Columns["update_at"].HeaderText = "Ngày cập nhật";
+
         }
 
-        public override void SaveChange()
+        public override void SaveChange(string tableName)
         {
-            adapter.Update(Singleton.getInstance.DataSet, "Users");
-            usersDataTable.AcceptChanges();
+            base.SaveChange(tableName);
             context.SaveChanges();
+            prevDataRow.Clear();
+            seletedId.Clear();
         }
     }
 }

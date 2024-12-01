@@ -30,6 +30,12 @@ namespace QLSach.view.admin
 
         private void UserManager_Load(object sender, EventArgs e)
         {
+            if (Singleton.getInstance.Role == Role.Staff)
+            {
+                cbb_modified_role.Visible = false;
+                lb_role.Visible = false;
+            }
+
             data.DataSource = viewModel.Users;
             viewModel.Load();
             viewModel.AssignFillterList(combobox_fillter);
@@ -72,23 +78,18 @@ namespace QLSach.view.admin
                 }
             };
 
-            init();
-        }
-
-        private void init()
-        {
             var roles = Enum.GetValues(typeof(Role))
                         .Cast<Role>()
-                        .Select(r => new { Value = (int)r, Name = r.ToString() })
+                        .Select(r => new { Value = (int)r, Name = r.ToString()})
                         .ToList();
 
             cbb_modified_role.DataSource = roles;
             cbb_modified_role.DisplayMember = "Name";
             cbb_modified_role.ValueMember = "Value";
 
-            string[] sex = new string[] { "Male", "Female", "Other" };
-            cbb_gender.DataSource = sex;
-            cbb_added_gender.DataSource = sex;
+            string[] gender = new string[] { "Male", "Female", "Other" };
+            cbb_gender.DataSource = gender;
+            cbb_added_gender.DataSource = gender;
 
             combobox_right.DataSource = Enum.GetValues(typeof(Role)).Cast<Role>();
             pane_add_user.Visible = isAdduser;
@@ -102,16 +103,17 @@ namespace QLSach.view.admin
 
         private void btn_add_user_Click(object sender, EventArgs e)
         {
-            Role role = setRole(combobox_right.SelectedValue.ToString());
+            Role role = setRole(combobox_right.Text.ToString());
             viewModel.AddUser(tb_name.Text, tb_password.Text, tb_username.Text,Convert.ToInt32(tb_added_age.Text), cbb_added_gender.Text, role);
         }
 
         private Role setRole(string role)
         {
+            MessageBox.Show(Role.Admin.ToString());
             Role _role;
             if (role == Role.Admin.ToString())
                 _role = Role.Admin;
-            else if (combobox_right.SelectedValue == Role.User.ToString())
+            else if (role == Role.User.ToString())
                 _role = Role.User;
             else
                 _role = Role.Staff;
@@ -149,7 +151,7 @@ namespace QLSach.view.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            viewModel.SaveChange();
+            viewModel.SaveChange("Users");
             Context.SaveChanges();
         }
 
@@ -162,21 +164,32 @@ namespace QLSach.view.admin
 
         private void btn_reset_password_Click(object sender, EventArgs e)
         {
-            User user = Context.Users.Where(o => o.Id == updatedId).First();
-            user.Password = "123";
-            Context.Users.Update(user);
+            try
+            {
+                User user = Context.Users.Where(o => o.Id == updatedId).First();
+                user.Password = "123";
+                Context.Users.Update(user);
 
-            MessageBox.Show("Đặt lại mặt khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đặt lại mặt khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) {}
         }
 
         private void btn_update_data_Click(object sender, EventArgs e)
         {
+            try
+            {
                 User user = Context.Users.Where(o => o.Id == updatedId).First();
-                user.UserName = tb_modified_username.Text;
-                user.Name = tb_modified_name.Text;
-                user.Role = setRole(cbb_modified_role.Text);
+                if (user != null)
+                {
+                    user.UserName = tb_modified_username.Text;
+                    user.Name = tb_modified_name.Text;
+
+                    user.Role = (Role)Enum.Parse(typeof(Role), cbb_modified_role.Text);
+                }
 
                 viewModel.UpdateUser(user.Name, user.UserName, user.Role, updatedIndex);
+            }catch (Exception ex) {}
         }
     }
 }

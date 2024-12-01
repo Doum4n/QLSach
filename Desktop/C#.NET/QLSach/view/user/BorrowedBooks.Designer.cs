@@ -35,20 +35,23 @@
             // 
             // data
             // 
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data.BackgroundColor = Color.FromArgb(251, 250, 218);
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             data.Location = new Point(30, 81);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(465, 188);
+            data.Size = new Size(739, 188);
             data.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(22, 66, 60);
             label1.Location = new Point(30, 20);
             label1.Name = "label1";
-            label1.Size = new Size(208, 41);
+            label1.Size = new Size(218, 41);
             label1.TabIndex = 1;
             label1.Text = "Sách đã mượn";
             // 

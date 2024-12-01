@@ -25,6 +25,9 @@ namespace QLSach.view.admin
 
         private void GenreManager_Load(object sender, EventArgs e)
         {
+            data.DataSource = viewModel.Genres;
+            dataBook.DataSource = viewModel.Books;
+
             viewModel.Load();
             viewModel.AssignFillterList(combobox_fillter);
 
@@ -42,14 +45,25 @@ namespace QLSach.view.admin
                 if (data.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
                 {
                     viewModel.addSelectedId(e.RowIndex, "id");
-                    //viewModel.se
+
                 }
+
+            };
+
+            data.CellClick += (sender, e) =>
+            {
+                var selectedRow = data.Rows[e.RowIndex];
+                viewModel.Id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+
+                dataBook.Columns["Id"].HeaderText = "Mã sách";
+                dataBook.Columns["name"].HeaderText = "Tên sách";
+                dataBook.Columns["description"].HeaderText = "Mô tả";
+                dataBook.Columns["genre_id"].Visible = false;
             };
         }
 
         private void BindData()
         {
-            data.DataSource = viewModel.Genres;
 
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
             combobox_fillter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -72,7 +86,7 @@ namespace QLSach.view.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            viewModel.SaveChange();
+            viewModel.SaveChange("Genres");
         }
 
         private void btn_add_genre_Click(object sender, EventArgs e)

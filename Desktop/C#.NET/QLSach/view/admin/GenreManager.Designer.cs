@@ -56,6 +56,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btn_delete = new Guna.UI2.WinForms.Guna2Button();
             btn_add = new Guna.UI2.WinForms.Guna2Button();
             btn_cancel = new Guna.UI2.WinForms.Guna2Button();
@@ -73,12 +75,16 @@
             data = new DataGridView();
             btn_delete_data = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            dataBook = new DataGridView();
+            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             guna2Panel3.SuspendLayout();
             pane_add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
             guna2Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataBook).BeginInit();
+            guna2Panel5.SuspendLayout();
             SuspendLayout();
             // 
             // btn_delete
@@ -93,7 +99,7 @@
             btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
-            btn_delete.Location = new Point(187, 6);
+            btn_delete.Location = new Point(183, 7);
             btn_delete.Name = "btn_delete";
             btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btn_delete.Size = new Size(165, 40);
@@ -113,7 +119,7 @@
             btn_add.FillColor = Color.FromArgb(106, 156, 137);
             btn_add.Font = new Font("Segoe UI", 9F);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(16, 6);
+            btn_add.Location = new Point(12, 7);
             btn_add.Name = "btn_add";
             btn_add.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btn_add.Size = new Size(165, 40);
@@ -133,7 +139,7 @@
             btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
-            btn_cancel.Location = new Point(358, 6);
+            btn_cancel.Location = new Point(354, 7);
             btn_cancel.Name = "btn_cancel";
             btn_cancel.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btn_cancel.Size = new Size(165, 40);
@@ -153,7 +159,7 @@
             btn_save.FillColor = Color.FromArgb(106, 156, 137);
             btn_save.Font = new Font("Segoe UI", 9F);
             btn_save.ForeColor = Color.White;
-            btn_save.Location = new Point(529, 6);
+            btn_save.Location = new Point(525, 7);
             btn_save.Name = "btn_save";
             btn_save.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btn_save.Size = new Size(165, 40);
@@ -165,7 +171,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(11, 5);
+            label1.Location = new Point(8, 12);
             label1.Name = "label1";
             label1.Size = new Size(271, 46);
             label1.TabIndex = 21;
@@ -303,9 +309,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(11, 17);
+            label2.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(5, 16);
             label2.Name = "label2";
-            label2.Size = new Size(86, 20);
+            label2.Size = new Size(94, 18);
             label2.TabIndex = 0;
             label2.Text = "Tên thể loại";
             // 
@@ -318,7 +325,7 @@
             data.Location = new Point(3, 3);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(692, 329);
+            data.Size = new Size(692, 182);
             data.TabIndex = 22;
             // 
             // btn_delete_data
@@ -333,7 +340,7 @@
             btn_delete_data.FillColor = Color.FromArgb(251, 250, 218);
             btn_delete_data.Font = new Font("Segoe UI", 9F);
             btn_delete_data.ForeColor = Color.FromArgb(18, 55, 42);
-            btn_delete_data.Location = new Point(3, 338);
+            btn_delete_data.Location = new Point(3, 191);
             btn_delete_data.Name = "btn_delete_data";
             btn_delete_data.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btn_delete_data.Size = new Size(141, 50);
@@ -350,14 +357,38 @@
             guna2Panel4.Location = new Point(0, 275);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Panel4.Size = new Size(701, 406);
+            guna2Panel4.Size = new Size(701, 246);
             guna2Panel4.TabIndex = 30;
+            // 
+            // dataBook
+            // 
+            dataBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataBook.BackgroundColor = Color.FromArgb(232, 223, 202);
+            dataBook.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dataBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataBook.Location = new Point(3, 1);
+            dataBook.Name = "dataBook";
+            dataBook.RowHeadersWidth = 51;
+            dataBook.Size = new Size(692, 161);
+            dataBook.TabIndex = 30;
+            // 
+            // guna2Panel5
+            // 
+            guna2Panel5.Controls.Add(dataBook);
+            guna2Panel5.CustomizableEdges = customizableEdges29;
+            guna2Panel5.Dock = DockStyle.Top;
+            guna2Panel5.Location = new Point(0, 521);
+            guna2Panel5.Name = "guna2Panel5";
+            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2Panel5.Size = new Size(701, 167);
+            guna2Panel5.TabIndex = 31;
             // 
             // GenreManager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 239, 230);
+            Controls.Add(guna2Panel5);
             Controls.Add(guna2Panel4);
             Controls.Add(guna2Panel3);
             Controls.Add(pane_add);
@@ -374,6 +405,8 @@
             pane_add.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             guna2Panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataBook).EndInit();
+            guna2Panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -396,5 +429,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_add_genre;
         private Guna.UI2.WinForms.Guna2Button btn_delete_data;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private DataGridView dataBook;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
     }
 }

@@ -37,6 +37,12 @@
     <Compile Update="view\admin\Statistacs.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\admin\StorageLocationManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="view\admin\ReaderManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\admin\UserManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,5 +112,13 @@
     <Compile Update="view\user\RegistedBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="view\user\DashBoard.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

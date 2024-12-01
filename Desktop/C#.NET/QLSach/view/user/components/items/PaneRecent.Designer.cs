@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             more_newlyBook = new Guna.UI2.WinForms.Guna2Button();
             tbLayoutPanel = new TableLayoutPanel();
             SuspendLayout();
             // 
             // more_newlyBook
             // 
-            more_newlyBook.CustomizableEdges = customizableEdges1;
+            more_newlyBook.CustomizableEdges = customizableEdges3;
             more_newlyBook.DisabledState.BorderColor = Color.DarkGray;
             more_newlyBook.DisabledState.CustomBorderColor = Color.DarkGray;
             more_newlyBook.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -44,10 +44,10 @@
             more_newlyBook.FillColor = Color.FromArgb(67, 104, 80);
             more_newlyBook.Font = new Font("Segoe UI", 9F);
             more_newlyBook.ForeColor = Color.White;
-            more_newlyBook.Location = new Point(689, 16);
+            more_newlyBook.Location = new Point(685, 16);
             more_newlyBook.Margin = new Padding(3, 4, 3, 4);
             more_newlyBook.Name = "more_newlyBook";
-            more_newlyBook.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            more_newlyBook.ShadowDecoration.CustomizableEdges = customizableEdges4;
             more_newlyBook.Size = new Size(125, 40);
             more_newlyBook.TabIndex = 14;
             more_newlyBook.Text = "Xem thêm";
@@ -56,14 +56,15 @@
             // tbLayoutPanel
             // 
             tbLayoutPanel.AutoSize = true;
-            tbLayoutPanel.BackColor = Color.FromArgb(251, 250, 218);
+            tbLayoutPanel.BackColor = Color.White;
             tbLayoutPanel.ColumnCount = 1;
             tbLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tbLayoutPanel.Location = new Point(13, 89);
+            tbLayoutPanel.MaximumSize = new Size(890, 0);
             tbLayoutPanel.Name = "tbLayoutPanel";
             tbLayoutPanel.RowCount = 1;
             tbLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tbLayoutPanel.Size = new Size(186, 207);
+            tbLayoutPanel.Size = new Size(186, 0);
             tbLayoutPanel.TabIndex = 15;
             // 
             // PaneRecent
@@ -74,8 +75,9 @@
             BackColor = Color.White;
             Controls.Add(more_newlyBook);
             Controls.Add(tbLayoutPanel);
+            MaximumSize = new Size(824, 0);
             Name = "PaneRecent";
-            Size = new Size(834, 306);
+            Size = new Size(824, 243);
             Load += PaneRecent_Load;
             ResumeLayout(false);
             PerformLayout();

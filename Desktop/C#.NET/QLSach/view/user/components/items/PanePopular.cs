@@ -17,7 +17,7 @@ namespace QLSach.view.components.items
             BookQuery query = new BookQuery();
             int i = 1;
             using (Context context = new Context()) {
-                foreach (var item in context.Books.OrderBy(o => o.rating).Take(10).ToList())
+                foreach (var item in context.Books.OrderByDescending(o => o.rating).Take(10).ToList())
                 {
                     BookMostPopular popular = new(item.Id);
                     popular.bookName = item.name;

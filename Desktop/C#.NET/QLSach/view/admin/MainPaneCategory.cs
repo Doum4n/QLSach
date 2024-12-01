@@ -55,6 +55,8 @@ namespace QLSach.view.admin
         private void CategoryMainPane_Load(object sender, EventArgs e)
         {
             data.DataSource = viewModel.Categories;
+            dataBooks.DataSource = viewModel.Books;
+
             viewModel.Load();
             viewModel.AssignFillterList(combobox_fillter);
 
@@ -75,8 +77,12 @@ namespace QLSach.view.admin
 
                         pane_modify_category.Visible = true;
                         pane_add_category.Visible = false;
-
                     }
+                    viewModel.Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                    dataBooks.Columns["Id"].HeaderText = "Mã sách";
+                    dataBooks.Columns["name"].HeaderText = "Tên sách";
+                    dataBooks.Columns["description"].HeaderText = "Mô tả";
                 }
             };
 
@@ -126,7 +132,7 @@ namespace QLSach.view.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            viewModel.SaveChange();
+            viewModel.SaveChange("Categories");
         }
 
         private void btn_addPaneAdd_Click(object sender, EventArgs e)

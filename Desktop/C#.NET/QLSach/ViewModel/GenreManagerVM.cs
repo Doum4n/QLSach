@@ -4,6 +4,7 @@ using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
 using QLSach.database;
+using QLSach.dbContext.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,8 @@ namespace QLSach.ViewModel
             genresDataTable.AcceptChanges();
 
             genresDataTable.TableName = "Genres";
-            Singleton.getInstance.DataSet.Tables.Add(genresDataTable);
+            if (!Singleton.getInstance.DataSet.Tables.Contains(genresDataTable.TableName))
+                Singleton.getInstance.DataSet.Tables.Add(genresDataTable);
             configuration("SELECT * FROM Genres");
         }
 
@@ -58,15 +60,26 @@ namespace QLSach.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public override void LoadData()
+        {
+            Books.DataSource = context.Books
+              .Select(o => new
+              {
+                  o.Id,
+                  o.name,
+                  o.description,
+                  o.genre_id
+              })
+              .Where(o => o.genre_id == Id)
+              .ToDataTable();
+        }
+
         public override void Load()
         {
             base.binding = Genres;
-        }
 
-
-        public override void SaveChange()
-        {
-            adapter.Update(Singleton.getInstance.DataSet, "Genres");
+            data.Columns["id"].HeaderText = "Mã thể loại";
+            data.Columns["name"].HeaderText = "Tên thể loại";
         }
     }
 }

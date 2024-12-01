@@ -36,20 +36,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(22, 66, 60);
             label1.Location = new Point(30, 24);
             label1.Name = "label1";
-            label1.Size = new Size(235, 41);
+            label1.Size = new Size(247, 41);
             label1.TabIndex = 3;
             label1.Text = "Sách đã đăng ký";
             // 
             // data
             // 
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data.BackgroundColor = Color.FromArgb(251, 250, 218);
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             data.Location = new Point(30, 85);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(581, 188);
+            data.Size = new Size(711, 188);
             data.TabIndex = 2;
             // 
             // RegistedBooks
@@ -59,7 +62,7 @@
             Controls.Add(label1);
             Controls.Add(data);
             Name = "RegistedBooks";
-            Size = new Size(638, 295);
+            Size = new Size(769, 295);
             Load += RegistedBooks_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             ResumeLayout(false);

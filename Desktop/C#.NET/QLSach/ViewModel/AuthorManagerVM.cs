@@ -4,6 +4,7 @@ using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
 using QLSach.database;
+using QLSach.database.models;
 using QLSach.dbContext.models;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,11 @@ namespace QLSach.ViewModel
     public class AuthorManagerVM : ManagerBase, INotifyPropertyChanged
     {
         private BindingSource _authors = new BindingSource();
+        public BindingSource Books = new BindingSource();
+
+        private int _author;
+        public int AuthorId { get { return _author; } set { _author = value; LoadData(); } }
+
         DataTable authorsDataTable;
         private author _selectedAuthor;
         public AuthorManagerVM(DataGridView data) : base(data)
@@ -27,7 +33,8 @@ namespace QLSach.ViewModel
 
             // Gán tên cho DataTable trước khi thêm vào DataSet
             authorsDataTable.TableName = "Authors";  // Đặt tên cho DataTable là "Authors"
-            Singleton.getInstance.DataSet.Tables.Add(authorsDataTable);
+            if (!Singleton.getInstance.DataSet.Tables.Contains(authorsDataTable.TableName))
+                Singleton.getInstance.DataSet.Tables.Add(authorsDataTable);
 
             configuration("SELECT * FROM Authors");
         }
@@ -73,16 +80,26 @@ namespace QLSach.ViewModel
             MessageBox.Show("Cập nhật tác giả thành công");
         }
 
+        public void LoadData()
+        {
+            Books.DataSource = context.Books
+              .Select(o => new
+              {
+                  o.Id,
+                  o.name,
+                  o.description,
+                  o.author_id
+              })
+              .Where(o => o.author_id == AuthorId)
+              .ToDataTable();
+        }
 
         public override void Load()
         {
             base.binding = Authors;
-
-        }
-
-        public override void SaveChange()
-        {
-            adapter.Update(Singleton.getInstance.DataSet, "Authors");
+            data.Columns["Id"].HeaderText = "Mã tác giả";
+            data.Columns["name"].HeaderText = "Tên tác giả";
+            data.Columns["description"].HeaderText = "Mô tả";
         }
     }
 }

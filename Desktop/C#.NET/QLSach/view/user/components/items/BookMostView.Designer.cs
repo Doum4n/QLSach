@@ -71,6 +71,7 @@
             ratingStar.RatingColor = Color.FromArgb(254, 236, 55);
             ratingStar.Size = new Size(150, 35);
             ratingStar.TabIndex = 3;
+            ratingStar.ValueChanged += ratingStar_ValueChanged;
             ratingStar.Click += rating_click;
             // 
             // btn_borrow

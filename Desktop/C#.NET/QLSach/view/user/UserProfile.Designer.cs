@@ -94,7 +94,7 @@
             tb_age.Size = new Size(108, 46);
             tb_age.TabIndex = 17;
             // 
-            // cbb_sex
+            // cbb_gender
             // 
             cbb_gender.BackColor = Color.Transparent;
             cbb_gender.CustomizableEdges = customizableEdges3;
@@ -106,7 +106,7 @@
             cbb_gender.ForeColor = Color.FromArgb(68, 88, 112);
             cbb_gender.ItemHeight = 30;
             cbb_gender.Location = new Point(127, 264);
-            cbb_gender.Name = "cbb_sex";
+            cbb_gender.Name = "cbb_gender";
             cbb_gender.ShadowDecoration.CustomizableEdges = customizableEdges4;
             cbb_gender.Size = new Size(138, 36);
             cbb_gender.TabIndex = 16;
@@ -118,6 +118,7 @@
             btn_modify.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_modify.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_modify.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_modify.FillColor = Color.FromArgb(98, 130, 93);
             btn_modify.Font = new Font("Segoe UI", 9F);
             btn_modify.ForeColor = Color.White;
             btn_modify.Location = new Point(243, 339);
@@ -195,6 +196,7 @@
             btn_cancel.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_cancel.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_cancel.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_cancel.FillColor = Color.FromArgb(98, 130, 93);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
             btn_cancel.Location = new Point(56, 339);
@@ -212,6 +214,7 @@
             btn_update.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_update.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_update.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_update.FillColor = Color.FromArgb(98, 130, 93);
             btn_update.Font = new Font("Segoe UI", 9F);
             btn_update.ForeColor = Color.White;
             btn_update.Location = new Point(243, 339);
@@ -226,6 +229,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(233, 239, 236);
             ClientSize = new Size(446, 450);
             Controls.Add(btn_update);
             Controls.Add(btn_cancel);
@@ -239,7 +243,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UserProfile";
-            Text = "Form1";
+            Text = "Chỉnh sửa thông tin";
             Load += UserProfile_Load;
             ResumeLayout(false);
             PerformLayout();

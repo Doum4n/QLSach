@@ -102,8 +102,16 @@ namespace QLSach.view.admin
 
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
             combobox_fillter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
-        }
 
+            //.Select(o => new { o.Id, o.name, genre = o.Genre.name, author = o.author.name, o.description })
+
+
+            data.Columns["Id"].HeaderText = "Mã sách";
+            data.Columns["name"].HeaderText = "Tên sách";
+            data.Columns["genre"].HeaderText = "Tên sách";
+            data.Columns["author"].HeaderText = "Tên tác giả";
+            data.Columns["description"].HeaderText = "Mô tả";
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {

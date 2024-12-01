@@ -63,29 +63,9 @@ namespace QLSach.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _637472568806769597 {
-            get {
-                object obj = ResourceManager.GetObject("637472568806769597", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bell {
             get {
                 object obj = ResourceManager.GetObject("bell", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Brown_Green_Aesthetic_Book_Store_Welcome_Banner {
-            get {
-                object obj = ResourceManager.GetObject("Brown Green Aesthetic Book Store Welcome Banner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

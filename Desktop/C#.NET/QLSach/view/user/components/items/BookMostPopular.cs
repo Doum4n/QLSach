@@ -51,6 +51,11 @@ namespace QLSach.view.components.items
             else
                 btn_register.Text = "Mượn";
 
+            updateRating();
+        }
+
+        private void updateRating()
+        {
             using (Context context = new Context())
             {
                 var rating = context.Feedbacks.Where(o => o.BookId == id).Select(o => o.rating).ToList();
@@ -62,6 +67,11 @@ namespace QLSach.view.components.items
                 });
                 if (count > 0)
                     ratingStar.Value = (float)(sum / count);
+
+                var book = context.Books.Where(o => o.Id == id).First();
+                book.rating = ratingStar.Value;
+                context.Books.Update(book);
+                context.SaveChanges();
             }
         }
 
@@ -120,6 +130,8 @@ namespace QLSach.view.components.items
 
                     context.Feedbacks.Update(feedback);
                 }
+
+                updateRating();
 
                 context.SaveChanges();
             }

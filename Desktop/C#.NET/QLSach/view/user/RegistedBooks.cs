@@ -23,6 +23,7 @@ namespace QLSach.view.user
                 .Select(o => new
                 {
                     o.BookId,
+                    o.Book.name,
                     o.register_at,
                     o.Status,
                 }).ToList();

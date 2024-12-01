@@ -23,6 +23,7 @@ namespace QLSach.view.user
                 .Select(o => new
                 {
                     o.BookId,
+                    o.Book.name,
                     o.borrow_at,
                     expected_return = o.borrow_at.Value.AddDays(7)
                 }).ToList();

@@ -37,9 +37,24 @@ namespace QLSach.Base
         // Sự kiện khi một thuộc tính đăng ký thay đổi
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        // Hiện thị sách khi nhấn vào một mục cụ thể (id)
+        public BindingSource Books = new BindingSource();
+        private int _id;
+        public int Id { get { return _id; } set { _id = value; LoadData(); } }
+
+        public virtual void LoadData()
+        {
+            
+        }
+
         protected ManagerBase(DataGridView data)
         {
             this.data = data;
+
+            data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data.AllowUserToAddRows = false;
+            data.AllowUserToDeleteRows = false;
+
             connection.Open();
         }
 
@@ -91,12 +106,23 @@ namespace QLSach.Base
             {
                 dr.Delete();
             }
+
+            if (adapter.DeleteCommand == null)
+            {
+                MySqlCommand deleteCommand = new MySqlCommand(
+                    $"DELETE FROM {tableName} WHERE {idColumn} = @id", connection);
+                deleteCommand.Parameters.Add("@id", MySqlDbType.Int32, 4).SourceColumn = idColumn;
+                adapter.DeleteCommand = deleteCommand;
+            }
         }
 
         protected void configuration(string selectString)
         {
             adapter = new MySqlDataAdapter(selectString, connection);
             MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+
+            // loại bỏ cơ chế Optimistic Concurrency
+            builder.ConflictOption = ConflictOption.OverwriteChanges;
         }
 
         public abstract void Load();
@@ -108,11 +134,9 @@ namespace QLSach.Base
 
             if (prevDataRow.Count > 0)
             {
-                // Duyệt qua các dòng đã lưu trữ, sắp xếp theo vị trí (Key)
-                foreach (var row in prevDataRow.OrderBy(r => r.Key))
+                foreach (var row in prevDataRow)
                 {
                     Singleton.getInstance.DataSet.Tables[tableName].Rows.InsertAt(row.Value, row.Key);
-                    MessageBox.Show(row.Key.ToString());
                 }
             }
 
@@ -123,9 +147,19 @@ namespace QLSach.Base
             seletedId.Clear();
         }
 
-        public virtual void SaveChange()
+        public virtual void SaveChange(string tableName)
         {
-            
+            try
+            {
+                binding.ResetBindings(true);
+                adapter.Update(Singleton.getInstance.DataSet, tableName);
+                prevDataRow.Clear();
+                seletedId.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         // Hoàn tác dữ liệu

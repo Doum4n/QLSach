@@ -34,7 +34,7 @@ namespace QLSach.view
 
         private void OnActivated(string newValue)
         {
-            lb_path.Text = newValue;
+            //lb_path.Text = newValue;
         }
 
 
@@ -131,8 +131,6 @@ namespace QLSach.view
 
             ReadMessagesFromPartition(0);
 
-            btn_look_up.Dock = DockStyle.Top;
-
             pane_nofitication.Visible = isContent;
         }
 
@@ -195,7 +193,6 @@ namespace QLSach.view
                     if (consumeResult != null)
                     {
                         int userId = consumeResult.Message.Key;
-                        MessageBox.Show(userId.ToString() + ":" + consumeResult.Message.Key.ToString());
                         if (userId == Singleton.getInstance.UserId)
                         {
                             RichTextBox textBox = new RichTextBox();
@@ -360,6 +357,14 @@ namespace QLSach.view
         {
             UserProfile userProfile = new UserProfile();
             userProfile.ShowDialog();
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            Login login = new Login();
+            login.Show();
         }
     }
 }

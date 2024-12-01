@@ -35,7 +35,7 @@ namespace QLSach.ViewModel
 
             using (var context = new Context())
             {
-                BookCategory.DataSource = context.Books.Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description }).ToDataTable();
+                BookCategory.DataSource = context.Books.Select(o => new { o.Id, o.name, genre = o.Genre.name, author = o.author.name, o.description }).ToDataTable();
                 base.data = data;
             }
 
@@ -111,7 +111,7 @@ namespace QLSach.ViewModel
                 binding.DataSource = context.Categories
              .Where(o => o.Id == id)
              .SelectMany(o => o.Books)
-             .Select(o => new { o.Id, o.name, genre = o.Genre.name, o.description })
+             .Select(o => new { o.Id, o.name, genre = o.Genre.name, author = o.author.name, o.description })
              .ToDataTable();
         }
 

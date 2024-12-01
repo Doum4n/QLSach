@@ -92,6 +92,7 @@
             // data
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data.BackgroundColor = Color.FromArgb(232, 223, 202);
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             data.Location = new Point(17, 137);
             data.Name = "data";

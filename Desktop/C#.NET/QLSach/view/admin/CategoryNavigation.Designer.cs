@@ -59,7 +59,7 @@
             guna2Panel2.Location = new Point(8, 13);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel2.Size = new Size(1007, 67);
+            guna2Panel2.Size = new Size(932, 67);
             guna2Panel2.TabIndex = 16;
             // 
             // btn_genre
@@ -123,7 +123,7 @@
             paneMain.Location = new Point(8, 86);
             paneMain.Name = "paneMain";
             paneMain.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            paneMain.Size = new Size(1007, 492);
+            paneMain.Size = new Size(932, 492);
             paneMain.TabIndex = 10;
             // 
             // CategoryNavigation
@@ -135,7 +135,7 @@
             Controls.Add(paneMain);
             Controls.Add(guna2Panel2);
             Name = "CategoryNavigation";
-            Size = new Size(1020, 581);
+            Size = new Size(946, 581);
             Load += CategoryNavigation_Load;
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);

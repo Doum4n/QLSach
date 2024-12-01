@@ -34,6 +34,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -74,14 +76,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             tb_author_id = new Guna.UI2.WinForms.Guna2TextBox();
             label5 = new Label();
             combobox_genre_name = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_genre_id = new Guna.UI2.WinForms.Guna2TextBox();
             panel_modify = new Panel();
+            cbb_storageLocation = new Guna.UI2.WinForms.Guna2ComboBox();
+            label14 = new Label();
             cbb_publisher = new Guna.UI2.WinForms.Guna2ComboBox();
             tb_publisher_id = new Guna.UI2.WinForms.Guna2TextBox();
             label9 = new Label();
@@ -113,8 +115,6 @@
             btn_deleteData = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             label3 = new Label();
-            cbb_storageLocation = new Guna.UI2.WinForms.Guna2ComboBox();
-            label14 = new Label();
             panel_modify.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picture).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -126,9 +126,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(697, 52);
+            label2.Font = new Font("Verdana", 9F);
+            label2.Location = new Point(692, 54);
             label2.Name = "label2";
-            label2.Size = new Size(81, 20);
+            label2.Size = new Size(89, 18);
             label2.TabIndex = 3;
             label2.Text = "Tên tác giả";
             // 
@@ -157,9 +158,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(717, 9);
+            label5.Font = new Font("Verdana", 9F);
+            label5.Location = new Point(716, 12);
             label5.Name = "label5";
-            label5.Size = new Size(61, 20);
+            label5.Size = new Size(65, 18);
             label5.TabIndex = 9;
             label5.Text = "Tên loại";
             // 
@@ -235,6 +237,33 @@
             panel_modify.Size = new Size(1177, 296);
             panel_modify.TabIndex = 14;
             // 
+            // cbb_storageLocation
+            // 
+            cbb_storageLocation.BackColor = Color.Transparent;
+            cbb_storageLocation.CustomizableEdges = customizableEdges7;
+            cbb_storageLocation.DrawMode = DrawMode.OwnerDrawFixed;
+            cbb_storageLocation.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_storageLocation.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbb_storageLocation.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbb_storageLocation.Font = new Font("Segoe UI", 10F);
+            cbb_storageLocation.ForeColor = Color.FromArgb(68, 88, 112);
+            cbb_storageLocation.ItemHeight = 30;
+            cbb_storageLocation.Location = new Point(787, 137);
+            cbb_storageLocation.Name = "cbb_storageLocation";
+            cbb_storageLocation.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cbb_storageLocation.Size = new Size(175, 36);
+            cbb_storageLocation.TabIndex = 24;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Verdana", 9F);
+            label14.Location = new Point(714, 138);
+            label14.Name = "label14";
+            label14.Size = new Size(67, 18);
+            label14.TabIndex = 23;
+            label14.Text = "Mã vị trí";
+            // 
             // cbb_publisher
             // 
             cbb_publisher.BackColor = Color.Transparent;
@@ -277,9 +306,10 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(684, 94);
+            label9.Font = new Font("Verdana", 9F);
+            label9.Location = new Point(674, 96);
             label9.Name = "label9";
-            label9.Size = new Size(97, 20);
+            label9.Size = new Size(107, 18);
             label9.TabIndex = 19;
             label9.Text = "Nhà xuất bản";
             // 
@@ -320,7 +350,7 @@
             btn_action.FillColor = Color.FromArgb(67, 104, 80);
             btn_action.Font = new Font("Segoe UI", 9F);
             btn_action.ForeColor = Color.White;
-            btn_action.Location = new Point(846, 192);
+            btn_action.Location = new Point(846, 235);
             btn_action.Name = "btn_action";
             btn_action.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btn_action.Size = new Size(116, 42);
@@ -331,7 +361,7 @@
             // rtb_book_description
             // 
             rtb_book_description.BorderStyle = BorderStyle.None;
-            rtb_book_description.Location = new Point(269, 91);
+            rtb_book_description.Location = new Point(269, 90);
             rtb_book_description.Name = "rtb_book_description";
             rtb_book_description.Size = new Size(400, 122);
             rtb_book_description.TabIndex = 2;
@@ -365,7 +395,7 @@
             tb_remaining.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_remaining.Font = new Font("Segoe UI", 9F);
             tb_remaining.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_remaining.Location = new Point(542, 53);
+            tb_remaining.Location = new Point(542, 51);
             tb_remaining.Margin = new Padding(3, 4, 3, 4);
             tb_remaining.Name = "tb_remaining";
             tb_remaining.PasswordChar = '\0';
@@ -410,7 +440,7 @@
             tb_book_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_book_name.Font = new Font("Segoe UI", 9F);
             tb_book_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_book_name.Location = new Point(269, 53);
+            tb_book_name.Location = new Point(269, 51);
             tb_book_name.Margin = new Padding(3, 4, 3, 4);
             tb_book_name.Name = "tb_book_name";
             tb_book_name.PasswordChar = '\0';
@@ -445,54 +475,60 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(464, 53);
+            label13.Font = new Font("Verdana", 9F);
+            label13.Location = new Point(480, 53);
             label13.Name = "label13";
-            label13.Size = new Size(55, 20);
+            label13.Size = new Size(58, 18);
             label13.TabIndex = 7;
             label13.Text = "Còn lại";
             // 
             // label12
             // 
             label12.AutoSize = true;
+            label12.Font = new Font("Verdana", 9F);
             label12.Location = new Point(464, 17);
             label12.Name = "label12";
-            label12.Size = new Size(69, 20);
+            label12.Size = new Size(74, 18);
             label12.TabIndex = 6;
             label12.Text = "Số lượng";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(149, 245);
+            label11.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(138, 235);
             label11.Name = "label11";
-            label11.Size = new Size(111, 20);
+            label11.Size = new Size(122, 18);
             label11.TabIndex = 5;
             label11.Text = "Năm phát hành";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(182, 94);
+            label8.Font = new Font("Verdana", 9F);
+            label8.Location = new Point(212, 90);
             label8.Name = "label8";
-            label8.Size = new Size(48, 20);
+            label8.Size = new Size(51, 18);
             label8.TabIndex = 2;
             label8.Text = "Mô tả";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(182, 53);
+            label7.Font = new Font("Verdana", 9F);
+            label7.Location = new Point(189, 49);
             label7.Name = "label7";
-            label7.Size = new Size(65, 20);
+            label7.Size = new Size(74, 18);
             label7.TabIndex = 1;
             label7.Text = "Tên sách";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(184, 17);
+            label6.Font = new Font("Verdana", 9F);
+            label6.Location = new Point(210, 13);
             label6.Name = "label6";
-            label6.Size = new Size(49, 20);
+            label6.Size = new Size(53, 18);
             label6.TabIndex = 0;
             label6.Text = "Mã số";
             // 
@@ -667,6 +703,7 @@
             // data
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data.BackgroundColor = Color.FromArgb(232, 223, 202);
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             data.Location = new Point(26, 3);
             data.Name = "data";
@@ -686,7 +723,7 @@
             btn_deleteData.FillColor = Color.FromArgb(251, 250, 218);
             btn_deleteData.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_deleteData.ForeColor = Color.FromArgb(18, 55, 42);
-            btn_deleteData.Location = new Point(26, 377);
+            btn_deleteData.Location = new Point(26, 356);
             btn_deleteData.Name = "btn_deleteData";
             btn_deleteData.ShadowDecoration.CustomizableEdges = customizableEdges46;
             btn_deleteData.Size = new Size(129, 56);
@@ -696,52 +733,26 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(data);
             guna2Panel1.Controls.Add(btn_deleteData);
+            guna2Panel1.Controls.Add(data);
             guna2Panel1.CustomizableEdges = customizableEdges47;
             guna2Panel1.ForeColor = SystemColors.ActiveCaptionText;
             guna2Panel1.Location = new Point(0, 502);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges48;
-            guna2Panel1.Size = new Size(1211, 435);
+            guna2Panel1.Size = new Size(1211, 418);
             guna2Panel1.TabIndex = 20;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(22, 66, 60);
             label3.Location = new Point(12, 10);
             label3.Name = "label3";
-            label3.Size = new Size(221, 46);
+            label3.Size = new Size(263, 41);
             label3.TabIndex = 23;
             label3.Text = "Quản lý sách";
-            // 
-            // cbb_storageLocation
-            // 
-            cbb_storageLocation.BackColor = Color.Transparent;
-            cbb_storageLocation.CustomizableEdges = customizableEdges7;
-            cbb_storageLocation.DrawMode = DrawMode.OwnerDrawFixed;
-            cbb_storageLocation.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbb_storageLocation.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbb_storageLocation.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbb_storageLocation.Font = new Font("Segoe UI", 10F);
-            cbb_storageLocation.ForeColor = Color.FromArgb(68, 88, 112);
-            cbb_storageLocation.ItemHeight = 30;
-            cbb_storageLocation.Location = new Point(787, 137);
-            cbb_storageLocation.Name = "cbb_storageLocation";
-            cbb_storageLocation.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            cbb_storageLocation.Size = new Size(175, 36);
-            cbb_storageLocation.TabIndex = 24;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(715, 137);
-            label14.Name = "label14";
-            label14.Size = new Size(63, 20);
-            label14.TabIndex = 23;
-            label14.Text = "Mã vị trí";
             // 
             // BookManager
             // 
@@ -754,7 +765,7 @@
             Controls.Add(panel_modify);
             Controls.Add(guna2Panel2);
             Name = "BookManager";
-            Size = new Size(1222, 953);
+            Size = new Size(1222, 914);
             Load += book_management_Load;
             panel_modify.ResumeLayout(false);
             panel_modify.PerformLayout();

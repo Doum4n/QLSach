@@ -30,7 +30,7 @@ namespace QLSach.view.admin
         private void BindData()
         {
             // Gán DataSource cho DataGridView
-            data.DataSource = viewModel.Authors;
+
 
             // Gán DataBinding cho TextBox và ComboBox
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -50,7 +50,7 @@ namespace QLSach.view.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            viewModel.SaveChange();
+            viewModel.SaveChange("Authors");
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -77,6 +77,9 @@ namespace QLSach.view.admin
 
         private void AuthorManager_Load(object sender, EventArgs e)
         {
+            data.DataSource = viewModel.Authors;
+            dataBooks.DataSource = viewModel.Books;
+
             viewModel.Load();
             viewModel.AssignFillterList(combobox_fillter);
 
@@ -103,6 +106,14 @@ namespace QLSach.view.admin
                     author.name = selectedRow.Cells["name"].Value.ToString();
                     author.description = selectedRow.Cells["description"].Value.ToString();
                     viewModel.SelectedAuthor = author;
+
+                    viewModel.AuthorId = author.Id;
+
+                    // Vì lúc mới load chưa dòng tác giả nào được chọn, nên sẽ lỗi
+                    dataBooks.Columns["Id"].HeaderText = "Mã sách";
+                    dataBooks.Columns["name"].HeaderText = "Tên sách";
+                    dataBooks.Columns["description"].HeaderText = "Mô tả";
+                    dataBooks.Columns["author_id"].Visible = false;
                 }
             };
 
@@ -131,6 +142,8 @@ namespace QLSach.view.admin
             pane_add_author.Visible = isAdd;
             pane_modify_author.Visible = isUpdate;
             checkbox.Visible = false;
+
+            btn_delete_data.Visible = false;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -142,5 +155,6 @@ namespace QLSach.view.admin
         {
             viewModel.AddAuthor(tb_name_added.Text, rtb_description_added.Text);
         }
+
     }
 }

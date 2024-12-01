@@ -1,4 +1,5 @@
-﻿using MoreLinq.Extensions;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using MoreLinq.Extensions;
 using MySqlConnector;
 using QLSach.Base;
 using QLSach.component;
@@ -45,9 +46,11 @@ namespace QLSach.ViewModel
             }
 
             booksDataTable = (DataTable)Books.DataSource;
+            booksDataTable.PrimaryKey = new DataColumn[] { booksDataTable.Columns["Id"] };
             booksDataTable.AcceptChanges();
             booksDataTable.TableName = "Books";
-            Singleton.getInstance.DataSet.Tables.Add(booksDataTable);
+            if (!Singleton.getInstance.DataSet.Tables.Contains(booksDataTable.TableName))
+                Singleton.getInstance.DataSet.Tables.Add(booksDataTable);
 
             configuration("SELECT * FROM Books");
         }
@@ -137,45 +140,50 @@ namespace QLSach.ViewModel
             data.Columns["photoPath"].Visible = false;
             data.Columns["publisher_id"].Visible = false;
 
-            data.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data.AllowUserToAddRows = false;
-            data.AllowUserToDeleteRows = false;
+        
         }
 
-        public override void SaveChange()
+        //public override void SaveChange()
+        //{
+        //    try
+        //    {
+        //        //booksDataTable.AcceptChanges();
+        //        adapter.Update(Singleton.getInstance.DataSet, "Books");
+        //        MessageBox.Show("Cập nhật sách thành công");
+        //        booksDataTable.AcceptChanges();
+        //        //adapter.Fill(Singleton.getInstance.DataSet.Tables["Books"]);
+        //        prevDataRow.Clear();
+        //        seletedId.Clear();
+        //    }catch(DBConcurrencyException e)
+        //    {
+        //        DialogResult result = MessageBox.Show("Dữ liệu đã bị thay đổi bởi người khác. Bạn có muốn tải lại dữ liệu?", "Cảnh báo", MessageBoxButtons.YesNo);
+        //        if (result == DialogResult.Yes)
+        //        {
+        //            try
+        //            {
+        //                // Làm sạch dữ liệu cũ trong DataTable
+        //                Singleton.getInstance.DataSet.Tables["Books"].Clear();
+
+        //                // Tải lại dữ liệu từ cơ sở dữ liệu
+        //                adapter.Fill(Singleton.getInstance.DataSet.Tables["Books"]);
+
+        //                MessageBox.Show("Dữ liệu đã được làm mới.");
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                // Xử lý nếu có lỗi xảy ra
+        //                MessageBox.Show($"Lỗi khi tải lại dữ liệu: {ex.Message}");
+        //            }
+        //        }
+
+        //    }
+        //}
+
+        public override void SaveChange(string tableName)
         {
-            try
-            {
-                //booksDataTable.AcceptChanges();
-                adapter.Update(Singleton.getInstance.DataSet, "Books");
-                MessageBox.Show("Cập nhật sách thành công");
-                booksDataTable.AcceptChanges();
-                //adapter.Fill(Singleton.getInstance.DataSet.Tables["Books"]);
-                prevDataRow.Clear();
-                seletedId.Clear();
-            }catch(DBConcurrencyException e)
-            {
-                DialogResult result = MessageBox.Show("Dữ liệu đã bị thay đổi bởi người khác. Bạn có muốn tải lại dữ liệu?", "Cảnh báo", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    try
-                    {
-                        // Làm sạch dữ liệu cũ trong DataTable
-                        Singleton.getInstance.DataSet.Tables["Books"].Clear();
-
-                        // Tải lại dữ liệu từ cơ sở dữ liệu
-                        adapter.Fill(Singleton.getInstance.DataSet.Tables["Books"]);
-
-                        MessageBox.Show("Dữ liệu đã được làm mới.");
-                    }
-                    catch (Exception ex)
-                    {
-                        // Xử lý nếu có lỗi xảy ra
-                        MessageBox.Show($"Lỗi khi tải lại dữ liệu: {ex.Message}");
-                    }
-                }
-
-            }
+            base.SaveChange(tableName);
+            MessageBox.Show("Cập nhật sách thành công");
+            booksDataTable.AcceptChanges();
         }
     }
 }

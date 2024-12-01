@@ -12,6 +12,8 @@ namespace QLSach.view
         private BookManager BookManager = new BookManager();
         private CategoryNavigation CategoryNavigation = new CategoryNavigation();
         private PublisherManager PublisherManager = new PublisherManager();
+        private StorageLocationManager StorageLocationManager = new StorageLocationManager();
+        private ReaderManager ReaderManager = new ReaderManager();
         public Admin()
         {
             InitializeComponent();
@@ -32,6 +34,11 @@ namespace QLSach.view
         private void Admin_Load(object sender, EventArgs e)
         {
             pane_main.Controls.Add(BookManager);
+
+            if(Singleton.getInstance.Role == database.models.Role.Staff)
+            {
+                btn_Statistacs.Visible = false;
+            }
         }
 
         private void btn_user_Click(object sender, EventArgs e)
@@ -65,9 +72,24 @@ namespace QLSach.view
             pane_main.Controls.Add(PublisherManager);
         }
 
+        private void btn_storageLocation_Click(object sender, EventArgs e)
+        {
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(StorageLocationManager);
+        }
+
         private void btn_reader_Click(object sender, EventArgs e)
         {
+            pane_main.Controls.Clear();
+            pane_main.Controls.Add(ReaderManager);
+        }
 
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            Login login = new Login();
+            login.Show();
         }
     }
 }

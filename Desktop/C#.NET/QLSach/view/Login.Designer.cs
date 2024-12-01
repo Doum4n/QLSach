@@ -46,9 +46,10 @@
             btn_signIn.DisabledState.CustomBorderColor = Color.DarkGray;
             btn_signIn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btn_signIn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn_signIn.FillColor = Color.FromArgb(106, 156, 137);
             btn_signIn.Font = new Font("Segoe UI", 9F);
             btn_signIn.ForeColor = Color.White;
-            btn_signIn.Location = new Point(234, 280);
+            btn_signIn.Location = new Point(233, 275);
             btn_signIn.Margin = new Padding(3, 4, 3, 4);
             btn_signIn.Name = "btn_signIn";
             btn_signIn.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -61,7 +62,7 @@
             // 
             tb_name.Cursor = Cursors.IBeam;
             tb_name.CustomizableEdges = customizableEdges3;
-            tb_name.DefaultText = "admin";
+            tb_name.DefaultText = "";
             tb_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tb_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             tb_name.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -69,7 +70,7 @@
             tb_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_name.Font = new Font("Segoe UI", 9F);
             tb_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_name.Location = new Point(180, 72);
+            tb_name.Location = new Point(179, 67);
             tb_name.Margin = new Padding(3, 5, 3, 5);
             tb_name.Name = "tb_name";
             tb_name.PasswordChar = '\0';
@@ -91,7 +92,7 @@
             tb_pw.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_pw.Font = new Font("Segoe UI", 9F);
             tb_pw.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_pw.Location = new Point(180, 171);
+            tb_pw.Location = new Point(179, 166);
             tb_pw.Margin = new Padding(3, 5, 3, 5);
             tb_pw.Name = "tb_pw";
             tb_pw.PasswordChar = '*';
@@ -105,13 +106,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(609, 381);
+            BackColor = Color.FromArgb(233, 239, 236);
+            ClientSize = new Size(602, 381);
             Controls.Add(tb_pw);
             Controls.Add(tb_name);
             Controls.Add(btn_signIn);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
-            Text = "Form1";
+            Text = "Đăng nhập";
             ResumeLayout(false);
         }
 

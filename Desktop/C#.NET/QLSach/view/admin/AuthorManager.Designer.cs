@@ -67,6 +67,8 @@ namespace QLSach.view.admin
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btn_update = new Guna.UI2.WinForms.Guna2Button();
             tb_author_name = new Guna.UI2.WinForms.Guna2TextBox();
             btn_save = new Guna.UI2.WinForms.Guna2Button();
@@ -94,7 +96,9 @@ namespace QLSach.view.admin
             tb_name_added = new Guna.UI2.WinForms.Guna2TextBox();
             label6 = new Label();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            dataBooks = new DataGridView();
+            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -102,7 +106,9 @@ namespace QLSach.view.admin
             guna2Panel2.SuspendLayout();
             pane_add_author.SuspendLayout();
             guna2Panel5.SuspendLayout();
-            guna2Panel6.SuspendLayout();
+            guna2Panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataBooks).BeginInit();
+            guna2Panel4.SuspendLayout();
             SuspendLayout();
             // 
             // btn_update
@@ -156,7 +162,7 @@ namespace QLSach.view.admin
             btn_save.FillColor = Color.FromArgb(106, 156, 137);
             btn_save.Font = new Font("Segoe UI", 9F);
             btn_save.ForeColor = Color.White;
-            btn_save.Location = new Point(476, 19);
+            btn_save.Location = new Point(480, 19);
             btn_save.Name = "btn_save";
             btn_save.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btn_save.Size = new Size(121, 39);
@@ -176,7 +182,7 @@ namespace QLSach.view.admin
             btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
-            btn_cancel.Location = new Point(324, 19);
+            btn_cancel.Location = new Point(328, 19);
             btn_cancel.Name = "btn_cancel";
             btn_cancel.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btn_cancel.Size = new Size(121, 39);
@@ -196,7 +202,7 @@ namespace QLSach.view.admin
             btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
-            btn_delete.Location = new Point(172, 19);
+            btn_delete.Location = new Point(176, 19);
             btn_delete.Name = "btn_delete";
             btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btn_delete.Size = new Size(121, 39);
@@ -207,9 +213,10 @@ namespace QLSach.view.admin
             // label13
             // 
             label13.AutoSize = true;
+            label13.Font = new Font("Verdana", 9F);
             label13.Location = new Point(24, 90);
             label13.Name = "label13";
-            label13.Size = new Size(32, 20);
+            label13.Size = new Size(35, 18);
             label13.TabIndex = 0;
             label13.Text = "Tên";
             // 
@@ -242,7 +249,7 @@ namespace QLSach.view.admin
             guna2Panel1.Location = new Point(0, 65);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel1.Size = new Size(972, 79);
+            guna2Panel1.Size = new Size(955, 79);
             guna2Panel1.TabIndex = 10;
             // 
             // btn_add_paneAuthor
@@ -257,7 +264,7 @@ namespace QLSach.view.admin
             btn_add_paneAuthor.FillColor = Color.FromArgb(106, 156, 137);
             btn_add_paneAuthor.Font = new Font("Segoe UI", 9F);
             btn_add_paneAuthor.ForeColor = Color.White;
-            btn_add_paneAuthor.Location = new Point(20, 19);
+            btn_add_paneAuthor.Location = new Point(24, 19);
             btn_add_paneAuthor.Name = "btn_add_paneAuthor";
             btn_add_paneAuthor.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btn_add_paneAuthor.Size = new Size(121, 39);
@@ -289,11 +296,12 @@ namespace QLSach.view.admin
             // data
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data.BackgroundColor = Color.FromArgb(232, 223, 202);
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             data.Location = new Point(16, 20);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(926, 329);
+            data.Size = new Size(926, 243);
             data.TabIndex = 0;
             // 
             // guna2Panel3
@@ -301,10 +309,10 @@ namespace QLSach.view.admin
             guna2Panel3.Controls.Add(data);
             guna2Panel3.CustomizableEdges = customizableEdges19;
             guna2Panel3.Dock = DockStyle.Top;
-            guna2Panel3.Location = new Point(0, 581);
+            guna2Panel3.Location = new Point(0, 528);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel3.Size = new Size(972, 370);
+            guna2Panel3.Size = new Size(955, 276);
             guna2Panel3.TabIndex = 12;
             // 
             // pane_modify_author
@@ -320,10 +328,10 @@ namespace QLSach.view.admin
             pane_modify_author.Controls.Add(label13);
             pane_modify_author.CustomizableEdges = customizableEdges23;
             pane_modify_author.Dock = DockStyle.Top;
-            pane_modify_author.Location = new Point(0, 144);
+            pane_modify_author.Location = new Point(0, 336);
             pane_modify_author.Name = "pane_modify_author";
             pane_modify_author.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            pane_modify_author.Size = new Size(972, 192);
+            pane_modify_author.Size = new Size(955, 192);
             pane_modify_author.TabIndex = 11;
             // 
             // tb_author_id
@@ -350,9 +358,10 @@ namespace QLSach.view.admin
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 9F);
             label1.Location = new Point(24, 22);
             label1.Name = "label1";
-            label1.Size = new Size(79, 20);
+            label1.Size = new Size(84, 18);
             label1.TabIndex = 10;
             label1.Text = "Mã tác giả";
             // 
@@ -368,9 +377,10 @@ namespace QLSach.view.admin
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Verdana", 9F);
             label4.Location = new Point(335, 22);
             label4.Name = "label4";
-            label4.Size = new Size(48, 20);
+            label4.Size = new Size(51, 18);
             label4.TabIndex = 6;
             label4.Text = "Mô tả";
             // 
@@ -384,7 +394,7 @@ namespace QLSach.view.admin
             btn_delete_data.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete_data.Font = new Font("Segoe UI", 9F);
             btn_delete_data.ForeColor = Color.White;
-            btn_delete_data.Location = new Point(794, 6);
+            btn_delete_data.Location = new Point(794, 7);
             btn_delete_data.Name = "btn_delete_data";
             btn_delete_data.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btn_delete_data.Size = new Size(148, 45);
@@ -401,10 +411,10 @@ namespace QLSach.view.admin
             guna2Panel2.Controls.Add(combobox_fillter);
             guna2Panel2.CustomizableEdges = customizableEdges27;
             guna2Panel2.Dock = DockStyle.Top;
-            guna2Panel2.Location = new Point(0, 528);
+            guna2Panel2.Location = new Point(0, 804);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Panel2.Size = new Size(972, 53);
+            guna2Panel2.Size = new Size(955, 53);
             guna2Panel2.TabIndex = 14;
             // 
             // label2
@@ -412,7 +422,7 @@ namespace QLSach.view.admin
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(22, 66, 60);
-            label2.Location = new Point(7, 7);
+            label2.Location = new Point(19, 10);
             label2.Name = "label2";
             label2.Size = new Size(257, 46);
             label2.TabIndex = 15;
@@ -429,10 +439,10 @@ namespace QLSach.view.admin
             pane_add_author.Controls.Add(label6);
             pane_add_author.CustomizableEdges = customizableEdges33;
             pane_add_author.Dock = DockStyle.Top;
-            pane_add_author.Location = new Point(0, 336);
+            pane_add_author.Location = new Point(0, 144);
             pane_add_author.Name = "pane_add_author";
             pane_add_author.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            pane_add_author.Size = new Size(972, 192);
+            pane_add_author.Size = new Size(955, 192);
             pane_add_author.TabIndex = 12;
             // 
             // rtb_description_added
@@ -465,9 +475,10 @@ namespace QLSach.view.admin
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Verdana", 9F);
             label5.Location = new Point(335, 12);
             label5.Name = "label5";
-            label5.Size = new Size(48, 20);
+            label5.Size = new Size(51, 18);
             label5.TabIndex = 6;
             label5.Text = "Mô tả";
             // 
@@ -495,9 +506,10 @@ namespace QLSach.view.admin
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Verdana", 9F);
             label6.Location = new Point(24, 11);
             label6.Name = "label6";
-            label6.Size = new Size(32, 20);
+            label6.Size = new Size(35, 18);
             label6.TabIndex = 0;
             label6.Text = "Tên";
             // 
@@ -509,19 +521,41 @@ namespace QLSach.view.admin
             guna2Panel5.Location = new Point(0, 0);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            guna2Panel5.Size = new Size(972, 65);
+            guna2Panel5.Size = new Size(955, 65);
             guna2Panel5.TabIndex = 16;
             // 
-            // guna2Panel6
+            // guna2Panel7
             // 
-            guna2Panel6.Controls.Add(btn_delete_data);
-            guna2Panel6.CustomizableEdges = customizableEdges37;
-            guna2Panel6.Dock = DockStyle.Top;
-            guna2Panel6.Location = new Point(0, 951);
-            guna2Panel6.Name = "guna2Panel6";
-            guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            guna2Panel6.Size = new Size(972, 56);
-            guna2Panel6.TabIndex = 17;
+            guna2Panel7.Controls.Add(dataBooks);
+            guna2Panel7.CustomizableEdges = customizableEdges37;
+            guna2Panel7.Dock = DockStyle.Top;
+            guna2Panel7.Location = new Point(0, 919);
+            guna2Panel7.Name = "guna2Panel7";
+            guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2Panel7.Size = new Size(955, 199);
+            guna2Panel7.TabIndex = 15;
+            // 
+            // dataBooks
+            // 
+            dataBooks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataBooks.BackgroundColor = Color.FromArgb(232, 223, 202);
+            dataBooks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataBooks.Location = new Point(23, 11);
+            dataBooks.Name = "dataBooks";
+            dataBooks.RowHeadersWidth = 51;
+            dataBooks.Size = new Size(926, 185);
+            dataBooks.TabIndex = 1;
+            // 
+            // guna2Panel4
+            // 
+            guna2Panel4.Controls.Add(btn_delete_data);
+            guna2Panel4.CustomizableEdges = customizableEdges39;
+            guna2Panel4.Dock = DockStyle.Top;
+            guna2Panel4.Location = new Point(0, 857);
+            guna2Panel4.Name = "guna2Panel4";
+            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            guna2Panel4.Size = new Size(955, 62);
+            guna2Panel4.TabIndex = 14;
             // 
             // AuthorManager
             // 
@@ -530,16 +564,17 @@ namespace QLSach.view.admin
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(245, 239, 230);
-            Controls.Add(guna2Panel6);
-            Controls.Add(guna2Panel3);
+            Controls.Add(guna2Panel7);
+            Controls.Add(guna2Panel4);
             Controls.Add(guna2Panel2);
-            Controls.Add(pane_add_author);
+            Controls.Add(guna2Panel3);
             Controls.Add(pane_modify_author);
+            Controls.Add(pane_add_author);
             Controls.Add(guna2Panel1);
             Controls.Add(guna2Panel5);
-            MinimumSize = new Size(972, 650);
+            MinimumSize = new Size(955, 600);
             Name = "AuthorManager";
-            Size = new Size(972, 1007);
+            Size = new Size(955, 1118);
             Load += AuthorManager_Load;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
@@ -551,7 +586,9 @@ namespace QLSach.view.admin
             pane_add_author.PerformLayout();
             guna2Panel5.ResumeLayout(false);
             guna2Panel5.PerformLayout();
-            guna2Panel6.ResumeLayout(false);
+            guna2Panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataBooks).EndInit();
+            guna2Panel4.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -585,6 +622,8 @@ namespace QLSach.view.admin
         private Guna.UI2.WinForms.Guna2TextBox tb_name_added;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private DataGridView dataBooks;
     }
 }

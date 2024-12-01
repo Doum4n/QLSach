@@ -18,7 +18,7 @@ namespace QLSach.view.components.items
             tbLayoutPanel.Controls.Clear();
             int i = 1;
             using (Context context = new Context()) {
-                foreach (var item in context.Books.OrderBy(o => o.views).Where(o => o.created_at >= DateTime.Now.AddDays(-7)).Take(10).ToList())
+                foreach (var item in context.Books.OrderByDescending(o => o.views).Where(o => o.created_at >= DateTime.Now.AddDays(-7)).Take(10).ToList())
                 {
                     BookMostView bookMostView = new BookMostView(item.Id);
                     bookMostView.bookName = item.name;
@@ -30,7 +30,6 @@ namespace QLSach.view.components.items
                     tbLayoutPanel.Controls.Add(bookMostView);
                 }
             }
-            MessageBox.Show("ok");
         }
 
         private void btn_thisWeek_Click(object sender, EventArgs e)

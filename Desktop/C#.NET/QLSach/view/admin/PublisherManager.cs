@@ -29,7 +29,7 @@ namespace QLSach.view.admin
 
         private void BindData()
         {
-            data.DataSource = viewModel.Publishers;
+
 
             tb_search.DataBindings.Add("Text", viewModel, "SearchText", true, DataSourceUpdateMode.OnPropertyChanged);
             combobox_fillter.DataBindings.Add("SelectedValue", viewModel, "SelectedFilter", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -52,7 +52,7 @@ namespace QLSach.view.admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            viewModel.SaveChange();
+            viewModel.SaveChange("Publishers");
         }
 
         private void btn_add_genre_Click(object sender, EventArgs e)
@@ -68,6 +68,9 @@ namespace QLSach.view.admin
 
         private void PublisherManager_Load(object sender, EventArgs e)
         {
+            data.DataSource = viewModel.Publishers;
+            dataBooks.DataSource = viewModel.Books;
+
             viewModel.Load();
             viewModel.AssignFillterList(combobox_fillter);
 
@@ -85,7 +88,19 @@ namespace QLSach.view.admin
                 if (data.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
                 {
                     viewModel.addSelectedId(e.RowIndex, "Id");
+                    viewModel.PublisherId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
                 }
+            };
+
+            data.CellClick += (sender, e) =>
+            {
+                var selectedRow = data.Rows[e.RowIndex];
+                viewModel.PublisherId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                dataBooks.Columns["Id"].HeaderText = "Mã sách";
+                dataBooks.Columns["name"].HeaderText = "Tên sách";
+                dataBooks.Columns["description"].HeaderText = "Mô tả";
+                dataBooks.Columns["publisher_id"].Visible = false;
             };
         }
     }

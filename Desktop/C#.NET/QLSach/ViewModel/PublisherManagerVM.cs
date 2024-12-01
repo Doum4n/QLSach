@@ -21,6 +21,10 @@ namespace QLSach.ViewModel
         DataTable publisherDataTable;
 
         private BindingSource _genres = new BindingSource();
+        public BindingSource Books = new BindingSource();
+
+        private int _publisher;
+        public int PublisherId { get { return _publisher; } set { _publisher = value; LoadData(); } }
 
         public PublisherManagerVM(DataGridView data) : base(data)
         {
@@ -59,11 +63,28 @@ namespace QLSach.ViewModel
         public override void Load()
         {
             base.binding = Publishers;
+
+            data.Columns["Id"].HeaderText = "Mã nhà xuất bản";
+            data.Columns["Name"].HeaderText = "Tên nhà xuất bản";
         }
 
-        public override void SaveChange()
+        public void LoadData()
         {
-            adapter.Update(Singleton.getInstance.DataSet, "Publishers");
+            Books.DataSource = context.Books
+              .Select(o => new
+              {
+                  o.Id,
+                  o.name,
+                  o.description,
+                  o.publisher_id
+              })
+              .Where(o => o.publisher_id == PublisherId)
+              .ToDataTable();
+        }
+
+        public override void SaveChange(string tableName)
+        {
+            base.SaveChange(tableName);
             publisherDataTable.AcceptChanges();
             MessageBox.Show("Cập nhật thành công", "");
         }

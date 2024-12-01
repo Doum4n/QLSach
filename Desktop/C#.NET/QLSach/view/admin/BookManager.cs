@@ -275,7 +275,7 @@ namespace QLSach.view.admin
 
         private void btn_update_data_Click(object sender, EventArgs e)
         {
-            viewModel.SaveChange();
+            viewModel.SaveChange("Books");
         }
 
         private void btn_deleteData_Click(object sender, EventArgs e)

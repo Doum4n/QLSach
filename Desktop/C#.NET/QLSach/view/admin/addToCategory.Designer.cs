@@ -72,10 +72,10 @@
             // 
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            data.Location = new Point(32, 285);
+            data.Location = new Point(15, 289);
             data.Name = "data";
             data.RowHeadersWidth = 51;
-            data.Size = new Size(970, 451);
+            data.Size = new Size(871, 372);
             data.TabIndex = 0;
             // 
             // label1
@@ -90,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(354, 18);
+            label2.Location = new Point(320, 18);
             label2.Name = "label2";
             label2.Size = new Size(48, 20);
             label2.TabIndex = 2;
@@ -119,15 +119,15 @@
             combobox_category_name.Location = new Point(128, 18);
             combobox_category_name.Name = "combobox_category_name";
             combobox_category_name.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            combobox_category_name.Size = new Size(175, 36);
+            combobox_category_name.Size = new Size(121, 36);
             combobox_category_name.TabIndex = 4;
             // 
             // rtb_description
             // 
             rtb_description.BorderStyle = BorderStyle.None;
-            rtb_description.Location = new Point(421, 18);
+            rtb_description.Location = new Point(387, 18);
             rtb_description.Name = "rtb_description";
-            rtb_description.Size = new Size(357, 80);
+            rtb_description.Size = new Size(303, 80);
             rtb_description.TabIndex = 5;
             rtb_description.Text = "";
             // 
@@ -149,7 +149,7 @@
             tb_count.PlaceholderText = "";
             tb_count.SelectedText = "";
             tb_count.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            tb_count.Size = new Size(92, 37);
+            tb_count.Size = new Size(45, 37);
             tb_count.TabIndex = 6;
             // 
             // btn_add
@@ -162,10 +162,10 @@
             btn_add.FillColor = Color.FromArgb(106, 156, 137);
             btn_add.Font = new Font("Segoe UI", 9F);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(811, 18);
+            btn_add.Location = new Point(734, 18);
             btn_add.Name = "btn_add";
             btn_add.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btn_add.Size = new Size(140, 42);
+            btn_add.Size = new Size(108, 42);
             btn_add.TabIndex = 7;
             btn_add.Text = "Thêm";
             btn_add.Click += btn_add_Click;
@@ -183,10 +183,10 @@
             combobox_fillter.ItemHeight = 30;
             combobox_fillter.ItemsAppearance.ForeColor = Color.FromArgb(22, 66, 60);
             combobox_fillter.ItemsAppearance.SelectedBackColor = Color.FromArgb(128, 175, 129);
-            combobox_fillter.Location = new Point(243, 242);
+            combobox_fillter.Location = new Point(226, 246);
             combobox_fillter.Name = "combobox_fillter";
             combobox_fillter.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            combobox_fillter.Size = new Size(153, 36);
+            combobox_fillter.Size = new Size(99, 36);
             combobox_fillter.TabIndex = 16;
             // 
             // tb_search
@@ -200,14 +200,14 @@
             tb_search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tb_search.Font = new Font("Segoe UI", 9F);
             tb_search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            tb_search.Location = new Point(32, 242);
+            tb_search.Location = new Point(15, 246);
             tb_search.Margin = new Padding(3, 4, 3, 4);
             tb_search.Name = "tb_search";
             tb_search.PasswordChar = '\0';
             tb_search.PlaceholderText = "Tìm kiếm";
             tb_search.SelectedText = "";
             tb_search.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            tb_search.Size = new Size(185, 36);
+            tb_search.Size = new Size(131, 36);
             tb_search.TabIndex = 15;
             tb_search.TextChanged += tb_search_TextChanged;
             // 
@@ -221,10 +221,10 @@
             btn_delete.FillColor = Color.FromArgb(106, 156, 137);
             btn_delete.Font = new Font("Segoe UI", 9F);
             btn_delete.ForeColor = Color.White;
-            btn_delete.Location = new Point(862, 772);
+            btn_delete.Location = new Point(778, 684);
             btn_delete.Name = "btn_delete";
             btn_delete.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btn_delete.Size = new Size(140, 40);
+            btn_delete.Size = new Size(108, 40);
             btn_delete.TabIndex = 17;
             btn_delete.Text = "Xóa";
             btn_delete.Click += btn_delete_Click;
@@ -240,10 +240,10 @@
             guna2Panel1.Controls.Add(label3);
             guna2Panel1.Controls.Add(combobox_category_name);
             guna2Panel1.CustomizableEdges = customizableEdges13;
-            guna2Panel1.Location = new Point(32, 108);
+            guna2Panel1.Location = new Point(15, 112);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel1.Size = new Size(970, 127);
+            guna2Panel1.Size = new Size(871, 127);
             guna2Panel1.TabIndex = 18;
             // 
             // label4
@@ -251,7 +251,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(22, 66, 60);
-            label4.Location = new Point(26, 4);
+            label4.Location = new Point(9, 8);
             label4.Name = "label4";
             label4.Size = new Size(419, 46);
             label4.TabIndex = 19;
@@ -267,10 +267,10 @@
             btn_save.FillColor = Color.FromArgb(106, 156, 137);
             btn_save.Font = new Font("Segoe UI", 9F);
             btn_save.ForeColor = Color.White;
-            btn_save.Location = new Point(287, 56);
+            btn_save.Location = new Point(270, 60);
             btn_save.Name = "btn_save";
             btn_save.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btn_save.Size = new Size(121, 39);
+            btn_save.Size = new Size(111, 39);
             btn_save.TabIndex = 22;
             btn_save.Text = "Cập nhật";
             btn_save.Click += btn_save_Click;
@@ -285,10 +285,10 @@
             btn_cancel.FillColor = Color.FromArgb(106, 156, 137);
             btn_cancel.Font = new Font("Segoe UI", 9F);
             btn_cancel.ForeColor = Color.White;
-            btn_cancel.Location = new Point(160, 56);
+            btn_cancel.Location = new Point(143, 60);
             btn_cancel.Name = "btn_cancel";
             btn_cancel.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btn_cancel.Size = new Size(121, 39);
+            btn_cancel.Size = new Size(111, 39);
             btn_cancel.TabIndex = 21;
             btn_cancel.Text = "Hủy";
             btn_cancel.Click += btn_cancel_Click;
@@ -303,10 +303,10 @@
             btn_deletePane.FillColor = Color.FromArgb(106, 156, 137);
             btn_deletePane.Font = new Font("Segoe UI", 9F);
             btn_deletePane.ForeColor = Color.White;
-            btn_deletePane.Location = new Point(32, 56);
+            btn_deletePane.Location = new Point(15, 60);
             btn_deletePane.Name = "btn_deletePane";
             btn_deletePane.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btn_deletePane.Size = new Size(121, 39);
+            btn_deletePane.Size = new Size(111, 39);
             btn_deletePane.TabIndex = 20;
             btn_deletePane.Text = "Xóa";
             btn_deletePane.Click += btn_deletePane_Click;
@@ -315,6 +315,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(245, 239, 230);
             Controls.Add(btn_save);
             Controls.Add(btn_cancel);
             Controls.Add(btn_deletePane);
@@ -325,7 +326,7 @@
             Controls.Add(data);
             Controls.Add(guna2Panel1);
             Name = "addToCategory";
-            Size = new Size(1055, 838);
+            Size = new Size(904, 747);
             Load += addToCategory_Load;
             ((System.ComponentModel.ISupportInitialize)data).EndInit();
             guna2Panel1.ResumeLayout(false);

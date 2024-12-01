@@ -1,6 +1,8 @@
 ﻿using QLSach.component;
+using QLSach.database;
 using QLSach.database.query;
 using QLSach.view.components;
+using System.Drawing.Printing;
 
 namespace QLSach.view
 {
@@ -9,14 +11,22 @@ namespace QLSach.view
         private Pagination pagination;
         private BookQuery dashBoard = new();
         private BookQuery BookQuery = new();
+        private Context context = new Context();
         public recentUpdate()
         {
             InitializeComponent();
-            //VERY IMPORTANT!!!
-            tablePane_recentUpdate.RowCount = 0;
-            tablePane_recentUpdate.ColumnCount = 0;
 
-            Singleton.getInstance.MainFrameHelper.Path += " > Book";
+            var genres = context.Genre.ToList();
+
+            genres.ForEach(genre => {
+                Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button();
+                btn.Text = genre.name;
+                btn.Dock = DockStyle.Left;
+                btn.Margin = new Padding(10,0,0,0);
+                btn.Width = 90;
+                btn.FillColor = Color.FromArgb(49, 81, 30);
+                flowLayou_pane.Controls.Add(btn);
+            });
         }
 
         private void btn_first_Click(object sender, EventArgs e)

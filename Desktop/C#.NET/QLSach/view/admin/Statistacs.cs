@@ -49,7 +49,7 @@ namespace QLSach.view.admin
                 pane_genres.Controls.Add(label);
             }
 
-            var categories = context.Categories.Select(o => o.Name).ToList();
+            var categories = context.Categories.Select(o => o.Name).Take(10).ToList();
             foreach (var category in categories)
             {
                 Label label = new Label();
@@ -75,7 +75,7 @@ namespace QLSach.view.admin
                               Name = book.name,
                           }
                       )
-                      .ToList();
+                      .Take(10).ToList();
 
                     foreach (var book in books)
                     {
