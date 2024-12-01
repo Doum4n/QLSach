@@ -3,7 +3,6 @@ using MySqlConnector;
 using QLSach.component;
 using QLSach.database;
 using QLSach.dbContext.models;
-using QLSach.interfaces;
 using QLSach.view.admin;
 using System.Data;
 using System.Windows.Forms;

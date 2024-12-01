@@ -28,7 +28,7 @@ namespace QLSach.component
         public int UserId { get; set; }
         public Role Role { get; set; }
 
-        public readonly string connectionString = "Server=localhost;Database=qlsach;User ID=root;Password=pw;";
+        public readonly string connectionString = "Server=localhost;Database=qlsach;User ID=root;Password=vertrigo;";
         //public MySqlConnection connection;
 
 
